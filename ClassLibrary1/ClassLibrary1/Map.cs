@@ -7,7 +7,13 @@ namespace ClassLibrary1
 {
     public class Map
     {
-        private int size;
-        private Player[] players;
+        /// <summary>
+        /// Size of the map.
+        /// </summary>
+        private MapSize size;
+        /// <summary>
+        /// Table of the map tiles.
+        /// </summary>
+        private ClassLibrary1.Tile[][] tiles;
     }
 }

@@ -5,16 +5,15 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    public class Player
+    public abstract class Unit
     {
         /// <summary>
-        /// Name of the player
+        /// Points of the unit
         /// </summary>
-        private string name;
+        private Points points;
         /// <summary>
-        /// Choosen race.
+        /// Position on the map.
         /// </summary>
-        private Race race;
-        private Unit[] units;
+        private Position position;
     }
 }

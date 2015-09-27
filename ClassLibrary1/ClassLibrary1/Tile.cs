@@ -5,10 +5,7 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    public enum Race
+    public abstract class Tile
     {
-        Human,
-        Elf,
-        Orc,
     }
 }
