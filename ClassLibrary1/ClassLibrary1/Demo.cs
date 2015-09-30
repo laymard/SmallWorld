@@ -5,11 +5,7 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    public enum Tile
+    public class Demo : MapSize
     {
-        Plain,
-        Water,
-        Mountain,
-        Forest,
     }
 }

@@ -10,7 +10,7 @@ namespace ClassLibrary1
         private int movePoints;
         private int lifePoints;
         private int attackPoints;
-        private int defensePoints;
+        private int defencePoints;
         private int victoryPoints;
 
         public void initialise()

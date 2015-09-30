@@ -40,18 +40,38 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Demo.cs" />
+    <Compile Include="Elf.cs" />
+    <Compile Include="Forest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Game.cs" />
     <Compile Include="Human.cs" />
-    <Compile Include="Map.cs" />
+    <Compile Include="Map.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MapSize.cs" />
-    <Compile Include="Plain.cs" />
-    <Compile Include="Player.cs" />
+    <Compile Include="Mountain.cs" />
+    <Compile Include="Orc.cs" />
+    <Compile Include="Plain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Player.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Points.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Race.cs" />
-    <Compile Include="Tile.cs" />
-    <Compile Include="Unit.cs" />
+    <Compile Include="Small.cs" />
+    <Compile Include="Standard.cs" />
+    <Compile Include="Tile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Water.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

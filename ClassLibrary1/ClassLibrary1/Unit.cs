@@ -7,13 +7,27 @@ namespace ClassLibrary1
 {
     public abstract class Unit
     {
-        /// <summary>
-        /// Points of the unit
-        /// </summary>
-        private Points points;
-        /// <summary>
-        /// Position on the map.
-        /// </summary>
-        private Position position;
+
+        public Points Points
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public Position Position
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
     }
 }

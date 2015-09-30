@@ -8,14 +8,6 @@ namespace ClassLibrary1
     public class Game
     {
         /// <summary>
-        /// Map configurations of the game.
-        /// </summary>
-        private int map;
-        /// <summary>
-        /// Table of players.
-        /// </summary>
-        private Player[] players;
-        /// <summary>
         /// Number of turns left before the end of the game.
         /// </summary>
         private int nbTurnsLeft;
@@ -24,12 +16,44 @@ namespace ClassLibrary1
         /// </summary>
         private Player currentPlayer;
 
+        public Map Map
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public ClassLibrary1.Player[] Player
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
         public void initialiseMap()
         {
             throw new System.NotImplementedException();
         }
 
         public void initialisePlayer()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void changePlayer()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void end()
         {
             throw new System.NotImplementedException();
         }

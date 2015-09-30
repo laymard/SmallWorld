@@ -5,11 +5,4 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    public enum Tile
-    {
-        Plain,
-        Water,
-        Mountain,
-        Forest,
-    }
 }

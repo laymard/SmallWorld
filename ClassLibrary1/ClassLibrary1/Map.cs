@@ -7,13 +7,32 @@ namespace ClassLibrary1
 {
     public class Map
     {
-        /// <summary>
-        /// Size of the map.
-        /// </summary>
-        private MapSize size;
-        /// <summary>
-        /// Table of the map tiles.
-        /// </summary>
-        private ClassLibrary1.Tile[][] tiles;
+
+        public MapSize MapSize
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public Tile Tile
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public void initialiseTiles()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

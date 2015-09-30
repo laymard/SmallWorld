@@ -11,10 +11,32 @@ namespace ClassLibrary1
         /// Name of the player
         /// </summary>
         private string name;
-        /// <summary>
-        /// Choosen race.
-        /// </summary>
-        private Race race;
-        private Unit[] units;
+
+        public ClassLibrary1.Unit[] Unit
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public Race Race
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public void initMovementPoints()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
