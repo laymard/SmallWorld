@@ -8,7 +8,7 @@ namespace ClassLibrary1
     public class Map
     {
 
-        public MapSize MapSize
+        public Tile Tile
         {
             get
             {
@@ -19,7 +19,7 @@ namespace ClassLibrary1
             }
         }
 
-        public Tile Tile
+        public MapSize MapSize1
         {
             get
             {

@@ -50,7 +50,7 @@
     <Compile Include="Map.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MapSize.cs" />
+    <Compile Include="MapSize1.cs" />
     <Compile Include="Mountain.cs" />
     <Compile Include="Orc.cs" />
     <Compile Include="Plain.cs">
