@@ -39,7 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttackUnits.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Commande.cs" />
     <Compile Include="Demo.cs" />
     <Compile Include="Elf.cs" />
     <Compile Include="Game.cs" />
@@ -48,6 +50,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="MapSize1.cs" />
+    <Compile Include="MoveUnits.cs" />
     <Compile Include="Orc.cs" />
     <Compile Include="Plain.cs">
       <SubType>Code</SubType>
