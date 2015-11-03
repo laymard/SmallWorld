@@ -5,29 +5,35 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    public class Human : Unit
+    public class TileFactory
     {
-        public void initialisePoints()
+        public Tile Tile
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public void getPlain()
         {
             throw new System.NotImplementedException();
         }
 
-        public void setVictoryPoints()
+        public void getMountain()
         {
             throw new System.NotImplementedException();
         }
 
-        public void move(Tile targetTile)
+        public void getWater()
         {
             throw new System.NotImplementedException();
         }
 
-        public void attack(Unit adverseUnit)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void setPoints()
+        public void getForest()
         {
             throw new System.NotImplementedException();
         }

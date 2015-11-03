@@ -8,6 +8,17 @@ namespace ClassLibrary1
     public class Map
     {
 
+        public MapSize MapSize1
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
         public Tile Tile
         {
             get
@@ -19,7 +30,7 @@ namespace ClassLibrary1
             }
         }
 
-        public MapSize MapSize1
+        public TileFactory TileFactory
         {
             get
             {

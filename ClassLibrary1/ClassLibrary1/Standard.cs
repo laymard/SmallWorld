@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    public class Standard : MapSize
+    public class StandardMap : MapSize
     {
     }
 }

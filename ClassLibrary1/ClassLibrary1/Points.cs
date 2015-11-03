@@ -7,13 +7,63 @@ namespace ClassLibrary1
 {
     public class Points
     {
-        private int movePoints;
-        private int lifePoints;
-        private int attackPoints;
-        private int defencePoints;
-        private int victoryPoints;
 
-        public void initialise()
+        public int attackPoints
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public int defencePoints
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public int lifePoints
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public int movePoints
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public int victoryPoints
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public void initialise(int attack, int defence, int life, int move)
         {
             throw new System.NotImplementedException();
         }

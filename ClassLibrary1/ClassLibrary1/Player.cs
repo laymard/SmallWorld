@@ -7,10 +7,6 @@ namespace ClassLibrary1
 {
     public class Player
     {
-        /// <summary>
-        /// Name of the player
-        /// </summary>
-        private string name;
 
         public ClassLibrary1.Unit[] Unit
         {
@@ -23,7 +19,7 @@ namespace ClassLibrary1
             }
         }
 
-        public Race Race
+        public String name
         {
             get
             {
@@ -34,7 +30,26 @@ namespace ClassLibrary1
             }
         }
 
-        public void initMovementPoints()
+        /// <summary>
+        /// create an Elf unit and add it to its units list
+        /// </summary>
+        public void CreateElf()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// create a Human unit and add it to its units list
+        /// </summary>
+        public void CreateHuman()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// create an Orc unit and add it to its units list
+        /// </summary>
+        public void CreateOrc()
         {
             throw new System.NotImplementedException();
         }

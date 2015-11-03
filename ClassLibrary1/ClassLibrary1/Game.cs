@@ -38,6 +38,17 @@ namespace ClassLibrary1
             }
         }
 
+        public Stratege Stratege
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
         public void initialiseMap()
         {
             throw new System.NotImplementedException();

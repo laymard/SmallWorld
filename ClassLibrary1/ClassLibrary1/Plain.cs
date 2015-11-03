@@ -5,4 +5,7 @@ using System.Text;
 
 namespace ClassLibrary1
 {
+    public class Plain
+    {
+    }
 }

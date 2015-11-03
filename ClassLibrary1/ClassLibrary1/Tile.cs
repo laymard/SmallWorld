@@ -7,9 +7,9 @@ namespace ClassLibrary1
 {
     public enum Tile
     {
+        Forest,
+        Mountain,
         Plain,
         Water,
-        Mountain,
-        Forest,
     }
 }
