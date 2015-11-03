@@ -82,5 +82,10 @@ namespace ClassLibrary1
         {
             throw new System.NotImplementedException();
         }
+
+        public Unit createUnit()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

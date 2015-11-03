@@ -15,31 +15,34 @@
   <Comment CommentText="Permet de controler les déplacement des unités&#xD;&#xA;&#xD;&#xA;Son invocateur serait le player et son receveur serait le tableu des unités&#xD;&#xA;&#xD;&#xA;">
     <Position X="0.5" Y="3.582" Height="1.453" Width="1.7" />
   </Comment>
+  <Comment CommentText="Monteur : montage du jeu différent si c'est un partie enregistrée ou une nouvelle partie">
+    <Position X="25.689" Y="2.725" Height="0.75" Width="1.7" />
+  </Comment>
   <Class Name="ClassLibrary1.Game">
-    <Position X="8.75" Y="0.5" Width="1.5" />
+    <Position X="9" Y="0.5" Width="1.5" />
     <AssociationLine Name="Map" Type="ClassLibrary1.Map" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="10.25" Y="1.562" />
-        <Point X="13.75" Y="1.562" />
+        <Point X="10.5" Y="1.65" />
+        <Point X="13.75" Y="1.65" />
         <Point X="13.75" Y="3.5" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="Player" Type="ClassLibrary1.Player" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="8.75" Y="1.25" />
-        <Point X="6.188" Y="1.25" />
+        <Point X="9" Y="1.312" />
+        <Point X="6.188" Y="1.312" />
         <Point X="6.188" Y="1.5" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="Stratege" Type="ClassLibrary1.Stratege" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="10.25" Y="1.25" />
-        <Point X="19.25" Y="1.25" />
+        <Point X="10.5" Y="1.312" />
+        <Point X="19.25" Y="1.312" />
         <Point X="19.25" Y="4" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AgABAAACABAAAAAAAAAAAAAQAQAAAACAAAAQAQAAAAA=</HashCode>
+      <HashCode>AgABAAACABAAAAAAAAAAAAAQAQAAAACAIAAQAQAAAAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -49,7 +52,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary1.Points">
-    <Position X="2.75" Y="4.25" Width="1.5" />
+    <Position X="3.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABCAAIAAAAAAAAAAkAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Points.cs</FileName>
@@ -112,7 +115,7 @@
   <Class Name="ClassLibrary1.Unit">
     <Position X="5.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAAAAAgACAAIAAAAACAAAAAACAAQBgAAAAAAA=</HashCode>
+      <HashCode>AAAQAAAAAAAAgACAAIAAAAACAAAAAACAAQBgAAAAAAI=</HashCode>
       <FileName>Unit.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -196,6 +199,27 @@
       <FileName>AttackUnits.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ClassLibrary1.GameBuilder">
+    <Position X="23.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassLibrary1.SavedGameBuilder">
+    <Position X="22.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SavedGameBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassLibrary1.NewGameBuilder">
+    <Position X="24.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NewGameBuilder.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Interface Name="ClassLibrary1.MovementStrategy">
     <Position X="18.5" Y="5.75" Width="1.5" />

@@ -45,12 +45,14 @@
     <Compile Include="Demo.cs" />
     <Compile Include="Elf.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="GameBuilder.cs" />
     <Compile Include="Human.cs" />
     <Compile Include="Map.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="MapSize1.cs" />
     <Compile Include="MoveUnits.cs" />
+    <Compile Include="NewGameBuilder.cs" />
     <Compile Include="Orc.cs" />
     <Compile Include="Plain.cs">
       <SubType>Code</SubType>
@@ -61,6 +63,7 @@
     <Compile Include="Points.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Race.cs" />
+    <Compile Include="SavedGameBuilder.cs" />
     <Compile Include="Small.cs" />
     <Compile Include="Standard.cs" />
     <Compile Include="Stratege.cs" />
