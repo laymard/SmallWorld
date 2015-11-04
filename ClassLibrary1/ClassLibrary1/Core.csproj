@@ -51,6 +51,7 @@
     <Compile Include="Map.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="mapPositionTile.cs" />
     <Compile Include="MapSize1.cs" />
     <Compile Include="Mountain.cs" />
     <Compile Include="MoveUnits.cs" />

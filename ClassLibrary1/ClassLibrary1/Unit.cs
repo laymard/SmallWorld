@@ -52,6 +52,17 @@ namespace ClassLibrary1
             }
         }
 
+        public mapPositionTile mapPositionTile
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
         public void move(Tile targetTile)
         {
             throw new System.NotImplementedException();
@@ -84,6 +95,11 @@ namespace ClassLibrary1
         }
 
         public Unit createUnit()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public int spendMovePoints(int x, int y)
         {
             throw new System.NotImplementedException();
         }

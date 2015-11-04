@@ -31,5 +31,10 @@ namespace ClassLibrary1
         {
             throw new System.NotImplementedException();
         }
+
+        public int spendMovePoints(int x, int y)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
