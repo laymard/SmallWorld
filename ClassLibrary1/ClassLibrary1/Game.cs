@@ -69,5 +69,21 @@ namespace ClassLibrary1
         {
             throw new System.NotImplementedException();
         }
+
+        /// <summary>
+        /// vérifie que les deux joueurs ont choisi deux races différentes.
+        /// </summary>
+        public void checkRaces()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// initialise le premier joueur
+        /// </summary>
+        public void setFirstPlayer()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
