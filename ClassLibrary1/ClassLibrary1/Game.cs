@@ -15,6 +15,7 @@ namespace ClassLibrary1
         /// Currently playing player.
         /// </summary>
         private Player currentPlayer;
+        private List<Player> players;
 
         public Map Map
         {

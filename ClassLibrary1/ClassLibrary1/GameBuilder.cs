@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    public class Plain : Tile
+    public abstract class GameBuilder
     {
     }
 }

@@ -8,17 +8,6 @@ namespace ClassLibrary1
     public class Player
     {
 
-        public ClassLibrary1.Unit[] Unit
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
-
         public String name
         {
             get
@@ -30,8 +19,41 @@ namespace ClassLibrary1
             }
         }
 
+        public vector<ClassLibrary1.Unit> units
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public int victoryPoints
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public Command Command
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
         /// <summary>
-        /// create an Elf unit and add it to its units list
+        /// create an Elf unit and add it to its a list
         /// </summary>
         public void CreateElf()
         {
@@ -39,7 +61,7 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// create a Human unit and add it to its units list
+        /// create a Human unit and add it to its a list
         /// </summary>
         public void CreateHuman()
         {
@@ -47,15 +69,14 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// create an Orc unit and add it to its units list
+        /// create an Orc unit and add it to its a list
         /// </summary>
         public void CreateOrc()
         {
             throw new System.NotImplementedException();
         }
 
-        /// <param name="race">Race choisi par le joueur en début de partie</param>
-        public void chooseRace(Unit race)
+        public void chooseRace()
         {
             throw new System.NotImplementedException();
         }
