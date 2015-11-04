@@ -10,7 +10,7 @@ namespace ClassLibrary1
         /// <summary>
         /// Exectue le mouvement et l'enregistre pour pouvoir le undo
         /// </summary>
-        public void @do(int moveToX, int moveToY, Unit unit)
+        public void @do()
         {
             throw new System.NotImplementedException();
         }
