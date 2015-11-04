@@ -41,6 +41,17 @@ namespace ClassLibrary1
             }
         }
 
+        public Tile Tile1
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
         public void initialiseTiles()
         {
             throw new System.NotImplementedException();

@@ -23,7 +23,7 @@ namespace ClassLibrary1
         private int nbTurns;
 
         /// <summary>
-        /// Number of units by player
+        /// Number of a by player
         /// </summary>
         private int nbUnits;
     }
