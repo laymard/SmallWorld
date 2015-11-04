@@ -53,5 +53,11 @@ namespace ClassLibrary1
         {
             throw new System.NotImplementedException();
         }
+
+        /// <param name="race">Race choisi par le joueur en début de partie</param>
+        public void chooseRace(Unit race)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

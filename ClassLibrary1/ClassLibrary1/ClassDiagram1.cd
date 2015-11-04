@@ -123,7 +123,7 @@
   <Class Name="ClassLibrary1.Player">
     <Position X="5.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAAAAgAAAAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAQ=</HashCode>
+      <HashCode>ACAAAAgAAAIAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -182,7 +182,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary1.MoveUnits">
-    <Position X="1.25" Y="2.5" Width="1.5" />
+    <Position X="0.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MoveUnits.cs</FileName>
@@ -190,7 +190,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ClassLibrary1.AttackUnits">
-    <Position X="3" Y="2.5" Width="1.5" />
+    <Position X="3.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>AttackUnits.cs</FileName>
