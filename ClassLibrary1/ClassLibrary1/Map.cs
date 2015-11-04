@@ -52,6 +52,18 @@ namespace ClassLibrary1
             }
         }
 
+        public IDictionary<Coordinate, Tile> matrix
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         public void initialiseTiles()
         {
             throw new System.NotImplementedException();

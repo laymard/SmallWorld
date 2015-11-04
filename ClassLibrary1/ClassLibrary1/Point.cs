@@ -5,7 +5,36 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    public struct Point
+    public struct Coordinate
     {
+        /// <summary>
+        /// coord x
+        /// </summary>
+        public int x
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        /// <summary>
+        /// coord y
+        /// </summary>
+        public int y
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
     }
 }

@@ -35,24 +35,9 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// vecteur x de mouvement
+        /// position avant le mouvement
         /// </summary>
-        public int x
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        /// <summary>
-        /// vecteur y de mouvement
-        /// </summary>
-        public int y
+        public Coordinate lastCoord
         {
             get
             {
@@ -67,7 +52,7 @@ namespace ClassLibrary1
         /// <summary>
         /// Exectue le mouvement et l'enregistre pour pouvoir le undo
         /// </summary>
-        public void @do()
+        public void execute()
         {
             throw new System.NotImplementedException();
         }

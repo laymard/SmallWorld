@@ -30,18 +30,10 @@ namespace ClassLibrary1
             }
         }
 
-        public int x
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
-
-        public int y
+        /// <summary>
+        /// position de l'unité sur la carte
+        /// </summary>
+        public Coordinate coord
         {
             get
             {

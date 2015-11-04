@@ -10,7 +10,7 @@ namespace ClassLibrary1
         /// <summary>
         /// execute le mouvement
         /// </summary>
-        void @do();
+        void execute();
         void redo();
         void undo();
         void canDo();
