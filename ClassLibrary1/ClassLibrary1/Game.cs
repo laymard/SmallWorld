@@ -50,12 +50,12 @@ namespace ClassLibrary1
             }
         }
 
-        public void initialiseMap()
+        public void initializeMap()
         {
             throw new System.NotImplementedException();
         }
 
-        public void initialisePlayer()
+        public void initializePlayer()
         {
             throw new System.NotImplementedException();
         }
