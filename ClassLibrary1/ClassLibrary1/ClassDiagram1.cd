@@ -107,13 +107,6 @@
   </Class>
   <Class Name="ClassLibrary1.Map">
     <Position X="15.75" Y="4" Width="1.5" />
-    <AssociationLine Name="TileFactory" Type="ClassLibrary1.TileFactory" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="16.125" Y="5.555" />
-        <Point X="16.125" Y="5.894" />
-        <Point X="14.25" Y="5.894" />
-      </Path>
-    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAQAAAAAAgCAAAAAAAAAAIAAAAAAEAQA=</HashCode>
       <FileName>Map.cs</FileName>
@@ -127,7 +120,7 @@
   <Class Name="ClassLibrary1.Unit">
     <Position X="5.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAwAQAAAAAAgACAAIAAAAACAAAAAACAAQBgAAAAAAI=</HashCode>
+      <HashCode>AAAwAQAAAAAAgACAAIAAAAACAABAAACAAQAAAAAAAAI=</HashCode>
       <FileName>Unit.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
