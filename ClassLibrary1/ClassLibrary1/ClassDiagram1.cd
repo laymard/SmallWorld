@@ -134,9 +134,6 @@
       <HashCode>ACAAAAgIAAIAAAAAAAAABAAAAAAUAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Command" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary1.MapSize">
     <Position X="15.75" Y="7.5" Width="1.5" />

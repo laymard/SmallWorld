@@ -41,7 +41,7 @@ namespace ClassLibrary1
             }
         }
 
-        public Command Command
+        public Stack<Command> Command
         {
             get
             {
