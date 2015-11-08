@@ -76,7 +76,25 @@ namespace ClassLibrary1
             throw new System.NotImplementedException();
         }
 
-        public void chooseRace()
+        public void chooseRace(Unit race)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void setName()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void undoLastCommand()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// méthode appelée quand le joueur a fin ses mouvements. Ordre donné manuellement par le joueur courant
+        /// </summary>
+        public void finishMoves()
         {
             throw new System.NotImplementedException();
         }

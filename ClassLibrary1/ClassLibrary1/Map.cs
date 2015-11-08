@@ -19,29 +19,7 @@ namespace ClassLibrary1
             }
         }
 
-        public Tile Tile
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
-
         public TileFactory TileFactory
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
-
-        public Tile Tile1
         {
             get
             {
@@ -65,6 +43,14 @@ namespace ClassLibrary1
         }
 
         public void initialiseTiles()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// return type tile of coord
+        /// </summary>
+        public Tile getTypeTiles(Coordinate coord)
         {
             throw new System.NotImplementedException();
         }
