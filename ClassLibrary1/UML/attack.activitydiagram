@@ -74,9 +74,9 @@
           <opaqueAction Id="3f18a9b7-d18e-4951-a254-9904470dabb7" name="Ask to click on a tile" isLeaf="false">
             <elementDefinition Id="ee3916ac-12b2-4041-a27a-dd5840ba4f44" />
             <flowNodeTargets>
-              <controlFlow Id="bb17f120-7ae5-4b46-8a50-d9da0c09cded" isLeaf="false">
+              <controlFlow Id="4622aa70-e852-44e2-b897-08db46e7289f" isLeaf="false">
                 <decisionNodeMoniker Id="75ccc5c1-18d3-40ee-9ed6-473aad511809" LastKnownName="Decision3" />
-                <elementDefinition Id="fc93079d-357d-4a7f-9315-0fbd5a05b23c" />
+                <elementDefinition Id="a43deda2-2463-4123-a1f2-10e421848d7e" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
@@ -87,19 +87,121 @@
                 <opaqueActionMoniker Id="3f18a9b7-d18e-4951-a254-9904470dabb7" LastKnownName="Ask to click on a tile" />
                 <elementDefinition Id="b99ee8eb-6eb0-45df-b7e8-70409df732dc" />
               </controlFlow>
-              <controlFlow Id="1ac82c3f-8642-43dc-b04e-c16d584c7c80" isLeaf="false">
-                <opaqueActionMoniker Id="50d57936-9798-42ec-8887-db3b394a2250" LastKnownName="Define the best defender of the tile" />
-                <elementDefinition Id="ace7448e-9ace-4b3b-8061-765788622e80" />
-              </controlFlow>
               <controlFlow Id="2a34affa-f9e4-4733-b403-1f229b1b2b41" guard="annulation" isLeaf="false">
                 <activityFinalNodeMoniker Id="13875853-dd10-43db-b704-5de346136a24" LastKnownName="ActivityFinal1" />
                 <elementDefinition Id="a4f2a4d9-277a-49db-abd7-aa13618dc1c7" />
               </controlFlow>
+              <controlFlow Id="dec524f4-754e-4579-aa41-bf3a7413cb4d" guard="tile clicked" isLeaf="false">
+                <opaqueActionMoniker Id="c70496de-972a-4a01-b8cc-f2dff6ef7825" LastKnownName="Compare player move points to move cost." />
+                <elementDefinition Id="73e93279-9bde-475f-8225-618971ea49e4" />
+              </controlFlow>
             </flowNodeTargets>
           </decisionNode>
-          <opaqueAction Id="50d57936-9798-42ec-8887-db3b394a2250" name="Define the best defender of the tile" isLeaf="false">
+          <opaqueAction Id="50d57936-9798-42ec-8887-db3b394a2250" name="current player loose move points" isLeaf="false">
             <elementDefinition Id="eca56fa7-7a73-4606-a60e-7b3ffc566288" />
+            <flowNodeTargets>
+              <controlFlow Id="a61691c5-2b73-4dba-911e-acfb079573e7" isLeaf="false">
+                <opaqueActionMoniker Id="5048716f-f814-4d0a-b0fa-af370f18fff1" LastKnownName="Define the best defender of the tile" />
+                <elementDefinition Id="1ae112f4-b3a5-4832-bbeb-d0ccfba1c77b" />
+              </controlFlow>
+            </flowNodeTargets>
           </opaqueAction>
+          <opaqueAction Id="c70496de-972a-4a01-b8cc-f2dff6ef7825" name="Compare player move points to move cost." isLeaf="false">
+            <elementDefinition Id="6ed77574-8f7b-48a8-a856-6f146a0ba9f8" />
+            <flowNodeTargets>
+              <controlFlow Id="61f31c99-c3de-43fe-a1e8-9155942c5697" isLeaf="false">
+                <decisionNodeMoniker Id="6449d2c4-b890-4980-8442-53ce6f85d2b8" LastKnownName="Decision4" />
+                <elementDefinition Id="05e9ca87-99d5-4699-b4eb-6fc7c3cc7556" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="6449d2c4-b890-4980-8442-53ce6f85d2b8" name="Decision4" isLeaf="false">
+            <elementDefinition Id="bba75bd2-7946-44d6-a316-b29641af8eea" />
+            <flowNodeTargets>
+              <controlFlow Id="14cc2625-ce55-4fc4-92bf-a39d841603b2" guard="move points &lt; move cost" isLeaf="false">
+                <opaqueActionMoniker Id="3f18a9b7-d18e-4951-a254-9904470dabb7" LastKnownName="Ask to click on a tile" />
+                <elementDefinition Id="5eafea22-96b4-41de-97be-5ca27aa90cad" />
+              </controlFlow>
+              <controlFlow Id="c395ed4f-4b30-4b9e-99ba-e912a6df7772" guard="move points &gt;= move cost" isLeaf="false">
+                <opaqueActionMoniker Id="50d57936-9798-42ec-8887-db3b394a2250" LastKnownName="current player loose move points" />
+                <elementDefinition Id="ea5fb3eb-4d05-469f-bd63-2cc50e9fa3a5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="f93db6b1-c008-432d-a955-7bf25a4ebd22" name="define the winner (attackant or defender) " isLeaf="false">
+            <elementDefinition Id="d35fc007-ddd5-4c76-9662-1f765a5a0d0b" />
+            <flowNodeTargets>
+              <controlFlow Id="d1acf443-1e1b-41c6-a646-36654af23855" isLeaf="false">
+                <decisionNodeMoniker Id="dd71d063-495b-4332-8346-5d530adab8b2" LastKnownName="Decision5" />
+                <elementDefinition Id="5d288b74-5012-48de-b6f3-91e7b7cadf4d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="dd71d063-495b-4332-8346-5d530adab8b2" name="Decision5" isLeaf="false">
+            <elementDefinition Id="34445da5-b1b8-4bc8-9036-cbf851a81dcd" />
+            <flowNodeTargets>
+              <controlFlow Id="1ff16cae-4c84-4e35-b657-bbf0f950d7e1" guard="defender wins" isLeaf="false">
+                <opaqueActionMoniker Id="8b49dcf5-12fa-4071-bfad-fbf26d78cc9b" LastKnownName="attackant loose life points" />
+                <elementDefinition Id="473d6d92-558e-42ed-9a9d-a5d96bae3391" />
+              </controlFlow>
+              <controlFlow Id="424f25b3-f47d-4453-b365-5ad6f89a5906" guard="attackant wins" isLeaf="false">
+                <opaqueActionMoniker Id="81ab6112-783a-40fc-9620-924a27ae2740" LastKnownName="defender loose life points" />
+                <elementDefinition Id="c0110a6d-8595-4bc8-bdd3-840af047c473" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="5048716f-f814-4d0a-b0fa-af370f18fff1" name="Define the best defender of the tile" isLeaf="false">
+            <elementDefinition Id="c33f4fc9-f85d-4796-8fad-5f141dfabd22" />
+            <flowNodeTargets>
+              <controlFlow Id="c6cd2927-8322-4e88-bb2d-314964f99dc2" isLeaf="false">
+                <opaqueActionMoniker Id="f93db6b1-c008-432d-a955-7bf25a4ebd22" LastKnownName="define the winner (attackant or defender) " />
+                <elementDefinition Id="2cd0f3a0-bc53-47a4-9d27-c3b8b2aa92d8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="8b49dcf5-12fa-4071-bfad-fbf26d78cc9b" name="attackant loose life points" isLeaf="false">
+            <elementDefinition Id="c31872dd-d444-42bb-a213-41ebc6f10eb5" />
+            <flowNodeTargets>
+              <controlFlow Id="f585cc5c-155f-4cc5-9321-beb9e1c45564" isLeaf="false">
+                <activityFinalNodeMoniker Id="ebfa8062-ce11-4c9d-bfe8-16e991b15111" LastKnownName="ActivityFinal2" />
+                <elementDefinition Id="725a1094-d0cb-43a8-ab4a-3250415f0777" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="81ab6112-783a-40fc-9620-924a27ae2740" name="defender loose life points" isLeaf="false">
+            <elementDefinition Id="58986422-8538-48b9-8e89-462c901cd864" />
+            <flowNodeTargets>
+              <controlFlow Id="2bb8da9a-8265-48d9-a217-dc561245e357" isLeaf="false">
+                <decisionNodeMoniker Id="a40a7c28-88a6-43cd-bb6d-a9e138111705" LastKnownName="Decision6" />
+                <elementDefinition Id="ce40a85e-39e7-48eb-bcf2-2e73b6fcae40" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="a40a7c28-88a6-43cd-bb6d-a9e138111705" name="Decision6" isLeaf="false">
+            <elementDefinition Id="9c3904b5-9842-4d00-bf9e-51df2dc5e001" />
+            <flowNodeTargets>
+              <controlFlow Id="96e567ba-a037-4388-8822-b66e48eee0e5" guard="defender dies" isLeaf="false">
+                <opaqueActionMoniker Id="93f796e5-fe74-47bd-9d1f-c2322169e618" LastKnownName="move current player to the attacked tile" />
+                <elementDefinition Id="5581c3e0-d112-4913-ac9e-dcbf8ad5276e" />
+              </controlFlow>
+              <controlFlow Id="1f45f9a8-387e-45a1-aa35-f41aa2762d8d" guard="defender still alive" isLeaf="false">
+                <activityFinalNodeMoniker Id="ebfa8062-ce11-4c9d-bfe8-16e991b15111" LastKnownName="ActivityFinal2" />
+                <elementDefinition Id="eaf438db-ce3c-4c38-b130-c0e3fe901eee" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="93f796e5-fe74-47bd-9d1f-c2322169e618" name="move current player to the attacked tile" isLeaf="false">
+            <elementDefinition Id="1781fe49-b718-422b-b992-e393572528c8" />
+            <flowNodeTargets>
+              <controlFlow Id="e4962a4b-df1c-4020-a6a8-b2c848021170" isLeaf="false">
+                <activityFinalNodeMoniker Id="ebfa8062-ce11-4c9d-bfe8-16e991b15111" LastKnownName="ActivityFinal2" />
+                <elementDefinition Id="650aea85-56a6-4e8e-838f-f38bc493c146" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="ebfa8062-ce11-4c9d-bfe8-16e991b15111" name="ActivityFinal2" isLeaf="false">
+            <elementDefinition Id="90fc546e-e517-4d73-8f5b-c8e6a2a5599f" />
+          </activityFinalNode>
         </nodes>
       </activity>
     </activityRootModelHasActivity>
