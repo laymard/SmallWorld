@@ -37,6 +37,13 @@
       <SubType>Content</SubType>
       <DependentUpon>initGame.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="initGame.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="initGame.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>initGame.usecasediagram</DependentUpon>
+    </Content>
     <Content Include="ModelDefinition\UML.uml">
       <SubType>Content</SubType>
     </Content>
