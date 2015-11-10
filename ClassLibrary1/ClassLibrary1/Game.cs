@@ -7,15 +7,6 @@ namespace ClassLibrary1
 {
     public class Game
     {
-        /// <summary>
-        /// Number of turns left before the end of the game.
-        /// </summary>
-        private int nbTurnsLeft;
-        /// <summary>
-        /// Currently playing player.
-        /// </summary>
-        private Player currentPlayer;
-        private List<Player> players;
 
         public Map Map
         {
@@ -28,7 +19,7 @@ namespace ClassLibrary1
             }
         }
 
-        public ClassLibrary1.Player[] Player
+        public List<Player> Player
         {
             get
             {
@@ -50,12 +41,36 @@ namespace ClassLibrary1
             }
         }
 
-        public void initialiseMap()
+        public int turnsLeft
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public int currentPlayer
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public void initializeMap()
         {
             throw new System.NotImplementedException();
         }
 
-        public void initialisePlayer()
+        public void initializePlayer()
         {
             throw new System.NotImplementedException();
         }
@@ -82,6 +97,11 @@ namespace ClassLibrary1
         /// initialise le premier joueur
         /// </summary>
         public void setFirstPlayer()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void saveGame()
         {
             throw new System.NotImplementedException();
         }
