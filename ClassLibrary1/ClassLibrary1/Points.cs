@@ -67,5 +67,10 @@ namespace ClassLibrary1
         {
             throw new System.NotImplementedException();
         }
+
+        public int getRatioLifePoints()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -95,5 +95,15 @@ namespace ClassLibrary1
         {
             throw new System.NotImplementedException();
         }
+
+        public int getRatioLifePoints()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void looseLifePoints(int nbPoints)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

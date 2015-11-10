@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="f9ddea68-8744-49a4-a5b6-316e435cc0ee" name="attack" linkedPackageId="a4037877-0db3-417c-9349-58c4a5e3672d" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="4030a6ca-5666-4ecf-93ab-5c57e9209078">
+      <profileInstance Id="35f5b677-0b1f-4554-a5b6-8baa72996f4f" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="3c1ae222-9e09-48d8-8aa1-046cc8fc49a9">
+      <profileInstance Id="74f2a17e-daa8-412d-9295-701d50d6abec" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="5f179d4d-f376-4cc3-8ea1-56216984b9dc" name="attack" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="53b3267c-3b58-4035-b9b6-b8e637b0c363" />
+        <nodes>
+          <initialNode Id="29d61f81-81ab-4ce5-a6d2-f084278f57f4" name="Initial1" isLeaf="false">
+            <elementDefinition Id="42d07958-838b-434b-92ed-ad69f32f92f4" />
+            <flowNodeTargets>
+              <controlFlow Id="c5996ebf-2913-4f4e-a9c6-21557d245eb8" isLeaf="false">
+                <opaqueActionMoniker Id="afe2c2bd-cd61-4dce-9032-4a4f4bd7fbc9" LastKnownName="select the clicked tile" />
+                <elementDefinition Id="3932f891-3056-4ce3-9f79-90f84bdd0f21" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="afe2c2bd-cd61-4dce-9032-4a4f4bd7fbc9" name="select the clicked tile" isLeaf="false">
+            <elementDefinition Id="c12fbcc0-e7cd-4ae0-bbbf-a7ce92e67a39" />
+            <flowNodeTargets>
+              <controlFlow Id="c5efe37a-7767-425c-97df-bea58e49c8d8" isLeaf="false">
+                <decisionNodeMoniker Id="50c669e1-a0a4-4d93-837f-cf443578b7c5" LastKnownName="Decision3" />
+                <elementDefinition Id="0697ffea-204d-4df8-8f53-fad2ae3d9e79" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="e75ca355-d0b0-41f2-93b7-d240060bfa42" name="get the  opponent units on tile" isLeaf="false">
+            <elementDefinition Id="bfd7ca45-d93f-45d2-9296-66691443dc36" />
+            <flowNodeTargets>
+              <controlFlow Id="9b8f8cad-5419-4f9d-8ac4-ee0c5dc1a51f" isLeaf="false">
+                <decisionNodeMoniker Id="e13534be-58fa-4c5b-8616-709127134555" LastKnownName="Decision1" />
+                <elementDefinition Id="a48eb709-b4e1-40e7-9c2e-bef7dab27cf3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="e13534be-58fa-4c5b-8616-709127134555" name="Decision1" isLeaf="false">
+            <elementDefinition Id="dda7888b-e932-4c2d-8ece-bef5b30f5397" />
+            <flowNodeTargets>
+              <controlFlow Id="1d5039a7-5908-41a2-8ffd-0c8390752529" guard="no unit" name="no units" isLeaf="false">
+                <activityFinalNodeMoniker Id="13875853-dd10-43db-b704-5de346136a24" LastKnownName="ActivityFinal1" />
+                <description>no unit</description>
+                <elementDefinition Id="ffbfc1af-e3f8-4af4-bd57-8b06b4cec562" />
+              </controlFlow>
+              <controlFlow Id="502f4656-a91b-402d-93fb-e07175333b48" isLeaf="false">
+                <opaqueActionMoniker Id="c77be8c2-c416-46a2-996f-bdf3869c2f69" LastKnownName="display units on tile" />
+                <elementDefinition Id="eaa874d8-db71-480b-ae46-4e247897b5c2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode Id="13875853-dd10-43db-b704-5de346136a24" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="79ffec38-f585-4564-b3e9-36de93bda2b6" />
+          </activityFinalNode>
+          <opaqueAction Id="c77be8c2-c416-46a2-996f-bdf3869c2f69" name="display units on tile" isLeaf="false">
+            <elementDefinition Id="c3b80454-b3a6-4d40-a28a-cf7b7a9f58f0" />
+            <flowNodeTargets>
+              <controlFlow Id="972a2636-8c35-40b0-bf58-73caa3509452" isLeaf="false">
+                <decisionNodeMoniker Id="54a66030-d015-4fb8-87e2-bced79460a34" LastKnownName="Decision2" />
+                <elementDefinition Id="57e72945-6496-47e9-86d6-5dd09548efa7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="54a66030-d015-4fb8-87e2-bced79460a34" name="Decision2" isLeaf="false">
+            <elementDefinition Id="3a296cb4-2c38-4cfd-ba45-2881c77184fa" />
+            <flowNodeTargets>
+              <controlFlow Id="3106a0b0-5d0a-43b4-a794-908d7589e805" guard="annulation" isLeaf="false">
+                <activityFinalNodeMoniker Id="13875853-dd10-43db-b704-5de346136a24" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="d9dcce07-8675-4fbe-9c22-50785b5b907c" />
+              </controlFlow>
+              <controlFlow Id="c4f07cb4-e336-406a-9ce2-f6c691efe6aa" guard="unit choosen" isLeaf="false">
+                <opaqueActionMoniker Id="afe2c2bd-cd61-4dce-9032-4a4f4bd7fbc9" LastKnownName="select the clicked tile" />
+                <elementDefinition Id="83a32ff8-3260-4428-aadc-87513e887f26" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode Id="50c669e1-a0a4-4d93-837f-cf443578b7c5" name="Decision3" isLeaf="false">
+            <elementDefinition Id="2a059f4f-915c-40a2-be2f-64949c64384a" />
+            <flowNodeTargets>
+              <controlFlow Id="0d2e3514-2a47-4636-8cba-c0ff54ab4d48" isLeaf="false">
+                <opaqueActionMoniker Id="e75ca355-d0b0-41f2-93b7-d240060bfa42" LastKnownName="get the  opponent units on tile" />
+                <elementDefinition Id="55f3c4d2-bb00-436d-8708-da58eb90d927" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="a4037877-0db3-417c-9349-58c4a5e3672d" name="UML">
+    <elementDefinition Id="fa8949cb-af95-44b7-accb-6fc12a05a8ec" />
+  </package>
+</activityRootModel>

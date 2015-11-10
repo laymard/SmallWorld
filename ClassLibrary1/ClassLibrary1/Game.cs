@@ -65,6 +65,17 @@ namespace ClassLibrary1
             }
         }
 
+        public Unit currentUnit
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
         public void initializeMap()
         {
             throw new System.NotImplementedException();
@@ -102,6 +113,31 @@ namespace ClassLibrary1
         }
 
         public void saveGame()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void selectTile(Coordinate tile)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void selectUnit(Unit unit)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void attack(Coordinate tile)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Boolean currentPlayerWin(Unit opponentUnit)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Unit selectBestDefender(Array<AttackUnits> unitsOnAttackedTile)
         {
             throw new System.NotImplementedException();
         }

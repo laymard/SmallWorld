@@ -22,23 +22,23 @@
     <Position X="0.5" Y="0.5" Height="4.347" Width="0.921" />
   </Comment>
   <Class Name="ClassLibrary1.Game">
-    <Position X="9" Y="0.5" Width="1.75" />
+    <Position X="8.75" Y="0.5" Width="1.75" />
     <AssociationLine Name="Map" Type="ClassLibrary1.Map" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="10.75" Y="1.726" />
-        <Point X="16.5" Y="1.726" />
+        <Point X="10.5" Y="2.053" />
+        <Point X="16.5" Y="2.053" />
         <Point X="16.5" Y="4" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="Stratege" Type="ClassLibrary1.Stratege" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="10.75" Y="1.366" />
-        <Point X="20.5" Y="1.366" />
+        <Point X="10.5" Y="1.597" />
+        <Point X="20.5" Y="1.597" />
         <Point X="20.5" Y="4" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AgABAAACABAAAAAAEAABAAAQAQAAAACAAAABAQAACAA=</HashCode>
+      <HashCode>AgABAAAiABAAIAAAEBABAAAQAQAAEACAAAABAQCACAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -49,7 +49,7 @@
   <Class Name="ClassLibrary1.Points">
     <Position X="3.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABCAAIAAAAAAAAAAkAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAABCAAoAAAAAAAAAAkAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Points.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -107,20 +107,19 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary1.Unit">
-    <Position X="5.5" Y="4.25" Width="2" />
+    <Position X="5.75" Y="4.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAwAQAAAAAAgACAAIAAAAACAABAAACAAQAAAAAAAAI=</HashCode>
+      <HashCode>AAAwAQAgAAAAgACAgIAAAAACAABAAACAAQAAAAAAAAI=</HashCode>
       <FileName>Unit.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Points" />
-      <Property Name="mapPositionTile" />
     </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary1.Player">
     <Position X="5.5" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>ACAEAAgIAAIAAAAAAAAABAAAAAAUAABAAAAAAAAAAgQ=</HashCode>
+      <HashCode>ACAEAAgIAAIAAAAAAAAABAAAAAAUAAAAAAAAAAAAAgQ=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -280,18 +279,8 @@
       <FileName>Mountain.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ClassLibrary1.mapPositionTile">
-    <Position X="8.25" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAgAAAACAAAIAAAAAAAAAAAAAAAAABgAAAAAAg=</HashCode>
-      <FileName>mapPositionTile.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Unit" />
-    </ShowAsAssociation>
-  </Class>
   <Struct Name="ClassLibrary1.Coordinate">
-    <Position X="1.5" Y="0.75" Width="1.5" />
+    <Position X="17.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
       <FileName>Point.cs</FileName>

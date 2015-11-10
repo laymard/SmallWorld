@@ -19,7 +19,7 @@ namespace ClassLibrary1
             }
         }
 
-        public vector<ClassLibrary1.Unit> units
+        public Array<ClassLibrary1.Unit> units
         {
             get
             {
@@ -81,11 +81,6 @@ namespace ClassLibrary1
             throw new System.NotImplementedException();
         }
 
-        public void setName()
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void undoLastCommand()
         {
             throw new System.NotImplementedException();
@@ -95,6 +90,11 @@ namespace ClassLibrary1
         /// méthode appelée quand le joueur a fin ses mouvements. Ordre donné manuellement par le joueur courant
         /// </summary>
         public void finishMoves()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void addAttackCommand(int cost, Coordinate tile)
         {
             throw new System.NotImplementedException();
         }
