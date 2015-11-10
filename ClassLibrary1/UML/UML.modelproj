@@ -29,13 +29,6 @@
       <SubType>Content</SubType>
       <DependentUpon>attack.activitydiagram</DependentUpon>
     </Content>
-    <Content Include="UMLActivityDiagram1.activitydiagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="UMLActivityDiagram1.activitydiagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>UMLActivityDiagram1.activitydiagram</DependentUpon>
-    </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="attack.sequencediagram">
       <SubType>Content</SubType>
@@ -50,6 +43,13 @@
     <Content Include="initGame.sequencediagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>initGame.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="initGame.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="initGame.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>initGame.usecasediagram</DependentUpon>
     </Content>
     <Content Include="ModelDefinition\UML.uml">
       <SubType>Content</SubType>
