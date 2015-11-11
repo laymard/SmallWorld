@@ -71,6 +71,17 @@
         <elementDefinition Id="b96f0fc9-9f48-492c-b6e7-1e96ad77f096" />
       </component>
     </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="c5d2c250-bd5b-4d4b-902f-59f82d95cff6" name="Builder" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7b83a493-2ce9-46a5-8697-887a4033e93b" />
+        <suppliersInternal>
+          <dependency Id="aebe9e7e-a242-4371-bc82-9d52f77a6120" name="create">
+            <componentMoniker Id="fba57637-6a83-44b6-8572-724ba3e2e638" LastKnownName="Game" />
+            <elementDefinition Id="22404e88-93c8-4101-9aa9-2088d85cd522" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
   </packagedElements>
   <package Id="1dbdf028-d05a-4b98-bd35-5d482b10702e" name="UML">
     <elementDefinition Id="fa8949cb-af95-44b7-accb-6fc12a05a8ec" />

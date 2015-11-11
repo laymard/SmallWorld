@@ -6399,6 +6399,25 @@
         isLeaf="false"
         isActiveClass="false" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="7b83a493-2ce9-46a5-8697-887a4033e93b"
+        name="Builder"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="22404e88-93c8-4101-9aa9-2088d85cd522"
+            name="create">
+            <componentMoniker
+              Id="08413095-05b3-4f85-9c5b-6d36b27f4ce7"
+              LastKnownName="Game"
+              LastKnownLocation="UML.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
