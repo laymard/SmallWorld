@@ -6371,12 +6371,30 @@
         name="Map"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="7aa95872-6d2e-485b-b3ef-e0ac125463ce">
+            <componentMoniker
+              Id="b96f0fc9-9f48-492c-b6e7-1e96ad77f096"
+              LastKnownName="Tile"
+              LastKnownLocation="UML.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <component
         Id="910e3e06-6808-4e5a-a111-a13722bb7631"
         name="Unités"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="b96f0fc9-9f48-492c-b6e7-1e96ad77f096"
+        name="Tile"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />

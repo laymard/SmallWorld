@@ -53,11 +53,22 @@
     <componentModelHasComponents>
       <component Id="1aae6246-d045-42a4-a8f8-15681f7bfc8b" name="Map" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="b72913fe-bed8-48b6-ac7d-5d933763e35b" />
+        <suppliersInternal>
+          <dependency Id="76da6b07-9ff8-4066-b526-e9f17a98839c">
+            <componentMoniker Id="78fe4b26-b041-42db-8823-b3bebc1aa459" LastKnownName="Tile" />
+            <elementDefinition Id="7aa95872-6d2e-485b-b3ef-e0ac125463ce" />
+          </dependency>
+        </suppliersInternal>
       </component>
     </componentModelHasComponents>
     <componentModelHasComponents>
       <component Id="ab2d857c-d17b-4c73-9d75-4ce79fd2582a" name="Unités" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="910e3e06-6808-4e5a-a111-a13722bb7631" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="78fe4b26-b041-42db-8823-b3bebc1aa459" name="Tile" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b96f0fc9-9f48-492c-b6e7-1e96ad77f096" />
       </component>
     </componentModelHasComponents>
   </packagedElements>
