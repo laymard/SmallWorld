@@ -30,17 +30,6 @@ namespace ClassLibrary1
             }
         }
 
-        public Stratege Stratege
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
-
         public int turnsLeft
         {
             get

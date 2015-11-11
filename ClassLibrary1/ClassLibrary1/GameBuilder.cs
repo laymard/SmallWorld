@@ -7,5 +7,16 @@ namespace ClassLibrary1
 {
     public abstract class GameBuilder
     {
+        public Game Game
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
     }
 }

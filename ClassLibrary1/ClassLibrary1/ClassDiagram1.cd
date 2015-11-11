@@ -13,7 +13,7 @@
     <Position X="14.319" Y="4.933" Height="0.345" Width="0.913" />
   </Comment>
   <Comment CommentText="Monteur : montage du jeu différent si c'est un partie enregistrée ou une nouvelle partie">
-    <Position X="25.689" Y="2.725" Height="0.75" Width="1.7" />
+    <Position X="20.556" Y="1.049" Height="0.75" Width="1.7" />
   </Comment>
   <Class Name="ClassLibrary1.Game">
     <Position X="8.75" Y="0.5" Width="1.75" />
@@ -24,20 +24,12 @@
         <Point X="16.5" Y="4" />
       </Path>
     </AssociationLine>
-    <AssociationLine Name="Stratege" Type="ClassLibrary1.Stratege" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="10.5" Y="1.597" />
-        <Point X="20.5" Y="1.597" />
-        <Point X="20.5" Y="4" />
-      </Path>
-    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AgABAAAiABAAIAAAEBABAAAQAQAAEACAAAABAQCACAA=</HashCode>
+      <HashCode>AgAAAAAiABAAIAAAEBABAAAQAQAAEACAAAABAQCACAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Map" />
-      <Property Name="Stratege" />
     </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary1.Points">
@@ -92,7 +84,7 @@
   <Class Name="ClassLibrary1.Map">
     <Position X="15.75" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAQAAAAAAgCAAAAAAAAAAAAAAAgAEAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAgCAAAAAgAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Map.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -103,7 +95,7 @@
   <Class Name="ClassLibrary1.Unit">
     <Position X="5.75" Y="4.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAwAQAgAAAAgACAgIAAAAACAABAAACAAQAAAAAAAAI=</HashCode>
+      <HashCode>AAAgAQAgAAAggACAgAAAACQAAABAAACAAQAAAAAAAAI=</HashCode>
       <FileName>Unit.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -123,40 +115,6 @@
       <HashCode>AAAAABAAAAAAAAAAAABAAEAAAAAAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>MapSize1.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="ClassLibrary1.Stratege">
-    <Position X="19.75" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Stratege.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="MovementStrategy" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="ClassLibrary1.Strategy1">
-    <Position X="18" Y="7.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Strategy1.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="ClassLibrary1.Strategy2">
-    <Position X="19.75" Y="7.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Strategy2.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="ClassLibrary1.Strategy3">
-    <Position X="21.5" Y="7.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Strategy3.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ClassLibrary1.TileFactory">
     <Position X="12.75" Y="5.5" Width="1.5" />
@@ -188,21 +146,32 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ClassLibrary1.GameBuilder">
-    <Position X="23.75" Y="2.25" Width="1.5" />
+    <Position X="18.75" Y="1" Width="1.5" />
+    <AssociationLine Name="Game" Type="ClassLibrary1.Game" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="18.75" Y="1.562" />
+        <Point X="18.375" Y="1.562" />
+        <Point X="18.375" Y="1.562" />
+        <Point X="10.5" Y="1.562" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameBuilder.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Game" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary1.SavedGameBuilder">
-    <Position X="22.75" Y="3.75" Width="1.5" />
+    <Position X="17.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SavedGameBuilder.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.NewGameBuilder">
-    <Position X="24.75" Y="3.75" Width="1.5" />
+    <Position X="19.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>NewGameBuilder.cs</FileName>
@@ -280,13 +249,6 @@
       <FileName>Point.cs</FileName>
     </TypeIdentifier>
   </Struct>
-  <Interface Name="ClassLibrary1.MovementStrategy">
-    <Position X="19.75" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Strategy.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Interface Name="ClassLibrary1.Command">
     <Position X="3.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
