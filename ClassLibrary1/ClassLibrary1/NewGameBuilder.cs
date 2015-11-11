@@ -7,5 +7,9 @@ namespace ClassLibrary1
 {
     public class NewGameBuilder : GameBuilder
     {
+        public void buildGame()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

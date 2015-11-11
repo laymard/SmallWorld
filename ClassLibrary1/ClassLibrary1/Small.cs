@@ -7,5 +7,9 @@ namespace ClassLibrary1
 {
     public class SmallMap : MapSize
     {
+        public void createMap()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
