@@ -29,6 +29,13 @@
       <SubType>Content</SubType>
       <DependentUpon>attack.activitydiagram</DependentUpon>
     </Content>
+    <Content Include="package.componentdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="package.componentdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>package.componentdiagram</DependentUpon>
+    </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="attack.sequencediagram">
       <SubType>Content</SubType>
