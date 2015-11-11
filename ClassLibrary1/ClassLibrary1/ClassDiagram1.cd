@@ -6,14 +6,14 @@
   <Comment CommentText="Fabrique : &#xD;&#xA;Player joue le rôle de fabrique">
     <Position X="7.996" Y="8.361" Height="0.685" Width="1.4" />
   </Comment>
-  <Comment CommentText="Strategy">
-    <Position X="21.58" Y="6.185" Height="0.417" Width="1.061" />
-  </Comment>
   <Comment CommentText="Flyweight&#xD;&#xA;">
     <Position X="14.319" Y="4.933" Height="0.345" Width="0.913" />
   </Comment>
-  <Comment CommentText="Monteur : montage du jeu différent si c'est un partie enregistrée ou une nouvelle partie">
+  <Comment CommentText="Monteur ">
     <Position X="20.556" Y="1.049" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Commande">
+    <Position X="3.15" Y="0.603" Height="0.75" Width="1.7" />
   </Comment>
   <Class Name="ClassLibrary1.Game">
     <Position X="8.75" Y="0.5" Width="1.75" />

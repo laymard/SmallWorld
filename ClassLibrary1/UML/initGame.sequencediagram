@@ -1,31 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="fa10279f-4747-4aa1-8daf-1d55e303e75f" name="initGame" linkedPackageId="5080f866-dba3-47a3-99bd-a5d964b21461" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="52f4aa66-f1f4-4b72-ae37-cabdda9bc932">
-      <profileInstance Id="7c7d535c-191c-404e-8e96-0d090330a329" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="ad1412ce-e873-4a5f-9dd7-41313610e320">
-      <profileInstance Id="783cab1c-3267-41da-b373-3615a584f3cd" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" dslVersion="1.0.0.0" Id="fa10279f-4747-4aa1-8daf-1d55e303e75f" name="initGame" linkedPackageId="5080f866-dba3-47a3-99bd-a5d964b21461" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
   <packagedElements>
     <packageHasNamedElement>
       <interaction Id="d2033e49-c9b3-4ed2-b791-002fdf58c172" name="initGame" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
         <ownedCommentsInternal>
-          <comment Id="df3140d6-8350-4709-aca2-2c4854dabb90">
-            <elementDefinition Id="8d07f556-9111-4ef0-bf08-bd9fd07b343f" />
-            <body>clique sur Play
-</body>
-            <annotatedElements>
-              <lifelineMoniker Id="17a47caf-780c-4dea-96ac-a5626e1d9648" LastKnownName="game : Game" />
-            </annotatedElements>
-          </comment>
           <comment Id="cddd7548-330e-455b-9d0b-c034bd5735c9">
             <elementDefinition Id="c6690604-9ff9-4e14-9e64-f60412256573" />
             <body>choix du mode de jeu
@@ -172,18 +150,18 @@
             <elementDefinition Id="473a0f2e-687b-49c9-ac1d-567ee8ebe98b" />
             <coveredLifelines>
               <lifelineMoniker Id="17a47caf-780c-4dea-96ac-a5626e1d9648" LastKnownName="game : Game" />
+              <lifelineMoniker Id="887a162a-47c1-4f6d-9677-f825c217129b" LastKnownName="map : Map" />
               <lifelineMoniker Id="2a8f3cf4-8cbe-4c7d-b021-be7271d73529" LastKnownName="player1 : Player" />
               <lifelineMoniker Id="851ab44a-f60c-44ad-ba66-e63aff6de083" LastKnownName="player2 : Player" />
-              <lifelineMoniker Id="887a162a-47c1-4f6d-9677-f825c217129b" LastKnownName="map : Map" />
             </coveredLifelines>
             <operands>
               <interactionOperand Id="0a30ca7b-76e8-4a5e-8c64-100317e144c6" name="InteractionOperand1">
                 <elementDefinition Id="c184072a-3d6e-49ca-b7a0-a8ff9f1f60e7" />
                 <coveredLifelines>
                   <lifelineMoniker Id="17a47caf-780c-4dea-96ac-a5626e1d9648" LastKnownName="game : Game" />
+                  <lifelineMoniker Id="887a162a-47c1-4f6d-9677-f825c217129b" LastKnownName="map : Map" />
                   <lifelineMoniker Id="2a8f3cf4-8cbe-4c7d-b021-be7271d73529" LastKnownName="player1 : Player" />
                   <lifelineMoniker Id="851ab44a-f60c-44ad-ba66-e63aff6de083" LastKnownName="player2 : Player" />
-                  <lifelineMoniker Id="887a162a-47c1-4f6d-9677-f825c217129b" LastKnownName="map : Map" />
                 </coveredLifelines>
                 <guard>
                   <interactionConstraint Id="14cdcf14-0220-4f0d-b321-3c896bf28da7">
@@ -203,16 +181,10 @@
               </interactionOperand>
             </operands>
           </combinedFragment>
-          <operandOccurrenceSpecification Id="95e5c18e-5816-45a3-bb5e-9d57ac6626b3" name="OperandOccurrenceSpecification25">
-            <elementDefinition Id="682cf6d6-9c71-4776-91d5-b579aa2e6ecc" />
+          <operandOccurrenceSpecification Id="b50b6572-1f3c-42d8-bf56-c5d4dad544bd" name="OperandOccurrenceSpecification11">
+            <elementDefinition Id="5b134cdc-b2dd-4e36-8f0a-cdb6342c3332" />
             <covered>
-              <lifelineMoniker Id="887a162a-47c1-4f6d-9677-f825c217129b" LastKnownName="map : Map" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="adca5fb7-0cdc-44bf-8839-f8200f2fee0c" name="OperandOccurrenceSpecification13">
-            <elementDefinition Id="1cc00a50-85b0-41bc-89e7-aad16e1da867" />
-            <covered>
-              <lifelineMoniker Id="851ab44a-f60c-44ad-ba66-e63aff6de083" LastKnownName="player2 : Player" />
+              <lifelineMoniker Id="2a8f3cf4-8cbe-4c7d-b021-be7271d73529" LastKnownName="player1 : Player" />
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="f87d3398-6e31-4869-ad2b-95fd5016ad8c" name="OperandOccurrenceSpecification9">
@@ -221,10 +193,16 @@
               <lifelineMoniker Id="17a47caf-780c-4dea-96ac-a5626e1d9648" LastKnownName="game : Game" />
             </covered>
           </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="b50b6572-1f3c-42d8-bf56-c5d4dad544bd" name="OperandOccurrenceSpecification11">
-            <elementDefinition Id="5b134cdc-b2dd-4e36-8f0a-cdb6342c3332" />
+          <operandOccurrenceSpecification Id="adca5fb7-0cdc-44bf-8839-f8200f2fee0c" name="OperandOccurrenceSpecification13">
+            <elementDefinition Id="1cc00a50-85b0-41bc-89e7-aad16e1da867" />
             <covered>
-              <lifelineMoniker Id="2a8f3cf4-8cbe-4c7d-b021-be7271d73529" LastKnownName="player1 : Player" />
+              <lifelineMoniker Id="851ab44a-f60c-44ad-ba66-e63aff6de083" LastKnownName="player2 : Player" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="95e5c18e-5816-45a3-bb5e-9d57ac6626b3" name="OperandOccurrenceSpecification25">
+            <elementDefinition Id="682cf6d6-9c71-4776-91d5-b579aa2e6ecc" />
+            <covered>
+              <lifelineMoniker Id="887a162a-47c1-4f6d-9677-f825c217129b" LastKnownName="map : Map" />
             </covered>
           </operandOccurrenceSpecification>
           <messageOccurrenceSpecification Id="1d27fd3a-9123-40c2-9160-a8414f797cea" name="MessageOccurrenceSpecification25">
@@ -365,16 +343,16 @@
               <lifelineMoniker Id="851ab44a-f60c-44ad-ba66-e63aff6de083" LastKnownName="player2 : Player" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="27a0603f-6821-4726-b159-80f12576735e" name="MessageOccurrenceSpecification41">
-            <elementDefinition Id="9f560d13-09c0-456f-9dae-7f61f2884c87" />
-            <covered>
-              <lifelineMoniker Id="17a47caf-780c-4dea-96ac-a5626e1d9648" LastKnownName="game : Game" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="d3fbd609-6f34-44df-88a5-167acc385a0e" name="MessageOccurrenceSpecification42">
             <elementDefinition Id="d8cc6918-9425-4e71-bde4-c42e741221dd" />
             <covered>
               <lifelineMoniker Id="851ab44a-f60c-44ad-ba66-e63aff6de083" LastKnownName="player2 : Player" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="27a0603f-6821-4726-b159-80f12576735e" name="MessageOccurrenceSpecification41">
+            <elementDefinition Id="9f560d13-09c0-456f-9dae-7f61f2884c87" />
+            <covered>
+              <lifelineMoniker Id="17a47caf-780c-4dea-96ac-a5626e1d9648" LastKnownName="game : Game" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="137fd327-7307-417f-afcf-24475519cdd1" name="MessageOccurrenceSpecification44">
@@ -970,5 +948,19 @@
   </packagedElements>
   <package Id="5080f866-dba3-47a3-99bd-a5d964b21461" name="UML">
     <elementDefinition Id="fa8949cb-af95-44b7-accb-6fc12a05a8ec" />
+    <profileInstances>
+      <packageHasProfileInstances Id="52f4aa66-f1f4-4b72-ae37-cabdda9bc932">
+        <profileInstance Id="7c7d535c-191c-404e-8e96-0d090330a329" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="ad1412ce-e873-4a5f-9dd7-41313610e320">
+        <profileInstance Id="783cab1c-3267-41da-b373-3615a584f3cd" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </SequenceDesignerModel>
