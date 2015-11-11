@@ -4,7 +4,7 @@
     <Position X="14.645" Y="8.391" Height="0.417" Width="1.061" />
   </Comment>
   <Comment CommentText="Fabrique : &#xD;&#xA;Player joue le rôle de fabrique">
-    <Position X="6.333" Y="7.111" Height="0.685" Width="1.4" />
+    <Position X="8.19" Y="7.147" Height="0.685" Width="1.4" />
   </Comment>
   <Comment CommentText="Strategy">
     <Position X="21.58" Y="6.185" Height="0.417" Width="1.061" />
@@ -109,7 +109,7 @@
   <Class Name="ClassLibrary1.Unit">
     <Position X="5.75" Y="4.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAwAQAgAAAAgACAgIAAAAACAABAAACAAQAAAAAAAAI=</HashCode>
+      <HashCode>AAAgAQAgAAAggACAgAAAACQAAABAAACAAQAAAAAAAAI=</HashCode>
       <FileName>Unit.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

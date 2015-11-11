@@ -55,7 +55,7 @@ namespace ClassLibrary1
             }
         }
 
-        public void move(Tile targetTile)
+        public void move(Coordinate targetTile)
         {
             throw new System.NotImplementedException();
         }
@@ -65,23 +65,10 @@ namespace ClassLibrary1
             throw new System.NotImplementedException();
         }
 
-        public void setPosition(int x, int y)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        /// <summary>
-        /// initialise points according to the Race of the unit
-        /// </summary>
-        public void initialisePoints()
-        {
-            throw new System.NotImplementedException();
-        }
-
         /// <summary>
         /// set victory points according to the current tile
         /// </summary>
-        public void setVictoryPoints()
+        public void addVictoryPoints()
         {
             throw new System.NotImplementedException();
         }
@@ -102,6 +89,16 @@ namespace ClassLibrary1
         }
 
         public void looseLifePoints(int nbPoints)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Boolean canMove(Coordinate tile)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Coordinate canAttack(Boolean tile)
         {
             throw new System.NotImplementedException();
         }
