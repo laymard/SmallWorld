@@ -85,14 +85,6 @@
         </umlExecutionSpecificationShape>
       </relativeChildShapes>
     </lifelineShape>
-    <commentShape Id="7348966b-c25b-4864-806b-a6c92bc90db0" absoluteBounds="0.75, 8.25, 1.25, 0.375" customColor="251, 247, 200">
-      <commentMoniker Id="3dc5e07c-5e2f-4ece-a783-327ece8c6080" />
-      <relativeChildShapes />
-    </commentShape>
-    <commentShape Id="56b7b0e0-f5e7-4890-8d6c-71d015fb1623" absoluteBounds="0.375, 8.875, 1.25, 0.375" customColor="251, 247, 200">
-      <commentMoniker Id="730fcd8f-92b3-4e61-bd39-a97535ce7bc3" />
-      <relativeChildShapes />
-    </commentShape>
     <lifelineShape Id="40d720b2-749f-414d-9cc9-71322b9f6bcd" absoluteBounds="13.157438665767295, 1, 0.15, 28.831822161503613" visible="true" visualStyleMode="Modified">
       <lifelineMoniker Id="cc985fb4-ab47-432e-b2f9-75f5d151601e" LastKnownName="opponentPlayer : Player" />
       <relativeChildShapes>

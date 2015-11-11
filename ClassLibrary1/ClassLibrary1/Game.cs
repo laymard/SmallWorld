@@ -30,17 +30,6 @@ namespace ClassLibrary1
             }
         }
 
-        public Stratege Stratege
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
-
         public int turnsLeft
         {
             get
@@ -71,6 +60,18 @@ namespace ClassLibrary1
             {
                 throw new System.NotImplementedException();
             }
+            set
+            {
+            }
+        }
+
+        public Player Player1
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
             set
             {
             }
