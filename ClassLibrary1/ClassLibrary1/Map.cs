@@ -50,7 +50,7 @@ namespace ClassLibrary1
         /// <summary>
         /// return type tile of coord
         /// </summary>
-        public Tile getTypeTiles(Coordinate coord)
+        public Tile getTileType(Coordinate coord)
         {
             throw new System.NotImplementedException();
         }
