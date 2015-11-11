@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm12="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="bff2b029-8614-4d97-8353-3da98212f063" name="package" linkedPackageId="1dbdf028-d05a-4b98-bd35-5d482b10702e" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="abef12b9-53ec-425b-8881-249eb408f208">
+      <profileInstance Id="5a138377-d8e3-450c-b58f-5bf836c4b285" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="27a5c1a4-f260-4117-9af7-f58616833a91">
+      <profileInstance Id="2bb79cac-53ba-4607-a273-c0ba4fc27615" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="fba57637-6a83-44b6-8572-724ba3e2e638" name="Game" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="08413095-05b3-4f85-9c5b-6d36b27f4ce7" />
+        <suppliersInternal>
+          <dependency Id="cafcd2da-3f70-44a6-bdbf-f1cfe9c16e5a">
+            <componentMoniker Id="1aae6246-d045-42a4-a8f8-15681f7bfc8b" LastKnownName="Map" />
+            <elementDefinition Id="ca0632dc-a2e0-4d66-9b75-fcba47175441" />
+          </dependency>
+          <dependency Id="311cf4ad-89fa-4fda-aed8-05167f14e652">
+            <componentMoniker Id="68fddc95-7c80-421a-aa3b-b21d489f0a81" LastKnownName="Player" />
+            <elementDefinition Id="978c127e-a9bf-45aa-8d43-9ead984e4ba9" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="e26b6ede-00d3-48d7-a880-16b8f7969fbf" name="Command" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="eea9bc2d-d8f9-4fa3-a3e6-dfd855a40511" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="68fddc95-7c80-421a-aa3b-b21d489f0a81" name="Player" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2eb9255a-4b0b-4a36-a098-a2548184f0da" />
+        <suppliersInternal>
+          <dependency Id="d4147513-93ad-41ec-bd14-bcf6a7b0f526" name="use">
+            <componentMoniker Id="e26b6ede-00d3-48d7-a880-16b8f7969fbf" LastKnownName="Command" />
+            <elementDefinition Id="d422ceb7-c1ee-4b4b-8a7d-9e1a720b3009" />
+          </dependency>
+          <dependency Id="27b81cc7-8864-4eda-bc42-eb8857699e87">
+            <componentMoniker Id="ab2d857c-d17b-4c73-9d75-4ce79fd2582a" LastKnownName="Unités" />
+            <elementDefinition Id="10afa7c6-f196-4106-a929-96f2b6dd37a1" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="1aae6246-d045-42a4-a8f8-15681f7bfc8b" name="Map" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b72913fe-bed8-48b6-ac7d-5d933763e35b" />
+        <suppliersInternal>
+          <dependency Id="76da6b07-9ff8-4066-b526-e9f17a98839c">
+            <componentMoniker Id="78fe4b26-b041-42db-8823-b3bebc1aa459" LastKnownName="Tile" />
+            <elementDefinition Id="7aa95872-6d2e-485b-b3ef-e0ac125463ce" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="ab2d857c-d17b-4c73-9d75-4ce79fd2582a" name="Unités" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="910e3e06-6808-4e5a-a111-a13722bb7631" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="78fe4b26-b041-42db-8823-b3bebc1aa459" name="Tile" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b96f0fc9-9f48-492c-b6e7-1e96ad77f096" />
+      </component>
+    </componentModelHasComponents>
+  </packagedElements>
+  <package Id="1dbdf028-d05a-4b98-bd35-5d482b10702e" name="UML">
+    <elementDefinition Id="fa8949cb-af95-44b7-accb-6fc12a05a8ec" />
+  </package>
+</componentModel>
