@@ -4,7 +4,7 @@
     <Position X="14.645" Y="8.391" Height="0.417" Width="1.061" />
   </Comment>
   <Comment CommentText="Fabrique : &#xD;&#xA;Player joue le rôle de fabrique">
-    <Position X="7.996" Y="7.111" Height="0.685" Width="1.4" />
+    <Position X="7.996" Y="8.361" Height="0.685" Width="1.4" />
   </Comment>
   <Comment CommentText="Strategy">
     <Position X="21.58" Y="6.185" Height="0.417" Width="1.061" />
@@ -25,15 +25,16 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AgAAAAAiABAAIAAAEBABAAAQAQAAEACAAAABAQCACAA=</HashCode>
+      <HashCode>AgAAAAAiABAAIAAAkBABAAAQAQAAEACAAAABAQCACAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Map" />
+      <Property Name="Player1" />
     </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary1.Points">
-    <Position X="3.25" Y="4.25" Width="1.5" />
+    <Position X="3.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABCAAoAAAAAAAAAAkAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Points.cs</FileName>
@@ -61,21 +62,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Human">
-    <Position X="5.5" Y="8.25" Width="1.5" />
+    <Position X="5.5" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAASAAAAAAAAAACAAIAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
       <FileName>Human.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Orc">
-    <Position X="3.75" Y="8.25" Width="1.5" />
+    <Position X="3.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAyAAAAAAAAAACAAIAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
       <FileName>Orc.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Elf">
-    <Position X="7.25" Y="8.25" Width="1.5" />
+    <Position X="7.25" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAyAAAAAAAAAACAAIAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
       <FileName>Elf.cs</FileName>
@@ -93,7 +94,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary1.Unit">
-    <Position X="5.75" Y="4.25" Width="2" />
+    <Position X="5.75" Y="5.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAgAQAgAAAggACAgAAAACQAAABAAACAAQAAAAAAAAI=</HashCode>
       <FileName>Unit.cs</FileName>
@@ -105,9 +106,13 @@
   <Class Name="ClassLibrary1.Player">
     <Position X="5.5" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>ACAEAAgIAAIAAAAAAAAABAAAAAAUAAAAAAAAAAAAAgQ=</HashCode>
+      <HashCode>ACAEAAgIAAIAACAAIAAABAAAAAAUAAAAAAAAAAAAAgQ=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Unit" />
+      <Property Name="Command" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary1.MapSize">
     <Position X="15.75" Y="7.5" Width="1.5" />
@@ -127,7 +132,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary1.MoveUnits">
-    <Position X="1.5" Y="2.75" Width="1.5" />
+    <Position X="0.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAAAAAIAAEAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MoveUnits.cs</FileName>
@@ -138,7 +143,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ClassLibrary1.AttackUnits">
-    <Position X="3.5" Y="2.5" Width="1.5" />
+    <Position X="2.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAIAAAAAAA=</HashCode>
       <FileName>AttackUnits.cs</FileName>
@@ -151,8 +156,8 @@
       <Path>
         <Point X="18.75" Y="1.562" />
         <Point X="18.375" Y="1.562" />
-        <Point X="18.375" Y="1.562" />
-        <Point X="10.5" Y="1.562" />
+        <Point X="18.375" Y="1.563" />
+        <Point X="10.5" Y="1.563" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -250,7 +255,7 @@
     </TypeIdentifier>
   </Struct>
   <Interface Name="ClassLibrary1.Command">
-    <Position X="3.25" Y="0.5" Width="1.5" />
+    <Position X="1.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEQAAAAAAAAAEEAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Commande.cs</FileName>

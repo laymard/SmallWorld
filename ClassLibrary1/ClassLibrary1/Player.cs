@@ -19,17 +19,6 @@ namespace ClassLibrary1
             }
         }
 
-        public Array<ClassLibrary1.Unit> units
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
-
         public int victoryPoints
         {
             get
@@ -41,12 +30,48 @@ namespace ClassLibrary1
             }
         }
 
-        public Stack<Command> Command
+        public Stack<Command> actions
         {
             get
             {
                 throw new System.NotImplementedException();
             }
+            set
+            {
+            }
+        }
+
+        public Array<Unit> units
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public Unit Unit
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public Command Command
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
             set
             {
             }

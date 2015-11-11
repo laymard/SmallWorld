@@ -65,6 +65,18 @@ namespace ClassLibrary1
             }
         }
 
+        public Player Player1
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         public void initializeMap()
         {
             throw new System.NotImplementedException();
