@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="fa8949cb-af95-44b7-accb-6fc12a05a8ec"
   name="UML" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -6071,6 +6071,240 @@
             isLeaf="false" />
         </nodes>
       </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="cd8da296-e8ee-414e-9391-d50b24af5784"
+        name="Joueur"
+        isAbstract="true"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="534732da-cfa7-4c40-b2d7-3c325c21e209"
+            isDerived="false"
+            sourceEndRoleName="Joueur"
+            targetEndRoleName="Choisir Race"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="80efb5fb-f055-44aa-a8a6-8f65cf51489d"
+              LastKnownName="Choisir Race"
+              LastKnownLocation="UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2770aa83-78f5-4ea0-9fb9-b55ba6845a51"
+                  name="Joueur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7611f133-f8f6-4e34-92ac-11087abc2335"
+                  name="Choisir Race"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="7e9144d8-a500-48b3-9d69-54410f5ff806"
+            isDerived="false"
+            sourceEndRoleName="Joueur"
+            targetEndRoleName="Choisir nom"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="58bdde9e-94f2-441e-b34b-5ec867d16d46"
+              LastKnownName="Choisir nom"
+              LastKnownLocation="UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e730cb5a-31fa-4345-b6ca-7e491f12b51f"
+                  name="Joueur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2d574218-91fe-478f-be44-ce59a9e570ec"
+                  name="Choisir nom"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="61c0aeab-3ab9-4546-acec-b07ed1f18f89"
+            isDerived="false"
+            sourceEndRoleName="Joueur"
+            targetEndRoleName="Choisir type de partie"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="e2954277-1223-4d4a-bfb0-1b412ffd9a38"
+              LastKnownName="Choisir type de partie"
+              LastKnownLocation="UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9f56200e-2c04-4e91-a5d0-fda871c6f998"
+                  name="Joueur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7e0a678f-e9d9-4687-a3f7-a02cf5952d4d"
+                  name="Choisir type de partie"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="9df579bf-edfe-4319-b9eb-959090f7f6be"
+        name="Joueur 1"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="97753a3a-48f9-43a7-ad9a-4d53a1fbe8a1">
+            <actorMoniker
+              Id="cd8da296-e8ee-414e-9391-d50b24af5784"
+              LastKnownName="Joueur"
+              LastKnownLocation="UML.uml" />
+          </dependency>
+        </suppliersInternal>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="48bf5449-574e-48bc-b979-d1ffec9b64ad"
+        name="Joueur 2"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="fdb00b9c-de61-448e-b38c-e6633f662d09">
+            <actorMoniker
+              Id="cd8da296-e8ee-414e-9391-d50b24af5784"
+              LastKnownName="Joueur"
+              LastKnownLocation="UML.uml" />
+          </dependency>
+        </suppliersInternal>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="50d59bd6-6875-4859-831c-4ecba604bfdc"
+        name="Initialisation du jeu"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="80efb5fb-f055-44aa-a8a6-8f65cf51489d"
+        name="Choisir Race"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="aa925462-3441-4061-b93c-951f1fc72116">
+            <useCaseMoniker
+              Id="ade41e62-7ac6-4626-a9d5-6b692aebbbad"
+              LastKnownName="Verification des races"
+              LastKnownLocation="UML.uml" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker
+            Id="50d59bd6-6875-4859-831c-4ecba604bfdc"
+            LastKnownName="Initialisation du jeu"
+            LastKnownLocation="UML.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e2954277-1223-4d4a-bfb0-1b412ffd9a38"
+        name="Choisir type de partie"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="50d59bd6-6875-4859-831c-4ecba604bfdc"
+            LastKnownName="Initialisation du jeu"
+            LastKnownLocation="UML.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="58bdde9e-94f2-441e-b34b-5ec867d16d46"
+        name="Choisir nom"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="50d59bd6-6875-4859-831c-4ecba604bfdc"
+            LastKnownName="Initialisation du jeu"
+            LastKnownLocation="UML.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ade41e62-7ac6-4626-a9d5-6b692aebbbad"
+        name="Verification des races"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="50d59bd6-6875-4859-831c-4ecba604bfdc"
+            LastKnownName="Initialisation du jeu"
+            LastKnownLocation="UML.uml" />
+        </subjects>
+      </useCase>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
