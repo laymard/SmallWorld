@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="f9ddea68-8744-49a4-a5b6-316e435cc0ee" name="attack" linkedPackageId="a4037877-0db3-417c-9349-58c4a5e3672d" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="f9ddea68-8744-49a4-a5b6-316e435cc0ee" name="attack" linkedPackageId="a4037877-0db3-417c-9349-58c4a5e3672d" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
   <packagedElements>
     <activityRootModelHasActivity>
       <activity Id="5f179d4d-f376-4cc3-8ea1-56216984b9dc" name="attack" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
@@ -162,9 +162,9 @@
           <opaqueAction Id="8b49dcf5-12fa-4071-bfad-fbf26d78cc9b" name="attackant loose life points" isLeaf="false">
             <elementDefinition Id="c31872dd-d444-42bb-a213-41ebc6f10eb5" />
             <flowNodeTargets>
-              <controlFlow Id="f585cc5c-155f-4cc5-9321-beb9e1c45564" isLeaf="false">
-                <activityFinalNodeMoniker Id="ebfa8062-ce11-4c9d-bfe8-16e991b15111" LastKnownName="ActivityFinal2" />
-                <elementDefinition Id="725a1094-d0cb-43a8-ab4a-3250415f0777" />
+              <controlFlow Id="9c923182-5f04-41b4-8faf-b7e19ff7813f" isLeaf="false">
+                <decisionNodeMoniker Id="f2515430-c59c-4886-9aa0-4e676cbd2cb3" LastKnownName="Decision8" />
+                <elementDefinition Id="948e4e81-5cea-4090-96fa-feffe84d5230" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
@@ -180,13 +180,13 @@
           <decisionNode Id="a40a7c28-88a6-43cd-bb6d-a9e138111705" name="Decision6" isLeaf="false">
             <elementDefinition Id="9c3904b5-9842-4d00-bf9e-51df2dc5e001" />
             <flowNodeTargets>
-              <controlFlow Id="96e567ba-a037-4388-8822-b66e48eee0e5" guard="defender dies" isLeaf="false">
-                <opaqueActionMoniker Id="93f796e5-fe74-47bd-9d1f-c2322169e618" LastKnownName="move current player to the attacked tile" />
-                <elementDefinition Id="5581c3e0-d112-4913-ac9e-dcbf8ad5276e" />
-              </controlFlow>
               <controlFlow Id="1f45f9a8-387e-45a1-aa35-f41aa2762d8d" guard="defender still alive" isLeaf="false">
                 <activityFinalNodeMoniker Id="ebfa8062-ce11-4c9d-bfe8-16e991b15111" LastKnownName="ActivityFinal2" />
                 <elementDefinition Id="eaf438db-ce3c-4c38-b130-c0e3fe901eee" />
+              </controlFlow>
+              <controlFlow Id="4368bffa-37e2-400c-a681-a92a71731430" guard="defender dies" isLeaf="false">
+                <opaqueActionMoniker Id="6dea8723-ec68-493d-abaa-e2d125126f34" LastKnownName="Remove defender from the game" />
+                <elementDefinition Id="438c7174-cada-49ac-93cc-6a435db56b73" />
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
@@ -202,6 +202,59 @@
           <activityFinalNode Id="ebfa8062-ce11-4c9d-bfe8-16e991b15111" name="ActivityFinal2" isLeaf="false">
             <elementDefinition Id="90fc546e-e517-4d73-8f5b-c8e6a2a5599f" />
           </activityFinalNode>
+          <opaqueAction Id="6dea8723-ec68-493d-abaa-e2d125126f34" name="Remove defender from the game" isLeaf="false">
+            <elementDefinition Id="9747e152-3c70-4b6e-8346-fd2487b51eba" />
+            <flowNodeTargets>
+              <controlFlow Id="4d78da22-8ed7-426f-969d-b3785dab283a" isLeaf="false">
+                <opaqueActionMoniker Id="93860e39-3662-4993-b6c6-28e0e4558401" LastKnownName="get the player's units on tile" />
+                <elementDefinition Id="5740955b-b5c1-48cc-ad43-f91c7b6d7c28" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="a20d199f-e889-4bec-bfde-10f32e5aea24" name="Decision7" isLeaf="false">
+            <elementDefinition Id="26790ba3-564e-4cdf-babb-af07e9c66d28" />
+            <flowNodeTargets>
+              <controlFlow Id="14db708d-eb11-43cc-8ae7-f616af135ec0" isLeaf="false">
+                <activityFinalNodeMoniker Id="ebfa8062-ce11-4c9d-bfe8-16e991b15111" LastKnownName="ActivityFinal2" />
+                <elementDefinition Id="61ff1ff0-ce87-4001-bef7-e63c40074a4a" />
+              </controlFlow>
+              <controlFlow Id="53f5ffbe-7f5f-4db0-8723-af6adab4b902" guard="no defender unit" isLeaf="false">
+                <opaqueActionMoniker Id="93f796e5-fe74-47bd-9d1f-c2322169e618" LastKnownName="move current player to the attacked tile" />
+                <elementDefinition Id="d7280772-15f5-4c9b-b20b-b264b4e1f9c6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="93860e39-3662-4993-b6c6-28e0e4558401" name="get the player's units on tile" isLeaf="false">
+            <elementDefinition Id="282ade4a-9dee-44b4-bd00-ed2fb3570916" />
+            <flowNodeTargets>
+              <controlFlow Id="665540d7-ab87-479b-b01d-d24f8da390ab" isLeaf="false">
+                <decisionNodeMoniker Id="a20d199f-e889-4bec-bfde-10f32e5aea24" LastKnownName="Decision7" />
+                <elementDefinition Id="902e6135-2470-484a-8e25-c8eff82e4571" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="27932e19-5395-449c-a04b-7bc318aebf70" name="Remove attackant from the game" isLeaf="false">
+            <elementDefinition Id="3fedb727-06d3-4e8f-9a0f-8f6d294abf85" />
+            <flowNodeTargets>
+              <controlFlow Id="e73a25fb-7b6d-45ef-8914-d96f59784f07" isLeaf="false">
+                <activityFinalNodeMoniker Id="ebfa8062-ce11-4c9d-bfe8-16e991b15111" LastKnownName="ActivityFinal2" />
+                <elementDefinition Id="ab214445-3762-4bb6-a4a1-d5987c8520f0" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="f2515430-c59c-4886-9aa0-4e676cbd2cb3" name="Decision8" isLeaf="false">
+            <elementDefinition Id="225e565b-1642-496f-85bc-f3d32de2606a" />
+            <flowNodeTargets>
+              <controlFlow Id="a6ba8fc6-4e6c-42bc-86c9-4239be72a199" guard="attackant dies" isLeaf="false">
+                <opaqueActionMoniker Id="27932e19-5395-449c-a04b-7bc318aebf70" LastKnownName="Remove attackant from the game" />
+                <elementDefinition Id="bd2c5ebb-d6d2-41eb-acf6-fcea4616e893" />
+              </controlFlow>
+              <controlFlow Id="29ad11d7-42e4-48c1-b19a-03d3aad9e51b" guard="attackant still alive" isLeaf="false">
+                <activityFinalNodeMoniker Id="ebfa8062-ce11-4c9d-bfe8-16e991b15111" LastKnownName="ActivityFinal2" />
+                <elementDefinition Id="42952a59-8da6-4fd6-baad-bbb3e089565a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
         </nodes>
       </activity>
     </activityRootModelHasActivity>

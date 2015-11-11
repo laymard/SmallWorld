@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="fa8949cb-af95-44b7-accb-6fc12a05a8ec"
   name="UML" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -6001,11 +6001,11 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="725a1094-d0cb-43a8-ab4a-3250415f0777"
+                Id="948e4e81-5cea-4090-96fa-feffe84d5230"
                 isLeaf="false">
-                <activityFinalNodeMoniker
-                  Id="90fc546e-e517-4d73-8f5b-c8e6a2a5599f"
-                  LastKnownName="ActivityFinal2"
+                <decisionNodeMoniker
+                  Id="225e565b-1642-496f-85bc-f3d32de2606a"
+                  LastKnownName="Decision8"
                   LastKnownLocation="UML.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -6031,21 +6031,21 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="5581c3e0-d112-4913-ac9e-dcbf8ad5276e"
-                guard="defender dies"
-                isLeaf="false">
-                <opaqueActionMoniker
-                  Id="1781fe49-b718-422b-b992-e393572528c8"
-                  LastKnownName="move current player to the attacked tile"
-                  LastKnownLocation="UML.uml" />
-              </controlFlow>
-              <controlFlow
                 Id="eaf438db-ce3c-4c38-b130-c0e3fe901eee"
                 guard="defender still alive"
                 isLeaf="false">
                 <activityFinalNodeMoniker
                   Id="90fc546e-e517-4d73-8f5b-c8e6a2a5599f"
                   LastKnownName="ActivityFinal2"
+                  LastKnownLocation="UML.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="438c7174-cada-49ac-93cc-6a435db56b73"
+                guard="defender dies"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="9747e152-3c70-4b6e-8346-fd2487b51eba"
+                  LastKnownName="Remove defender from the game"
                   LastKnownLocation="UML.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -6069,6 +6069,100 @@
             Id="90fc546e-e517-4d73-8f5b-c8e6a2a5599f"
             name="ActivityFinal2"
             isLeaf="false" />
+          <opaqueAction
+            Id="9747e152-3c70-4b6e-8346-fd2487b51eba"
+            name="Remove defender from the game"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5740955b-b5c1-48cc-ad43-f91c7b6d7c28"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="282ade4a-9dee-44b4-bd00-ed2fb3570916"
+                  LastKnownName="get the player's units on tile"
+                  LastKnownLocation="UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="26790ba3-564e-4cdf-babb-af07e9c66d28"
+            name="Decision7"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="61ff1ff0-ce87-4001-bef7-e63c40074a4a"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="90fc546e-e517-4d73-8f5b-c8e6a2a5599f"
+                  LastKnownName="ActivityFinal2"
+                  LastKnownLocation="UML.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="d7280772-15f5-4c9b-b20b-b264b4e1f9c6"
+                guard="no defender unit"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1781fe49-b718-422b-b992-e393572528c8"
+                  LastKnownName="move current player to the attacked tile"
+                  LastKnownLocation="UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="282ade4a-9dee-44b4-bd00-ed2fb3570916"
+            name="get the player's units on tile"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="902e6135-2470-484a-8e25-c8eff82e4571"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="26790ba3-564e-4cdf-babb-af07e9c66d28"
+                  LastKnownName="Decision7"
+                  LastKnownLocation="UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="3fedb727-06d3-4e8f-9a0f-8f6d294abf85"
+            name="Remove attackant from the game"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ab214445-3762-4bb6-a4a1-d5987c8520f0"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="90fc546e-e517-4d73-8f5b-c8e6a2a5599f"
+                  LastKnownName="ActivityFinal2"
+                  LastKnownLocation="UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="225e565b-1642-496f-85bc-f3d32de2606a"
+            name="Decision8"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="bd2c5ebb-d6d2-41eb-acf6-fcea4616e893"
+                guard="attackant dies"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="3fedb727-06d3-4e8f-9a0f-8f6d294abf85"
+                  LastKnownName="Remove attackant from the game"
+                  LastKnownLocation="UML.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="42952a59-8da6-4fd6-baad-bbb3e089565a"
+                guard="attackant still alive"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="90fc546e-e517-4d73-8f5b-c8e6a2a5599f"
+                  LastKnownName="ActivityFinal2"
+                  LastKnownLocation="UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
         </nodes>
       </activity>
     </packageHasNamedElement>
