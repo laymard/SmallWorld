@@ -7,79 +7,51 @@ namespace ClassLibrary1
 {
     public class Game
     {
+        private Map map;
 
         public Map Map
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get { return map; }
+            set { map = value; }
         }
 
-        public List<Player> Player
+
+        public List<Player> Players
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
-        public int turnsLeft
+        public int TurnsLeft
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get;
+            set;
         }
 
-        public int currentPlayer
+        public Player CurrentPlayer
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get;
+            set;
         }
 
-        public Unit currentUnit
+        public Unit CurrentUnit
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
-        public Player Player1
+        public Game()
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
 
-            set
-            {
-            }
         }
 
-        public void initializeMap()
+        public void initializeMap(MapSize ms)
         {
-            throw new System.NotImplementedException();
+            this.Map = new Map();
+            this.Players = new List<Player>(ms.nbPlayers);
+            this.TurnsLeft = ms.nbTurns;
+
+
         }
 
         public void initializePlayer()

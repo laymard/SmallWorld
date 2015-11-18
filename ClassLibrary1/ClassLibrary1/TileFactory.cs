@@ -7,35 +7,28 @@ namespace ClassLibrary1
 {
     public class TileFactory
     {
-        public Tile Tile
+        public Dictionary<TileType, Tile> Tiles
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
+        }
+       
+
+        public TileFactory()
+        {
+            Tiles = new Dictionary<TileType, Tile>(4);
+            Tiles.Add(TileType.PLAIN, new Plain());
+            Tiles.Add(TileType.WATER, new Water());
+            Tiles.Add(TileType.FOREST, new Forest());
+            Tiles.Add(TileType.MOUNTAIN, new Mountain());
+
         }
 
-        public void getPlain()
+
+        public Tile getTile(TileType tt)
         {
-            throw new System.NotImplementedException();
+            return this.Tiles[tt];
         }
 
-        public void getMountain()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void getWater()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void getForest()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

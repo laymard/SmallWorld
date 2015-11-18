@@ -12,14 +12,9 @@ namespace ClassLibrary1
         /// </summary>
         public int x
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+            get;
+            set;
 
-            set
-            {
-            }
         }
 
         /// <summary>
@@ -27,14 +22,13 @@ namespace ClassLibrary1
         /// </summary>
         public int y
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+            get;
+            set;
+        }
 
-            set
-            {
-            }
+        public Coordinate (int i,int j){
+            this.x = i;
+            this.y = j;
         }
     }
 }

@@ -40,7 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttackUnits.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Commande.cs" />
     <Compile Include="Demo.cs" />
     <Compile Include="Elf.cs" />
@@ -51,7 +50,6 @@
     <Compile Include="Map.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="mapPositionTile.cs" />
     <Compile Include="MapSize1.cs" />
     <Compile Include="Mountain.cs" />
     <Compile Include="MoveUnits.cs" />
@@ -70,13 +68,9 @@
     <Compile Include="SavedGameBuilder.cs" />
     <Compile Include="Small.cs" />
     <Compile Include="Standard.cs" />
-    <Compile Include="Stratege.cs" />
-    <Compile Include="Strategy.cs" />
-    <Compile Include="Strategy1.cs" />
-    <Compile Include="Strategy2.cs" />
-    <Compile Include="Strategy3.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="TileFactory.cs" />
+    <Compile Include="TileType.cs" />
     <Compile Include="Unit.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -8,43 +8,40 @@ namespace ClassLibrary1
     public class Map
     {
 
-        public MapSize MapSize1
+        public MapSize MapSize
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public TileFactory TileFactory
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            
+            
+            set;
+
         }
+
+        
 
         public IDictionary<Coordinate, Tile> matrix
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+            get;
+            set;
+        }
 
-            set
-            {
-            }
+        public Map(MapSize ms){
+            this.MapSize = ms;
+            this.TileFactory = new TileFactory();
+            this.matrix = new Dictionary<Coordinate, Tile>(ms.nbTiles * ms.nbTiles);
+            this.setEmptyMatrix(ms.nbTiles);
         }
 
         public void initialiseTiles()
         {
-            throw new System.NotImplementedException();
+            // appel à la librairie C++
+            
         }
 
         /// <summary>
@@ -53,6 +50,18 @@ namespace ClassLibrary1
         public Tile getTileType(Coordinate coord)
         {
             throw new System.NotImplementedException();
+        }
+
+        public void setEmptyMatrix(int size)
+        {
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    Coordinate coord = new Coordinate(i, j);
+                    this.matrix.Add(coord,null);
+                }
+            }
         }
     }
 }
