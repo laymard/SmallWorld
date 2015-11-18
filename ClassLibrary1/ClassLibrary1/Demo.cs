@@ -11,5 +11,7 @@ namespace ClassLibrary1
         {
             throw new System.NotImplementedException();
         }
+
+        public Demo
     }
 }
