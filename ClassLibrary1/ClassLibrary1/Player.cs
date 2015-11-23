@@ -41,7 +41,7 @@ namespace ClassLibrary1
             }
         }
 
-        public Array<Unit> units
+        public List<Unit> units
         {
             get
             {
@@ -53,16 +53,10 @@ namespace ClassLibrary1
             }
         }
 
-        public Unit Unit
+        public List<Unit> Unit
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public Command Command
@@ -134,5 +128,7 @@ namespace ClassLibrary1
         {
             throw new System.NotImplementedException();
         }
+
+        public List<Unit> getUnitsOnTile(Coordinate tile) { return null; }
     }
 }

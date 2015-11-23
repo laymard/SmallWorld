@@ -44,16 +44,6 @@ namespace ClassLibrary1
             }
         }
 
-        public mapPositionTile mapPositionTile
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
 
         public void move(Coordinate targetTile)
         {
@@ -98,9 +88,24 @@ namespace ClassLibrary1
             throw new System.NotImplementedException();
         }
 
-        public Coordinate canAttack(Boolean tile)
+        public bool canAttack(Coordinate tile)
         {
             throw new System.NotImplementedException();
+        }
+
+        public bool betterDefence(Unit unit)
+        {
+            return this.Points.defencePoints > unit.Points.defencePoints;
+        }
+
+        public Unit()
+        {
+            // TODO: Complete member initialization
+        }
+
+        public Unit()
+        {
+            // TODO: Complete member initialization
         }
     }
 }
