@@ -7,11 +7,12 @@ namespace ClassLibrary1
 {
     public class DemoMap : MapSize
     {
-        public void createMap()
+        public DemoMap()
         {
-            throw new System.NotImplementedException();
+            this.NbPlayers = 2;
+            this.NbTiles = 10;
+            this.NbTurns = 20;
+            this.NbUnits = 6;
         }
-
-        public Demo
     }
 }

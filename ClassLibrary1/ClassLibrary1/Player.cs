@@ -77,6 +77,17 @@ namespace ClassLibrary1
             }
         }
 
+        public Race Race
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
         /// <summary>
         /// create an Elf unit and add it to its a list
         /// </summary>

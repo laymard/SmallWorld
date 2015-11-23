@@ -7,70 +7,40 @@ namespace ClassLibrary1
 {
     public abstract class MapSize
     {
-
         /// <summary>
         /// Number of tiles by side (square maps)
         /// </summary>
-        public int nbTiles
+        public int NbTiles
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get;
+            set;
         }
 
         /// <summary>
         /// Number of Turns
         /// </summary>
-        public int nbTurns
+        public int NbTurns
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get;
+            set;
         }
 
         /// <summary>
         /// Number of units per player
         /// </summary>
-        public int nbUnits
+        public int NbUnits
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get;
+            set;
         }
 
         /// <summary>
         /// Number of Players
         /// </summary>
-        public int nbPlayers
+        public int NbPlayers
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public void createMap()
-        {
-            throw new System.NotImplementedException();
+            get;
+            set;
         }
     }
 }

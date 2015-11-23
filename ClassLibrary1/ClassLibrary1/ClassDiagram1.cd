@@ -29,24 +29,17 @@
       <FileName>Points.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ClassLibrary1.DemoMap">
-    <Position X="14" Y="9.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Demo.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="ClassLibrary1.StandardMap">
     <Position X="15.75" Y="9.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Standard.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.SmallMap">
     <Position X="17.5" Y="9.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Small.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -78,8 +71,8 @@
       <FileName>Map.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="TileFactory" />
       <Property Name="MapSize" />
+      <Property Name="TileFactory" />
     </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary1.Unit">
@@ -95,7 +88,7 @@
   <Class Name="ClassLibrary1.Player">
     <Position X="5.5" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>ACAEAAgIAAIAACAAIAAABAAAAAAUAAAAAAAAAAAAAgQ=</HashCode>
+      <HashCode>QCAEAAgIAAIAACAAIAAABAAAAAAUAAAAAAAAAAAAAgQ=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -106,7 +99,7 @@
   <Class Name="ClassLibrary1.MapSize">
     <Position X="15.75" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAABAAAAAAAAAAAABAAEAAEAAAAAAAAAAAAAAAAAE=</HashCode>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAQABAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>MapSize1.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -141,7 +134,7 @@
     <AssociationLine Name="Game" Type="ClassLibrary1.Game" ManuallyRouted="true" FixedFromPoint="true">
       <Path>
         <Point X="18.75" Y="1.562" />
-        <Point X="10.5" Y="1.717" />
+        <Point X="10.5" Y="1.763" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="-2.258" Y="-0.414" />
@@ -232,6 +225,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Mountain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassLibrary1.DemoMap">
+    <Position X="14" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Demo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Struct Name="ClassLibrary1.Coordinate">

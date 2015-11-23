@@ -8,6 +8,7 @@ namespace ClassLibrary1
     public class Game
     {
         private Map map;
+        private int currentPlayer;
 
         public Map Map
         {
@@ -30,8 +31,9 @@ namespace ClassLibrary1
 
         public Player CurrentPlayer
         {
-            get;
-            set;
+            get {
+                return this.Players[currentPlayer];
+                }
         }
 
         public Unit CurrentUnit
@@ -47,11 +49,9 @@ namespace ClassLibrary1
 
         public void initializeMap(MapSize ms)
         {
-            this.Map = new Map();
-            this.Players = new List<Player>(ms.nbPlayers);
-            this.TurnsLeft = ms.nbTurns;
-
-
+            this.Map = new Map(ms);
+            this.Players = new List<Player>(ms.NbPlayers);
+            this.TurnsLeft = ms.NbTurns;
         }
 
         public void initializePlayer()
@@ -61,20 +61,26 @@ namespace ClassLibrary1
 
         public void changePlayer()
         {
-            throw new System.NotImplementedException();
+            this.currentPlayer = (currentPlayer + 1) % map.MapSize.NbPlayers; 
         }
 
         public void end()
         {
-            throw new System.NotImplementedException();
+            this.TurnsLeft = 0;
         }
 
         /// <summary>
         /// vérifie que les deux joueurs ont choisi deux races différentes.
         /// </summary>
-        public void checkRaces()
+        public void checkRaces(Race race)
         {
-            throw new System.NotImplementedException();
+            for (int i = 0; i < Players.Count; i++)
+            {
+                if (Players[i].Race.Equals(race))
+                {
+                    // traiter le cas du choix d'une race déjà sélectionnée
+                }
+            }
         }
 
         /// <summary>

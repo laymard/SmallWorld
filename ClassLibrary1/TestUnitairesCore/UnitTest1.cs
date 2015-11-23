@@ -12,6 +12,7 @@ namespace TestUnitairesCore
         {
             DemoMap dm = new DemoMap();
             Map m = new Map(dm);
+           
         }
     }
 }

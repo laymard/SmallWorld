@@ -7,9 +7,12 @@ namespace ClassLibrary1
 {
     public class StandardMap : MapSize
     {
-        public void createMap()
+        public StandardMap()
         {
-            throw new System.NotImplementedException();
+            this.NbPlayers = 2;
+            this.NbTiles = 14;
+            this.NbTurns = 30;
+            this.NbUnits = 8;
         }
     }
 }

@@ -7,9 +7,12 @@ namespace ClassLibrary1
 {
     public class SmallMap : MapSize
     {
-        public void createMap()
-        {
-            throw new System.NotImplementedException();
-        }
+            public SmallMap()
+            {
+                this.NbPlayers = 2;
+                this.NbTiles = 6;
+                this.NbTurns = 5;
+                this.NbUnits = 4;
+            }
     }
 }
