@@ -34,8 +34,8 @@ namespace ClassLibrary1
         public Map(MapSize ms){
             this.MapSize = ms;
             this.TileFactory = new TileFactory();
-            this.matrix = new Dictionary<Coordinate, Tile>(ms.nbTiles * ms.nbTiles);
-            this.setEmptyMatrix(ms.nbTiles);
+            this.matrix = new Dictionary<Coordinate, Tile>(ms.NbTiles * ms.NbTiles);
+            this.setEmptyMatrix(ms.NbTiles);
         }
 
         public void initialiseTiles()

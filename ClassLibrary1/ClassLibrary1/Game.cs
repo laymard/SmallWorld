@@ -7,50 +7,84 @@ namespace ClassLibrary1
 {
     public class Game
     {
+        /// <summary>
+        /// Liste des joueurs (au moins deux)
+        /// </summary>
+        public List<Player> Players
+        {
+            get;
+            set
+            {
+                if (value.Count > 1) this.Players = value;
+            }
+        }
+
+        /// <summary>
+        /// Indice du joueur courant dans la liste des joueurs Players.
+        /// </summary>
         private int currentPlayer;
 
+        /// <summary>
+        /// Joueur courant.
+        /// </summary>
+        public Player CurrentPlayer
+        {
+            get
+            {
+                return this.Players[currentPlayer];
+            }
+        }
+
+        /// <summary>
+        /// Carte du jeu.
+        /// </summary>
         public Map Map
         {
             get;
             set;
         }
 
-
-        public List<Player> Players
-        {
-            get;
-            set;
-        }
-
-        public int TurnsLeft
-        {
-            get;
-            set;
-        }
-
-        public Player CurrentPlayer
-        {
-            get {
-                return this.Players[currentPlayer];
-                }
-        }
-
+        /// <summary>
+        /// Unité choisie par le joueur courant.
+        /// </summary>
         public Unit CurrentUnit
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Dernière case sélectionnée (pour attaque ou déplacement).
+        /// </summary>
         public Coordinate selectedTile
         {
             get;
             set;
         }
+
+
+
+        /// <summary>
+        /// Nombre de tours restant.
+        /// </summary>
+        public int TurnsLeft
+        {
+            get;
+            set;
+        }
+
+
+        /// <summary>
+        /// Constructeur de la classe Game.
+        /// </summary>
         public Game()
         {
 
         }
 
+        /// <summary>
+        /// Initialisation de la carte à partir des caractéristiques du mode de jeu contenues dans la MapSize ms.
+        /// </summary>
         public void initializeMap(MapSize ms)
         {
             this.Map = new Map(ms);
@@ -63,18 +97,24 @@ namespace ClassLibrary1
             throw new System.NotImplementedException();
         }
 
+        /// <summary>
+        /// Changement de joueur : remplace le joueur courant par le joueur suivant dans la liste Players.
+        /// </summary>
         public void changePlayer()
         {
             this.currentPlayer = (currentPlayer + 1) % Map.MapSize.NbPlayers; 
         }
 
+        /// <summary>
+        /// Fin du jeu.
+        /// </summary>
         public void end()
         {
             this.TurnsLeft = 0;
         }
 
         /// <summary>
-        /// vérifie que les deux joueurs ont choisi deux races différentes.
+        /// Vérifie que la Race race n'a pas déjà été choisie par un autre joueur lors de l'initialisation de la partie.
         /// </summary>
         public void checkRaces(Race race)
         {
@@ -93,7 +133,7 @@ namespace ClassLibrary1
         public void setFirstPlayer()
         {
             Random rnd = new Random();
-            this.currentPlayer = rnd.Next(0, 1);
+            this.currentPlayer = rnd.Next(0, Players.Count);
         }
 
         public void saveGame()
