@@ -54,9 +54,18 @@ namespace ClassLibrary1
         }
 
         /// <summary>
+        /// Unité attaquée.
+        /// </summary>
+        public Unit AttackedUnit
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Dernière case sélectionnée (pour attaque ou déplacement).
         /// </summary>
-        public Coordinate selectedTile
+        public Coordinate SelectedTile
         {
             get;
             set;
@@ -77,9 +86,17 @@ namespace ClassLibrary1
         /// <summary>
         /// Constructeur de la classe Game.
         /// </summary>
-        public Game()
+        public Game(MapSize ms, List<Player> players)
         {
+            this.CurrentUnit = null;
+            this.AttackedUnit = null;
+            initializeMap(ms);
 
+            foreach(Player p in players){
+                this.Players.Add(p);
+            }
+
+            setFirstPlayer();
         }
 
         /// <summary>
@@ -92,9 +109,13 @@ namespace ClassLibrary1
             this.TurnsLeft = ms.NbTurns;
         }
 
-        public void initializePlayer()
+        /// <summary>
+        /// initialise le premier joueur de manière aléatoire
+        /// </summary>
+        public void setFirstPlayer()
         {
-            throw new System.NotImplementedException();
+            Random rnd = new Random();
+            this.currentPlayer = rnd.Next(0, Players.Count - 1);
         }
 
         /// <summary>
@@ -127,25 +148,26 @@ namespace ClassLibrary1
             }
         }
 
-        /// <summary>
-        /// initialise le premier joueur de manière aléatoire
-        /// </summary>
-        public void setFirstPlayer()
-        {
-            Random rnd = new Random();
-            this.currentPlayer = rnd.Next(0, Players.Count);
-        }
-
         public void saveGame()
         {
             // TO DO
         }
 
+        /// <summary>
+        /// Selectionne la case tile et si des unités sont présentes sur la cases alors la meilleure unité est choisie pour l'attaque.
+        /// </summary>
         public void selectTile(Coordinate tile)
         {
-            selectedTile = tile;
+            SelectedTile = tile;
+            if (selectBestDefender(tile))
+            {
+                attack();
+            }
         }
 
+        /// <summary>
+        /// Affiche les unités présentes sur la case tile et sélectionne l'unité choisie par le joueur.
+        /// </summary>
         public void selectUnit(Coordinate tile)
         {
             List<Unit> playerUnits = CurrentPlayer.getUnitsOnTile(tile);
@@ -158,20 +180,22 @@ namespace ClassLibrary1
            
         }
 
-
-        public void attack(Coordinate tile)
+        /// <summary>
+        /// Attaque d'une case par l'unité courante.
+        /// </summary>
+        public void attack()
         {
-            if (CurrentUnit.canAttack(tile))
+            if (CurrentUnit.canAttack(SelectedTile))
             {
-                Unit defender = selectBestDefender(tile);
-                
-                bool winner = this.chooseWinner(defender);
+                // choix du vainqueur de l'attaque
+                bool winner = this.chooseWinner(AttackedUnit);
+
                 // nombre de points perdus généré aléatoirement
                 Random rnd = new Random();
                 int lost = rnd.Next(1, 4);
                 if (winner)
                 {
-                    defender.looseLifePoints(lost);
+                    AttackedUnit.looseLifePoints(lost);
                 }
                 else
                 {
@@ -180,6 +204,9 @@ namespace ClassLibrary1
             }
         }
 
+        /// <summary>
+        /// Algorithme de décision du vainqueur entre les unités currentUnit et defender
+        /// </summary>
         public Boolean chooseWinner(Unit opponentUnit)
         {
             // TO DO : algo de décision du vainqueur entre les unités currentUnit et defender
@@ -190,33 +217,36 @@ namespace ClassLibrary1
             
         }
 
-        public Unit selectBestDefender(Coordinate tile)
+        /// <summary>
+        /// Si des unités sont présentes sur la cases alors la meilleure unité est choisie pour l'attaque.
+        /// retourne true si une unité est attaquée, false sinon
+        /// </summary>
+        public bool selectBestDefender(Coordinate tile)
         {
             int i = 0;
             bool found = false;
-            Unit res;
 
-            // Pour chaque joueur (en supposant qu'il puisse y en avoir plus de 2) on ajoute sa meilleure unité à la liste des defenseurs possibles
-            while(!found && i<Players.Count)
+            while (!found && i < Players.Count)
             {
                 List<Unit> p_units = Players[i].getUnitsOnTile(tile);
                 if (!(p_units.Count == 0)) // si le joueur a au moins une unité sur la case
                 {
+                    // le joueur présent sur la case tile est trouvé
                     found = true;
 
                     Unit best = p_units[0];
-                    foreach(Unit u in p_units)
+                    foreach (Unit u in p_units)
                     {
-                        if(u.betterDefence(best))
+                        if (u.betterDefence(best))
                         {
                             best = u;
                         }
                     }
-                    return best;
+                    AttackedUnit = best;
                 }
             }
-
-            return null;
+            // pas d'unité sur cette case.
+            return found;
         }
     }
 }

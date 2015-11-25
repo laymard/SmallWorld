@@ -8,52 +8,31 @@ namespace ClassLibrary1
     public class Player
     {
 
-        public String name
+        public String Name
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
-        public int victoryPoints
+        public int VictoryPoints
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
-        public Stack<Command> actions
+        public Stack<Command> Actions
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
-        public List<Unit> units
+        public List<Unit> Units
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get;
+            set;
         }
 
-        public List<Unit> Unit
+        public int NbUnits
         {
             get;
             set;
@@ -61,33 +40,64 @@ namespace ClassLibrary1
 
         public Command Command
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public Race Race
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
         /// <summary>
         /// create an Elf unit and add it to its a list
         /// </summary>
+        public Player(Race race, String name, int nbUnits)
+        {
+            this.Race = race;
+            this.NbUnits = nbUnits;
+            initializeUnits();
+        }
+
+        public void initializeUnits()
+        {
+            this.Units = new List<Unit>(NbUnits);
+            for (int i = 0; i < NbUnits - 1; i++)
+            {
+                createUnits();
+            }
+
+        }
+
+        /// <summary>
+        /// create a unit of the player's race
+        /// </summary>
+        public void createUnits() 
+        {
+            switch (this.Race)
+            {
+                case (Race.Orc) :
+                    CreateOrc();
+                    break;
+
+                case Race.Human:
+                    CreateHuman();
+                    break;
+
+                case Race.Elf:
+                    CreateElf();
+                    break;
+            }
+        }
+        /// <summary>
+        /// create an Elf unit and add it to its a list
+        /// </summary>
         public void CreateElf()
         {
-            throw new System.NotImplementedException();
+            Elf elf = new Elf();
+            this.Units.Add(elf);
+            this.NbUnits++;
         }
 
         /// <summary>
@@ -95,7 +105,10 @@ namespace ClassLibrary1
         /// </summary>
         public void CreateHuman()
         {
-            throw new System.NotImplementedException();
+            Human human = new Human();
+            this.Units.Add(human);
+            this.NbUnits++;
+
         }
 
         /// <summary>
@@ -103,12 +116,9 @@ namespace ClassLibrary1
         /// </summary>
         public void CreateOrc()
         {
-            throw new System.NotImplementedException();
-        }
-
-        public void chooseRace(Unit race)
-        {
-            throw new System.NotImplementedException();
+            Orc orc = new Orc();
+            this.Units.Add(orc);
+            this.NbUnits++;
         }
 
         public void undoLastCommand()
@@ -129,6 +139,16 @@ namespace ClassLibrary1
             throw new System.NotImplementedException();
         }
 
-        public List<Unit> getUnitsOnTile(Coordinate tile) { return null; }
+        /// <summary>
+        /// retourne les unités du joueur présentes sur la case tile
+        /// </summary>
+        public List<Unit> getUnitsOnTile(Coordinate tile) {
+            List<Unit> res = new List<Unit>();
+            foreach (Unit u in this.Units)
+            {
+                if (u.currentTile.Equals(tile)) res.Add(u);
+            }
+             return res;
+        }
     }
 }
