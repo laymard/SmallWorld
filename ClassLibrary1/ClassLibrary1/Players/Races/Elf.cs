@@ -5,14 +5,14 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    public class Orc : Unit
+    public class Elf : Unit
     {
-        public void initialisePoints()
+        public Elf(Coordinate coord) : base(coord)
         {
-            throw new System.NotImplementedException();
+            this.Points = new Points(12,4,3);
         }
 
-        public void setVictoryPoints()
+        public Boolean canMove(Coordinate tile)
         {
             throw new System.NotImplementedException();
         }
@@ -23,11 +23,6 @@ namespace ClassLibrary1
         }
 
         public void attack(Unit adverseUnit)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void setPoints()
         {
             throw new System.NotImplementedException();
         }

@@ -18,50 +18,50 @@
   <Class Name="ClassLibrary1.Points">
     <Position X="3.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABCAAoAAAAAAAAAAkAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Points.cs</FileName>
+      <HashCode>AAABCAAoAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Players\Points.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.StandardMap">
     <Position X="15.75" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Standard.cs</FileName>
+      <FileName>Map\Standard.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.SmallMap">
     <Position X="17.5" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Small.cs</FileName>
+      <FileName>Map\Small.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Human">
     <Position X="5.5" Y="9.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAASAAAAAAAAAACAAIAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
-      <FileName>Human.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAACAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Players\Races\Human.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Orc">
     <Position X="3.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAyAAAAAAAAAACAAIAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
-      <FileName>Orc.cs</FileName>
+      <HashCode>AAAgAAAAAAAgAACAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Players\Races\Orc.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Elf">
     <Position X="7.25" Y="9.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAyAAAAAAAAAACAAIAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
-      <FileName>Elf.cs</FileName>
+      <HashCode>AAAgAAAAAAAgAACAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Players\Races\Elf.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Map">
     <Position X="15.75" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAAAAAAAAAAAQAAAAAAgCAAAAAgAAAAAgAAAAAAAAA=</HashCode>
-      <FileName>Map.cs</FileName>
+      <HashCode>gAAAAAAAQAAAAQAAAAAAgCAAAAAgAAAAAgAAAAEAAAA=</HashCode>
+      <FileName>Map\Map.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="MapSize" />
@@ -71,8 +71,8 @@
   <Class Name="ClassLibrary1.Unit">
     <Position X="5.75" Y="5.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAgAQggAAAggACAgAAAACQAAABAAACAAQAAAAAAAAI=</HashCode>
-      <FileName>Unit.cs</FileName>
+      <HashCode>AAAgAAggAAAggACAgAAAACQAAABAAACAAQAAAAAAAAI=</HashCode>
+      <FileName>Players\Races\Unit.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Points" />
@@ -81,8 +81,8 @@
   <Class Name="ClassLibrary1.Player">
     <Position X="5.5" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>QCAEAAgIAAIAACAAIAAABAAAACAUAAAAAAAAAAAAAgQ=</HashCode>
-      <FileName>Player.cs</FileName>
+      <HashCode>UCgEAAgAIAAAAAAAAAAABAQAACAAAAAAEAAAAAAAAgY=</HashCode>
+      <FileName>Players\Player.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Command" />
@@ -92,21 +92,21 @@
     <Position X="15.75" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAQABAAAAAAAAAAQAAAAA=</HashCode>
-      <FileName>MapSize1.cs</FileName>
+      <FileName>Map\MapSize1.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.TileFactory">
     <Position X="12.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAEAAAA=</HashCode>
-      <FileName>TileFactory.cs</FileName>
+      <FileName>Map\TileFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.MoveUnits">
     <Position X="0.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAAAAAIAAEAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>MoveUnits.cs</FileName>
+      <FileName>Players\MoveUnits.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Unit" />
@@ -125,28 +125,28 @@
     <Position X="18.75" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GameBuilder.cs</FileName>
+      <FileName>Game\GameBuilder.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.SavedGameBuilder">
     <Position X="17.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>SavedGameBuilder.cs</FileName>
+      <FileName>Game\SavedGameBuilder.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.NewGameBuilder">
     <Position X="19.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>NewGameBuilder.cs</FileName>
+      <FileName>Game\NewGameBuilder.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Tile">
     <Position X="12.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Tile.cs</FileName>
+      <FileName>Map\Tile.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Forest" Collapsed="true">
@@ -159,7 +159,7 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Forest.cs</FileName>
+      <FileName>Map\Forest.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Plain" Collapsed="true">
@@ -174,7 +174,7 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Plain.cs</FileName>
+      <FileName>Map\Plain.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Water" Collapsed="true">
@@ -189,7 +189,7 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Water.cs</FileName>
+      <FileName>Map\Water.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Mountain" Collapsed="true">
@@ -204,39 +204,32 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Mountain.cs</FileName>
+      <FileName>Map\Mountain.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.DemoMap">
     <Position X="14" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Demo.cs</FileName>
+      <FileName>Map\Demo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Game">
     <Position X="8.75" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AiBIAAACABAAIAAAEAQBAAAQAQAgEACAAAABgACAAAA=</HashCode>
-      <FileName>Game.cs</FileName>
+      <HashCode>AiDIAAACABAAIAAAEAABAAAEAQAgEACAAAQBgACAAAA=</HashCode>
+      <FileName>Game\Game.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Struct Name="ClassLibrary1.Coordinate">
-    <Position X="17.5" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
-      <FileName>Point.cs</FileName>
-    </TypeIdentifier>
-  </Struct>
   <Interface Name="ClassLibrary1.Command">
     <Position X="1.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEQAAAAAAAAAEEAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
-      <FileName>Commande.cs</FileName>
+      <FileName>Players\Commande.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="ClassLibrary1.TileType">
-    <Position X="11" Y="7.5" Width="1.5" />
+    <Position X="20.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAgAAACAAAAAAAAAAAAAAAAACAAAgAAAAAA=</HashCode>
       <FileName>TileType.cs</FileName>

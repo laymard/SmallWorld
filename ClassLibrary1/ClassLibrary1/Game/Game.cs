@@ -109,6 +109,25 @@ namespace ClassLibrary1
             this.TurnsLeft = ms.NbTurns;
         }
 
+
+        /// <summary>
+        /// Initialisation et positionnement des unités sur la carte.
+        /// </summary>
+        public void initializeUnits()
+        {
+            foreach (Player p in Players) 
+            {
+                p.Units = new List<Unit>(p.NbUnits);
+                for (int i = 0; i < p.NbUnits - 1; i++)
+                {
+                    Random rndx = new Random();
+                    int x = rndx.Next(0, Map.MapSize.NbTiles -1);
+                    int y = rndx.Next(0, Map.MapSize.NbTiles - 1);
+                    p.createUnit(Map.getCoord(x,y));
+                }
+            }
+        }
+
         /// <summary>
         /// initialise le premier joueur de manière aléatoire
         /// </summary>

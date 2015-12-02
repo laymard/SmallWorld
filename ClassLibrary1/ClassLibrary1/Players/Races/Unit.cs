@@ -10,24 +10,14 @@ namespace ClassLibrary1
 
         public Points Points
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public Tile currentTile
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
         /// <summary>
@@ -35,19 +25,14 @@ namespace ClassLibrary1
         /// </summary>
         public Coordinate coord
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
 
         public void move(Coordinate targetTile)
         {
-            throw new System.NotImplementedException();
+            coord = targetTile;
         }
 
         public void attack(Unit adverseUnit)
@@ -59,15 +44,20 @@ namespace ClassLibrary1
         /// set victory points according to the current tile
         /// </summary>
         public void addVictoryPoints()
+        {}
+
+ 
+        public Unit createUnit(Race race)
         {
             throw new System.NotImplementedException();
         }
 
-        public Unit createUnit()
-        {
-            throw new System.NotImplementedException();
-        }
-
+        /// <summary>
+        /// spendMovePoints(int x,int y)
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
         public int spendMovePoints(int x, int y)
         {
             throw new System.NotImplementedException();
@@ -75,12 +65,12 @@ namespace ClassLibrary1
 
         public int getRatioLifePoints()
         {
-            throw new System.NotImplementedException();
+            return Points.getRatioLifePoints();
         }
 
         public void looseLifePoints(int nbPoints)
         {
-            throw new System.NotImplementedException();
+            Points.lifePoints -= nbPoints;
         }
 
         public Boolean canMove(Coordinate tile)
@@ -98,14 +88,11 @@ namespace ClassLibrary1
             return this.Points.defencePoints > unit.Points.defencePoints;
         }
 
-        public Unit()
+        public Unit(Coordinate coord)
         {
-            // TODO: Complete member initialization
+            this.coord = coord;
+            this.currentTile = Map.getTile(coord);
         }
 
-        public Unit()
-        {
-            // TODO: Complete member initialization
-        }
     }
 }

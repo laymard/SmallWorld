@@ -5,14 +5,14 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    public class Elf : Unit
+    public class Human : Unit
     {
-        public void initialisePoints()
+        public Human(Coordinate coord) : base(coord)
         {
-            throw new System.NotImplementedException();
+            this.Points = new Points(15,6,3);
         }
 
-        public void setVictoryPoints()
+        public Boolean canMove(Coordinate tile)
         {
             throw new System.NotImplementedException();
         }
@@ -27,14 +27,5 @@ namespace ClassLibrary1
             throw new System.NotImplementedException();
         }
 
-        public void setPoints()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public int spendMovePoints(int x, int y)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

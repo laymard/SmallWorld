@@ -57,45 +57,36 @@ namespace ClassLibrary1
         {
             this.Race = race;
             this.NbUnits = nbUnits;
-            initializeUnits();
         }
 
-        public void initializeUnits()
-        {
-            this.Units = new List<Unit>(NbUnits);
-            for (int i = 0; i < NbUnits - 1; i++)
-            {
-                createUnits();
-            }
-
-        }
 
         /// <summary>
         /// create a unit of the player's race
         /// </summary>
-        public void createUnits() 
+        public void createUnit(Coordinate coord) 
         {
+
             switch (this.Race)
             {
                 case (Race.Orc) :
-                    CreateOrc();
+                    CreateOrc(coord);
                     break;
 
                 case Race.Human:
-                    CreateHuman();
+                    CreateHuman(coord);
                     break;
 
                 case Race.Elf:
-                    CreateElf();
+                    CreateElf(coord);
                     break;
             }
         }
         /// <summary>
         /// create an Elf unit and add it to its a list
         /// </summary>
-        public void CreateElf()
+        public void CreateElf(Coordinate coord)
         {
-            Elf elf = new Elf();
+            Elf elf = new Elf(coord);
             this.Units.Add(elf);
             this.NbUnits++;
         }
@@ -103,9 +94,9 @@ namespace ClassLibrary1
         /// <summary>
         /// create a Human unit and add it to its a list
         /// </summary>
-        public void CreateHuman()
+        public void CreateHuman(Coordinate coord)
         {
-            Human human = new Human();
+            Human human = new Human(coord);
             this.Units.Add(human);
             this.NbUnits++;
 
@@ -114,9 +105,9 @@ namespace ClassLibrary1
         /// <summary>
         /// create an Orc unit and add it to its a list
         /// </summary>
-        public void CreateOrc()
+        public void CreateOrc(Coordinate coord)
         {
-            Orc orc = new Orc();
+            Orc orc = new Orc(coord);
             this.Units.Add(orc);
             this.NbUnits++;
         }

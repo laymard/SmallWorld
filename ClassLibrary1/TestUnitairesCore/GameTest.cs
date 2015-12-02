@@ -3,7 +3,8 @@ using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace TestUnitairesCore
+
+namespace ClassLibrary1
 {
     /// <summary>
     /// Description résumée pour GameTest
@@ -13,10 +14,10 @@ namespace TestUnitairesCore
     {
         public GameTest()
         {
-            Player p1 = new Player();
-            Player p2 = new Player();
-            Player p3 = new Player();
-            
+            Player p1 = new Player(Race.Human, "Robert", 4);
+            Player p2 = new Player(Race.Orc, "Marie", 4);
+            Player p3 = new Player(Race.Elf, "Gaston", 4);
+            List<Player> list = new List<Player>();
         }
 
         private TestContext testContextInstance;

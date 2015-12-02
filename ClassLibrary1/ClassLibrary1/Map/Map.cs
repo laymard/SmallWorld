@@ -17,15 +17,11 @@ namespace ClassLibrary1
         public TileFactory TileFactory
         {
             get;
-            
-            
             set;
-
         }
 
-        
 
-        public IDictionary<Coordinate, Tile> matrix
+        public static IDictionary<Coordinate, Tile> matrix
         {
             get;
             set;
@@ -34,7 +30,7 @@ namespace ClassLibrary1
         public Map(MapSize ms){
             this.MapSize = ms;
             this.TileFactory = new TileFactory();
-            this.matrix = new Dictionary<Coordinate, Tile>(ms.NbTiles * ms.NbTiles);
+            matrix = new Dictionary<Coordinate, Tile>(ms.NbTiles * ms.NbTiles);
             this.setEmptyMatrix(ms.NbTiles);
         }
 
@@ -59,9 +55,27 @@ namespace ClassLibrary1
                 for (int j = 0; j < size; j++)
                 {
                     Coordinate coord = new Coordinate(i, j);
-                    this.matrix.Add(coord,null);
+                    matrix.Add(coord,null);
                 }
             }
+        }
+
+        public static Tile getTile(Coordinate coord)
+        {
+            return matrix[coord];
+        }
+
+        public static Coordinate getCoord(int x, int y)
+        {
+            Coordinate coord = null;
+            foreach (Coordinate c in Map.matrix.Keys)
+            {
+                if (c.X == x && c.Y == y)
+                {
+                    coord = c;
+                }
+            }
+            return coord;
         }
     }
 }
