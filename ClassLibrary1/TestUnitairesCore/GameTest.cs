@@ -14,10 +14,7 @@ namespace ClassLibrary1
     {
         public GameTest()
         {
-            Player p1 = new Player(Race.Human, "Robert", 4);
-            Player p2 = new Player(Race.Orc, "Marie", 4);
-            Player p3 = new Player(Race.Elf, "Gaston", 4);
-            List<Player> list = new List<Player>();
+ 
         }
 
         private TestContext testContextInstance;
@@ -61,11 +58,15 @@ namespace ClassLibrary1
         #endregion
 
         [TestMethod]
-        public void TestInitilizeMap()
+        public void TestInitilizeUnits()
         {
-            //
-            // TODO: ajoutez ici la logique du test
-            //
+            Player p1 = new Player(Race.Human, "Robert", 4);
+            Player p2 = new Player(Race.Orc, "Marie", 4);
+            Player p3 = new Player(Race.Elf, "Gaston", 4);
+            List<Player> list = new List<Player> { p1, p2, p3 };
+            StandardMap ms = new StandardMap();
+
+            Game game = new Game(ms, list);     
         }
 
         [TestMethod]

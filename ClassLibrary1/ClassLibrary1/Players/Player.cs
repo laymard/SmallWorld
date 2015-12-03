@@ -137,7 +137,7 @@ namespace ClassLibrary1
             List<Unit> res = new List<Unit>();
             foreach (Unit u in this.Units)
             {
-                if (u.currentTile.Equals(tile)) res.Add(u);
+                if (u.coord.Equals(tile)) res.Add(u);
             }
              return res;
         }

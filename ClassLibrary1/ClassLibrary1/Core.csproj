@@ -74,7 +74,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Map\Water.cs" />
-    <Compile Include="TileType.cs" />
+    <Compile Include="Map\TileType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

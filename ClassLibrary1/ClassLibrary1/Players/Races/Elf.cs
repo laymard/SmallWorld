@@ -7,29 +7,68 @@ namespace ClassLibrary1
 {
     public class Elf : Unit
     {
+        /// <summary>
+        /// Constructeur Elf
+        /// </summary>
+        /// <param name="coord"> coordonnées de départ </param>
         public Elf(Coordinate coord) : base(coord)
         {
             this.Points = new Points(12,4,3);
         }
 
-        public Boolean canMove(Coordinate tile)
+        public override void addVictoryPoints()
         {
-            throw new System.NotImplementedException();
+            int nbPoints;
+
+            switch (currentTile)
+            {
+                case TileType.FOREST :
+                    nbPoints = 3;
+                    break;
+                case TileType.PLAIN:
+                    nbPoints = 1;
+                    break;
+                default :
+                    nbPoints = 0;
+                    break;
+            }
+            this.Points.victoryPoints += nbPoints;
         }
 
-        public void move(Tile targetTile)
+        public override bool canAttack(Coordinate tile)
         {
-            throw new System.NotImplementedException();
+            int dist = this.coord.distanceFrom(tile);
+            return (dist == 0 || dist == 2);
         }
 
-        public void attack(Unit adverseUnit)
+        public override bool canMove(Coordinate tile)
         {
-            throw new System.NotImplementedException();
+            TileType tileType = Map.getTile(coord);
+
+            // Les elfes ne peuvent pas aller sur l'eau
+            if (tileType == TileType.WATER)
+                return false;
+
+            int cost = this.coord.distanceFrom(tile);
+            if (tileType == TileType.MOUNTAIN) cost *= 2;
+            int movePoints = Points.movePoints;
+
+            return movePoints > cost;
         }
 
-        public int spendMovePoints(int x, int y)
+        public override void looseLifePoints(int nbPoints)
         {
-            throw new System.NotImplementedException();
+            base.looseLifePoints(nbPoints);
         }
+
+        public override void move(Coordinate targetTile)
+        {
+            base.move(targetTile);
+
+            int cost = this.coord.distanceFrom(targetTile);
+            if (Map.getTile(coord) == TileType.MOUNTAIN) cost *= 2;
+            Points.movePoints -= cost;
+        }
+        
     }
 }

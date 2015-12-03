@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    class Coordinate
+    public class Coordinate
     {
         public Coordinate(int x, int y)
         {
@@ -23,6 +23,21 @@ namespace ClassLibrary1
         {
             get;
             set;
+        }
+
+        /// <summary>
+        /// Distance from this to the Coordinate tile
+        /// </summary>
+        /// <param name="tile"></param>
+        /// <returns>int : the distance (-1 if tile is on a diagonal </returns>
+        public int distanceFrom(Coordinate tile)
+        {
+            if (this.Y == tile.Y)
+                return Math.Abs(this.X - tile.X);
+
+            if (this.X == tile.X)
+                return Math.Abs(this.Y - tile.Y);
+            else return -1;
         }
     }
 }

@@ -53,14 +53,14 @@
   <Class Name="ClassLibrary1.Elf">
     <Position X="7.25" Y="9.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgAAAAAAAgAACAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAACAgAAAACQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Players\Races\Elf.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Map">
     <Position X="15.75" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAAAAAAQAAAAQAAAAAAgCAAAAAgAAAAAgAAAAEAAAA=</HashCode>
+      <HashCode>gAAAAAAAQAAAAQAAAAAAgCAAAAAAAAAAAgAAAAEAAAA=</HashCode>
       <FileName>Map\Map.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -71,7 +71,7 @@
   <Class Name="ClassLibrary1.Unit">
     <Position X="5.75" Y="5.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAgAAggAAAggACAgAAAACQAAABAAACAAQAAAAAAAAI=</HashCode>
+      <HashCode>AAAgAAggAAAggACAgAAAACQAAABAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Players\Races\Unit.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -105,7 +105,7 @@
   <Class Name="ClassLibrary1.MoveUnits">
     <Position X="0.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAAAAAAAIAAEAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAACAAAAAAAAAAAIAEEAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Players\MoveUnits.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -231,8 +231,8 @@
   <Enum Name="ClassLibrary1.TileType">
     <Position X="20.5" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAgAAACAAAAAAAAAAAAAAAAACAAAgAAAAAA=</HashCode>
-      <FileName>TileType.cs</FileName>
+      <HashCode>AAAAAAAAAAgAAACAAAAAAAgAAAAAAAAACAAAgAAAAAA=</HashCode>
+      <FileName>Map\TileType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

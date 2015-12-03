@@ -17,7 +17,7 @@ namespace ClassLibrary1
             throw new System.NotImplementedException();
         }
 
-        public void move(Tile targetTile)
+        public void move(Coordinate targetTile)
         {
             throw new System.NotImplementedException();
         }

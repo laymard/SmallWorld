@@ -11,5 +11,6 @@ namespace ClassLibrary1
         WATER,
         MOUNTAIN,
         FOREST,
+        DEFAULT
     }
 }

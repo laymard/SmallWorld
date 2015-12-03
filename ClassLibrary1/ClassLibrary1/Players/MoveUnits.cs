@@ -9,14 +9,8 @@ namespace ClassLibrary1
     {
         public Unit Unit
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get;
+            set;
         }
 
         /// <summary>
@@ -24,14 +18,8 @@ namespace ClassLibrary1
         /// </summary>
         public int cost
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get;
+            set;
         }
 
         /// <summary>
@@ -39,14 +27,8 @@ namespace ClassLibrary1
         /// </summary>
         public Coordinate lastCoord
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get;
+            set;
         }
 
         /// <summary>
@@ -54,7 +36,9 @@ namespace ClassLibrary1
         /// </summary>
         public void execute()
         {
-            throw new System.NotImplementedException();
+            //TO DO
         }
+
+        public void redo() : base Command{ }
     }
 }

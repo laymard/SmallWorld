@@ -21,7 +21,7 @@ namespace ClassLibrary1
         }
 
 
-        public static IDictionary<Coordinate, Tile> matrix
+        public static IDictionary<Coordinate, TileType> matrix
         {
             get;
             set;
@@ -30,7 +30,7 @@ namespace ClassLibrary1
         public Map(MapSize ms){
             this.MapSize = ms;
             this.TileFactory = new TileFactory();
-            matrix = new Dictionary<Coordinate, Tile>(ms.NbTiles * ms.NbTiles);
+            matrix = new Dictionary<Coordinate, TileType>(ms.NbTiles * ms.NbTiles);
             this.setEmptyMatrix(ms.NbTiles);
         }
 
@@ -40,14 +40,6 @@ namespace ClassLibrary1
             
         }
 
-        /// <summary>
-        /// return type tile of coord
-        /// </summary>
-        public Tile getTileType(Coordinate coord)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void setEmptyMatrix(int size)
         {
             for (int i = 0; i < size; i++)
@@ -55,12 +47,15 @@ namespace ClassLibrary1
                 for (int j = 0; j < size; j++)
                 {
                     Coordinate coord = new Coordinate(i, j);
-                    matrix.Add(coord,null);
+                    matrix.Add(coord,TileType.DEFAULT);
                 }
             }
         }
 
-        public static Tile getTile(Coordinate coord)
+        /// <summary>
+        /// return type tile of coord
+        /// </summary>
+        public static TileType getTile(Coordinate coord)
         {
             return matrix[coord];
         }

@@ -14,7 +14,7 @@ namespace ClassLibrary1
             set;
         }
 
-        public Tile currentTile
+        public TileType currentTile
         {
             get;
             set;
@@ -30,27 +30,18 @@ namespace ClassLibrary1
         }
 
 
-        public void move(Coordinate targetTile)
+        public virtual void  move(Coordinate targetTile)
         {
-            coord = targetTile;
-        }
-
-        public void attack(Unit adverseUnit)
-        {
-            throw new System.NotImplementedException();
+            if (this.canMove(targetTile))
+            {
+                coord = targetTile;
+            }
         }
 
         /// <summary>
         /// set victory points according to the current tile
         /// </summary>
-        public void addVictoryPoints()
-        {}
-
- 
-        public Unit createUnit(Race race)
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract virtual void addVictoryPoints();
 
         /// <summary>
         /// spendMovePoints(int x,int y)
@@ -58,30 +49,21 @@ namespace ClassLibrary1
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <returns></returns>
-        public int spendMovePoints(int x, int y)
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract virtual void spendMovePoints(int x, int y);
 
         public int getRatioLifePoints()
         {
             return Points.getRatioLifePoints();
         }
 
-        public void looseLifePoints(int nbPoints)
+        public virtual void looseLifePoints(int nbPoints)
         {
             Points.lifePoints -= nbPoints;
         }
 
-        public Boolean canMove(Coordinate tile)
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract virtual bool canMove(Coordinate tile);
 
-        public bool canAttack(Coordinate tile)
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract virtual bool canAttack(Coordinate tile);
 
         public bool betterDefence(Unit unit)
         {
