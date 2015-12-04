@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
 namespace ClassLibrary1
 {
     [Serializable]
@@ -37,8 +38,21 @@ namespace ClassLibrary1
 
         public void initialiseTiles()
         {
-            // appel à la librairie C++
+            Algo algo = new Algo();
+            var size = MapSize.NbTiles;
+            var map=algo.CreateMap(size*size);
+
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    var coord = new Coordinate(i, j);
+                    matrix.Add(coord, map[i * size + j]);
+                }
+            }
             
+
+
         }
 
         public void setEmptyMatrix(int size)
