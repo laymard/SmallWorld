@@ -19,49 +19,49 @@
     <Position X="3.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABCAAoAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAEA=</HashCode>
-      <FileName>Players\Points.cs</FileName>
+      <FileName>Actors\Points.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.StandardMap">
     <Position X="15.75" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Map\Standard.cs</FileName>
+      <FileName>Environment\Standard.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.SmallMap">
     <Position X="17.5" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Map\Small.cs</FileName>
+      <FileName>Environment\Small.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Human">
     <Position X="5.5" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAACAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
-      <FileName>Players\Races\Human.cs</FileName>
+      <FileName>Actors\Races\Human.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Orc">
     <Position X="3.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAgAACAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
-      <FileName>Players\Races\Orc.cs</FileName>
+      <FileName>Actors\Races\Orc.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Elf">
     <Position X="7.25" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAACAgAAAACQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Players\Races\Elf.cs</FileName>
+      <FileName>Actors\Races\Elf.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Map">
     <Position X="15.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAAAAQAAAAQAAAAAAgCAAAAAAAAAAAgAAAAEAAAA=</HashCode>
-      <FileName>Map\Map.cs</FileName>
+      <FileName>Environment\Map.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="MapSize" />
@@ -72,7 +72,7 @@
     <Position X="5.75" Y="5.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAgAAggAAAggACAgAAAACQAAABAAAAAAQAAAAAAAAA=</HashCode>
-      <FileName>Players\Races\Unit.cs</FileName>
+      <FileName>Actors\Races\Unit.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Points" />
@@ -82,7 +82,7 @@
     <Position X="5.5" Y="0.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>UCgEAAgAIAAAAAAAAAAABAQAACAAAAAAEAAAAAAAAgY=</HashCode>
-      <FileName>Players\Player.cs</FileName>
+      <FileName>Actors\Player.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Command" />
@@ -92,18 +92,18 @@
     <Position X="15.75" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAQABAAAAAAAAAAQAAAAA=</HashCode>
-      <FileName>Map\MapSize1.cs</FileName>
+      <FileName>Environment\MapSize1.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.TileFactory">
     <Position X="12.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAEAAAA=</HashCode>
-      <FileName>Map\TileFactory.cs</FileName>
+      <FileName>Environment\TileFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.MoveUnits">
-    <Position X="0.5" Y="3.75" Width="1.5" />
+    <Position X="0.5" Y="3.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAAAAAIAEEAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Players\MoveUnits.cs</FileName>
@@ -125,28 +125,28 @@
     <Position X="18.75" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Game\GameBuilder.cs</FileName>
+      <FileName>Base\GameBuilder.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.SavedGameBuilder">
     <Position X="17.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Game\SavedGameBuilder.cs</FileName>
+      <FileName>Base\SavedGameBuilder.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.NewGameBuilder">
     <Position X="19.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Game\NewGameBuilder.cs</FileName>
+      <FileName>Base\NewGameBuilder.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Tile">
     <Position X="12.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Map\Tile.cs</FileName>
+      <FileName>Environment\Tile.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Forest" Collapsed="true">
@@ -159,7 +159,7 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Map\Forest.cs</FileName>
+      <FileName>Environment\Forest.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Plain" Collapsed="true">
@@ -174,7 +174,7 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Map\Plain.cs</FileName>
+      <FileName>Environment\Plain.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Water" Collapsed="true">
@@ -189,7 +189,7 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Map\Water.cs</FileName>
+      <FileName>Environment\Water.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Mountain" Collapsed="true">
@@ -204,35 +204,35 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Map\Mountain.cs</FileName>
+      <FileName>Environment\Mountain.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.DemoMap">
     <Position X="14" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Map\Demo.cs</FileName>
+      <FileName>Environment\Demo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Game">
     <Position X="8.75" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AiDIAAACABAAIAAAEAABAAAEAQAgEACAAAQBgACAAAA=</HashCode>
-      <FileName>Game\Game.cs</FileName>
+      <FileName>Base\Game.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="ClassLibrary1.Command">
     <Position X="1.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEQAAAAAAAAAEEAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
-      <FileName>Players\Commande.cs</FileName>
+      <FileName>Actors\Commande.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="ClassLibrary1.TileType">
     <Position X="20.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAgAAACAAAAAAAgAAAAAAAAACAAAgAAAAAA=</HashCode>
-      <FileName>Map\TileType.cs</FileName>
+      <FileName>Environment\TileType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

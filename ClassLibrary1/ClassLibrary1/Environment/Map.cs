@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
 namespace ClassLibrary1
 {
     public class Map
@@ -36,8 +37,8 @@ namespace ClassLibrary1
 
         public void initialiseTiles()
         {
-            // appel à la librairie C++
-            
+            ClassLibrary1.Map.Algo algo = new ClassLibrary1.Map.Algo();
+
         }
 
         public void setEmptyMatrix(int size)
