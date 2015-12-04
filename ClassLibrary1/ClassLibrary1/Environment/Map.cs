@@ -37,7 +37,20 @@ namespace ClassLibrary1
 
         public void initialiseTiles()
         {
-            ClassLibrary1.Map.Algo algo = new ClassLibrary1.Map.Algo();
+            Algo algo = new Algo();
+            var size = MapSize.NbTiles;
+            var map=algo.CreateMap(size*size);
+
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    var coord = new Coordinate(i, j);
+                    matrix.Add(coord, map[i * size + j]);
+                }
+            }
+            
+
 
         }
 

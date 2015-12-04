@@ -5,19 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 
-namespace ClassLibrary1.Map
+namespace ClassLibrary1
 {
     public class Algo : IDisposable
     {
         bool disposed = false;
         IntPtr nativeAlgo;
 
-        public Map CreateMap(int size)
+        public TileType[] CreateMap(int size)
         {
             var tiles = new TileType[size * size];
             Algo_fillMap(nativeAlgo, tiles, size);
-            return new Map(tiles);
+            return tiles;
         }
+
+
 
         public Algo()
         {
