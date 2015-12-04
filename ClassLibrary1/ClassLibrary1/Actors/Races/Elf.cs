@@ -17,6 +17,21 @@ namespace ClassLibrary1
             this.Points = new Points(12,4,3);
         }
 
+        public static IDictionary<TileType,int> RequiredMovePoints
+        {
+            get
+            {
+                return new Dictionary<TileType, int>()
+                {
+                    {TileType.MOUNTAIN,2 },
+                    {TileType.WATER,-1 },
+                    {TileType.FOREST,1 },
+                    {TileType.PLAIN,1 }
+
+                };
+            }
+        }
+
         public override void addVictoryPoints()
         {
             int nbPoints;

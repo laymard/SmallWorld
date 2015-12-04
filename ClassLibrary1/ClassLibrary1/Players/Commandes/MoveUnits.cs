@@ -30,6 +30,16 @@ namespace ClassLibrary1
             get;
             set;
         }
+
+
+        public MoveUnits(MoveUnits unit, Coordinate coord, int value)
+        {
+            Unit = unit;
+            lastCoord = coord;
+            cost = value;
+
+        }
+
         void Command.execute()
         {
  	        throw new NotImplementedException();

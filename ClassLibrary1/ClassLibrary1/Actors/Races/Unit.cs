@@ -33,6 +33,7 @@ namespace ClassLibrary1
         }
 
 
+
         public virtual void  move(Coordinate targetTile)
         {
             if (this.canMove(targetTile))
