@@ -39,21 +39,21 @@
   <Class Name="ClassLibrary1.Human">
     <Position X="5.5" Y="9.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgAAAAQAAgAAAAAAAAACQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAgAAAAAAAgAAAAAAAAACQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Actors\Races\Human.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Orc">
     <Position X="3.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABgAAAAQAAgAAAAAAAAACQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAgAAAAAAAgAAAAAAAAACQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Actors\Races\Orc.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Elf">
     <Position X="7.25" Y="9.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgAAAAQAAgAACAgAAAACQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAgAAAAAAAgAACAgAAAACQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Actors\Races\Elf.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -81,7 +81,7 @@
   <Class Name="ClassLibrary1.Player">
     <Position X="5.5" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>UCgEAAgAIAAAAAAACAAABAQAACAAAAAAEAAAAAAAAgY=</HashCode>
+      <HashCode>UCgEAAgAIAAAAAAAAAAABAQAACAAAAAAEAAAAAAAAgY=</HashCode>
       <FileName>Actors\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -195,7 +195,7 @@
   <Class Name="ClassLibrary1.Game">
     <Position X="8.75" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AiDIAAACABAQIACAEAABAAAEAQAgEACAIAQBgACAAAA=</HashCode>
+      <HashCode>AiDIAAACABAQIAAAEAABAAAEAQAgEACAIAQBgACAAAA=</HashCode>
       <FileName>Base\Game.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -214,7 +214,7 @@
     <Position X="2.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAAAAEAAAAAAAAQAAAAgAAAAAIAAABggQ=</HashCode>
-      <FileName>AttackUnits.cs</FileName>
+      <FileName>Actors\AttackUnits.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>

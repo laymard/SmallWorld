@@ -61,4 +61,4 @@ namespace ClassLibrary1
         extern static IntPtr Algo_delete(IntPtr algo);
     }
 }
-}
+

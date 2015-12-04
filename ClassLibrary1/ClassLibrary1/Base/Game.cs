@@ -142,7 +142,8 @@ namespace ClassLibrary1
                     Random rndx = new Random();
                     int x = rndx.Next(0, Map.MapSize.NbTiles -1);
                     int y = rndx.Next(0, Map.MapSize.NbTiles - 1);
-                    p.createUnit(Map.getCoord(x,y));
+                    Coordinate coord = this.Map.getCoord(x,y);
+                    p.createUnit(coord,this.Map.getTile(coord));
                 }
             }
         }
@@ -223,7 +224,8 @@ namespace ClassLibrary1
         /// </summary>
         public void attack()
         {
-            if (CurrentUnit.canAttack(SelectedTile))
+            TileType type = this.Map.getTile(SelectedTile);
+            if (CurrentUnit.canAttack(SelectedTile,type))
             {
                 // choix du vainqueur de l'attaque
                 bool winner = this.chooseWinner(AttackedUnit);

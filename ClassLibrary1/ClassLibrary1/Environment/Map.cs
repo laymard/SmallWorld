@@ -23,7 +23,7 @@ namespace ClassLibrary1
         }
 
 
-        public static IDictionary<Coordinate, TileType> matrix
+        public IDictionary<Coordinate, TileType> matrix
         {
             get;
             set;
@@ -75,10 +75,10 @@ namespace ClassLibrary1
             return matrix[coord];
         }
 
-        public static Coordinate getCoord(int x, int y)
+        public Coordinate getCoord(int x, int y)
         {
             Coordinate coord = null;
-            foreach (Coordinate c in Map.matrix.Keys)
+            foreach (Coordinate c in matrix.Keys)
             {
                 if (c.X == x && c.Y == y)
                 {

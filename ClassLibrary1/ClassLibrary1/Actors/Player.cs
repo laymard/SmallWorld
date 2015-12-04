@@ -71,48 +71,48 @@ namespace ClassLibrary1
         /// <summary>
         /// create a unit of the player's race
         /// </summary>
-        public void createUnit(Coordinate coord) 
+        public void createUnit(Coordinate coord, TileType type) 
         {
 
             switch (this.Race)
             {
                 case (Race.Orc) :
-                    CreateOrc(coord);
+                    CreateOrc(coord,type);
                     break;
 
                 case Race.Human:
-                    CreateHuman(coord);
+                    CreateHuman(coord,type);
                     break;
 
                 case Race.Elf:
-                    CreateElf(coord);
+                    CreateElf(coord,type);
                     break;
             }
         }
         /// <summary>
         /// create an Elf unit and add it to its a list
         /// </summary>
-        public void CreateElf(Coordinate coord)
+        public void CreateElf(Coordinate coord, TileType type)
         {
-            Elf elf = new Elf(coord);
+            Elf elf = new Elf(coord,type);
             this.Units.Add(elf);
         }
 
         /// <summary>
         /// create a Human unit and add it to its a list
         /// </summary>
-        public void CreateHuman(Coordinate coord)
+        public void CreateHuman(Coordinate coord, TileType type)
         {
-            Human human = new Human(coord);
+            Human human = new Human(coord,type);
             this.Units.Add(human);
         }
 
         /// <summary>
         /// create an Orc unit and add it to its a list
         /// </summary>
-        public void CreateOrc(Coordinate coord)
+        public void CreateOrc(Coordinate coord, TileType type)
         {
-            Orc orc = new Orc(coord);
+            Orc orc = new Orc(coord,type);
             this.Units.Add(orc);
         }
 
