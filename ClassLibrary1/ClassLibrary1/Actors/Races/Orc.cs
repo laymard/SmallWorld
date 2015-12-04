@@ -5,6 +5,7 @@ using System.Text;
 
 namespace ClassLibrary1
 {
+    [Serializable]
     public class Orc : Unit
     {
         public Orc(Coordinate coord) : base(coord)
@@ -12,24 +13,25 @@ namespace ClassLibrary1
             this.Points = new Points(17,5,2);
         }
 
-        public Boolean canMove(Coordinate tile)
+
+        public override void addVictoryPoints()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        public void move(Coordinate targetTile)
+        public override void spendMovePoints(Coordinate targetTile)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        public void attack(Unit adverseUnit)
+        public override bool canMove(Coordinate tile)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        public int spendMovePoints(int x, int y)
+        public override bool canAttack(Coordinate tile)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 
 namespace ClassLibrary1
 {
+    [Serializable]
     public class Elf : Unit
     {
         /// <summary>
@@ -64,11 +65,13 @@ namespace ClassLibrary1
         public override void move(Coordinate targetTile)
         {
             base.move(targetTile);
+        }
 
+        public override void spendMovePoints(Coordinate targetTile)
+        {
             int cost = this.coord.distanceFrom(targetTile);
             if (Map.getTile(coord) == TileType.MOUNTAIN) cost *= 2;
             Points.movePoints -= cost;
         }
-        
     }
 }

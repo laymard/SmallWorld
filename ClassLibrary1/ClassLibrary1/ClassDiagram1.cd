@@ -39,21 +39,21 @@
   <Class Name="ClassLibrary1.Human">
     <Position X="5.5" Y="9.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAACAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAgAAAAAAAgAAAAAAAAACQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Actors\Races\Human.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Orc">
     <Position X="3.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgAAAAAAAgAACAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAgAAAAAAAgAAAAAAAAACQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Actors\Races\Orc.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Elf">
     <Position X="7.25" Y="9.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAACAgAAAACQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAgAAAAAAAgAACAgAAAACQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Actors\Races\Elf.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -84,9 +84,6 @@
       <HashCode>UCgEAAgAIAAAAAAAAAAABAQAACAAAAAAEAAAAAAAAgY=</HashCode>
       <FileName>Actors\Player.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Command" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary1.MapSize">
     <Position X="15.75" Y="7.5" Width="1.5" />
@@ -217,7 +214,7 @@
   <Class Name="ClassLibrary1.Game">
     <Position X="8.75" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AiDIAAACABAAIAAAEAABAAAEAQAgEACAAAQBgACAAAA=</HashCode>
+      <HashCode>AiDIAAACABAQIAAAEAABAAAEAQAgEACAIAQBgACAAAA=</HashCode>
       <FileName>Base\Game.cs</FileName>
     </TypeIdentifier>
   </Class>

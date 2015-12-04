@@ -30,15 +30,29 @@ namespace ClassLibrary1
             get;
             set;
         }
-
-        /// <summary>
-        /// Exectue le mouvement et l'enregistre pour pouvoir le undo
-        /// </summary>
-        public void execute()
+        void Command.execute()
         {
-            //TO DO
+ 	        throw new NotImplementedException();
         }
 
-        public void redo() : base Command{ }
+        void Command.redo()
+        {
+ 	        throw new NotImplementedException();
+        }
+
+        void Command.undo()
+        {
+ 	        throw new NotImplementedException();
+        }
+
+        void Command.canDo()
+        {
+ 	        throw new NotImplementedException();
+        }
+
+        void Command.done()
+        {
+ 	        throw new NotImplementedException();
+        }
     }
 }

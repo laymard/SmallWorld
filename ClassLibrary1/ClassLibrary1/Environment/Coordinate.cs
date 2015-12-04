@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Serialization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
+    [Serializable]
     public class Coordinate
     {
         public Coordinate(int x, int y)
@@ -13,18 +15,20 @@ namespace ClassLibrary1
             X = x;
             Y = y;
         }
+
+        [XmlAttribute]
         public int X
         {
             get;
             set;
         }
 
+        [XmlAttribute]
         public int Y
         {
             get;
             set;
         }
-
         /// <summary>
         /// Distance from this to the Coordinate tile
         /// </summary>

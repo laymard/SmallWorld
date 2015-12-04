@@ -63,5 +63,30 @@ namespace ClassLibrary1
             {
             }
         }
+
+        void Command.execute()
+        {
+            throw new NotImplementedException();
+        }
+
+        void Command.redo()
+        {
+            throw new NotImplementedException();
+        }
+
+        void Command.undo()
+        {
+            throw new NotImplementedException();
+        }
+
+        void Command.canDo()
+        {
+            throw new NotImplementedException();
+        }
+
+        void Command.done()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

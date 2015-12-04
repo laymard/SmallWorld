@@ -6,6 +6,7 @@ using System.Text;
 
 namespace ClassLibrary1
 {
+    [Serializable]
     public class Map
     {
 

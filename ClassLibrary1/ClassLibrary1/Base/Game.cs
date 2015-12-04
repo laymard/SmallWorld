@@ -1,24 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using System.Linq;
 using System.Text;
+using System.IO;
 
 namespace ClassLibrary1
 {
+    [Serializable]
     public class Game
     {
+        private List<Player> players;
         /// <summary>
         /// Liste des joueurs (au moins deux)
         /// </summary>
         public List<Player> Players
         {
-            get;
+            get
+            {
+                return this.players;
+            }
             set
             {
-                if (value.Count > 1) this.Players = value;
+                if (value.Count > 1) this.players = value;
             }
         }
 
+        [XmlAttribute]
         /// <summary>
         /// Indice du joueur courant dans la liste des joueurs Players.
         /// </summary>
@@ -76,6 +84,7 @@ namespace ClassLibrary1
         /// <summary>
         /// Nombre de tours restant.
         /// </summary>
+        [XmlAttribute]
         public int TurnsLeft
         {
             get;
@@ -92,11 +101,22 @@ namespace ClassLibrary1
             this.AttackedUnit = null;
             initializeMap(ms);
 
-            foreach(Player p in players){
-                this.Players.Add(p);
-            }
+            this.Players = players;
 
+            this.initializeUnits();
             setFirstPlayer();
+        }
+
+        /// <summary>
+        /// Constructeur de la classe Game.
+        /// </summary>
+        public Game()
+        {
+            this.CurrentUnit = null;
+            this.AttackedUnit = null;
+            initializeMap(new StandardMap());
+
+            this.Players = new List<Player>();
         }
 
         /// <summary>
@@ -117,7 +137,6 @@ namespace ClassLibrary1
         {
             foreach (Player p in Players) 
             {
-                p.Units = new List<Unit>(p.NbUnits);
                 for (int i = 0; i < p.NbUnits - 1; i++)
                 {
                     Random rndx = new Random();
@@ -266,6 +285,15 @@ namespace ClassLibrary1
             }
             // pas d'unité sur cette case.
             return found;
+        }
+
+        public void SaveGame(string path)
+        {
+            XmlSerializer game_serializer = new XmlSerializer(typeof(Game));
+            //XmlSerializer player_serializer = new XmlSerializer(typeof(Player));
+            StreamWriter writer = new StreamWriter(path,false);
+            game_serializer.Serialize(writer, this);
+            writer.Close();
         }
     }
 }
