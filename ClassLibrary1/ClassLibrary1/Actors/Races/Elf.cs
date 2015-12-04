@@ -12,7 +12,7 @@ namespace ClassLibrary1
         /// Constructeur Elf
         /// </summary>
         /// <param name="coord"> coordonnées de départ </param>
-        public Elf(Coordinate coord) : base(coord)
+        public Elf(Coordinate coord, TileType type) : base(coord,type)
         {
             this.Points = new Points(12,4,3);
         }
@@ -36,41 +36,39 @@ namespace ClassLibrary1
             this.Points.victoryPoints += nbPoints;
         }
 
-        public override bool canAttack(Coordinate tile)
+        public override bool canAttack(Coordinate tile, TileType type)
         {
             int dist = this.coord.distanceFrom(tile);
             return (dist == 0 || dist == 2);
         }
 
-        public override bool canMove(Coordinate tile)
+        public override bool canMove(Coordinate tile, TileType type)
         {
-            TileType tileType = Map.getTile(coord);
-
             // Les elfes ne peuvent pas aller sur l'eau
-            if (tileType == TileType.WATER)
+            if (type == TileType.WATER)
                 return false;
 
             int cost = this.coord.distanceFrom(tile);
-            if (tileType == TileType.MOUNTAIN) cost *= 2;
+            if (type == TileType.MOUNTAIN) cost *= 2;
             int movePoints = Points.movePoints;
 
             return movePoints > cost;
         }
 
-        public override void looseLifePoints(int nbPoints)
+    public override void looseLifePoints(int nbPoints)
         {
             base.looseLifePoints(nbPoints);
         }
 
-        public override void move(Coordinate targetTile)
+        public override void move(Coordinate targetTile, TileType type)
         {
-            base.move(targetTile);
+            base.move(targetTile,type);
         }
 
-        public override void spendMovePoints(Coordinate targetTile)
+        public override void spendMovePoints(Coordinate targetTile, TileType type)
         {
             int cost = this.coord.distanceFrom(targetTile);
-            if (Map.getTile(coord) == TileType.MOUNTAIN) cost *= 2;
+            if (type == TileType.MOUNTAIN) cost *= 2;
             Points.movePoints -= cost;
         }
     }

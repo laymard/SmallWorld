@@ -99,25 +99,6 @@
       <FileName>Environment\TileFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ClassLibrary1.MoveUnits">
-    <Position X="0.5" Y="3.75" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAACAAAAAAAAAAAIAEEAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Players\MoveUnits.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Unit" />
-    </ShowAsAssociation>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="ClassLibrary1.AttackUnits">
-    <Position X="2.5" Y="3.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAIAAAAAAA=</HashCode>
-      <FileName>AttackUnits.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="ClassLibrary1.GameBuilder">
     <Position X="18.75" Y="1" Width="1.5" />
     <TypeIdentifier>
@@ -217,6 +198,25 @@
       <HashCode>AiDIAAACABAQIAAAEAABAAAEAQAgEACAIAQBgACAAAA=</HashCode>
       <FileName>Base\Game.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="ClassLibrary1.MoveUnits">
+    <Position X="0.5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAEIAAAAAAAAAAQAAAAAAAAAAABggQ=</HashCode>
+      <FileName>Actors\MoveUnits.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Unit" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ClassLibrary1.AttackUnits">
+    <Position X="2.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAEAAAAAAAAQAAAAgAAAAAIAAABggQ=</HashCode>
+      <FileName>Actors\AttackUnits.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="ClassLibrary1.Command">
     <Position X="1.5" Y="1.5" Width="1.5" />

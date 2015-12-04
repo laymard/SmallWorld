@@ -33,12 +33,12 @@ namespace ClassLibrary1
         }
 
 
-        public virtual void  move(Coordinate targetTile)
+        public virtual void  move(Coordinate targetTile, TileType type)
         {
-            if (this.canMove(targetTile))
+            if (this.canMove(targetTile,type))
             {
                 coord = targetTile;
-                this.spendMovePoints(targetTile);
+                this.spendMovePoints(targetTile,type);
             }
         }
 
@@ -53,7 +53,7 @@ namespace ClassLibrary1
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <returns></returns>
-        public abstract void spendMovePoints(Coordinate targetTile);
+        public abstract void spendMovePoints(Coordinate targetTile, TileType type);
 
         public int getRatioLifePoints()
         {
@@ -65,19 +65,19 @@ namespace ClassLibrary1
             Points.lifePoints -= nbPoints;
         }
 
-        public abstract bool canMove(Coordinate tile);
+        public abstract bool canMove(Coordinate tile, TileType type);
 
-        public abstract bool canAttack(Coordinate tile);
+        public abstract bool canAttack(Coordinate tile, TileType type);
 
         public bool betterDefence(Unit unit)
         {
             return this.Points.defencePoints > unit.Points.defencePoints;
         }
 
-        public Unit(Coordinate coord)
+        public Unit(Coordinate coord, TileType type)
         {
             this.coord = coord;
-            this.currentTile = Map.getTile(coord);
+            this.currentTile = type;
         }
 
     }
