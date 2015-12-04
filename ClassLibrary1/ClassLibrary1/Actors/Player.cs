@@ -57,6 +57,7 @@ namespace ClassLibrary1
         {
             this.Race = race;
             this.NbUnits = nbUnits;
+            this.Name = name;
         }
 
 

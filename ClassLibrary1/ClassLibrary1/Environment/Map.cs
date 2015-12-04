@@ -69,7 +69,7 @@ namespace ClassLibrary1
         /// <summary>
         /// return type tile of coord
         /// </summary>
-        public static TileType getTile(Coordinate coord)
+        public TileType getTile(Coordinate coord)
         {
             return matrix[coord];
         }
