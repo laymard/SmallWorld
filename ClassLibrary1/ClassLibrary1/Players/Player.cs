@@ -1,19 +1,22 @@
 ﻿using System;
+using System.Xml.Serialization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace ClassLibrary1
 {
+    [Serializable]
     public class Player
     {
-
+        [XmlAttribute]
         public String Name
         {
             get;
             set;
         }
 
+        [XmlAttribute]
         public int VictoryPoints
         {
             get;
@@ -32,6 +35,7 @@ namespace ClassLibrary1
             set;
         }
 
+        [XmlAttribute]
         public int NbUnits
         {
             get;
@@ -44,6 +48,7 @@ namespace ClassLibrary1
             set;
         }
 
+        [XmlAttribute]
         public Race Race
         {
             get;
@@ -57,6 +62,9 @@ namespace ClassLibrary1
         {
             this.Race = race;
             this.NbUnits = nbUnits;
+            this.Units = new List<Unit>();
+            this.VictoryPoints = 0;
+            this.Name = name;
         }
 
 
@@ -88,7 +96,6 @@ namespace ClassLibrary1
         {
             Elf elf = new Elf(coord);
             this.Units.Add(elf);
-            this.NbUnits++;
         }
 
         /// <summary>
@@ -98,8 +105,6 @@ namespace ClassLibrary1
         {
             Human human = new Human(coord);
             this.Units.Add(human);
-            this.NbUnits++;
-
         }
 
         /// <summary>
@@ -109,7 +114,6 @@ namespace ClassLibrary1
         {
             Orc orc = new Orc(coord);
             this.Units.Add(orc);
-            this.NbUnits++;
         }
 
         public void undoLastCommand()

@@ -5,6 +5,7 @@ using System.Text;
 
 namespace ClassLibrary1
 {
+    [Serializable]
     public class Human : Unit
     {
         public Human(Coordinate coord) : base(coord)
@@ -12,20 +13,24 @@ namespace ClassLibrary1
             this.Points = new Points(15,6,3);
         }
 
-        public Boolean canMove(Coordinate tile)
+        public override void addVictoryPoints()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        public void move(TileType targetTile)
+        public override void spendMovePoints(Coordinate targetTile)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        public void attack(Unit adverseUnit)
+        public override bool canMove(Coordinate tile)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
+        public override bool canAttack(Coordinate tile)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

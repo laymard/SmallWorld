@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Xml.Serialization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace ClassLibrary1
 {
+    [Serializable(), XmlInclude(typeof(Elf)), XmlInclude(typeof(Orc)),XmlInclude(typeof(Human))]
     public abstract class Unit
     {
 
@@ -14,6 +16,7 @@ namespace ClassLibrary1
             set;
         }
 
+        [XmlAttribute]
         public TileType currentTile
         {
             get;
@@ -35,13 +38,14 @@ namespace ClassLibrary1
             if (this.canMove(targetTile))
             {
                 coord = targetTile;
+                this.spendMovePoints(targetTile);
             }
         }
 
         /// <summary>
         /// set victory points according to the current tile
         /// </summary>
-        public abstract virtual void addVictoryPoints();
+        public abstract void addVictoryPoints();
 
         /// <summary>
         /// spendMovePoints(int x,int y)
@@ -49,7 +53,7 @@ namespace ClassLibrary1
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <returns></returns>
-        public abstract virtual void spendMovePoints(int x, int y);
+        public abstract void spendMovePoints(Coordinate targetTile);
 
         public int getRatioLifePoints()
         {
@@ -61,9 +65,9 @@ namespace ClassLibrary1
             Points.lifePoints -= nbPoints;
         }
 
-        public abstract virtual bool canMove(Coordinate tile);
+        public abstract bool canMove(Coordinate tile);
 
-        public abstract virtual bool canAttack(Coordinate tile);
+        public abstract bool canAttack(Coordinate tile);
 
         public bool betterDefence(Unit unit)
         {

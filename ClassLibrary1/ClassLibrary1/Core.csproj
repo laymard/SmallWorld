@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B3760582-AD61-4F7C-98F3-3D3861E7FEE4}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ClassLibrary1</RootNamespace>
     <AssemblyName>ClassLibrary1</AssemblyName>
@@ -29,6 +29,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ClassLibrary1.MainTest</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -39,9 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AttackUnits.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Players\Commandes\AttackUnits.cs" />
     <Compile Include="Map\Coordinate.cs" />
-    <Compile Include="Players\Commande.cs" />
+    <Compile Include="Players\Commandes\Commande.cs" />
     <Compile Include="Map\Demo.cs" />
     <Compile Include="Players\Races\Elf.cs" />
     <Compile Include="Map\Forest.cs" />
@@ -53,7 +57,7 @@
     </Compile>
     <Compile Include="Map\MapSize1.cs" />
     <Compile Include="Map\Mountain.cs" />
-    <Compile Include="Players\MoveUnits.cs" />
+    <Compile Include="Players\Commandes\MoveUnits.cs" />
     <Compile Include="Game\NewGameBuilder.cs" />
     <Compile Include="Players\Races\Orc.cs" />
     <Compile Include="Map\Plain.cs">
