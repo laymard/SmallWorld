@@ -292,7 +292,6 @@ namespace ClassLibrary1
         public void SaveGame(string path)
         {
             XmlSerializer game_serializer = new XmlSerializer(typeof(Game));
-            //XmlSerializer player_serializer = new XmlSerializer(typeof(Player));
             StreamWriter writer = new StreamWriter(path,false);
             game_serializer.Serialize(writer, this);
             writer.Close();
