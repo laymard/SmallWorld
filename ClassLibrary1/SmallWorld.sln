@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C0F76E2F-0983-4F7C-9AA1-0531AA77D95D}"
 	ProjectSection(SolutionItems) = preProject
 		libCPP\libCPPP.vcxproj = libCPP\libCPPP.vcxproj
+		ClassLibrary1\Players\Commandes\MoveUnits.cs = ClassLibrary1\Players\Commandes\MoveUnits.cs
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libCPP", "libCPP\libCPPP.vcxproj", "{81E670FE-8518-4C71-B28D-D3D6AC90C790}"

@@ -134,6 +134,11 @@ namespace ClassLibrary1
             throw new System.NotImplementedException();
         }
 
+        public void addMoveCommand(Unit unit,Coordinate target)
+        {
+            MoveUnits mu = new MoveUnits
+        }
+
         /// <summary>
         /// retourne les unités du joueur présentes sur la case tile
         /// </summary>

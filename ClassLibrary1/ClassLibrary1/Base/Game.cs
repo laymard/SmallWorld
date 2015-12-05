@@ -244,6 +244,13 @@ namespace ClassLibrary1
             }
         }
 
+        public void move(Unit unit,Coordinate coord)
+        {
+            TileType type = Map.getTile(coord);
+            var quichelorraine = unit.RequiredMovePoints;
+            CurrentPlayer.move(unit, coord, type);
+        }
+
         /// <summary>
         /// Algorithme de décision du vainqueur entre les unités currentUnit et defender
         /// </summary>
