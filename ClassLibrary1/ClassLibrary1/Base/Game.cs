@@ -272,6 +272,13 @@ namespace ClassLibrary1
             CurrentUnit.move(coord, type);
         }
 
+        public void move(int x,int y)
+        {
+            Coordinate coord = Map.getCoord(0, 0);
+            TileType type = Map.getTile(coord);
+            //var quichelorraine = unit.RequiredMovePoints();
+            CurrentUnit.move(coord, type);
+        }
         /// <summary>
         /// Algorithme de décision du vainqueur entre les unités currentUnit et defender
         /// </summary>
