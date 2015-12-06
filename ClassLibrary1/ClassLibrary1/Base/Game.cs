@@ -9,9 +9,6 @@ namespace ClassLibrary1
     [Serializable()]
     public class Game
     {
-        [XmlIgnore()]
-        private List<Player> players;
-
         /// <summary>
         /// Liste des joueurs (au moins deux)
         /// </summary>
@@ -20,14 +17,8 @@ namespace ClassLibrary1
         [XmlArrayItem("player")]
         public List<Player> Players
         {
-            get
-            {
-                return this.players;
-            }
-            set
-            {
-                if (value.Count > 1) this.players = value;
-            }
+            get;
+            set;
         }
 
         
@@ -131,6 +122,14 @@ namespace ClassLibrary1
             initializeMap(new StandardMap());
 
             this.Players = new List<Player>();
+        }
+
+        public Game(GameSaver gs)
+        {
+            this.Players = gs.Game.Players;
+            this.CurrentPlayerIndex = gs.Game.CurrentPlayerIndex;
+            this.Map = new Map(gs.Game.Map, gs.Matrix);
+            this.TurnsLeft = gs.Game.TurnsLeft;
         }
 
         /*public Game(GameSaver gs)

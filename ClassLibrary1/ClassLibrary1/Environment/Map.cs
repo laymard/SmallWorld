@@ -48,6 +48,16 @@ namespace ClassLibrary1
 
         public Map() { }
 
+        public Map(Map map, MatrixSaver ms)
+        {
+            this.MapSize = map.MapSize;
+            this.matrix = new Dictionary<Coordinate,TileType>();
+            foreach (Entry entry in ms.list)
+            {
+                this.matrix.Add(entry.Coord, entry.TileType);
+            }
+        }
+
         public void initialiseTiles()
         {
             Algo algo = new Algo();

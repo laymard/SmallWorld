@@ -71,18 +71,6 @@ namespace ClassLibrary1
             this.Name = name;
         }
 
-        public Player(PlayerSaver ps)
-        {
-            this.VictoryPoints= ps.VictoryPoints;
-            this.Units = new List<Unit>();
-            foreach (Unit u in ps.Units)
-            {
-                this.createUnit(u.coord,u.currentTile);
-            }
-            this.Race = ps.Race;
-            this.NbUnits = ps.NbUnits;
-            this.Name = ps.Name;
-        }
         public Player() { }
 
 
