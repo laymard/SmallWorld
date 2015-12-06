@@ -83,5 +83,10 @@ namespace ClassLibrary1
             this.currentTile = type;
         }
         public Unit() { }
+
+        internal bool isDead()
+        {
+            return this.Points.lifePoints <= 0;
+        }
     }
 }

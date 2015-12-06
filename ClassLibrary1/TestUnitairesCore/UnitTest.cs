@@ -24,6 +24,7 @@ namespace TestUnitairesCore
             Coordinate coord3 = new Coordinate(1, 1);
 
             Unit elf = new Elf(new Coordinate(0,0), TileType.DEFAULT);
+            elf.Points.movePoints = 2;
             Assert.IsFalse(elf.canMove(coord1, TileType.WATER));
             Assert.IsTrue(elf.canMove(coord1, TileType.MOUNTAIN));
             Assert.IsFalse(elf.canMove(coord2, TileType.PLAIN));
@@ -38,6 +39,7 @@ namespace TestUnitairesCore
             Coordinate coord3 = new Coordinate(1, 1);
 
             Unit orc = new Orc(new Coordinate(0, 0), TileType.DEFAULT);
+            orc.Points.movePoints = 2;
             Assert.IsFalse(orc.canMove(coord1, TileType.WATER));
             Assert.IsTrue(orc.canMove(coord1, TileType.MOUNTAIN));
             Assert.IsTrue(orc.canMove(coord2, TileType.PLAIN));
@@ -53,6 +55,7 @@ namespace TestUnitairesCore
             Coordinate coord3 = new Coordinate(1, 1);
 
             Unit human = new Human(new Coordinate(0, 0), TileType.DEFAULT);
+            human.Points.movePoints = 2;
             Assert.IsTrue(human.canMove(coord1, TileType.WATER));
             Assert.IsTrue(human.canMove(coord1, TileType.MOUNTAIN));
             Assert.IsFalse(human.canMove(coord2, TileType.FOREST));
@@ -77,6 +80,7 @@ namespace TestUnitairesCore
 
             // Possible movement
             Unit orc1 = new Orc(coord0, TileType.DEFAULT);
+            orc1.Points.movePoints = 2;
             orc1.move(coord1, TileType.MOUNTAIN);
 
             Assert.AreEqual(orc1.coord, coord1);
@@ -86,6 +90,7 @@ namespace TestUnitairesCore
 
             // Impossible movement
             Unit orc2 = new Orc(coord0, TileType.DEFAULT);
+            orc2.Points.movePoints = 2;
             orc2.move(coord2, TileType.DEFAULT);
             Assert.AreEqual(orc2.coord, coord0);
             Assert.AreEqual(orc2.Points.movePoints, 2);

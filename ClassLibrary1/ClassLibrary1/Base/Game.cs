@@ -54,15 +54,6 @@ namespace ClassLibrary1
             set;
         }
 
-        /// <summary>
-        /// Unité choisie par le joueur courant.
-        /// </summary>
-        [XmlIgnore()]
-        public Unit CurrentUnit
-        {
-            get;
-            set;
-        }
 
         /// <summary>
         /// Unité attaquée.
@@ -102,7 +93,6 @@ namespace ClassLibrary1
         /// </summary>
         public Game(MapSize ms, List<Player> players)
         {
-            this.CurrentUnit = null;
             this.AttackedUnit = null;
             initializeMap(ms);
 
@@ -117,7 +107,6 @@ namespace ClassLibrary1
         /// </summary>
         public Game()
         {
-            this.CurrentUnit = null;
             this.AttackedUnit = null;
             initializeMap(new StandardMap());
 
@@ -132,18 +121,6 @@ namespace ClassLibrary1
             this.TurnsLeft = gs.Game.TurnsLeft;
         }
 
-        /*public Game(GameSaver gs)
-        {
-            this.CurrentPlayerIndex = gs.CurrentPlayerIndex;
-            this.Map = new Map(gs.Map);
-
-            this.Players = new List<Player>();
-            foreach(Player ps in gs.Players){
-                this.Players.Add(ps);
-            }
-
-            this.TurnsLeft = gs.TurnsLeft;
-        }*/
 
         /// <summary>
         /// Initialisation de la carte à partir des caractéristiques du mode de jeu contenues dans la MapSize ms.
@@ -188,7 +165,8 @@ namespace ClassLibrary1
         /// </summary>
         public void changePlayer()
         {
-            this.CurrentPlayerIndex = (CurrentPlayerIndex + 1) % Map.MapSize.NbPlayers; 
+            this.CurrentPlayerIndex = (CurrentPlayerIndex + 1) % Map.MapSize.NbPlayers;
+            this.CurrentPlayer.setMovePoints();
         }
 
         /// <summary>
@@ -226,27 +204,12 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// Affiche les unités présentes sur la case tile et sélectionne l'unité choisie par le joueur.
-        /// </summary>
-        public void selectUnit(Coordinate tile)
-        {
-            List<Unit> playerUnits = CurrentPlayer.getUnitsOnTile(tile);
-            if (!(playerUnits.Count == 0))
-            {
-                // affichage des unités et demande au joueur d'en sélectionner une.
-                //CurrentUnit = unit;
-            }
-
-           
-        }
-
-        /// <summary>
         /// Attaque d'une case par l'unité courante.
         /// </summary>
         public void attack()
         {
             TileType type = this.Map.getTile(SelectedTile);
-            if (CurrentUnit.canAttack(SelectedTile,type))
+            if (CurrentPlayer.CurrentUnit.canAttack(SelectedTile,type))
             {
                 // choix du vainqueur de l'attaque
                 bool winner = this.chooseWinner(AttackedUnit);
@@ -257,10 +220,14 @@ namespace ClassLibrary1
                 if (winner)
                 {
                     AttackedUnit.looseLifePoints(lost);
+                    if (AttackedUnit.isDead())
+                    {
+                        CurrentPlayer.CurrentUnit.move(AttackedUnit.coord, AttackedUnit.currentTile);
+                    }
                 }
                 else
                 {
-                    CurrentUnit.looseLifePoints(lost);
+                    CurrentPlayer.CurrentUnit.looseLifePoints(lost);
                 }
             }
         }
@@ -269,7 +236,7 @@ namespace ClassLibrary1
         {
             TileType type = Map.getTile(coord);
             //var quichelorraine = unit.RequiredMovePoints();
-            CurrentUnit.move(coord, type);
+            CurrentPlayer.CurrentUnit.move(coord, type);
         }
 
         public void move(int x,int y)
@@ -277,7 +244,7 @@ namespace ClassLibrary1
             Coordinate coord = Map.getCoord(0, 0);
             TileType type = Map.getTile(coord);
             //var quichelorraine = unit.RequiredMovePoints();
-            CurrentUnit.move(coord, type);
+            CurrentPlayer.CurrentUnit.move(coord, type);
         }
         /// <summary>
         /// Algorithme de décision du vainqueur entre les unités currentUnit et defender
@@ -287,7 +254,7 @@ namespace ClassLibrary1
             // TO DO : algo de décision du vainqueur entre les unités currentUnit et defender
             // retourne true si currentUnit a gagné, false sinon
             double DefenderLife = opponentUnit.getRatioLifePoints();
-            double AttackerLife = CurrentUnit.getRatioLifePoints();
+            double AttackerLife = CurrentPlayer.CurrentUnit.getRatioLifePoints();
             return true;
             
         }

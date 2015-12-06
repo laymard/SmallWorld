@@ -66,7 +66,7 @@ namespace ClassLibrary1
                 return false;
 
             if (type == TileType.MOUNTAIN) cost *= 2;
-            double movePoints = Points.movePoints;
+            double movePoints = this.Points.movePoints;
 
             return movePoints >= cost;
         }

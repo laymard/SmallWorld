@@ -24,6 +24,13 @@ namespace ClassLibrary1
         }
 
         [XmlIgnore()]
+        public int MovePoints
+        {
+            get;
+            set;
+        }
+
+        [XmlIgnore()]
         public Stack<Command> Actions
         {
             get;
@@ -40,6 +47,13 @@ namespace ClassLibrary1
 
         [XmlAttribute()]
         public int NbUnits
+        {
+            get;
+            set;
+        }
+
+        [XmlIgnore()]
+        public Unit CurrentUnit
         {
             get;
             set;
@@ -68,6 +82,7 @@ namespace ClassLibrary1
             this.NbUnits = nbUnits;
             this.Units = new List<Unit>();
             this.VictoryPoints = 0;
+            this.MovePoints = 2;
             this.Name = name;
         }
 
@@ -122,6 +137,16 @@ namespace ClassLibrary1
             this.Units.Add(orc);
         }
 
+        /// <summary>
+        /// sélectionne l'unité choisie par le joueur.
+        /// </summary>
+        public void selectUnit(Unit u)
+        {
+            CurrentUnit.Points.movePoints = 0;
+            CurrentUnit = u;
+            CurrentUnit.Points.movePoints = this.MovePoints;
+        }
+
         public void undoLastCommand()
         {
             throw new System.NotImplementedException();
@@ -155,6 +180,10 @@ namespace ClassLibrary1
                 if (u.coord.Equals(tile)) res.Add(u);
             }
              return res;
+        }
+        internal void setMovePoints()
+        {
+            this.MovePoints = 2;
         }
     }
 }

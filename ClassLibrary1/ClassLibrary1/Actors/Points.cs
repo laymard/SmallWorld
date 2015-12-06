@@ -64,7 +64,7 @@ namespace ClassLibrary1
             attackPoints = attack;
             defencePoints = defence;
             victoryPoints = 0;
-            movePoints = 2;
+            movePoints = 0;
         }
         public Points() { }
     }
