@@ -286,8 +286,8 @@ namespace ClassLibrary1
         {
             // TO DO : algo de décision du vainqueur entre les unités currentUnit et defender
             // retourne true si currentUnit a gagné, false sinon
-            int DefenderLife = opponentUnit.getRatioLifePoints();
-            int AttackerLife = CurrentUnit.getRatioLifePoints();
+            double DefenderLife = opponentUnit.getRatioLifePoints();
+            double AttackerLife = CurrentUnit.getRatioLifePoints();
             return true;
             
         }

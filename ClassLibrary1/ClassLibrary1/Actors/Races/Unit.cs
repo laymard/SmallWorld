@@ -38,8 +38,10 @@ namespace ClassLibrary1
         {
             if (this.canMove(targetTile,type))
             {
-                coord = targetTile;
                 this.spendMovePoints(targetTile,type);
+                coord = targetTile;
+                currentTile = type;
+                this.addVictoryPoints();
             }
         }
 
@@ -56,7 +58,7 @@ namespace ClassLibrary1
         /// <returns></returns>
         public abstract void spendMovePoints(Coordinate targetTile, TileType type);
 
-        public int getRatioLifePoints()
+        public double getRatioLifePoints()
         {
             return Points.getRatioLifePoints();
         }

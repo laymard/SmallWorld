@@ -35,21 +35,17 @@ namespace ClassLibrary1
 
         public override void addVictoryPoints()
         {
-            int nbPoints;
-
             switch (currentTile)
             {
                 case TileType.FOREST :
-                    nbPoints = 3;
+                    this.Points.victoryPoints += 3;
                     break;
                 case TileType.PLAIN:
-                    nbPoints = 1;
+                    this.Points.victoryPoints += 1;
                     break;
                 default :
-                    nbPoints = 0;
                     break;
             }
-            this.Points.victoryPoints += nbPoints;
         }
 
         public override bool canAttack(Coordinate tile, TileType type)
@@ -64,11 +60,15 @@ namespace ClassLibrary1
             if (type == TileType.WATER)
                 return false;
 
-            int cost = this.coord.distanceFrom(tile);
-            if (type == TileType.MOUNTAIN) cost *= 2;
-            int movePoints = Points.movePoints;
+            double cost = (double)this.coord.distanceFrom(tile);
 
-            return movePoints > cost;
+            if (cost < 0) 
+                return false;
+
+            if (type == TileType.MOUNTAIN) cost *= 2;
+            double movePoints = Points.movePoints;
+
+            return movePoints >= cost;
         }
 
     public override void looseLifePoints(int nbPoints)

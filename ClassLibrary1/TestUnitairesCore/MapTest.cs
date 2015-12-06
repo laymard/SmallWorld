@@ -56,6 +56,8 @@ namespace TestUnitairesCore
                         break;
                 }
             }
+
+            // Il doit y avoir autant de cases de chaque type
             Assert.AreEqual(plain, water);
             Assert.AreEqual(plain, mountain);
             Assert.AreEqual(plain, forest);
@@ -63,6 +65,5 @@ namespace TestUnitairesCore
             Assert.AreEqual(water, forest);
             Assert.AreEqual(mountain, forest);
         }
-
     }
 }

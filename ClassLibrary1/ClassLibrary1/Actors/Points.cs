@@ -39,7 +39,7 @@ namespace ClassLibrary1
         }
 
         [XmlAttribute()]
-        public int movePoints
+        public double movePoints
         {
             get;
             set;
@@ -52,9 +52,9 @@ namespace ClassLibrary1
             set;
         }
 
-        public int getRatioLifePoints()
+        public double getRatioLifePoints()
         {
-            return lifePoints/initialLifePoints;
+            return (double)lifePoints/(double)initialLifePoints;
         }
 
         public Points(int life, int attack, int defence)
