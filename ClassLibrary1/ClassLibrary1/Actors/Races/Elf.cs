@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    [Serializable]
+    [Serializable()]
     public class Elf : Unit
     {
         /// <summary>
@@ -16,7 +16,8 @@ namespace ClassLibrary1
         {
             this.Points = new Points(12,4,3);
         }
-
+        public Elf()
+            : base(){ }
         public static IDictionary<TileType,int> RequiredMovePoints
         {
             get

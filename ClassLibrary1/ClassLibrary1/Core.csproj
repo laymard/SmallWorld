@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B3760582-AD61-4F7C-98F3-3D3861E7FEE4}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ClassLibrary1</RootNamespace>
     <AssemblyName>ClassLibrary1</AssemblyName>
@@ -47,8 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>ClassLibrary1.MainTest</StartupObject>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup />
@@ -77,7 +76,7 @@
     <Compile Include="Environment\Map.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Environment\MapSize1.cs" />
+    <Compile Include="Environment\MapSize.cs" />
     <Compile Include="Environment\Mountain.cs" />
     <Compile Include="Base\NewGameBuilder.cs" />
     <Compile Include="Actors\Races\Orc.cs" />
@@ -102,6 +101,11 @@
     </Compile>
     <Compile Include="Environment\Water.cs" />
     <Compile Include="Environment\TileType.cs" />
+    <Compile Include="Serialisation\GameSaver.cs" />
+    <Compile Include="Serialisation\Lists\MatrixSaver.cs" />
+    <Compile Include="Serialisation\Lists\PlayersSaver.cs" />
+    <Compile Include="Serialisation\MapSaver.cs" />
+    <Compile Include="Serialisation\PlayerSaver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

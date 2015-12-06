@@ -9,14 +9,10 @@ namespace ClassLibrary1
     {
         public Game Game
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get;
+            set;
         }
+
+        public abstract void buildGame();
     }
 }

@@ -18,7 +18,7 @@ namespace ClassLibrary1
 
             Game game = new Game(new StandardMap(), players);
 
-            game.SaveGame("lejeu.xml");
+            game.saveGame("lejeu.xml");
         }
     }
 }

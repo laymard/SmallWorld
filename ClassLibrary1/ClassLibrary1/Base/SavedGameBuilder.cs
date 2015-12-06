@@ -7,9 +7,17 @@ namespace ClassLibrary1
 {
     public class SavedGameBuilder : GameBuilder
     {
-        public void buildGame()
+        public String path;
+        public SavedGameBuilder(String path)
+            : base()
         {
-            throw new System.NotImplementedException();
+            this.path = path;
+        }
+
+        public override void buildGame()
+        {
+            GameSaver gs = GameSaver.ChargeGame(path);
+            //this.Game = new Game(gs);
         }
     }
 }

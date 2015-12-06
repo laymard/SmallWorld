@@ -6,41 +6,46 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    [Serializable]
+    [Serializable()]
     public class Points
     {
-        [XmlAttribute]
+        [XmlAttribute()]
         public int attackPoints
         {
             get;
             set;
         }
 
-        [XmlAttribute]
+        [XmlAttribute()]
         public int defencePoints
         {
             get;
             set;
         }
 
-        [XmlAttribute]
+
+        [XmlAttribute()]
         public int lifePoints
         {
             get;
             set;
         }
 
-        [XmlAttribute]
-        public int initialLifePoints;
+        [XmlAttribute()]
+        public int initialLifePoints
+        {
+            get;
+            set;
+        }
 
-        [XmlAttribute]
+        [XmlAttribute()]
         public int movePoints
         {
             get;
             set;
         }
 
-        [XmlAttribute]
+        [XmlAttribute()]
         public int victoryPoints
         {
             get;
@@ -59,6 +64,8 @@ namespace ClassLibrary1
             attackPoints = attack;
             defencePoints = defence;
             victoryPoints = 0;
+            movePoints = 2;
         }
+        public Points() { }
     }
 }

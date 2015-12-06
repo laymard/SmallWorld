@@ -9,14 +9,14 @@ namespace ClassLibrary1
     [Serializable(), XmlInclude(typeof(Elf)), XmlInclude(typeof(Orc)),XmlInclude(typeof(Human))]
     public abstract class Unit
     {
-
+        [XmlElement()]
         public Points Points
         {
             get;
             set;
         }
 
-        [XmlAttribute]
+        [XmlAttribute()]
         public TileType currentTile
         {
             get;
@@ -26,6 +26,7 @@ namespace ClassLibrary1
         /// <summary>
         /// position de l'unité sur la carte
         /// </summary>
+        [XmlElement()]
         public Coordinate coord
         {
             get;
@@ -79,6 +80,6 @@ namespace ClassLibrary1
             this.coord = coord;
             this.currentTile = type;
         }
-
+        public Unit() { }
     }
 }

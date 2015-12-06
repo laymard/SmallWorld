@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    [Serializable]
+    [Serializable()]
     public class Human : Unit
     {
         public Human(Coordinate coord, TileType type)
@@ -13,7 +13,8 @@ namespace ClassLibrary1
         {
             this.Points = new Points(15, 6, 3);
         }
-
+        public Human()
+            : base() { }
 
         public override void addVictoryPoints()
         {

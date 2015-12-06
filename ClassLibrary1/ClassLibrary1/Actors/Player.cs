@@ -6,49 +6,53 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    [Serializable]
+    [Serializable()]
     public class Player
     {
-        [XmlAttribute]
+        [XmlAttribute()]
         public String Name
         {
             get;
             set;
         }
 
-        [XmlAttribute]
+        [XmlAttribute()]
         public int VictoryPoints
         {
             get;
             set;
         }
 
+        [XmlIgnore()]
         public Stack<Command> Actions
         {
             get;
             set;
         }
 
+        [XmlArray("units")]
+        [XmlArrayItem("unit")]
         public List<Unit> Units
         {
             get;
             set;
         }
 
-        [XmlAttribute]
+        [XmlAttribute()]
         public int NbUnits
         {
             get;
             set;
         }
 
+        [XmlIgnore()]
         public Command Command
         {
             get;
             set;
         }
 
-        [XmlAttribute]
+        [XmlAttribute()]
         public Race Race
         {
             get;
@@ -66,6 +70,20 @@ namespace ClassLibrary1
             this.VictoryPoints = 0;
             this.Name = name;
         }
+
+        public Player(PlayerSaver ps)
+        {
+            this.VictoryPoints= ps.VictoryPoints;
+            this.Units = new List<Unit>();
+            foreach (Unit u in ps.Units)
+            {
+                this.createUnit(u.coord,u.currentTile);
+            }
+            this.Race = ps.Race;
+            this.NbUnits = ps.NbUnits;
+            this.Name = ps.Name;
+        }
+        public Player() { }
 
 
         /// <summary>
@@ -136,7 +154,7 @@ namespace ClassLibrary1
 
         public void addMoveCommand(Unit unit,Coordinate target)
         {
-            MoveUnits mu = new MoveUnits
+            MoveUnits mu = new MoveUnits();
         }
 
         /// <summary>

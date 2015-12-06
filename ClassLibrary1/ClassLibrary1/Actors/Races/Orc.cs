@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    [Serializable]
+    [Serializable()]
     public class Orc : Unit
     {
         public Orc(Coordinate coord, TileType type)
@@ -13,6 +13,8 @@ namespace ClassLibrary1
         {
             this.Points = new Points(17, 5, 2);
         }
+        public Orc()
+            : base() { }
 
 
         public override void addVictoryPoints()

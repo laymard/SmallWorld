@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    [Serializable]
+    [Serializable()]
     public class Coordinate
     {
         public Coordinate(int x, int y)
@@ -15,15 +15,16 @@ namespace ClassLibrary1
             X = x;
             Y = y;
         }
+        public Coordinate() { }
 
-        [XmlAttribute]
+        [XmlAttribute()]
         public int X
         {
             get;
             set;
         }
 
-        [XmlAttribute]
+        [XmlAttribute()]
         public int Y
         {
             get;

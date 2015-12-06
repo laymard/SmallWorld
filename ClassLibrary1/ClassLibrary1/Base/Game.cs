@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Linq;
 using System.Text;
-using System.IO;
 
 namespace ClassLibrary1
 {
-    [Serializable]
+    [Serializable()]
     public class Game
     {
+        [XmlIgnore()]
         private List<Player> players;
+
         /// <summary>
         /// Liste des joueurs (au moins deux)
         /// </summary>
+
+        [XmlArray("players")]
+        [XmlArrayItem("player")]
         public List<Player> Players
         {
             get
@@ -26,26 +30,33 @@ namespace ClassLibrary1
             }
         }
 
-        [XmlAttribute]
+        
         /// <summary>
         /// Indice du joueur courant dans la liste des joueurs Players.
         /// </summary>
-        private int currentPlayer;
+        [XmlAttribute()]
+        public int CurrentPlayerIndex
+        {
+            get;
+            set;
+        }
 
         /// <summary>
         /// Joueur courant.
         /// </summary>
+        [XmlIgnore()]
         public Player CurrentPlayer
         {
             get
             {
-                return this.Players[currentPlayer];
+                return this.Players[CurrentPlayerIndex];
             }
         }
 
         /// <summary>
         /// Carte du jeu.
         /// </summary>
+        [XmlElement()]
         public Map Map
         {
             get;
@@ -55,6 +66,7 @@ namespace ClassLibrary1
         /// <summary>
         /// Unité choisie par le joueur courant.
         /// </summary>
+        [XmlIgnore()]
         public Unit CurrentUnit
         {
             get;
@@ -64,6 +76,7 @@ namespace ClassLibrary1
         /// <summary>
         /// Unité attaquée.
         /// </summary>
+        [XmlIgnore()]
         public Unit AttackedUnit
         {
             get;
@@ -73,6 +86,7 @@ namespace ClassLibrary1
         /// <summary>
         /// Dernière case sélectionnée (pour attaque ou déplacement).
         /// </summary>
+        [XmlIgnore()]
         public Coordinate SelectedTile
         {
             get;
@@ -84,7 +98,7 @@ namespace ClassLibrary1
         /// <summary>
         /// Nombre de tours restant.
         /// </summary>
-        [XmlAttribute]
+        [XmlAttribute()]
         public int TurnsLeft
         {
             get;
@@ -108,7 +122,7 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// Constructeur de la classe Game.
+        /// Constructeur par défaut de la classe Game.
         /// </summary>
         public Game()
         {
@@ -118,6 +132,19 @@ namespace ClassLibrary1
 
             this.Players = new List<Player>();
         }
+
+        /*public Game(GameSaver gs)
+        {
+            this.CurrentPlayerIndex = gs.CurrentPlayerIndex;
+            this.Map = new Map(gs.Map);
+
+            this.Players = new List<Player>();
+            foreach(Player ps in gs.Players){
+                this.Players.Add(ps);
+            }
+
+            this.TurnsLeft = gs.TurnsLeft;
+        }*/
 
         /// <summary>
         /// Initialisation de la carte à partir des caractéristiques du mode de jeu contenues dans la MapSize ms.
@@ -154,7 +181,7 @@ namespace ClassLibrary1
         public void setFirstPlayer()
         {
             Random rnd = new Random();
-            this.currentPlayer = rnd.Next(0, Players.Count - 1);
+            this.CurrentPlayerIndex = rnd.Next(0, Players.Count - 1);
         }
 
         /// <summary>
@@ -162,7 +189,7 @@ namespace ClassLibrary1
         /// </summary>
         public void changePlayer()
         {
-            this.currentPlayer = (currentPlayer + 1) % Map.MapSize.NbPlayers; 
+            this.CurrentPlayerIndex = (CurrentPlayerIndex + 1) % Map.MapSize.NbPlayers; 
         }
 
         /// <summary>
@@ -185,11 +212,6 @@ namespace ClassLibrary1
                     // traiter le cas du choix d'une race déjà sélectionnée
                 }
             }
-        }
-
-        public void saveGame()
-        {
-            // TO DO
         }
 
         /// <summary>
@@ -244,11 +266,11 @@ namespace ClassLibrary1
             }
         }
 
-        public void move(Unit unit,Coordinate coord)
+        public void move(Coordinate coord)
         {
             TileType type = Map.getTile(coord);
-            var quichelorraine = unit.RequiredMovePoints;
-            CurrentPlayer.move(unit, coord, type);
+            //var quichelorraine = unit.RequiredMovePoints();
+            CurrentUnit.move(coord, type);
         }
 
         /// <summary>
@@ -296,12 +318,10 @@ namespace ClassLibrary1
             return found;
         }
 
-        public void SaveGame(string path)
+        public void saveGame(String path)
         {
-            XmlSerializer game_serializer = new XmlSerializer(typeof(Game));
-            StreamWriter writer = new StreamWriter(path,false);
-            game_serializer.Serialize(writer, this);
-            writer.Close();
+            GameSaver gs = new GameSaver(this);
+            gs.SaveGame(path);
         }
     }
 }

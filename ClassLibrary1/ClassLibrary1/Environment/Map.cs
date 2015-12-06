@@ -2,28 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Serialization;
 
 
 namespace ClassLibrary1
 {
-    [Serializable]
+    [Serializable()]
     public class Map
     {
-
+        [XmlElement()]
         public MapSize MapSize
         {
             get;
             set;
         }
 
+        [XmlIgnore()]
         public TileFactory TileFactory
         {
             get;
             set;
         }
 
-
-        public IDictionary<Coordinate, TileType> matrix
+        [XmlIgnore()]
+        public Dictionary<Coordinate, TileType> matrix
         {
             get;
             set;
@@ -35,6 +37,16 @@ namespace ClassLibrary1
             matrix = new Dictionary<Coordinate, TileType>(ms.NbTiles * ms.NbTiles);
             this.setEmptyMatrix(ms.NbTiles);
         }
+
+        /*public Map(MapSaver ms)
+        {
+            this.matrix = new Dictionary<Coordinate,TileType>();
+            foreach(Entry entry in ms.matrix){
+                this.matrix.Add(entry.Coord, entry.TileType);
+            }
+        }*/
+
+        public Map() { }
 
         public void initialiseTiles()
         {
