@@ -93,9 +93,50 @@ namespace TestUnitairesCore
         }
 
         [TestMethod]
-        public void TestCanAttack()
+        public void TestCanAttackElf()
         {
-            // TO DO
+            Coordinate coord0 = new Coordinate(0, 0);
+            Coordinate coord1 = new Coordinate(0, 1);
+            Coordinate coord2 = new Coordinate(0, 2);
+            Coordinate coord3 = new Coordinate(0, 3);
+
+            Unit elf = new Elf(coord0,TileType.DEFAULT);
+            Assert.IsTrue(elf.canAttack(coord1, TileType.DEFAULT));
+            Assert.IsTrue(elf.canAttack(coord2, TileType.DEFAULT));
+            Assert.IsFalse(elf.canAttack(coord3, TileType.DEFAULT));
+        }
+
+        [TestMethod]
+        public void TestCanAttackHuman()
+        {
+            Coordinate coord0 = new Coordinate(0, 0);
+            Coordinate coord1 = new Coordinate(0, 1);
+            Coordinate coord2 = new Coordinate(0, 2);
+            
+
+            Unit human = new Human(coord0, TileType.DEFAULT);
+            Assert.IsTrue(human.canAttack(coord1, TileType.DEFAULT));
+            Assert.IsFalse(human.canAttack(coord2, TileType.DEFAULT));
+        }
+
+
+        [TestMethod]
+        public void TestCanAttackOrc()
+        {
+            Coordinate coord0 = new Coordinate(0, 0);
+            Coordinate coord1 = new Coordinate(0, 1);
+            Coordinate coord2 = new Coordinate(0, 2);
+            Coordinate coord3 = new Coordinate(0, 3);
+
+
+            Unit orc1 = new Orc(coord0, TileType.DEFAULT);
+            Assert.IsTrue(orc1.canAttack(coord1, TileType.DEFAULT));
+            Assert.IsFalse(orc1.canAttack(coord2, TileType.DEFAULT));
+
+            Unit orc2 = new Orc(coord0, TileType.MOUNTAIN);
+            Assert.IsTrue(orc2.canAttack(coord1, TileType.DEFAULT));
+            Assert.IsTrue(orc2.canAttack(coord2, TileType.DEFAULT));
+            Assert.IsFalse(orc2.canAttack(coord3, TileType.DEFAULT));
         }
 
         [TestMethod]

@@ -51,7 +51,7 @@ namespace ClassLibrary1
         public override bool canAttack(Coordinate tile, TileType type)
         {
             int dist = this.coord.distanceFrom(tile);
-            return (dist == 0 || dist == 2);
+            return (dist == 1 || dist == 2);
         }
 
         public override bool canMove(Coordinate tile, TileType type)

@@ -60,7 +60,8 @@ namespace ClassLibrary1
 
         public override bool canAttack(Coordinate tile, TileType type)
         {
-            throw new NotImplementedException();
+            int dist = this.coord.distanceFrom(tile);
+            return ((currentTile == TileType.MOUNTAIN && dist == 2) || dist == 1);
         }
     }
 }

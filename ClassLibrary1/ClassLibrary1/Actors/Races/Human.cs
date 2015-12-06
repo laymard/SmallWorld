@@ -34,9 +34,10 @@ namespace ClassLibrary1
             }
         }
 
-        public override void spendMovePoints(Coordinate targetTile, TileType type)
+        public override void spendMovePoints(Coordinate tile, TileType type)
         {
-            throw new NotImplementedException();
+            double cost = (double)this.coord.distanceFrom(tile);
+            Points.movePoints -= cost;
         }
 
         public override bool canMove(Coordinate tile, TileType type)
@@ -51,7 +52,8 @@ namespace ClassLibrary1
 
         public override bool canAttack(Coordinate tile, TileType type)
         {
-            throw new NotImplementedException();
+            int dist = this.coord.distanceFrom(tile);
+            return (dist == 1);
         }
     }
 }
