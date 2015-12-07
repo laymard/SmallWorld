@@ -24,7 +24,7 @@ namespace ClassLibrary1
         }
 
         [XmlIgnore()]
-        public int MovePoints
+        public double MovePoints
         {
             get;
             set;
@@ -60,6 +60,13 @@ namespace ClassLibrary1
         }
 
         [XmlIgnore()]
+        public Dictionary<TileType, double> RequiredMovePoints
+        {
+            get;
+            set;
+        }
+
+        [XmlIgnore()]
         public Command Command
         {
             get;
@@ -79,6 +86,7 @@ namespace ClassLibrary1
         public Player(Race race, String name, int nbUnits)
         {
             this.Race = race;
+            this.initializeRequiredMovePoints();
             this.NbUnits = nbUnits;
             this.Units = new List<Unit>();
             this.VictoryPoints = 0;
@@ -86,15 +94,33 @@ namespace ClassLibrary1
             this.Name = name;
         }
 
-        public Player() { }
+        public Player()
+        {
+            this.initializeRequiredMovePoints();
+            this.VictoryPoints = 0;
+            this.MovePoints = 2;
+        }
 
+        public void initializeRequiredMovePoints()
+        {
+            switch(this.Race) {
+                case Race.Elf :
+                    this.RequiredMovePoints = Elf.RequiredMovePoints();
+                    break;
+                case Race.Human:
+                    this.RequiredMovePoints = Human.RequiredMovePoints();
+                    break;
+                case Race.Orc:
+                    this.RequiredMovePoints = Orc.RequiredMovePoints();
+                    break;
+            }
+        }
 
         /// <summary>
         /// create a unit of the player's race
         /// </summary>
         public void createUnit(Coordinate coord, TileType type) 
         {
-
             switch (this.Race)
             {
                 case (Race.Orc) :
@@ -142,9 +168,7 @@ namespace ClassLibrary1
         /// </summary>
         public void selectUnit(Unit u)
         {
-            CurrentUnit.Points.movePoints = 0;
             CurrentUnit = u;
-            CurrentUnit.Points.movePoints = this.MovePoints;
         }
 
         public void undoLastCommand()
@@ -165,16 +189,21 @@ namespace ClassLibrary1
             throw new System.NotImplementedException();
         }
 
-        public void move (Unit unit, Coordinate target, TileType targetType)
+        public void move (Coordinate target, TileType targetType)
         {
-            if(unit.canMoveTo(target,targetType))
-            this.addMoveCommand(unit, target, unit.RequiredMovePoints[targetType]);
+            double requiredMovePoints = this.RequiredMovePoints[targetType];
 
+            if (CurrentUnit.canMove(target, targetType,this.MovePoints))
+            {
+                this.addMoveCommand(target, requiredMovePoints);
+                this.spendMovePoints(target, targetType);
+                this.CurrentUnit.move(target, targetType);
+            }
         }
 
-        public void addMoveCommand(Unit unit,Coordinate target,double cost)
+        public void addMoveCommand(Coordinate target,double cost)
         {
-            MoveUnits mu = new MoveUnits(unit,target, cost);
+            MoveUnits mu = new MoveUnits(CurrentUnit,target, cost);
         }
 
         /// <summary>
@@ -191,6 +220,12 @@ namespace ClassLibrary1
         internal void setMovePoints()
         {
             this.MovePoints = 2;
+        }
+
+        public void spendMovePoints(Coordinate targetTile, TileType type)
+        {
+            double cost = this.RequiredMovePoints[type];
+            if (cost > 0) this.MovePoints -= cost;
         }
     }
 }

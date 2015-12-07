@@ -34,13 +34,13 @@ namespace ClassLibrary1
             }
         }
 
-        public override void spendMovePoints(Coordinate tile, TileType type)
+        /*public override void spendMovePoints(Coordinate tile, TileType type)
         {
             double cost = (double)this.coord.distanceFrom(tile);
             Points.movePoints -= cost;
-        }
+        }*/
 
-        public override bool canMove(Coordinate tile, TileType type)
+        /*public override bool canMove(Coordinate tile, TileType type)
         {
             double cost = (double)this.coord.distanceFrom(tile);
 
@@ -48,12 +48,38 @@ namespace ClassLibrary1
                 return false;
 
             return Points.movePoints >= cost;
-        }
+        }*/
 
         public override bool canAttack(Coordinate tile, TileType type)
         {
             int dist = this.coord.distanceFrom(tile);
             return (dist == 1);
+        }
+
+        public static Dictionary<TileType, double> RequiredMovePoints()
+        {
+            return new Dictionary<TileType, double>()
+                {
+                    {TileType.MOUNTAIN,1 },
+                    {TileType.WATER,1 },
+                    {TileType.FOREST,1 },
+                    {TileType.PLAIN,1 }
+
+                };
+        }
+
+        public override bool canMove(Coordinate tile, TileType type, double movePoints)
+        {
+            double requiredMovePoints = Human.RequiredMovePoints()[type];
+            if (requiredMovePoints == -1 || !this.coord.isNearTo(tile) || movePoints - requiredMovePoints < 0)
+            {
+                return false;
+            }
+
+            else
+            {
+                return true;
+            }
         }
     }
 }

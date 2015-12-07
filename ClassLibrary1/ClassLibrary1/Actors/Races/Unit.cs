@@ -23,12 +23,6 @@ namespace ClassLibrary1
             set;
         }
 
-        public Dictionary<TileType,double> RequiredMovePoints
-        {
-            get;
-            set;
-        }
-
         /// <summary>
         /// position de l'unité sur la carte
         /// </summary>
@@ -40,15 +34,11 @@ namespace ClassLibrary1
         }
 
 
-        public virtual void  move(Coordinate targetTile, TileType type)
+        public void  move(Coordinate targetTile, TileType type)
         {
-            if (this.canMove(targetTile,type))
-            {
-                this.spendMovePoints(targetTile,type);
                 coord = targetTile;
                 currentTile = type;
                 this.addVictoryPoints();
-            }
         }
 
         /// <summary>
@@ -56,37 +46,12 @@ namespace ClassLibrary1
         /// </summary>
         public abstract void addVictoryPoints();
 
-        /// <summary>
-        /// spendMovePoints(int x,int y)
-        /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <returns></returns>
-        public abstract void spendMovePoints(Coordinate targetTile, TileType type);
-
-        public double getRatioLifePoints()
-        {
-            return Points.getRatioLifePoints();
-        }
-
         public virtual void looseLifePoints(int nbPoints)
         {
             Points.lifePoints -= nbPoints;
         }
 
-        public  bool canMove(Coordinate tile, TileType type)
-        {
-            if(this.RequiredMovePoints[type]==-1 || !this.coord.isNearTo(tile) ||Points.movePoints- RequiredMovePoints[type]<0)
-            {
-                return false;
-            }
-
-            else
-            {
-                return true;
-            }
-
-        }
+        public abstract bool canMove(Coordinate tile, TileType type, double movePoints);
 
         public abstract bool canAttack(Coordinate tile, TileType type);
 
@@ -105,6 +70,11 @@ namespace ClassLibrary1
         internal bool isDead()
         {
             return this.Points.lifePoints <= 0;
+        }
+
+         public double getRatioLifePoints()
+        {
+            return this.Points.getRatioLifePoints();
         }
     }
 }
