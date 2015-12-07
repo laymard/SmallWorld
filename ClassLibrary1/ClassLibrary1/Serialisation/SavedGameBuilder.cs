@@ -17,7 +17,7 @@ namespace ClassLibrary1
         public override void buildGame()
         {
             GameSaver gs = GameSaver.ChargeGame(path);
-            //this.Game = new Game(gs);
+            this.Game = new Game(gs);
         }
     }
 }

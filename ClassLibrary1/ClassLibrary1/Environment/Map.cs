@@ -38,15 +38,17 @@ namespace ClassLibrary1
             this.setEmptyMatrix(ms.NbTiles);
         }
 
-        /*public Map(MapSaver ms)
+        public Map() { }
+
+        public Map(Map map, MatrixSaver ms)
         {
+            this.MapSize = map.MapSize;
             this.matrix = new Dictionary<Coordinate,TileType>();
-            foreach(Entry entry in ms.matrix){
+            foreach (Entry entry in ms.list)
+            {
                 this.matrix.Add(entry.Coord, entry.TileType);
             }
-        }*/
-
-        public Map() { }
+        }
 
         public void initialiseTiles()
         {
@@ -90,12 +92,17 @@ namespace ClassLibrary1
         public Coordinate getCoord(int x, int y)
         {
             Coordinate coord = null;
-            foreach (Coordinate c in matrix.Keys)
-            {
+            bool found = false;
+            Coordinate c;
+            int i = 0;
+            while(!found){
+                 c = matrix.Keys.ElementAt(i);
                 if (c.X == x && c.Y == y)
                 {
                     coord = c;
+                    found = true;
                 }
+                i++;
             }
             return coord;
         }

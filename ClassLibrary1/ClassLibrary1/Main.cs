@@ -18,7 +18,11 @@ namespace ClassLibrary1
 
             Game game = new Game(new StandardMap(), players);
 
-            game.saveGame("lejeu.xml");
+            game.saveGame("lejeu1.xml");
+
+            SavedGameBuilder gameBuilder = new SavedGameBuilder("lejeu1.xml");
+            gameBuilder.buildGame();
+            gameBuilder.Game.saveGame("lejeu2.xml");
         }
     }
 }

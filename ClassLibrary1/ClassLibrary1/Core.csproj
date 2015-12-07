@@ -71,14 +71,14 @@
     <Compile Include="Actors\Races\Elf.cs" />
     <Compile Include="Environment\Forest.cs" />
     <Compile Include="Base\Game.cs" />
-    <Compile Include="Base\GameBuilder.cs" />
+    <Compile Include="Serialisation\GameBuilder.cs" />
     <Compile Include="Actors\Races\Human.cs" />
     <Compile Include="Environment\Map.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Environment\MapSize.cs" />
     <Compile Include="Environment\Mountain.cs" />
-    <Compile Include="Base\NewGameBuilder.cs" />
+    <Compile Include="Serialisation\NewGameBuilder.cs" />
     <Compile Include="Actors\Races\Orc.cs" />
     <Compile Include="Environment\Plain.cs">
       <SubType>Code</SubType>
@@ -91,7 +91,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Actors\Races\Race.cs" />
-    <Compile Include="Base\SavedGameBuilder.cs" />
+    <Compile Include="Serialisation\SavedGameBuilder.cs" />
     <Compile Include="Environment\Small.cs" />
     <Compile Include="Environment\Standard.cs" />
     <Compile Include="Environment\Tile.cs" />
@@ -102,10 +102,8 @@
     <Compile Include="Environment\Water.cs" />
     <Compile Include="Environment\TileType.cs" />
     <Compile Include="Serialisation\GameSaver.cs" />
-    <Compile Include="Serialisation\Lists\MatrixSaver.cs" />
-    <Compile Include="Serialisation\Lists\PlayersSaver.cs" />
+    <Compile Include="Serialisation\MatrixSaver.cs" />
     <Compile Include="Serialisation\MapSaver.cs" />
-    <Compile Include="Serialisation\PlayerSaver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

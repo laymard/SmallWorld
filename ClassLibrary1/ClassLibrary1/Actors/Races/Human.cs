@@ -18,22 +18,42 @@ namespace ClassLibrary1
 
         public override void addVictoryPoints()
         {
-            throw new NotImplementedException();
+            switch (this.currentTile)
+            {
+                case TileType.PLAIN:
+                    this.Points.victoryPoints += 2;
+                    break;
+                case TileType.FOREST:
+                    this.Points.victoryPoints += 1;
+                    break;
+                case TileType.MOUNTAIN:
+                    this.Points.victoryPoints += 1;
+                    break;
+                default:
+                    break;
+            }
         }
 
-        public override void spendMovePoints(Coordinate targetTile, TileType type)
+        public override void spendMovePoints(Coordinate tile, TileType type)
         {
-            throw new NotImplementedException();
+            double cost = (double)this.coord.distanceFrom(tile);
+            Points.movePoints -= cost;
         }
 
         public override bool canMove(Coordinate tile, TileType type)
         {
-            throw new NotImplementedException();
+            double cost = (double)this.coord.distanceFrom(tile);
+
+            if (cost < 0)
+                return false;
+
+            return Points.movePoints >= cost;
         }
 
         public override bool canAttack(Coordinate tile, TileType type)
         {
-            throw new NotImplementedException();
+            int dist = this.coord.distanceFrom(tile);
+            return (dist == 1);
         }
     }
 }
