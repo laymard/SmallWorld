@@ -152,9 +152,16 @@ namespace ClassLibrary1
             throw new System.NotImplementedException();
         }
 
-        public void addMoveCommand(Unit unit,Coordinate target)
+        public void move (Unit unit, Coordinate target, TileType targetType)
         {
-            MoveUnits mu = new MoveUnits();
+            if(unit.canMoveTo(target,targetType))
+            this.addMoveCommand(unit, target, unit.RequiredMovePoints[targetType]);
+
+        }
+
+        public void addMoveCommand(Unit unit,Coordinate target,double cost)
+        {
+            MoveUnits mu = new MoveUnits(unit,target, cost);
         }
 
         /// <summary>

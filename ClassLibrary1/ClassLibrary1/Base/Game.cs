@@ -270,7 +270,7 @@ namespace ClassLibrary1
         {
             TileType type = Map.getTile(coord);
             //var quichelorraine = unit.RequiredMovePoints();
-            CurrentUnit.move(coord, type);
+            CurrentPlayer.move(coord, type,CurrentUnit);
         }
 
         /// <summary>

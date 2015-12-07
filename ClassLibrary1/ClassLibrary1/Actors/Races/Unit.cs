@@ -23,6 +23,12 @@ namespace ClassLibrary1
             set;
         }
 
+        public Dictionary<TileType,double> RequiredMovePoints
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// position de l'unité sur la carte
         /// </summary>
@@ -66,7 +72,19 @@ namespace ClassLibrary1
             Points.lifePoints -= nbPoints;
         }
 
-        public abstract bool canMove(Coordinate tile, TileType type);
+        public  bool canMove(Coordinate tile, TileType type)
+        {
+            if(this.RequiredMovePoints[type]==-1 || !this.coord.isNearTo(tile) ||Points.movePoints- RequiredMovePoints[type]<0)
+            {
+                return false;
+            }
+
+            else
+            {
+                return true;
+            }
+
+        }
 
         public abstract bool canAttack(Coordinate tile, TileType type);
 

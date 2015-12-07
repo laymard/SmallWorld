@@ -16,7 +16,7 @@ namespace ClassLibrary1
         /// <summary>
         /// point de mouvement nécessaire à ce mouvement
         /// </summary>
-        public int cost
+        public double cost
         {
             get;
             set;
@@ -32,7 +32,7 @@ namespace ClassLibrary1
         }
 
 
-        public MoveUnits(MoveUnits unit, Coordinate coord, int value)
+        public MoveUnits(MoveUnits unit, Coordinate coord, double value)
         {
             Unit = unit;
             lastCoord = coord;
@@ -57,7 +57,7 @@ namespace ClassLibrary1
 
         void Command.canDo()
         {
- 	        throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         void Command.done()

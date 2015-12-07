@@ -8,14 +8,38 @@ namespace ClassLibrary1
     [Serializable()]
     public class Orc : Unit
     {
+        private static Dictionary<TileType, double> movePoints = new Dictionary<TileType, double>()
+        {
+            {TileType.MOUNTAIN,1 },
+            {TileType.FOREST,1 },
+            {TileType.WATER,-1 },
+            {TileType.PLAIN,0.5 }
+        };
+
         public Orc(Coordinate coord, TileType type)
             : base(coord, type)
         {
             this.Points = new Points(17, 5, 2);
         }
+
+
+
         public Orc()
             : base() { }
 
+
+        public new Dictionary<TileType, double> RequiredMovePoints
+        {
+            get
+            {
+                return movePoints;
+            }
+
+            set
+            {
+                movePoints = value;
+            }
+        }
 
         public override void addVictoryPoints()
         {
@@ -27,7 +51,7 @@ namespace ClassLibrary1
             throw new NotImplementedException();
         }
 
-        public override bool canMove(Coordinate tile, TileType type)
+        public bool canMove(Coordinate tile, TileType type)
         {
             throw new NotImplementedException();
         }

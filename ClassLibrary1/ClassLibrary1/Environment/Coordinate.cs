@@ -44,5 +44,11 @@ namespace ClassLibrary1
                 return Math.Abs(this.Y - tile.Y);
             else return -1;
         }
+
+        public bool isNearTo(Coordinate tile)
+        {
+            return (X == tile.X && (Y == tile.Y - 1 || Y == tile.Y + 1)) ||
+                    (Y == tile.Y && (X == tile.X - 1 || X == tile.X - 1));
+        }
     }
 }
