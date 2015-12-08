@@ -35,7 +35,7 @@ namespace ClassLibrary1
             this.MapSize = ms;
             this.TileFactory = new TileFactory();
             matrix = new Dictionary<Coordinate, TileType>(ms.NbTiles * ms.NbTiles);
-            this.setEmptyMatrix(ms.NbTiles);
+            this.initialiseTiles();
         }
 
         public Map() { }
@@ -60,8 +60,7 @@ namespace ClassLibrary1
             {
                 for (int j = 0; j < size; j++)
                 {
-                    var coord = new Coordinate(i, j);
-                    matrix.Add(coord, map[i * size + j]);
+                    matrix.Add(new Coordinate(i, j), map[i * size + j]);
                 }
             }
             

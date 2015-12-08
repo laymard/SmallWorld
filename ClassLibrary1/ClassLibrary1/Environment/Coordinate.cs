@@ -30,6 +30,8 @@ namespace ClassLibrary1
             get;
             set;
         }
+
+  
         /// <summary>
         /// Distance from this to the Coordinate tile
         /// </summary>

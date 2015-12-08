@@ -167,14 +167,14 @@ namespace ClassLibrary1
 
         public void move (Unit unit, Coordinate target, TileType targetType)
         {
-            if(unit.canMoveTo(target,targetType))
+            if(unit.canMove(target,targetType))
             this.addMoveCommand(unit, target, unit.RequiredMovePoints[targetType]);
 
         }
 
         public void addMoveCommand(Unit unit,Coordinate target,double cost)
         {
-            MoveUnits mu = new MoveUnits(unit,target, cost);
+           // MoveUnits mu = new MoveUnits(unit,target, cost);
         }
 
         /// <summary>

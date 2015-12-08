@@ -74,19 +74,8 @@ namespace ClassLibrary1
             Points.lifePoints -= nbPoints;
         }
 
-        public  bool canMove(Coordinate tile, TileType type)
-        {
-            if(this.RequiredMovePoints[type]==-1 || !this.coord.isNearTo(tile) ||Points.movePoints- RequiredMovePoints[type]<0)
-            {
-                return false;
-            }
+        public abstract bool canMove(Coordinate tile, TileType type);
 
-            else
-            {
-                return true;
-            }
-
-        }
 
         public abstract bool canAttack(Coordinate tile, TileType type);
 

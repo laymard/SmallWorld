@@ -18,7 +18,7 @@ namespace ClassLibrary1
         }
         public Elf()
             : base(){ }
-        public static IDictionary<TileType,int> RequiredMovePoints
+        public new static IDictionary<TileType,int> RequiredMovePoints
         {
             get
             {
