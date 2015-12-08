@@ -39,13 +39,6 @@ namespace ClassLibrary1
         }
 
         [XmlAttribute()]
-        public double movePoints
-        {
-            get;
-            set;
-        }
-
-        [XmlAttribute()]
         public int victoryPoints
         {
             get;
@@ -64,7 +57,6 @@ namespace ClassLibrary1
             attackPoints = attack;
             defencePoints = defence;
             victoryPoints = 0;
-            movePoints = 0;
         }
         public Points() { }
     }

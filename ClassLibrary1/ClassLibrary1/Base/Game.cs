@@ -116,6 +116,10 @@ namespace ClassLibrary1
         public Game(GameSaver gs)
         {
             this.Players = gs.Game.Players;
+            foreach (Player p in this.Players)
+            {
+                p.initializeRequiredMovePoints();
+            }
             this.CurrentPlayerIndex = gs.Game.CurrentPlayerIndex;
             this.Map = new Map(gs.Game.Map, gs.Matrix);
             this.TurnsLeft = gs.Game.TurnsLeft;

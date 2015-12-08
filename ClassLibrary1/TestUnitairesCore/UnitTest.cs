@@ -24,42 +24,38 @@ namespace TestUnitairesCore
             Coordinate coord3 = new Coordinate(1, 1);
 
             Unit elf = new Elf(new Coordinate(0,0), TileType.DEFAULT);
-            elf.Points.movePoints = 2;
-            Assert.IsFalse(elf.canMove(coord1, TileType.WATER));
-            Assert.IsTrue(elf.canMove(coord1, TileType.MOUNTAIN));
-            Assert.IsFalse(elf.canMove(coord2, TileType.PLAIN));
-            Assert.IsFalse(elf.canMove(coord3, TileType.FOREST));
+            
+            Assert.IsFalse(elf.canMove(coord1, TileType.WATER,2));
+            Assert.IsTrue(elf.canMove(coord1, TileType.MOUNTAIN,2));
+            Assert.IsFalse(elf.canMove(coord2, TileType.PLAIN,2));
+            Assert.IsFalse(elf.canMove(coord3, TileType.FOREST,2));
         }
 
         [TestMethod]
         public void TestCanMoveOrc()
         {
-            Coordinate coord1 = new Coordinate(0, 2);
-            Coordinate coord2 = new Coordinate(0, 4);
-            Coordinate coord3 = new Coordinate(1, 1);
+            Coordinate coord1 = new Coordinate(0, 1);
+            Coordinate coord2 = new Coordinate(0, 2);
 
             Unit orc = new Orc(new Coordinate(0, 0), TileType.DEFAULT);
-            orc.Points.movePoints = 2;
-            Assert.IsFalse(orc.canMove(coord1, TileType.WATER));
-            Assert.IsTrue(orc.canMove(coord1, TileType.MOUNTAIN));
-            Assert.IsTrue(orc.canMove(coord2, TileType.PLAIN));
-            Assert.IsFalse(orc.canMove(coord2, TileType.FOREST));
-            Assert.IsFalse(orc.canMove(coord3, TileType.FOREST));
+
+            Assert.IsTrue(orc.canMove(coord1, TileType.FOREST, 2));
+            Assert.IsFalse(orc.canMove(coord1, TileType.FOREST, 0.5));
+            Assert.IsTrue(orc.canMove(coord1, TileType.PLAIN, 0.5));
+            Assert.IsFalse(orc.canMove(coord2, TileType.FOREST, 2));
         }
 
         [TestMethod]
         public void TestCanMoveHuman()
         {
-            Coordinate coord1 = new Coordinate(0, 2);
-            Coordinate coord2 = new Coordinate(0, 4);
-            Coordinate coord3 = new Coordinate(1, 1);
+            Coordinate coord1 = new Coordinate(0, 1);
+            Coordinate coord2 = new Coordinate(4, 4);
 
             Unit human = new Human(new Coordinate(0, 0), TileType.DEFAULT);
-            human.Points.movePoints = 2;
-            Assert.IsTrue(human.canMove(coord1, TileType.WATER));
-            Assert.IsTrue(human.canMove(coord1, TileType.MOUNTAIN));
-            Assert.IsFalse(human.canMove(coord2, TileType.FOREST));
-            Assert.IsFalse(human.canMove(coord3, TileType.FOREST));
+
+            Assert.IsTrue(human.canMove(coord1, TileType.WATER, 2));
+            Assert.IsTrue(human.canMove(coord1, TileType.MOUNTAIN, 2));
+            Assert.IsFalse(human.canMove(coord2, TileType.FOREST, 2));
         }
 
         [TestMethod]
@@ -75,26 +71,15 @@ namespace TestUnitairesCore
         public void TestMove()
         {
             Coordinate coord0 = new Coordinate(0, 0);
-            Coordinate coord1 = new Coordinate(0, 2);
-            Coordinate coord2 = new Coordinate(0, 4);
+            Coordinate coord1 = new Coordinate(0, 1);
+            Coordinate coord2 = new Coordinate(3, 3);
 
-            // Possible movement
-            Unit orc1 = new Orc(coord0, TileType.DEFAULT);
-            orc1.Points.movePoints = 2;
-            orc1.move(coord1, TileType.MOUNTAIN);
+            Unit elf = new Elf(coord0, TileType.DEFAULT);
+            
+            elf.move(coord1, TileType.FOREST);
 
-            Assert.AreEqual(orc1.coord, coord1);
-            Assert.AreEqual(orc1.Points.movePoints,0);
-
-            Assert.AreEqual(2, orc1.Points.victoryPoints);
-
-            // Impossible movement
-            Unit orc2 = new Orc(coord0, TileType.DEFAULT);
-            orc2.Points.movePoints = 2;
-            orc2.move(coord2, TileType.DEFAULT);
-            Assert.AreEqual(orc2.coord, coord0);
-            Assert.AreEqual(orc2.Points.movePoints, 2);
-            Assert.AreEqual(0, orc2.Points.victoryPoints);
+            Assert.AreEqual(elf.coord, coord1);
+            Assert.AreEqual(3, elf.Points.victoryPoints);
         }
 
         [TestMethod]

@@ -18,7 +18,7 @@ namespace ClassLibrary1
 
         public override void addVictoryPoints()
         {
-            switch (this.currentTile)
+             switch (this.currentTile)
             {
                 case TileType.PLAIN :
                     this.Points.victoryPoints++;
@@ -34,14 +34,14 @@ namespace ClassLibrary1
             }
         }
 
-        public override void spendMovePoints(Coordinate tile, TileType type)
+        /*public override void spendMovePoints(Coordinate tile, TileType type)
         {
             double cost = (double)this.coord.distanceFrom(tile);
             if (type == TileType.PLAIN) cost *= 0.5;
             Points.movePoints -= cost;
-        }
+        }*/
 
-        public override bool canMove(Coordinate tile, TileType type)
+        /*public override bool canMove(Coordinate tile, TileType type)
         {
             // Les orcs ne peuvent pas aller sur l'eau
             if (type == TileType.WATER)
@@ -56,12 +56,40 @@ namespace ClassLibrary1
             double movePoints = (double)Points.movePoints;
 
             return movePoints >= cost;
-        }
+        }*/
 
         public override bool canAttack(Coordinate tile, TileType type)
         {
             int dist = this.coord.distanceFrom(tile);
             return ((currentTile == TileType.MOUNTAIN && dist == 2) || dist == 1);
+        }
+
+        /*public override Dictionary<TileType, double> RequiredMovePoints
+        {
+            get;
+        }*/
+        public static Dictionary<TileType, double> RequiredMovePoints()
+        {
+            return new Dictionary<TileType, double>()
+                {
+                    {TileType.MOUNTAIN, 1},
+                    {TileType.WATER, -1},
+                    {TileType.FOREST, 1},
+                    {TileType.PLAIN, 0.5}
+                };
+        }
+        public override bool canMove(Coordinate tile, TileType type, double movePoints)
+        {
+            double requiredMovePoints = Orc.RequiredMovePoints()[type];
+            if (requiredMovePoints == -1 || !this.coord.isNearTo(tile) || movePoints - requiredMovePoints < 0)
+            {
+                return false;
+            }
+
+            else
+            {
+                return true;
+            }
         }
     }
 }

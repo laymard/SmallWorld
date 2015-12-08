@@ -18,19 +18,16 @@ namespace ClassLibrary1
         }
         public Elf()
             : base(){ }
-        public new static IDictionary<TileType,int> RequiredMovePoints
+
+        public static Dictionary<TileType, double> RequiredMovePoints()
         {
-            get
-            {
-                return new Dictionary<TileType, int>()
+            return new Dictionary<TileType, double>()
                 {
                     {TileType.MOUNTAIN,2 },
                     {TileType.WATER,-1 },
                     {TileType.FOREST,1 },
                     {TileType.PLAIN,1 }
-
                 };
-            }
         }
 
         public override void addVictoryPoints()
@@ -54,7 +51,7 @@ namespace ClassLibrary1
             return (dist == 1 || dist == 2);
         }
 
-        public override bool canMove(Coordinate tile, TileType type)
+        /*public override bool canMove(Coordinate tile, TileType type)
         {
             // Les elfes ne peuvent pas aller sur l'eau
             if (type == TileType.WATER)
@@ -69,23 +66,32 @@ namespace ClassLibrary1
             double movePoints = this.Points.movePoints;
 
             return movePoints >= cost;
-        }
+        }*/
 
     public override void looseLifePoints(int nbPoints)
         {
             base.looseLifePoints(nbPoints);
         }
 
-        public override void move(Coordinate targetTile, TileType type)
-        {
-            base.move(targetTile,type);
-        }
-
-        public override void spendMovePoints(Coordinate targetTile, TileType type)
+        /*public override void spendMovePoints(Coordinate targetTile, TileType type)
         {
             int cost = this.coord.distanceFrom(targetTile);
             if (type == TileType.MOUNTAIN) cost *= 2;
             Points.movePoints -= cost;
+        }*/
+
+    public override bool canMove(Coordinate tile, TileType type, double movePoints)
+    {
+        double requiredMovePoints = Elf.RequiredMovePoints()[type];
+        if (requiredMovePoints == -1 || !this.coord.isNearTo(tile) || movePoints - requiredMovePoints < 0)
+        {
+            return false;
         }
+
+        else
+        {
+            return true;
+        }
+    }
     }
 }
