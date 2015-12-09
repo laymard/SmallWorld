@@ -50,12 +50,10 @@ namespace ClassLibrary1
             return Points.movePoints >= cost;
         }*/
 
-        public override bool canAttack(Coordinate tile, TileType type)
-        {
-            int dist = this.coord.distanceFrom(tile);
-            return (dist == 1);
-        }
 
+        /// <summary>
+        /// Map associant à chaque type de case le nombre de points de mouvement requis pour un déplacement
+        /// </summary>
         public static Dictionary<TileType, double> RequiredMovePoints()
         {
             return new Dictionary<TileType, double>()
@@ -80,6 +78,11 @@ namespace ClassLibrary1
             {
                 return true;
             }
+        }
+        public override bool canAttack(Coordinate tile, TileType type)
+        {
+            int dist = this.coord.distanceFrom(tile);
+            return (dist == 1);
         }
     }
 }

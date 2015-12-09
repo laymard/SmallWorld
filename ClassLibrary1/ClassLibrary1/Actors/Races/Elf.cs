@@ -16,9 +16,16 @@ namespace ClassLibrary1
         {
             this.Points = new Points(12,4,3);
         }
+
+        /// <summary>
+        /// Constructeur Elf par défaut
+        /// </summary>
         public Elf()
             : base(){ }
 
+        /// <summary>
+        /// Map associant à chaque type de case le nombre de points de mouvement requis pour un déplacement
+        /// </summary>
         public static Dictionary<TileType, double> RequiredMovePoints()
         {
             return new Dictionary<TileType, double>()

@@ -128,11 +128,5 @@ namespace TestUnitairesCore
             Assert.IsTrue(orc2.canAttack(coord2, TileType.DEFAULT));
             Assert.IsFalse(orc2.canAttack(coord3, TileType.DEFAULT));
         }
-
-        [TestMethod]
-        public void TestAttack()
-        {
-            // TO DO
-        }
     }
 }

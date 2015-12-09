@@ -64,10 +64,9 @@ namespace ClassLibrary1
             return ((currentTile == TileType.MOUNTAIN && dist == 2) || dist == 1);
         }
 
-        /*public override Dictionary<TileType, double> RequiredMovePoints
-        {
-            get;
-        }*/
+        /// <summary>
+        /// Map associant à chaque type de case le nombre de points de mouvement requis pour un déplacement
+        /// </summary>
         public static Dictionary<TileType, double> RequiredMovePoints()
         {
             return new Dictionary<TileType, double>()

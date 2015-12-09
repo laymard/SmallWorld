@@ -14,18 +14,77 @@ namespace TestUnitairesCore
         [TestMethod]
         public void TestGetUnitsOnTile()
         {
-            Player p1 = new Player(Race.Human, "Robert", 4);
-            Player p2 = new Player(Race.Elf, "Gaston", 4);
-            List<Player> players = new List<Player>{p1,p2};
+            Coordinate coord0 = new Coordinate(0,0);
 
-            Game game = new Game(new StandardMap(), players);
+            // initialisation du joueur et ses unités
+            Player p = new Player(Race.Human, "Robert", 4);
+            for (int i = 0; i < p.NbUnits; i++)
+            {
+                p.createUnit(coord0, TileType.WATER);
+            }
 
-            Player currentPlayer = game.CurrentPlayer;
-            game.move(0,0);
+            List<Unit> unitsOnTile = p.getUnitsOnTile(coord0);
 
-            List<Unit> unitsOnTile = currentPlayer.getUnitsOnTile(game.Map.getCoord(0,0));
+            // Tests
+            Assert.AreEqual(p.NbUnits,unitsOnTile.Count);
 
-            Assert.IsTrue(unitsOnTile.Contains(game.CurrentPlayer.CurrentUnit));
+            for (int i = 0 ; i < unitsOnTile.Count ; i++ )
+            {
+                Assert.IsTrue(unitsOnTile.Contains(p.Units[i]));
+            }
         }
+
+        [TestMethod]
+        public void TestSpendMovePoints()
+        {
+            Coordinate coord0 = new Coordinate(0,0);
+            Coordinate coord1 = new Coordinate(0,1);
+        
+            Player p = new Player(Race.Human, "Gaston", 4);
+            p.createUnit(coord0, TileType.FOREST);
+            p.spendMovePoints(coord1, TileType.FOREST);
+
+            Assert.AreEqual(1, p.MovePoints);
+        }
+
+        [TestMethod]
+        public void TestUndoLastCommand()
+        {
+        }
+
+        [TestMethod]
+        public void TestPlayerSpendMovePoints()
+        {
+        }
+
+        [TestMethod]
+        public void TestMoveHuman()
+        {
+            Coordinate coord0 = new Coordinate(0, 0);
+            Coordinate coord1 = new Coordinate(0, 1);
+            Coordinate coord2 = new Coordinate(4, 4);
+
+            Player p = new Player(Race.Human, "Gaston", 4);
+            p.createUnit(coord0, TileType.FOREST);
+            p.selectUnit(p.Units[0]);
+
+            // Mouvement possible
+            p.move(coord1, TileType.WATER);
+
+            Assert.AreEqual(coord1, p.Units[0].coord);
+            Assert.AreEqual(1, p.MovePoints);
+
+            // Mouvement impossible
+            p.move(coord1, TileType.WATER);
+
+            Assert.AreEqual(coord1, p.Units[0].coord);
+            Assert.AreEqual(1, p.MovePoints);
+        }
+
+        [TestMethod]
+        public void TestAttack()
+        {
+        }
+
     }
 }

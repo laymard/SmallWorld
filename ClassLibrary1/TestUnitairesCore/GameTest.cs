@@ -156,5 +156,13 @@ namespace ClassLibrary1
             // TODO: ajoutez ici la logique du test
             //
         }
+
+        [TestMethod]
+        public void SaveGame()
+        {
+            //
+            // TODO: ajoutez ici la logique du test
+            //
+        }
     }
 }
