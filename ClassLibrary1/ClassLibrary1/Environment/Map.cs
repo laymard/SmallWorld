@@ -54,7 +54,7 @@ namespace ClassLibrary1
         {
             Algo algo = new Algo();
             var size = MapSize.NbTiles;
-            var map=algo.CreateMap(size*size);
+            var map=algo.CreateMap(size);
 
             for (int i = 0; i < size; i++)
             {

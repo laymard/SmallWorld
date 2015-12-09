@@ -17,11 +17,14 @@ namespace ClassLibrary1
             List<Player> players = new List<Player> { p1, p2, p3 };
 
             //Test Algo
+            Console.WriteLine("Début construction Map");
             MapSize size = new DemoMap();
             Map map = new Map(size);
             Coordinate coord = new Coordinate(0, 0);
             Coordinate coord2 = new Coordinate(0, 0);
             Console.WriteLine("test égalité : " + coord.Equals(coord2));
+            Console.WriteLine("test Contains Key : " + map.matrix.ContainsKey(coord));
+            Console.WriteLine("test des clés : " + map.matrix.Keys);
             TileType type = map.matrix[coord];
             Console.WriteLine(type);
             Console.ReadKey();

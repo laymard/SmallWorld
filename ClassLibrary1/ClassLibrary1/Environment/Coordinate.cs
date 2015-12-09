@@ -24,6 +24,36 @@ namespace ClassLibrary1
             set;
         }
 
+        public bool Equals(Coordinate coord)
+        {
+            return X == coord.X && Y == coord.Y;
+        }
+
+        public static bool operator ==(Coordinate a, Coordinate b)
+        {
+            if (System.Object.ReferenceEquals(a,b))
+            {
+                return true;
+            }
+
+            if (((object)a == null) || ((object)b == null))
+            {
+                return false;
+            }
+
+            return a.X == b.X && a.Y == b.Y;
+        }
+
+        public override string ToString()
+        {
+            return "Coord : " + X + " , " + Y;
+        }
+
+        public static bool operator !=(Coordinate a, Coordinate b)
+        {
+            return !(a == b);
+        }
+
         [XmlAttribute()]
         public int Y
         {

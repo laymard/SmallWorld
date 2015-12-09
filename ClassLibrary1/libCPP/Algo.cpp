@@ -14,6 +14,7 @@ void Algo::fillMap(TileType map[], int size)
 {
 	// je considere size comme la taille du côté de la carte
 	int nbMaxType = pow(size, 2)/4;
+	int randNb = 0;
 	vector<int> max;
 	for (int i = 0; i < 4; i++)
 	{
@@ -21,6 +22,12 @@ void Algo::fillMap(TileType map[], int size)
 	}
 	
 	//TODO : init map tiles with a better algorithm
-	for (int i = 0; i < size; i++)
-		map[i] = (TileType)(i % 4);
+	for (int i = 0; i < size*size; i++) {
+		randNb = rand() % 4;
+		while (max[randNb]==0) {
+			randNb = rand() % 4;
+		}
+		map[i] = (TileType)randNb;
+		max[randNb] = max[randNb] - 1;;
+	}
 }
