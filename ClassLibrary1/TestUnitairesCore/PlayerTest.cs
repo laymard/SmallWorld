@@ -53,7 +53,7 @@ namespace TestUnitairesCore
         }
 
         [TestMethod]
-        public void TestPlayerSpendMovePoints()
+        public void TestSpendMovePoints()
         {
         }
 

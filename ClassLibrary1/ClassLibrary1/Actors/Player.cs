@@ -23,12 +23,12 @@ namespace ClassLibrary1
             set;
         }
 
-        [XmlIgnore()]
+        /*[XmlIgnore()]
         public double MovePoints
         {
             get;
             set;
-        }
+        }*/
 
         [XmlIgnore()]
         public Stack<Command> Actions
@@ -86,22 +86,18 @@ namespace ClassLibrary1
         public Player(Race race, String name, int nbUnits)
         {
             this.Race = race;
-            this.initializeRequiredMovePoints();
             this.NbUnits = nbUnits;
             this.Units = new List<Unit>();
             this.VictoryPoints = 0;
-            this.MovePoints = 2;
             this.Name = name;
         }
 
         public Player()
         {
-            this.initializeRequiredMovePoints();
             this.VictoryPoints = 0;
-            this.MovePoints = 2;
         }
 
-        public void initializeRequiredMovePoints()
+        /*public void initializeRequiredMovePoints()
         {
             switch(this.Race) {
                 case Race.Elf :
@@ -114,7 +110,7 @@ namespace ClassLibrary1
                     this.RequiredMovePoints = Orc.RequiredMovePoints();
                     break;
             }
-        }
+        }*/
 
         /// <summary>
         /// create a unit of the player's race
@@ -193,10 +189,9 @@ namespace ClassLibrary1
         {
             double requiredMovePoints = this.RequiredMovePoints[targetType];
 
-            if (CurrentUnit.canMove(target, targetType,this.MovePoints))
+            if (CurrentUnit.canMove(target, targetType))
             {
                 this.addMoveCommand(target, requiredMovePoints);
-                this.spendMovePoints(target, targetType);
                 this.CurrentUnit.move(target, targetType);
             }
         }
@@ -219,13 +214,11 @@ namespace ClassLibrary1
         }
         internal void setMovePoints()
         {
-            this.MovePoints = 2;
+            foreach (Unit u in Units)
+            {
+                u.Points.MovePoints = 2;
+            }
         }
 
-        public void spendMovePoints(Coordinate targetTile, TileType type)
-        {
-            double cost = this.RequiredMovePoints[type];
-            if (cost > 0) this.MovePoints -= cost;
-        }
     }
 }

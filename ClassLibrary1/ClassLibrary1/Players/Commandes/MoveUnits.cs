@@ -31,11 +31,13 @@ namespace ClassLibrary1
             set;
         }
 
+        
 
-        public MoveUnits(MoveUnits unit, Coordinate coord, double value)
+
+        public MoveUnits(Unit unit, Coordinate coord, double value)
         {
             Unit = unit;
-            lastCoord = coord;
+            lastCoord = unit.coord;
             cost = value;
 
         }
@@ -52,7 +54,8 @@ namespace ClassLibrary1
 
         void Command.undo()
         {
- 	        throw new NotImplementedException();
+            this.Unit.coord = this.lastCoord();
+            this.Unit.Points.movePoints += cost;
         }
 
         void Command.canDo()

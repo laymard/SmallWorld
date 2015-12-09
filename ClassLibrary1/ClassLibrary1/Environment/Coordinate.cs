@@ -24,6 +24,29 @@ namespace ClassLibrary1
             set;
         }
 
+        public override int GetHashCode()
+        {
+            return (X+1) ^ (Y+1);
+        }
+
+        public override bool Equals(object b)
+        {
+            if (!(b is Coordinate) || b == null)
+                return false;
+
+            if (this == b)
+                return true;
+
+            var c2 = (Coordinate)b;
+            return X == c2.X && Y == c2.Y;
+        }
+        
+
+        public override string ToString()
+        {
+            return "Coord : " + X + " , " + Y;
+        }
+        
         [XmlAttribute()]
         public int Y
         {

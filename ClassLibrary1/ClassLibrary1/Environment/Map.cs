@@ -34,7 +34,7 @@ namespace ClassLibrary1
         public Map(MapSize ms){
             this.MapSize = ms;
             this.TileFactory = new TileFactory();
-            matrix = new Dictionary<Coordinate, TileType>(ms.NbTiles * ms.NbTiles);
+            matrix = new Dictionary<Coordinate, TileType>();
             this.initialiseTiles();
         }
 
@@ -54,7 +54,7 @@ namespace ClassLibrary1
         {
             Algo algo = new Algo();
             var size = MapSize.NbTiles;
-            var map=algo.CreateMap(size*size);
+            var map=algo.CreateMap(size);
 
             for (int i = 0; i < size; i++)
             {
