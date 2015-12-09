@@ -28,6 +28,6 @@ void Algo::fillMap(TileType map[], int size)
 			randNb = rand() % 4;
 		}
 		map[i] = (TileType)randNb;
-		max[randNb] = max[randNb] - 1;;
+		max[randNb] = max[randNb] - 1;
 	}
 }

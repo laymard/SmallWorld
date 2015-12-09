@@ -20,11 +20,14 @@ namespace ClassLibrary1
             Console.WriteLine("Début construction Map");
             MapSize size = new DemoMap();
             Map map = new Map(size);
+            TileType output;
             Coordinate coord = new Coordinate(0, 0);
             Coordinate coord2 = new Coordinate(0, 0);
             Console.WriteLine("test égalité : " + coord.Equals(coord2));
             Console.WriteLine("test Contains Key : " + map.matrix.ContainsKey(coord));
-            Console.WriteLine("test des clés : " + map.matrix.Keys);
+            map.matrix.TryGetValue(coord, out output);
+            Console.WriteLine("test try get Value " + output);
+            Console.WriteLine("test des clés : " + map.matrix[coord]);
             TileType type = map.matrix[coord];
             Console.WriteLine(type);
             Console.ReadKey();

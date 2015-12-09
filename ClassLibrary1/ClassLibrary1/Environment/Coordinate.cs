@@ -24,36 +24,29 @@ namespace ClassLibrary1
             set;
         }
 
-        public bool Equals(Coordinate coord)
+        public override int GetHashCode()
         {
-            return X == coord.X && Y == coord.Y;
+            return (X+1) ^ (Y+1);
         }
 
-        public static bool operator ==(Coordinate a, Coordinate b)
+        public override bool Equals(object b)
         {
-            if (System.Object.ReferenceEquals(a,b))
-            {
-                return true;
-            }
-
-            if (((object)a == null) || ((object)b == null))
-            {
+            if (!(b is Coordinate) || b == null)
                 return false;
-            }
 
-            return a.X == b.X && a.Y == b.Y;
+            if (this == b)
+                return true;
+
+            var c2 = (Coordinate)b;
+            return X == c2.X && Y == c2.Y;
         }
+        
 
         public override string ToString()
         {
             return "Coord : " + X + " , " + Y;
         }
-
-        public static bool operator !=(Coordinate a, Coordinate b)
-        {
-            return !(a == b);
-        }
-
+        
         [XmlAttribute()]
         public int Y
         {
