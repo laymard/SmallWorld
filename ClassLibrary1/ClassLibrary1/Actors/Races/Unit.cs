@@ -89,9 +89,9 @@ namespace ClassLibrary1
          }
 
          public void spendMovePoints(TileType type)
-         {
+        {
              this.Points.MovePoints -= RequiredMovePoints[type];
-         }
+        }
 
     }
 }
