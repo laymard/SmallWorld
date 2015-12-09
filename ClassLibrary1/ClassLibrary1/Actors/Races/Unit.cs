@@ -36,9 +36,10 @@ namespace ClassLibrary1
 
         public void  move(Coordinate targetTile, TileType type)
         {
-                coord = targetTile;
-                currentTile = type;
-                this.addVictoryPoints();
+            coord = targetTile;
+            currentTile = type;
+            this.addVictoryPoints();
+
         }
 
         /// <summary>
