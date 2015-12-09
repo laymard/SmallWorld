@@ -25,10 +25,10 @@ namespace TestUnitairesCore
 
             Unit elf = new Elf(new Coordinate(0,0), TileType.DEFAULT);
             
-            Assert.IsFalse(elf.canMove(coord1, TileType.WATER,2));
-            Assert.IsTrue(elf.canMove(coord1, TileType.MOUNTAIN,2));
-            Assert.IsFalse(elf.canMove(coord2, TileType.PLAIN,2));
-            Assert.IsFalse(elf.canMove(coord3, TileType.FOREST,2));
+            Assert.IsFalse(elf.canMove(coord1, TileType.WATER));
+            Assert.IsTrue(elf.canMove(coord1, TileType.MOUNTAIN));
+            Assert.IsFalse(elf.canMove(coord2, TileType.PLAIN));
+            Assert.IsFalse(elf.canMove(coord3, TileType.FOREST));
         }
 
         [TestMethod]
@@ -39,10 +39,10 @@ namespace TestUnitairesCore
 
             Unit orc = new Orc(new Coordinate(0, 0), TileType.DEFAULT);
 
-            Assert.IsTrue(orc.canMove(coord1, TileType.FOREST, 2));
-            Assert.IsFalse(orc.canMove(coord1, TileType.FOREST, 0.5));
-            Assert.IsTrue(orc.canMove(coord1, TileType.PLAIN, 0.5));
-            Assert.IsFalse(orc.canMove(coord2, TileType.FOREST, 2));
+            Assert.IsTrue(orc.canMove(coord1, TileType.FOREST));
+            Assert.IsFalse(orc.canMove(coord1, TileType.FOREST));
+            Assert.IsTrue(orc.canMove(coord1, TileType.PLAIN));
+            Assert.IsFalse(orc.canMove(coord2, TileType.FOREST));
         }
 
         [TestMethod]
@@ -53,9 +53,9 @@ namespace TestUnitairesCore
 
             Unit human = new Human(new Coordinate(0, 0), TileType.DEFAULT);
 
-            Assert.IsTrue(human.canMove(coord1, TileType.WATER, 2));
-            Assert.IsTrue(human.canMove(coord1, TileType.MOUNTAIN, 2));
-            Assert.IsFalse(human.canMove(coord2, TileType.FOREST, 2));
+            Assert.IsTrue(human.canMove(coord1, TileType.WATER));
+            Assert.IsTrue(human.canMove(coord1, TileType.MOUNTAIN));
+            Assert.IsFalse(human.canMove(coord2, TileType.FOREST));
         }
 
         [TestMethod]

@@ -45,9 +45,17 @@ namespace ClassLibrary1
             set;
         }
 
-        public double getRatioLifePoints()
+        [XmlAttribute()]
+        public double MovePoints { get; set; }
+
+        public double getRatioDefender()
         {
-            return (double)lifePoints/(double)initialLifePoints;
+            return (double)defencePoints*(double)lifePoints/(double)initialLifePoints;
+        }
+
+        public double getRatioAttacker()
+        {
+            return (double)attackPoints * (double)lifePoints / (double)initialLifePoints;
         }
 
         public Points(int life, int attack, int defence)
@@ -57,6 +65,7 @@ namespace ClassLibrary1
             attackPoints = attack;
             defencePoints = defence;
             victoryPoints = 0;
+            MovePoints = 2;
         }
         public Points() { }
     }
