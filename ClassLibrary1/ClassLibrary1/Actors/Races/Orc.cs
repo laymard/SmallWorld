@@ -68,20 +68,27 @@ namespace ClassLibrary1
         {
             get;
         }*/
-        public static Dictionary<TileType, double> RequiredMovePoints()
-        {
-            return new Dictionary<TileType, double>()
+
+        private static Dictionary<TileType, double> requiredMovePoints = new Dictionary<TileType, double>()
                 {
                     {TileType.MOUNTAIN, 1},
                     {TileType.WATER, -1},
                     {TileType.FOREST, 1},
                     {TileType.PLAIN, 0.5}
                 };
-        }
-        public override bool canMove(Coordinate tile, TileType type, double movePoints)
+
+        public new Dictionary<TileType, double> RequiredMovePoints
         {
-            double requiredMovePoints = Orc.RequiredMovePoints()[type];
-            if (requiredMovePoints == -1 || !this.coord.isNearTo(tile) || movePoints - requiredMovePoints < 0)
+            get
+            {
+                return Orc.requiredMovePoints;
+            }
+        }
+
+        public override bool canMove(Coordinate tile, TileType type)
+        {
+            double requiredMovePoints = Orc.requiredMovePoints[type];
+            if (requiredMovePoints == -1 || !this.coord.isNearTo(tile) || Points.MovePoints - requiredMovePoints < 0)
             {
                 return false;
             }

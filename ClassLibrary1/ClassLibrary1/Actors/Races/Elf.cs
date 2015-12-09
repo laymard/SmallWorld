@@ -19,15 +19,20 @@ namespace ClassLibrary1
         public Elf()
             : base(){ }
 
-        public static Dictionary<TileType, double> RequiredMovePoints()
-        {
-            return new Dictionary<TileType, double>()
+        private static Dictionary<TileType, double> requiredMovePoints = new Dictionary<TileType, double>()
                 {
                     {TileType.MOUNTAIN,2 },
                     {TileType.WATER,-1 },
                     {TileType.FOREST,1 },
                     {TileType.PLAIN,1 }
                 };
+
+        public new  Dictionary<TileType, double> RequiredMovePoints
+        {
+            get
+            {
+                return Elf.requiredMovePoints;
+            }
         }
 
         public override void addVictoryPoints()
@@ -80,10 +85,10 @@ namespace ClassLibrary1
             Points.movePoints -= cost;
         }*/
 
-    public override bool canMove(Coordinate tile, TileType type, double movePoints)
+    public override bool canMove(Coordinate tile, TileType type)
     {
-        double requiredMovePoints = Elf.RequiredMovePoints()[type];
-        if (requiredMovePoints == -1 || !this.coord.isNearTo(tile) || movePoints - requiredMovePoints < 0)
+        double requiredMovePoints = Elf.requiredMovePoints[type];
+        if (requiredMovePoints == -1 || !this.coord.isNearTo(tile) || Points.MovePoints - requiredMovePoints < 0)
         {
             return false;
         }

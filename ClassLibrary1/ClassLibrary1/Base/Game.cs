@@ -116,10 +116,6 @@ namespace ClassLibrary1
         public Game(GameSaver gs)
         {
             this.Players = gs.Game.Players;
-            foreach (Player p in this.Players)
-            {
-                p.initializeRequiredMovePoints();
-            }
             this.CurrentPlayerIndex = gs.Game.CurrentPlayerIndex;
             this.Map = new Map(gs.Game.Map, gs.Matrix);
             this.TurnsLeft = gs.Game.TurnsLeft;
@@ -257,9 +253,11 @@ namespace ClassLibrary1
         {
             // TO DO : algo de décision du vainqueur entre les unités currentUnit et defender
             // retourne true si currentUnit a gagné, false sinon
-            double DefenderLife = opponentUnit.getRatioLifePoints();
-            double AttackerLife = CurrentPlayer.CurrentUnit.getRatioLifePoints();
-            return true;
+            double defender = opponentUnit.getRatioDefender();
+            double attacker = CurrentPlayer.CurrentUnit.getRatioAttacker();
+            Random r= new Random();
+            double rnd = r.Next(0, 1);
+            return (rnd > defender/(attacker+attacker));
             
         }
 

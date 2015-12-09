@@ -33,13 +33,18 @@ namespace ClassLibrary1
             set;
         }
 
+        public Dictionary<TileType, double> RequiredMovePoints
+        {
+            get;
+            set;
+        }
 
         public void  move(Coordinate targetTile, TileType type)
         {
-            coord = targetTile;
-            currentTile = type;
-            this.addVictoryPoints();
-
+                this.spendMovePoints(type);
+                coord = targetTile;
+                currentTile = type;
+                this.addVictoryPoints();
         }
 
         /// <summary>
@@ -52,7 +57,7 @@ namespace ClassLibrary1
             Points.lifePoints -= nbPoints;
         }
 
-        public abstract bool canMove(Coordinate tile, TileType type, double movePoints);
+        public abstract bool canMove(Coordinate tile, TileType type);
 
         public abstract bool canAttack(Coordinate tile, TileType type);
 
@@ -73,9 +78,20 @@ namespace ClassLibrary1
             return this.Points.lifePoints <= 0;
         }
 
-         public double getRatioLifePoints()
+         public double getRatioDefender()
         {
-            return this.Points.getRatioLifePoints();
+            return this.Points.getRatioDefender();
         }
+
+         public double getRatioAttacker()
+         {
+             return this.Points.getRatioAttacker();
+         }
+
+         public void spendMovePoints(TileType type)
+        {
+             this.Points.MovePoints -= RequiredMovePoints[type];
+        }
+
     }
 }
