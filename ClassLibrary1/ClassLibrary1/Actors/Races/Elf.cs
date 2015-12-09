@@ -31,7 +31,7 @@ namespace ClassLibrary1
                     {TileType.PLAIN,1 }
                 };
 
-        public new  Dictionary<TileType, double> RequiredMovePoints
+        public override  Dictionary<TileType, double> RequiredMovePoints
         {
             get
             {

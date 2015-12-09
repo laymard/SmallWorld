@@ -39,10 +39,15 @@ namespace TestUnitairesCore
 
             Unit orc = new Orc(new Coordinate(0, 0), TileType.DEFAULT);
 
+            // Mouvement possible
             Assert.IsTrue(orc.canMove(coord1, TileType.FOREST));
-            Assert.IsFalse(orc.canMove(coord1, TileType.FOREST));
-            Assert.IsTrue(orc.canMove(coord1, TileType.PLAIN));
+
+            // Mouvement impossible
             Assert.IsFalse(orc.canMove(coord2, TileType.FOREST));
+
+            // Mouvement possible pour un orc
+            orc.Points.MovePoints = 0.5;
+            Assert.IsTrue(orc.canMove(coord1, TileType.PLAIN));    
         }
 
         [TestMethod]
@@ -56,15 +61,6 @@ namespace TestUnitairesCore
             Assert.IsTrue(human.canMove(coord1, TileType.WATER));
             Assert.IsTrue(human.canMove(coord1, TileType.MOUNTAIN));
             Assert.IsFalse(human.canMove(coord2, TileType.FOREST));
-        }
-
-        [TestMethod]
-        public void TestRatioLifePoints()
-        {
-            Unit elf = new Elf(new Coordinate(0, 0), TileType.DEFAULT);
-            elf.looseLifePoints(6);
-            double truc = elf.getRatioLifePoints();
-            Assert.AreEqual(elf.getRatioLifePoints(), 0.5);
         }
 
         [TestMethod]

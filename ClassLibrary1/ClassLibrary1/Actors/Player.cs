@@ -60,13 +60,6 @@ namespace ClassLibrary1
         }
 
         [XmlIgnore()]
-        public Dictionary<TileType, double> RequiredMovePoints
-        {
-            get;
-            set;
-        }
-
-        [XmlIgnore()]
         public Command Command
         {
             get;
@@ -187,7 +180,7 @@ namespace ClassLibrary1
 
         public void move (Coordinate target, TileType targetType)
         {
-            double requiredMovePoints = this.RequiredMovePoints[targetType];
+            double requiredMovePoints = CurrentUnit.RequiredMovePoints[targetType];
 
             if (CurrentUnit.canMove(target, targetType))
             {

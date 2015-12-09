@@ -33,7 +33,7 @@ namespace ClassLibrary1
             set;
         }
 
-        public Dictionary<TileType, double> RequiredMovePoints
+        public virtual Dictionary<TileType, double> RequiredMovePoints
         {
             get;
             set;

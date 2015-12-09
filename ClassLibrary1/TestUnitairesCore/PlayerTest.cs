@@ -35,19 +35,6 @@ namespace TestUnitairesCore
         }
 
         [TestMethod]
-        public void TestSpendMovePoints()
-        {
-            Coordinate coord0 = new Coordinate(0,0);
-            Coordinate coord1 = new Coordinate(0,1);
-        
-            Player p = new Player(Race.Human, "Gaston", 4);
-            p.createUnit(coord0, TileType.FOREST);
-            p.spendMovePoints(coord1, TileType.FOREST);
-
-            Assert.AreEqual(1, p.MovePoints);
-        }
-
-        [TestMethod]
         public void TestUndoLastCommand()
         {
         }
@@ -71,19 +58,14 @@ namespace TestUnitairesCore
             // Mouvement possible
             p.move(coord1, TileType.WATER);
 
-            Assert.AreEqual(coord1, p.Units[0].coord);
-            Assert.AreEqual(1, p.MovePoints);
+            Assert.AreEqual(coord1, p.CurrentUnit.coord);
+            Assert.AreEqual(1, p.CurrentUnit.Points.MovePoints);
 
             // Mouvement impossible
             p.move(coord1, TileType.WATER);
 
-            Assert.AreEqual(coord1, p.Units[0].coord);
-            Assert.AreEqual(1, p.MovePoints);
-        }
-
-        [TestMethod]
-        public void TestAttack()
-        {
+            Assert.AreEqual(coord1, p.CurrentUnit.coord);
+            Assert.AreEqual(1, p.CurrentUnit.Points.MovePoints);
         }
 
     }
