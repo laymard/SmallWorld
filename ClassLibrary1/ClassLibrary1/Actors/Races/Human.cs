@@ -87,5 +87,10 @@ namespace ClassLibrary1
                 return true;
             }
         }
+
+        public static bool canBeOn(TileType type)
+        {
+            return Human.requiredMovePoints[type] != -1;
+        }
     }
 }

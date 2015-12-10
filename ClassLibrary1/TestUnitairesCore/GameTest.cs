@@ -60,29 +60,55 @@ namespace ClassLibrary1
         [TestMethod]
         public void TestInitilizeUnits()
         {
+            // Création des joueurs
+            Player p1 = new Player(Race.Human, "Robert", 4);
+            Player p2 = new Player(Race.Orc, "Marie", 4);
+            Player p3 = new Player(Race.Elf, "Gaston", 4);
+            List<Player> list = new List<Player> { p1, p2, p3 };
+            // Création de la map
+            StandardMap ms = new StandardMap();
+            // Création du jeu
+            Game game = new Game(ms, list);
+
+            game.initializeUnits();
+
+            // Liste des coordonnées occupées
+            List<Coordinate> listCoord = new List<Coordinate>();
+
+            // Les unités sont positionnées sur la carte
+            foreach (Player p in game.Players)
+            {
+                foreach (Unit u in p.Units)
+                {
+                    Assert.IsTrue(u.coord.X < ms.NbTiles);
+                    Assert.IsTrue(u.coord.Y < ms.NbTiles);
+                    Assert.IsTrue(u.coord.X >= 0);
+                    Assert.IsTrue(u.coord.Y >= 0);
+                    
+                    listCoord.Add(u.coord);
+                }
+            }
+
+            foreach (Coordinate coord in listCoord)
+            {
+                // Seule un des trois joueur peut être positionné sur la case (une seule race par case)
+                Assert.IsTrue(
+                    p1.getUnitsOnTile(coord).Count == 0 && p2.getUnitsOnTile(coord).Count == 0
+                 || p1.getUnitsOnTile(coord).Count == 0 && p3.getUnitsOnTile(coord).Count == 0
+                 || p2.getUnitsOnTile(coord).Count == 0 && p3.getUnitsOnTile(coord).Count == 0);
+            }
+        }
+
+        [TestMethod]
+        public void testChangePlayer()
+        {
             Player p1 = new Player(Race.Human, "Robert", 4);
             Player p2 = new Player(Race.Orc, "Marie", 4);
             Player p3 = new Player(Race.Elf, "Gaston", 4);
             List<Player> list = new List<Player> { p1, p2, p3 };
             StandardMap ms = new StandardMap();
 
-            Game game = new Game(ms, list);     
-        }
-
-        [TestMethod]
-        public void TestInitilizePlayer()
-        {
-            //
-            // TODO: ajoutez ici la logique du test
-            //
-        }
-
-        [TestMethod]
-        public void testChangePlayer()
-        {
-            //
-            // TODO: ajoutez ici la logique du test
-            //
+            Game game = new Game(ms, list); 
         }
 
         [TestMethod]

@@ -40,11 +40,6 @@ namespace TestUnitairesCore
         }
 
         [TestMethod]
-        public void TestSpendMovePoints()
-        {
-        }
-
-        [TestMethod]
         public void TestMoveHuman()
         {
             Coordinate coord0 = new Coordinate(0, 0);

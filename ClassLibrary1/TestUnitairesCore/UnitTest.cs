@@ -124,5 +124,28 @@ namespace TestUnitairesCore
             Assert.IsTrue(orc2.canAttack(coord2, TileType.DEFAULT));
             Assert.IsFalse(orc2.canAttack(coord3, TileType.DEFAULT));
         }
+
+        [TestMethod]
+        public void TestCanBeOn()
+        {
+            Unit elf = new Elf();
+            Unit orc = new Orc();
+            Unit human = new Human();
+
+            Assert.IsFalse(Elf.canBeOn(TileType.WATER));
+            Assert.IsTrue(Elf.canBeOn(TileType.PLAIN));
+            Assert.IsTrue(Elf.canBeOn(TileType.MOUNTAIN));
+            Assert.IsTrue(Elf.canBeOn(TileType.FOREST));
+
+            Assert.IsFalse(Orc.canBeOn(TileType.WATER));
+            Assert.IsTrue(Orc.canBeOn(TileType.PLAIN));
+            Assert.IsTrue(Orc.canBeOn(TileType.MOUNTAIN));
+            Assert.IsTrue(Orc.canBeOn(TileType.FOREST));
+
+            Assert.IsTrue(Human.canBeOn(TileType.WATER));
+            Assert.IsTrue(Human.canBeOn(TileType.PLAIN));
+            Assert.IsTrue(Human.canBeOn(TileType.MOUNTAIN));
+            Assert.IsTrue(Human.canBeOn(TileType.FOREST));
+        }
     }
 }

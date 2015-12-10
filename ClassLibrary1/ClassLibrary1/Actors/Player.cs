@@ -80,7 +80,7 @@ namespace ClassLibrary1
         {
             this.Race = race;
             this.NbUnits = nbUnits;
-            this.Units = new List<Unit>();
+            this.Units = new List<Unit>(nbUnits);
             this.VictoryPoints = 0;
             this.Name = name;
         }
@@ -113,15 +113,18 @@ namespace ClassLibrary1
             switch (this.Race)
             {
                 case (Race.Orc) :
-                    CreateOrc(coord,type);
+                    if (Orc.canBeOn(type))
+                        CreateOrc(coord,type);
                     break;
 
                 case Race.Human:
-                    CreateHuman(coord,type);
+                    if (Human.canBeOn(type)) 
+                        CreateHuman(coord, type);
                     break;
 
                 case Race.Elf:
-                    CreateElf(coord,type);
+                    if (Elf.canBeOn(type))
+                        CreateElf(coord,type);
                     break;
             }
         }

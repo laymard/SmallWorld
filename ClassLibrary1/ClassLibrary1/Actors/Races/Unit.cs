@@ -39,6 +39,13 @@ namespace ClassLibrary1
             set;
         }
 
+        public Unit(Coordinate coord, TileType type)
+        {
+            this.coord = coord;
+            this.currentTile = type;
+        }
+        public Unit() { }
+
         public void  move(Coordinate targetTile, TileType type)
         {
                 this.spendMovePoints(type);
@@ -65,13 +72,6 @@ namespace ClassLibrary1
         {
             return this.Points.defencePoints > unit.Points.defencePoints;
         }
-
-        public Unit(Coordinate coord, TileType type)
-        {
-            this.coord = coord;
-            this.currentTile = type;
-        }
-        public Unit() { }
 
         internal bool isDead()
         {

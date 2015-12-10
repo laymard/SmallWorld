@@ -138,17 +138,34 @@ namespace ClassLibrary1
         /// </summary>
         public void initializeUnits()
         {
+            Random rnd = new Random();
             foreach (Player p in Players) 
             {
-                for (int i = 0; i < p.NbUnits - 1; i++)
+                while (p.Units.Count != p.Units.Capacity)
                 {
-                    Random rndx = new Random();
-                    int x = rndx.Next(0, Map.MapSize.NbTiles -1);
-                    int y = rndx.Next(0, Map.MapSize.NbTiles - 1);
-                    Coordinate coord = this.Map.getCoord(x,y);
-                    p.createUnit(coord,this.Map.getTile(coord));
+                    int x = rnd.Next(0, Map.MapSize.NbTiles - 1);
+                    int y = rnd.Next(0, Map.MapSize.NbTiles - 1);
+                    Coordinate coord = Map.getCoord(x, y);
+
+                    // creation de l'unit si la case n'est pas occupée par un autre joueur
+                    if (!otherRaceOnTile(coord, p))
+                        p.createUnit(coord, this.Map.getTile(coord));
                 }
             }
+        }
+
+        public bool otherRaceOnTile(Coordinate coord, Player player)
+        {
+            bool res = false;
+            foreach (Player p in Players)
+            {
+                if (!p.Equals(player) && p.getUnitsOnTile(coord).Count>0)
+                {
+                    res = true;
+                    break;
+                }
+            }
+            return res;
         }
 
         /// <summary>
@@ -291,6 +308,21 @@ namespace ClassLibrary1
             }
             // pas d'unité sur cette case.
             return found;
+        }
+
+        /// <summary>
+        /// Retourne la liste des unités présentes sur la case coord
+        /// </summary>
+        public void getUnitsOnTile(Coordinate coord)
+        {
+            List<Unit> units = new List<Unit>();
+            foreach (Player p in Players)
+            {
+                foreach (Unit u in p.Units)
+                {
+                    units.Add(u);
+                }
+            }
         }
 
         public void saveGame(String path)

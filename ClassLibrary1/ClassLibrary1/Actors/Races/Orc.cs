@@ -98,5 +98,10 @@ namespace ClassLibrary1
                 return true;
             }
         }
+
+        public static bool canBeOn(TileType type)
+        {
+            return Orc.requiredMovePoints[type] != -1;
+        }
     }
 }
