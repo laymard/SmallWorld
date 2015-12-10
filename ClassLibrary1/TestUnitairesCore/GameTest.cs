@@ -63,7 +63,7 @@ namespace ClassLibrary1
             // Création de la map
             StandardMap ms = new StandardMap();
             // Création du jeu
-            NewGameBuilder gb = NewGameBuilder(ms);
+            NewGameBuilder gb = new NewGameBuilder(ms);
             gb.buildGame();
             Game game = gb.Game;
             // Création des joueurs
@@ -107,18 +107,13 @@ namespace ClassLibrary1
             Assert.IsTrue(game.Players.Contains(game.CurrentPlayer));
         }
 
-        private NewGameBuilder NewGameBuilder(StandardMap ms)
-        {
-            throw new NotImplementedException();
-        }
-
         [TestMethod]
         public void testChangePlayer()
         {
             // Création de la map
             StandardMap ms = new StandardMap();
             // Création du jeu
-            NewGameBuilder gb = NewGameBuilder(ms);
+            NewGameBuilder gb = new NewGameBuilder(ms);
             gb.buildGame();
             Game game = gb.Game;
             // Création des joueurs
@@ -147,7 +142,7 @@ namespace ClassLibrary1
             // Création de la map
             StandardMap ms = new StandardMap();
             // Création du jeu
-            NewGameBuilder gb = NewGameBuilder(ms);
+            GameBuilder gb = new NewGameBuilder(ms);
             gb.buildGame();
             Game game = gb.Game;
             // Création des joueurs
