@@ -127,18 +127,19 @@ namespace ClassLibrary1
             Random rnd = new Random();
             foreach (Player p in Players)
             {
-                while (p.Units.Count != p.Units.Capacity)
-                {
-                    int x = rnd.Next(0, Map.MapSize.NbTiles - 1);
-                    int y = rnd.Next(0, Map.MapSize.NbTiles - 1);
-                    Coordinate coord = Map.getCoord(x, y);
+                int x = rnd.Next(0, Map.MapSize.NbTiles - 1);
+                int y = rnd.Next(0, Map.MapSize.NbTiles - 1);
+                Coordinate coord = Map.getCoord(x, y);
 
+                if (!otherRaceOnTile(coord, p))
+                {
+                    while (p.Units.Count != p.Units.Capacity)
+                    {
                     // creation de l'unit si la case n'est pas occupée par un autre joueur
-                    if (!otherRaceOnTile(coord, p))
                         p.createUnit(coord, this.Map.getTile(coord));
+                    }
                 }
             }
-
             setFirstPlayer();
         }
 

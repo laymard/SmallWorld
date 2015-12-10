@@ -164,14 +164,6 @@ namespace ClassLibrary1
             Assert.AreEqual(3,game.Players.Count);
         }
 
-        [TestMethod]
-        public void TestSaveGame()
-        {
-            //
-            // TODO: ajoutez ici la logique du test
-            //
-        }
-
         /// <summary>
         /// [R24_1_BATTLE_EXECUTION]
         /// [R24_2_BATTLE_CONSEQUENCES]
