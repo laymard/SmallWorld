@@ -35,7 +35,7 @@ namespace ClassLibrary1
             this.MapSize = ms;
             this.TileFactory = new TileFactory();
             matrix = new Dictionary<Coordinate, TileType>();
-            this.initialiseTiles();
+            //this.initialiseTiles();
         }
 
         public Map() { }
@@ -85,7 +85,15 @@ namespace ClassLibrary1
         /// </summary>
         public TileType getTile(Coordinate coord)
         {
-            return matrix[coord];
+            if (matrix.Keys.Contains(coord))
+            {
+                return matrix[coord];
+            }
+            else
+            {
+                return TileType.DEFAULT;
+            }
+            
         }
 
         public Coordinate getCoord(int x, int y)

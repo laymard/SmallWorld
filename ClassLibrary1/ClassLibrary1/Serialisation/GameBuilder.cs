@@ -7,6 +7,10 @@ namespace ClassLibrary1
 {
     public abstract class GameBuilder
     {
+        public GameBuilder()
+        {
+            Game = new Game();
+        }
         public Game Game
         {
             get;

@@ -14,6 +14,7 @@ namespace TestUnitairesCore
         public void TestGetCoord()
         {
             Map map = new Map(new StandardMap());
+            map.initialiseTiles();
             Coordinate coord = map.getCoord(0, 0);
             Assert.AreEqual(coord.X, 0);
             Assert.AreEqual(coord.Y, 0);
@@ -24,19 +25,28 @@ namespace TestUnitairesCore
         public void TestGetTile()
         {
             Map map = new Map(new StandardMap());
-            Coordinate coord = new Coordinate(10, 10);
-            map.matrix.Add(coord, TileType.WATER);
+
+            Coordinate coord1 = new Coordinate(10,10);
+            Coordinate coord2 = new Coordinate(0, 0);
+
+            map.matrix.Add(coord1, TileType.WATER);
           
-            TileType tile = map.getTile(coord);
-            Assert.AreEqual(tile, TileType.WATER);
-        
+            // Si la case coord existe getTile doit retourner le type de case
+            TileType tile1 = map.getTile(coord1);
+            Assert.AreEqual(TileType.WATER,tile1);
+
+            // sinon getTile retourne le type DEFAULT
+            TileType tile2 = map.getTile(coord2);
+            Assert.AreEqual(TileType.DEFAULT, tile2);
         }
 
         [TestMethod]
         public void TestInitialiseTiles()
         {
             Map map = new Map(new StandardMap());
+
             map.initialiseTiles();
+
             int water = 0, plain=0, forest=0, mountain=0;
             foreach (Coordinate c in map.matrix.Keys)
             {
@@ -65,5 +75,7 @@ namespace TestUnitairesCore
             Assert.AreEqual(water, forest);
             Assert.AreEqual(mountain, forest);
         }
+
+        
     }
 }

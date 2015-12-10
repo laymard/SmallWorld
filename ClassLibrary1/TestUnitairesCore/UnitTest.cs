@@ -11,6 +11,7 @@ namespace TestUnitairesCore
         public void TestBetterDefence()
         {
             Map map = new Map(new StandardMap());
+            map.initialiseTiles();
             Unit orc = new Orc(map.getCoord(0, 0),TileType.DEFAULT);
             Unit elf = new Elf(map.getCoord(0, 0),TileType.DEFAULT);
             Assert.IsTrue(elf.betterDefence(orc));

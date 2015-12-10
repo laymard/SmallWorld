@@ -88,18 +88,13 @@ namespace ClassLibrary1
         }
 
 
-        /// <summary>
-        /// Constructeur de la classe Game.
-        /// </summary>
-        public Game(MapSize ms, List<Player> players)
+        public void AddPlayer(Race race, String name, int nbUnits)
         {
-            this.AttackedUnit = null;
-            initializeMap(ms);
-
-            this.Players = players;
-
-            this.initializeUnits();
-            setFirstPlayer();
+            Player p = new Player(race, name, nbUnits);
+            if (checkRaces(p.Race))
+            {
+                Players.Add(p);
+            }
         }
 
         /// <summary>
@@ -108,8 +103,7 @@ namespace ClassLibrary1
         public Game()
         {
             this.AttackedUnit = null;
-            initializeMap(new StandardMap());
-
+            //initializeMap(new StandardMap());
             this.Players = new List<Player>();
         }
 
@@ -121,22 +115,10 @@ namespace ClassLibrary1
             this.TurnsLeft = gs.Game.TurnsLeft;
         }
 
-
-        /// <summary>
-        /// Initialisation de la carte à partir des caractéristiques du mode de jeu contenues dans la MapSize ms.
-        /// </summary>
-        public void initializeMap(MapSize ms)
-        {
-            this.Map = new Map(ms);
-            this.Players = new List<Player>(ms.NbPlayers);
-            this.TurnsLeft = ms.NbTurns;
-        }
-
-
         /// <summary>
         /// Initialisation et positionnement des unités sur la carte.
         /// </summary>
-        public void initializeUnits()
+        public void StartGame()
         {
             Random rnd = new Random();
             foreach (Player p in Players) 
@@ -152,6 +134,8 @@ namespace ClassLibrary1
                         p.createUnit(coord, this.Map.getTile(coord));
                 }
             }
+
+            setFirstPlayer();
         }
 
         public bool otherRaceOnTile(Coordinate coord, Player player)
@@ -195,17 +179,18 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// Vérifie que la Race race n'a pas déjà été choisie par un autre joueur lors de l'initialisation de la partie.
+        /// Vérifie que la Race race n'a pas déjà été choisie par un autre joueur lors de l'initialisation de la partie. Retourne faux si la race a déjà été selectionnée. Vrai, sinon.
         /// </summary>
-        public void checkRaces(Race race)
+        public bool checkRaces(Race race)
         {
             for (int i = 0; i < Players.Count; i++)
             {
                 if (Players[i].Race.Equals(race))
                 {
-                    // traiter le cas du choix d'une race déjà sélectionnée
+                    return false;
                 }
             }
+            return true;
         }
 
         /// <summary>

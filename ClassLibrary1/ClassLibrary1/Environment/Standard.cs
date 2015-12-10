@@ -9,6 +9,7 @@ namespace ClassLibrary1
     public class StandardMap : MapSize
     {
         public StandardMap()
+        
         {
             this.NbPlayers = 2;
             this.NbTiles = 14;

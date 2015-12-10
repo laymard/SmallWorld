@@ -58,19 +58,24 @@ namespace ClassLibrary1
         #endregion
 
         [TestMethod]
-        public void TestInitilizeUnits()
+        public void TestStartGame()
         {
-            // Création des joueurs
-            Player p1 = new Player(Race.Human, "Robert", 4);
-            Player p2 = new Player(Race.Orc, "Marie", 4);
-            Player p3 = new Player(Race.Elf, "Gaston", 4);
-            List<Player> list = new List<Player> { p1, p2, p3 };
             // Création de la map
             StandardMap ms = new StandardMap();
             // Création du jeu
-            Game game = new Game(ms, list);
+            NewGameBuilder gb = NewGameBuilder(ms);
+            gb.buildGame();
+            Game game = gb.Game;
+            // Création des joueurs
+            game.AddPlayer(Race.Human, "Robert", 4);
+            game.AddPlayer(Race.Orc, "Marie", 4);
+            game.AddPlayer(Race.Elf, "Gaston", 4);
 
-            game.initializeUnits();
+            Player p1 = game.Players[0];
+            Player p2 = game.Players[1];
+            Player p3 = game.Players[2];
+
+            game.StartGame();
 
             // Liste des coordonnées occupées
             List<Coordinate> listCoord = new List<Coordinate>();
@@ -97,19 +102,31 @@ namespace ClassLibrary1
                  || p1.getUnitsOnTile(coord).Count == 0 && p3.getUnitsOnTile(coord).Count == 0
                  || p2.getUnitsOnTile(coord).Count == 0 && p3.getUnitsOnTile(coord).Count == 0);
             }
+
+            // test setFirstPlayer
+            Assert.IsTrue(game.Players.Contains(game.CurrentPlayer));
+        }
+
+        private NewGameBuilder NewGameBuilder(StandardMap ms)
+        {
+            throw new NotImplementedException();
         }
 
         [TestMethod]
         public void testChangePlayer()
         {
-            Player p1 = new Player(Race.Human, "Robert", 4);
-            Player p2 = new Player(Race.Orc, "Marie", 4);
-            Player p3 = new Player(Race.Elf, "Gaston", 4);
-            List<Player> list = new List<Player> { p1, p2, p3 };
+            // Création de la map
             StandardMap ms = new StandardMap();
+            // Création du jeu
+            NewGameBuilder gb = NewGameBuilder(ms);
+            gb.buildGame();
+            Game game = gb.Game;
+            // Création des joueurs
+            game.AddPlayer(Race.Human, "Robert", 4);
+            game.AddPlayer(Race.Orc, "Marie", 4);
+            game.AddPlayer(Race.Elf, "Gaston", 4);
 
-            Game game = new Game(ms, list);
-
+            // Test
             Player first = game.CurrentPlayer;
             game.changePlayer();
             Player second = game.CurrentPlayer;
@@ -125,27 +142,21 @@ namespace ClassLibrary1
         }
 
         [TestMethod]
-        public void testEnd()
+        public void TestAddPlayer()
         {
-            //
-            // TODO: ajoutez ici la logique du test
-            //
-        }
+            // Création de la map
+            StandardMap ms = new StandardMap();
+            // Création du jeu
+            NewGameBuilder gb = NewGameBuilder(ms);
+            gb.buildGame();
+            Game game = gb.Game;
+            // Création des joueurs
+            game.AddPlayer(Race.Human, "Robert", 4);
+            game.AddPlayer(Race.Orc, "Marie", 4);
+            game.AddPlayer(Race.Elf, "Gaston", 4);
+            game.AddPlayer(Race.Elf, "Gaston", 4);
 
-        [TestMethod]
-        public void TestCheckRaces()
-        {
-            //
-            // TODO: ajoutez ici la logique du test
-            //
-        }
-
-        [TestMethod]
-        public void TestSetFirstPlayer()
-        {
-            //
-            // TODO: ajoutez ici la logique du test
-            //
+            Assert.AreEqual(3,game.Players.Count);
         }
 
         [TestMethod]
@@ -156,21 +167,6 @@ namespace ClassLibrary1
             //
         }
 
-        [TestMethod]
-        public void TestSelectTile()
-        {
-            //
-            // TODO: ajoutez ici la logique du test
-            //
-        }
-
-        [TestMethod]
-        public void TestSelectUnit()
-        {
-            //
-            // TODO: ajoutez ici la logique du test
-            //
-        }
 
         [TestMethod]
         public void TestAttack()
@@ -196,12 +192,5 @@ namespace ClassLibrary1
             //
         }
 
-        [TestMethod]
-        public void SaveGame()
-        {
-            //
-            // TODO: ajoutez ici la logique du test
-            //
-        }
     }
 }
