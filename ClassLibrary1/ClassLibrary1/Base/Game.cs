@@ -174,14 +174,16 @@ namespace ClassLibrary1
         /// <summary>
         /// Changement de joueur : remplace le joueur courant par le joueur suivant dans la liste Players.
         /// </summary>
-        public void changePlayer()
+        public void EndTurn()
         {
+            // Le jeu est-il fini ?
             if (TurnsLeft == 0 || Victory())
                 this.end();
+
+            // Changement de joueur
             else
             {
                 this.CurrentPlayerIndex = (CurrentPlayerIndex + 1) % (Map.MapSize.NbPlayers + 1);
-                this.CurrentPlayer.setMovePoints();
             }
         }
 
@@ -216,7 +218,7 @@ namespace ClassLibrary1
                 Player champion = new Player();
                 foreach (Player p in Players)
                 {
-                    if (!p.IsDead() && p.VictoryPoints > champion.VictoryPoints)
+                    if (p.VictoryPoints > champion.VictoryPoints)
                     {
                         champion = p;
                     }

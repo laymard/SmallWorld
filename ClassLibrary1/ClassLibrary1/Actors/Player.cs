@@ -203,19 +203,20 @@ namespace ClassLibrary1
             }
              return res;
         }
-        internal void setMovePoints()
-        {
-            foreach (Unit u in Units)
-            {
-                u.Points.MovePoints = 2;
-            }
-        }
 
+        /// <summary>
+        /// Supprime les unités mortes vérifie que le joueur a toujours des unités en vie
+        /// </summary>
+        /// <returns>true si toutes les unités sont mortes, false sinon</returns>
         public bool IsDead()
         {
             foreach(Unit u in this.Units)
             {
                 if (!(u.isDead())) return false;
+                else
+                {
+                    Units.Remove(u);
+                }
             }
             return true;
         }

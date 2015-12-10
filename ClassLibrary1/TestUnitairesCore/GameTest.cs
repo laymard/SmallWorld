@@ -57,7 +57,10 @@ namespace ClassLibrary1
         // public void MyTestCleanup() { }
         //
         #endregion
-
+        /// <summary>
+        /// [R21_2_GAME_INITIALISATION]
+        /// [R21_3_GAME_START]
+        /// </summary>
         [TestMethod]
         public void TestStartGame()
         {
@@ -108,6 +111,9 @@ namespace ClassLibrary1
             Assert.IsTrue(game.Players.Contains(game.CurrentPlayer));
         }
 
+        /// <summary>
+        /// [R21_4_GAME_TURN_ORDER]
+        /// </summary>
         [TestMethod]
         public void testChangePlayer()
         {
@@ -124,11 +130,11 @@ namespace ClassLibrary1
 
             // Test
             Player first = game.CurrentPlayer;
-            game.changePlayer();
+            game.EndTurn();
             Player second = game.CurrentPlayer;
-            game.changePlayer();
+            game.EndTurn();
             Player third = game.CurrentPlayer;
-            game.changePlayer();
+            game.EndTurn();
 
             Assert.AreNotEqual(first,second);
             Assert.AreNotEqual(second, third);
@@ -137,6 +143,9 @@ namespace ClassLibrary1
 
         }
 
+        /// <summary>
+        /// [R21_1_GAME_PLAYERS]
+        /// </summary>
         [TestMethod]
         public void TestAddPlayer()
         {
@@ -163,9 +172,13 @@ namespace ClassLibrary1
             //
         }
 
-
+        /// <summary>
+        /// [R24_1_BATTLE_EXECUTION]
+        /// [R24_2_BATTLE_CONSEQUENCES]
+        /// [R24_4_BATTLE_MOVE_COST]
+        /// </summary>
         [TestMethod]
-        public void TestAttackHuman()
+        public void TestAttack()
         {
             Game game = new Game();
 
@@ -196,6 +209,9 @@ namespace ClassLibrary1
             Assert.IsTrue(attacker.CurrentUnit.Points.lifePoints < 15 || defender.Units[0].Points.lifePoints < 17);
         }
 
+        /// <summary>
+        /// [R24_BATTLE_MULTIPLE_DEFENDER]
+        /// </summary>
         [TestMethod]
         public void TestselectBestDefender()
         {

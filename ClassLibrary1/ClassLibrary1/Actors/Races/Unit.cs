@@ -68,6 +68,7 @@ namespace ClassLibrary1
         public virtual void looseLifePoints(int nbPoints)
         {
             Points.lifePoints -= nbPoints;
+
         }
 
         public abstract bool canMove(Coordinate tile, TileType type);

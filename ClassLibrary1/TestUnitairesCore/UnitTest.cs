@@ -17,6 +17,10 @@ namespace TestUnitairesCore
             Assert.IsTrue(elf.betterDefence(orc));
         }
 
+        /// <summary>
+        /// [R21_6_UNIT_ACTIONS]
+        /// [R22_4_ELF]
+        /// </summary>
         [TestMethod]
         public void TestCanMoveElf()
         {
@@ -32,6 +36,10 @@ namespace TestUnitairesCore
             Assert.IsFalse(elf.canMove(coord3, TileType.FOREST));
         }
 
+        /// <summary>
+        /// [R21_6_UNIT_ACTIONS]
+        /// [R22_5_ORC]
+        /// </summary>
         [TestMethod]
         public void TestCanMoveOrc()
         {
@@ -51,6 +59,10 @@ namespace TestUnitairesCore
             Assert.IsTrue(orc.canMove(coord1, TileType.PLAIN));    
         }
 
+        /// <summary>
+        /// [R21_6_UNIT_ACTIONS]
+        /// [R22_3_HUMAN]
+        /// </summary>
         [TestMethod]
         public void TestCanMoveHuman()
         {
@@ -59,7 +71,10 @@ namespace TestUnitairesCore
 
             Unit human = new Human(new Coordinate(0, 0), TileType.DEFAULT);
 
+            // Les humains peuvent marcher sur l'eau
             Assert.IsTrue(human.canMove(coord1, TileType.WATER));
+
+            // 
             Assert.IsTrue(human.canMove(coord1, TileType.MOUNTAIN));
             Assert.IsFalse(human.canMove(coord2, TileType.FOREST));
         }
@@ -79,6 +94,10 @@ namespace TestUnitairesCore
             Assert.AreEqual(3, elf.Points.victoryPoints);
         }
 
+        /// <summary>
+        /// [R22_4_ELF]
+        /// [R21_6_UNIT_ACTIONS]
+        /// </summary>
         [TestMethod]
         public void TestCanAttackElf()
         {
@@ -93,6 +112,10 @@ namespace TestUnitairesCore
             Assert.IsFalse(elf.canAttack(coord3, TileType.FOREST));
         }
 
+        /// <summary>
+        /// [R21_6_UNIT_ACTIONS]
+        /// [R22_3_HUMAN]
+        /// </summary>
         [TestMethod]
         public void TestCanAttackHuman()
         {
@@ -106,7 +129,10 @@ namespace TestUnitairesCore
             Assert.IsFalse(human.canAttack(coord2, TileType.FOREST));
         }
 
-
+        /// <summary>
+        /// [R21_6_UNIT_ACTIONS]
+        /// [R22_5_ORC]
+        /// </summary>
         [TestMethod]
         public void TestCanAttackOrc()
         {

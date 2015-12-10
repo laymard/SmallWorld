@@ -40,6 +40,10 @@ namespace TestUnitairesCore
             Assert.AreEqual(TileType.DEFAULT, tile2);
         }
 
+        /// <summary>
+        /// [R23_2_MAP_TILES]
+        /// [R23_3_MAP_INITIALISATION]
+        /// </summary>
         [TestMethod]
         public void TestInitialiseTiles()
         {

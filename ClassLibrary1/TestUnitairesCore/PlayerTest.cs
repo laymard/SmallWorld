@@ -34,6 +34,9 @@ namespace TestUnitairesCore
             }
         }
 
+        /// <summary>
+        /// [R21_9_CHEAT_MODE]
+        /// </summary>
         [TestMethod]
         public void TestUndoLastCommand()
         {
@@ -88,9 +91,11 @@ namespace TestUnitairesCore
             Assert.AreEqual(coord1, p.CurrentUnit.coord);
             Assert.AreEqual(1, p.CurrentUnit.Points.MovePoints);
         }
-
+        /// <summary>
+        /// [R22_6_MOVE_POINTS_TURN]
+        /// </summary>
         [TestMethod]
-        public void TestVictoryPoints()
+        public void TestFinishMoves()
         {
             List<Coordinate> map = new List<Coordinate>();
             List<TileType> tt = new List<TileType>() { TileType.MOUNTAIN,TileType.FOREST,TileType.PLAIN,TileType.WATER };
