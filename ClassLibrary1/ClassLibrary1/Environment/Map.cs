@@ -10,6 +10,9 @@ namespace ClassLibrary1
     [Serializable()]
     public class Map
     {
+        /// <summary>
+        /// Caractéristiques du mode de jeu
+        /// </summary>
         [XmlElement()]
         public MapSize MapSize
         {
@@ -17,13 +20,16 @@ namespace ClassLibrary1
             set;
         }
 
-        [XmlIgnore()]
+        /*[XmlIgnore()]
         public TileFactory TileFactory
         {
             get;
             set;
-        }
+        }*/
 
+        /// <summary>
+        /// Matrice de la mapp associant à chaque coordonnée un type (eau,forêt,montagne,plaine)
+        /// </summary>
         [XmlIgnore()]
         public Dictionary<Coordinate, TileType> matrix
         {
@@ -31,19 +37,30 @@ namespace ClassLibrary1
             set;
         }
 
+        /// <summary>
+        /// Constructeur de Map
+        /// </summary>
+        /// <param name="ms">Caractéristiques du mode de jeu</param>
         public Map(MapSize ms){
             this.MapSize = ms;
-            this.TileFactory = new TileFactory();
+            //this.TileFactory = new TileFactory();
             matrix = new Dictionary<Coordinate, TileType>();
-            //this.initialiseTiles();
         }
 
+        /// <summary>
+        /// Constructeur par défaut
+        /// </summary>
         public Map() {
             this.MapSize = new StandardMap();
-            this.TileFactory = new TileFactory();
+            //this.TileFactory = new TileFactory();
             this.matrix = new Dictionary<Coordinate, TileType>();
         }
 
+        /// <summary>
+        /// Constructeur à partir d'une sauvegarde
+        /// </summary>
+        /// <param name="map">sauvegarde de la map</param>
+        /// <param name="ms">sauvegarde de la matrice</param>
         public Map(Map map, MatrixSaver ms)
         {
             this.MapSize = map.MapSize;
@@ -54,6 +71,9 @@ namespace ClassLibrary1
             }
         }
 
+        /// <summary>
+        /// Initialisation de la map
+        /// </summary>
         public void initialiseTiles()
         {
             Algo algo = new Algo();
@@ -72,21 +92,11 @@ namespace ClassLibrary1
 
         }
 
-        public void setEmptyMatrix(int size)
-        {
-            for (int i = 0; i < size; i++)
-            {
-                for (int j = 0; j < size; j++)
-                {
-                    Coordinate coord = new Coordinate(i, j);
-                    matrix.Add(coord,TileType.DEFAULT);
-                }
-            }
-        }
-
         /// <summary>
-        /// return type tile of coord
+        /// Type d'une case
         /// </summary>
+        /// <param name="coord">Coordonnées de la case</param>
+        /// <returns>retourne le type de la case à partir de ses coordonnées</returns>
         public TileType getTile(Coordinate coord)
         {
             if (matrix.Keys.Contains(coord))
@@ -100,6 +110,12 @@ namespace ClassLibrary1
             
         }
 
+        /// <summary>
+        /// Coordonnées
+        /// </summary>
+        /// <param name="x">x</param>
+        /// <param name="y">y</param>
+        /// <returns>L'objet coordinate de la map correspondant à la coordonnée (x,y)</returns>
         public Coordinate getCoord(int x, int y)
         {
             Coordinate coord = null;
