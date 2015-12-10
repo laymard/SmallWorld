@@ -39,6 +39,12 @@ namespace ClassLibrary1
             set;
         }
 
+        public virtual Dictionary<TileType,int> VictoryPoints
+        {
+            get;
+            set;
+        }
+
         public Unit(Coordinate coord, TileType type)
         {
             this.coord = coord;

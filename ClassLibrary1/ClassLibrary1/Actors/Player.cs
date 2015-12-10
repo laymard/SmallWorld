@@ -174,7 +174,13 @@ namespace ClassLibrary1
         /// </summary>
         public void finishMoves()
         {
-            throw new System.NotImplementedException();
+            // remettre deux points de mouvements à chaque Unités
+            foreach (var unit in this.Units)
+            {
+                unit.Points.MovePoints = 2;
+                this.VictoryPoints += unit.VictoryPoints[unit.currentTile];
+            }
+
         }
 
         public void addAttackCommand(int cost, Coordinate tile)

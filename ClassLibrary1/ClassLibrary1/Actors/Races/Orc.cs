@@ -77,11 +77,26 @@ namespace ClassLibrary1
                     {TileType.PLAIN, 0.5}
                 };
 
+        private static Dictionary<TileType, int> victoryPoints = new Dictionary<TileType, int>()
+        {
+            {TileType.FOREST,1 },
+            {TileType.MOUNTAIN,2 },
+            {TileType.PLAIN,1 },
+        };
+
         public override Dictionary<TileType, double> RequiredMovePoints
         {
             get
             {
                 return Orc.requiredMovePoints;
+            }
+        }
+
+        public override Dictionary<TileType,int> VictoryPoints
+        {
+            get
+            {
+                return Orc.victoryPoints;
             }
         }
 

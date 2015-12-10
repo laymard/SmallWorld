@@ -89,5 +89,38 @@ namespace TestUnitairesCore
             Assert.AreEqual(1, p.CurrentUnit.Points.MovePoints);
         }
 
+        [TestMethod]
+        public void TestVictoryPoints()
+        {
+            List<Coordinate> map = new List<Coordinate>();
+            List<TileType> tt = new List<TileType>() { TileType.MOUNTAIN,TileType.FOREST,TileType.PLAIN,TileType.WATER };
+
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    map.Add(new Coordinate(i, j));
+
+                }
+            }
+
+            Player p = new Player(Race.Human, "Gaston", 4);
+
+            for (int i = 0; i < p.Units.Capacity; i++)
+            {
+                p.createUnit(map[i],tt[i%4]);
+                p.selectUnit(p.Units[i]);
+                p.move(map[i + 4], tt[i]);
+            }
+            p.finishMoves();
+
+            foreach (Unit unit in p.Units)
+            {
+                Assert.AreEqual(unit.Points.MovePoints, 2);
+            }
+
+            Assert.AreEqual(p.VictoryPoints, 4);
+        }
+
     }
 }
