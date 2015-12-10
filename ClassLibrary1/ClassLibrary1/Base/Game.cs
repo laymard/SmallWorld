@@ -21,7 +21,7 @@ namespace ClassLibrary1
             set;
         }
 
-        
+
         /// <summary>
         /// Indice du joueur courant dans la liste des joueurs Players.
         /// </summary>
@@ -43,6 +43,11 @@ namespace ClassLibrary1
                 return this.Players[CurrentPlayerIndex];
             }
         }
+
+        /// <summary>
+        /// Joueur vainqueur.
+        /// </summary>
+        public Player Champion { get; set; }
 
         /// <summary>
         /// Carte du jeu.
@@ -120,7 +125,7 @@ namespace ClassLibrary1
         public void StartGame()
         {
             Random rnd = new Random();
-            foreach (Player p in Players) 
+            foreach (Player p in Players)
             {
                 while (p.Units.Count != p.Units.Capacity)
                 {
@@ -148,7 +153,7 @@ namespace ClassLibrary1
             bool res = false;
             foreach (Player p in Players)
             {
-                if (!p.Equals(player) && p.getUnitsOnTile(coord).Count>0)
+                if (!p.Equals(player) && p.getUnitsOnTile(coord).Count > 0)
                 {
                     res = true;
                     break;
@@ -171,15 +176,34 @@ namespace ClassLibrary1
         /// </summary>
         public void changePlayer()
         {
-            if (TurnsLeft == 0 || this.Victory()) this.end();
-            this.CurrentPlayerIndex = (CurrentPlayerIndex + 1) % (Map.MapSize.NbPlayers+1);
-            this.CurrentPlayer.setMovePoints();
-
+            if (TurnsLeft == 0 || Victory())
+                this.end();
+            else
+            {
+                this.CurrentPlayerIndex = (CurrentPlayerIndex + 1) % (Map.MapSize.NbPlayers + 1);
+                this.CurrentPlayer.setMovePoints();
+            }
         }
 
+        /// <summary>
+        /// Vérifie s'il y a un vainqueur
+        /// </summary>
+        /// <returns></returns>
         private bool Victory()
         {
-            return true;
+            List<Player> alive = new List<Player>();
+            foreach (Player p in Players)
+            {
+                if (!p.IsDead()) { alive.Add(p); }
+            }
+            //return (alive.Count == 1);
+            if (alive.Count == 1)
+            {
+                this.Champion = alive[0];
+                return true;
+            }
+            else return false;
+
         }
 
         /// <summary>
@@ -187,6 +211,20 @@ namespace ClassLibrary1
         /// </summary>
         public void end()
         {
+            if (TurnsLeft == 0)
+            {
+                Player champion = new Player();
+                foreach (Player p in Players)
+                {
+                    if (!p.IsDead() && p.VictoryPoints > champion.VictoryPoints)
+                    {
+                        champion = p;
+                    }
+                }
+
+                this.Champion = champion;
+            }
+
             this.TurnsLeft = 0;
         }
 
@@ -223,7 +261,7 @@ namespace ClassLibrary1
         public void attack()
         {
             TileType type = this.Map.getTile(SelectedTile);
-            if (CurrentPlayer.CurrentUnit.canAttack(SelectedTile,type))
+            if (CurrentPlayer.CurrentUnit.canAttack(SelectedTile, type))
             {
                 // choix du vainqueur de l'attaque
                 bool winner = this.chooseWinner(AttackedUnit);
@@ -247,13 +285,14 @@ namespace ClassLibrary1
             }
         }
 
+
         public void move(Coordinate coord)
         {
             TileType type = Map.getTile(coord);
             CurrentPlayer.CurrentUnit.move(coord, type);
         }
 
-        public void move(int x,int y)
+        public void move(int x, int y)
         {
             Coordinate coord = Map.getCoord(0, 0);
             TileType type = Map.getTile(coord);
@@ -267,10 +306,10 @@ namespace ClassLibrary1
             double defender = opponentUnit.getRatioDefender();
             double attacker = CurrentPlayer.CurrentUnit.getRatioAttacker();
 
-            Random r= new Random();
+            Random r = new Random();
             double rnd = r.Next(0, 1);
 
-            return (rnd > defender/(attacker+attacker));
+            return (rnd > defender / (attacker + attacker));
         }
 
         /// <summary>
@@ -279,25 +318,25 @@ namespace ClassLibrary1
         /// </summary>
         public bool selectBestDefender(Coordinate tile)
         {
-                List<Unit> units = this.getUnitsOnTile(tile);
+            List<Unit> units = this.getUnitsOnTile(tile);
 
-                // s'il n'y a pas d'unité sur la case
-                if ((units.Count == 0)) return false;
+            // s'il n'y a pas d'unité sur la case
+            if ((units.Count == 0)) return false;
 
-                // s'il y a au moins une unité sur la case
-                else 
+            // s'il y a au moins une unité sur la case
+            else
+            {
+                Unit best = units[0];
+                foreach (Unit u in units)
                 {
-                    Unit best = units[0];
-                    foreach (Unit u in units)
+                    if (u.betterDefence(best))
                     {
-                        if (u.betterDefence(best))
-                        {
-                            best = u;
-                        }
+                        best = u;
                     }
-                    AttackedUnit = best;
-                    return true;
                 }
+                AttackedUnit = best;
+                return true;
+            }
         }
 
         /// <summary>

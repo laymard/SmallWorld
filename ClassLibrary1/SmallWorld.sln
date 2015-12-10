@@ -1,13 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "ClassLibrary1\Core.csproj", "{B3760582-AD61-4F7C-98F3-3D3861E7FEE4}"
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "UML", "UML\UML.modelproj", "{2174EC2C-357E-4EBE-81F2-F0C2CA31FEDA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUnitairesCore", "TestUnitairesCore\TestUnitairesCore.csproj", "{3C0538E6-C69B-48F7-8A42-85756FA7D1A6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{81E670FE-8518-4C71-B28D-D3D6AC90C790} = {81E670FE-8518-4C71-B28D-D3D6AC90C790}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C0F76E2F-0983-4F7C-9AA1-0531AA77D95D}"
 	ProjectSection(SolutionItems) = preProject

@@ -37,6 +37,32 @@ namespace TestUnitairesCore
         [TestMethod]
         public void TestUndoLastCommand()
         {
+
+            NewGameBuilder builder = new NewGameBuilder(new DemoMap());
+
+            builder.buildGame();
+
+            Game game = builder.Game;
+
+            game.AddPlayer(Race.Human, "Player 1", 4);
+            game.AddPlayer(Race.Orc, "Player 2", 4);
+
+            Player p1 = game.Players[0];
+            Player p2 = game.Players[1];
+
+            game.StartGame();
+
+            Coordinate coord = new Coordinate(p1.Units[0].coord.X, p1.Units[0].coord.Y);
+            Coordinate coordTarget = new Coordinate(coord.X + 1, coord.Y);
+
+            p1.CurrentUnit = p1.Units[0];
+            p1.move(coordTarget, game.Map.getTile(coordTarget));
+
+            p1.undoLastCommand();
+
+            Assert.AreEqual(coord, p1.Units[0].coord);
+            Assert.AreEqual(p1.Units[0].Points.MovePoints, 2);
+            
         }
 
         [TestMethod]
@@ -64,20 +90,36 @@ namespace TestUnitairesCore
         }
 
         [TestMethod]
-        public void TestIsDead(){
-            Player p = new Player(Race.Human, "Gaston", 4);
+        public void TestVictoryPoints()
+        {
+            List<Coordinate> map = new List<Coordinate>();
+            List<TileType> tt = new List<TileType>() { TileType.MOUNTAIN,TileType.FOREST,TileType.PLAIN,TileType.WATER };
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 2; i++)
             {
-                p.createUnit(new Coordinate(0, 0), TileType.FOREST);
-                p.Units[i].Points.lifePoints = 0;
+                for (int j = 0; j < 4; j++)
+                {
+                    map.Add(new Coordinate(i, j));
+
+                }
             }
 
-            Assert.IsTrue(p.IsDead());
+            Player p = new Player(Race.Human, "Gaston", 4);
 
-            p.Units[0].Points.lifePoints = 1;
-            Assert.IsFalse(p.IsDead());
+            for (int i = 0; i < p.Units.Capacity; i++)
+            {
+                p.createUnit(map[i],tt[i%4]);
+                p.selectUnit(p.Units[i]);
+                p.move(map[i + 4], tt[i]);
+            }
+            p.finishMoves();
 
+            foreach (Unit unit in p.Units)
+            {
+                Assert.AreEqual(unit.Points.MovePoints, 2);
+            }
+
+            Assert.AreEqual(p.VictoryPoints, 4);
         }
 
     }

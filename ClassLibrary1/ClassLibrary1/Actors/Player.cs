@@ -83,6 +83,7 @@ namespace ClassLibrary1
             this.Units = new List<Unit>(nbUnits);
             this.VictoryPoints = 0;
             this.Name = name;
+            this.Actions = new Stack<Command>();
         }
 
         public Player()
@@ -152,7 +153,7 @@ namespace ClassLibrary1
 
         public void undoLastCommand()
         {
-            throw new System.NotImplementedException();
+            this.Actions.Pop().undo();
         }
 
         /// <summary>
@@ -160,7 +161,13 @@ namespace ClassLibrary1
         /// </summary>
         public void finishMoves()
         {
-            throw new System.NotImplementedException();
+            // remettre deux points de mouvements à chaque Unités
+            foreach (var unit in this.Units)
+            {
+                unit.Points.MovePoints = 2;
+                this.VictoryPoints += unit.VictoryPoints[unit.currentTile];
+            }
+
         }
 
         public void addAttackCommand(int cost, Coordinate tile)
@@ -182,6 +189,7 @@ namespace ClassLibrary1
         public void addMoveCommand(Coordinate target,double cost)
         {
             MoveUnits mu = new MoveUnits(CurrentUnit,target, cost);
+            this.Actions.Push(mu);
         }
 
         /// <summary>

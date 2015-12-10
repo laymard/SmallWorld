@@ -10,12 +10,13 @@ namespace ClassLibrary1
         private Coordinate target;
         private double cost1;
 
-        public MoveUnits(ClassLibrary1.Unit unit, Coordinate target, double cost1)
+        public MoveUnits(Unit unit, Coordinate target, double cost)
         {
             // TODO: Complete member initialization
             this.Unit = unit;
             this.target = target;
-            this.cost1 = cost1;
+            this.cost = cost;
+            this.lastCoord = new Coordinate(Unit.coord.X,Unit.coord.Y);
         }
         public Unit Unit
         {
@@ -26,7 +27,7 @@ namespace ClassLibrary1
         /// <summary>
         /// point de mouvement nécessaire à ce mouvement
         /// </summary>
-        public int cost
+        public double cost
         {
             get;
             set;
@@ -52,7 +53,10 @@ namespace ClassLibrary1
 
         void Command.undo()
         {
- 	        throw new NotImplementedException();
+            Unit.coord.X = lastCoord.X;
+            Unit.coord.Y = lastCoord.Y;
+
+            Unit.Points.MovePoints += cost;
         }
 
         void Command.canDo()

@@ -87,10 +87,10 @@ namespace TestUnitairesCore
             Coordinate coord2 = new Coordinate(0, 2);
             Coordinate coord3 = new Coordinate(0, 3);
 
-            Unit elf = new Elf(coord0,TileType.DEFAULT);
-            Assert.IsTrue(elf.canAttack(coord1, TileType.DEFAULT));
-            Assert.IsTrue(elf.canAttack(coord2, TileType.DEFAULT));
-            Assert.IsFalse(elf.canAttack(coord3, TileType.DEFAULT));
+            Unit elf = new Elf(coord0, TileType.FOREST);
+            Assert.IsTrue(elf.canAttack(coord1, TileType.FOREST));
+            Assert.IsTrue(elf.canAttack(coord2, TileType.FOREST));
+            Assert.IsFalse(elf.canAttack(coord3, TileType.FOREST));
         }
 
         [TestMethod]
@@ -99,11 +99,11 @@ namespace TestUnitairesCore
             Coordinate coord0 = new Coordinate(0, 0);
             Coordinate coord1 = new Coordinate(0, 1);
             Coordinate coord2 = new Coordinate(0, 2);
-            
 
-            Unit human = new Human(coord0, TileType.DEFAULT);
-            Assert.IsTrue(human.canAttack(coord1, TileType.DEFAULT));
-            Assert.IsFalse(human.canAttack(coord2, TileType.DEFAULT));
+
+            Unit human = new Human(coord0, TileType.FOREST);
+            Assert.IsTrue(human.canAttack(coord1, TileType.FOREST));
+            Assert.IsFalse(human.canAttack(coord2, TileType.FOREST));
         }
 
 
@@ -116,14 +116,14 @@ namespace TestUnitairesCore
             Coordinate coord3 = new Coordinate(0, 3);
 
 
-            Unit orc1 = new Orc(coord0, TileType.DEFAULT);
-            Assert.IsTrue(orc1.canAttack(coord1, TileType.DEFAULT));
-            Assert.IsFalse(orc1.canAttack(coord2, TileType.DEFAULT));
+            Unit orc1 = new Orc(coord0, TileType.FOREST);
+            Assert.IsTrue(orc1.canAttack(coord1, TileType.FOREST));
+            Assert.IsFalse(orc1.canAttack(coord2, TileType.FOREST));
 
             Unit orc2 = new Orc(coord0, TileType.MOUNTAIN);
-            Assert.IsTrue(orc2.canAttack(coord1, TileType.DEFAULT));
-            Assert.IsTrue(orc2.canAttack(coord2, TileType.DEFAULT));
-            Assert.IsFalse(orc2.canAttack(coord3, TileType.DEFAULT));
+            Assert.IsTrue(orc2.canAttack(coord1, TileType.FOREST));
+            Assert.IsTrue(orc2.canAttack(coord2, TileType.FOREST));
+            Assert.IsFalse(orc2.canAttack(coord3, TileType.FOREST));
         }
 
         [TestMethod]

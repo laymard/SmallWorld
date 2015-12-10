@@ -16,6 +16,22 @@ namespace ClassLibrary1
         public Human()
             : base() { }
 
+        private static Dictionary<TileType, int> victoryPoints = new Dictionary<TileType, int>()
+        {
+            {TileType.FOREST,1 },
+            {TileType.MOUNTAIN,1 },
+            {TileType.PLAIN,2 },
+            {TileType.WATER,0 }
+        };
+
+        public override Dictionary<TileType,int> VictoryPoints
+        {
+            get
+            {
+                return Human.victoryPoints;
+            }
+        }
+
         public override void addVictoryPoints()
         {
             switch (this.currentTile)

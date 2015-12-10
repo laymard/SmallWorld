@@ -39,6 +39,21 @@ namespace ClassLibrary1
             }
         }
 
+        private static Dictionary<TileType, int> victoryPoints = new Dictionary<TileType, int>()
+        {
+            {TileType.FOREST,3 },
+            {TileType.MOUNTAIN,0 },
+            {TileType.PLAIN,1 }
+        };
+
+        public override Dictionary<TileType, int> VictoryPoints
+        {
+            get
+            {
+                return Elf.victoryPoints;
+            }
+        }
+
         public override void addVictoryPoints()
         {
             switch (currentTile)
