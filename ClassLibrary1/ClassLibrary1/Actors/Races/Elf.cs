@@ -12,6 +12,7 @@ namespace ClassLibrary1
         /// Constructeur Elf
         /// </summary>
         /// <param name="coord"> coordonnées de départ </param>
+        /// <param name="type"> type de case </param>
         public Elf(Coordinate coord, TileType type) : base(coord,type)
         {
             this.Points = new Points(12,4,3);
@@ -21,6 +22,7 @@ namespace ClassLibrary1
         /// </summary>
         public Elf()
             : base(){ }
+
 
         private static Dictionary<TileType, double> requiredMovePoints = new Dictionary<TileType, double>()
         {
@@ -38,6 +40,7 @@ namespace ClassLibrary1
             }
         }
 
+
         private static Dictionary<TileType, int> victoryPoints = new Dictionary<TileType, int>()
         {
             {TileType.FOREST,3 },
@@ -53,20 +56,12 @@ namespace ClassLibrary1
             }
         }
 
+
         public override void addVictoryPoints()
         {
-            switch (currentTile)
-            {
-                case TileType.FOREST :
-                    this.Points.victoryPoints += 3;
-                    break;
-                case TileType.PLAIN:
-                    this.Points.victoryPoints += 1;
-                    break;
-                default :
-                    break;
-            }
+                this.Points.victoryPoints += Elf.victoryPoints[currentTile];
         }
+
 
         public override bool canAttack(Coordinate tile, TileType type)
         {
@@ -82,13 +77,6 @@ namespace ClassLibrary1
         {
             base.looseLifePoints(nbPoints);
         }
-
-        /*public override void spendMovePoints(Coordinate targetTile, TileType type)
-        {
-            int cost = this.coord.distanceFrom(targetTile);
-            if (type == TileType.MOUNTAIN) cost *= 2;
-            Points.movePoints -= cost;
-        }*/
 
     public override bool canMove(Coordinate tile, TileType type)
     {
