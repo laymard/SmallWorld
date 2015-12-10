@@ -16,7 +16,6 @@ namespace ClassLibrary1
         {
             this.Points = new Points(12,4,3);
         }
-
         /// <summary>
         /// Constructeur Elf par défaut
         /// </summary>

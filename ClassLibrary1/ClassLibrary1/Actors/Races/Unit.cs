@@ -77,7 +77,9 @@ namespace ClassLibrary1
 
         public bool betterDefence(Unit unit)
         {
-            return this.Points.defencePoints > unit.Points.defencePoints;
+            return (this.Points.defencePoints > unit.Points.defencePoints 
+                // cas ou les deux unités ont le même nombre de points de défense
+                || this.Points.attackPoints > unit.Points.attackPoints);
         }
 
         internal bool isDead()

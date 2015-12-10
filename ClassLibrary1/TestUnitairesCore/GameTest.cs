@@ -207,6 +207,55 @@ namespace ClassLibrary1
         [TestMethod]
         public void TestselectBestDefender()
         {
+            Game game = new Game();
+
+            // Coordonnée utilisée
+            Coordinate coord = new Coordinate(0, 0);
+            game.Map.matrix.Add(coord, TileType.WATER);
+
+            // Postionnement de 3 unités sur la case coord
+            game.AddPlayer(Race.Human, "Robert", 1);
+            game.AddPlayer(Race.Orc, "Marie", 1);
+            game.AddPlayer(Race.Elf, "Gaston", 1);
+            foreach (Player p in game.Players)
+            {
+                p.createUnit(coord, TileType.FOREST);
+            }
+
+            // Test de sélection du meilleur défenseur
+            bool defender = game.selectBestDefender(coord);
+
+            Assert.IsTrue(defender);
+            Assert.IsInstanceOfType(game.AttackedUnit, typeof(Human));
+        }
+
+        /// <summary>
+        /// [R25_1_VICTORY_KILL]
+        /// [R25_2_VICTORY_POINTS]
+        /// </summary>
+        [TestMethod]
+        public void TestEndGame()
+        {
+            Game game = new Game();
+            // Création des joueurs
+            game.AddPlayer(Race.Human, "Robert", 1);
+            game.Players[0].createUnit(new Coordinate(0,0),TileType.WATER);
+
+            // Test : le joueur est seul donc à la fin du tour il est vainqueur
+            game.TurnsLeft = 2;
+            game.EndTurn();
+            Assert.AreEqual(game.Players[0],game.Champion);
+
+            // Test : il ne reste plus de tour donc le vainqueur est le joueur avec le plus de points de victoire
+            game.AddPlayer(Race.Orc, "Elsa", 1);
+            game.Players[1].createUnit(new Coordinate(0, 0), TileType.WATER);
+
+            game.Players[0].VictoryPoints = 1;
+            game.Players[1].VictoryPoints = 4;
+
+            game.TurnsLeft = 0;
+            game.EndTurn();
+            Assert.AreEqual(game.Players[1], game.Champion);
 
         }
 
