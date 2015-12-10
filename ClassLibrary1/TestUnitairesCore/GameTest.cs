@@ -165,27 +165,41 @@ namespace ClassLibrary1
 
 
         [TestMethod]
-        public void TestAttack()
+        public void TestAttackHuman()
         {
-            //
-            // TODO: ajoutez ici la logique du test
-            //
-        }
+            Game game = new Game();
 
-        [TestMethod]
-        public void TestChooseWinner()
-        {
-            //
-            // TODO: ajoutez ici la logique du test
-            //
+            // Coordonnées utilisées
+            Coordinate coord00 = new Coordinate(0, 0);
+            game.Map.matrix.Add(coord00, TileType.WATER);
+            Coordinate coord01 = new Coordinate(0, 1);
+            game.Map.matrix.Add(coord01, TileType.WATER);
+            Coordinate coord20 = new Coordinate(2, 0);
+            game.Map.matrix.Add(coord20, TileType.WATER);
+
+            // Attaquant : unité située sur la case (0,0)
+            Player attacker = new Player(Race.Human, "attacker", 1);
+            attacker.createUnit(coord00, TileType.WATER);
+            attacker.CurrentUnit = attacker.Units[0];
+            // défenseur
+            Player defender = new Player(Race.Orc, "defender", 1);
+            attacker.createUnit(coord01, TileType.WATER);
+
+            game.Players.Add(attacker);
+            game.Players.Add(defender);
+            game.CurrentPlayerIndex = 0;
+
+            // Test attaque
+            game.selectTile(coord01);
+
+            Assert.AreEqual(attacker.CurrentUnit.Points.MovePoints, 1);
+            Assert.IsTrue(attacker.CurrentUnit.Points.lifePoints < 15 || defender.Units[0].Points.lifePoints < 17);
         }
 
         [TestMethod]
         public void TestselectBestDefender()
         {
-            //
-            // TODO: ajoutez ici la logique du test
-            //
+
         }
 
     }

@@ -38,7 +38,11 @@ namespace ClassLibrary1
             //this.initialiseTiles();
         }
 
-        public Map() { }
+        public Map() {
+            this.MapSize = new StandardMap();
+            this.TileFactory = new TileFactory();
+            this.matrix = new Dictionary<Coordinate, TileType>();
+        }
 
         public Map(Map map, MatrixSaver ms)
         {

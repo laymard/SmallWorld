@@ -57,25 +57,12 @@ namespace ClassLibrary1
         public override bool canAttack(Coordinate tile, TileType type)
         {
             int dist = this.coord.distanceFrom(tile);
-            return (dist == 1 || dist == 2);
+            bool distance =  (dist == 1 || dist == 2);
+            bool points = Elf.requiredMovePoints[type] < this.Points.MovePoints;
+            
+            return (points && distance);
         }
 
-        /*public override bool canMove(Coordinate tile, TileType type)
-        {
-            // Les elfes ne peuvent pas aller sur l'eau
-            if (type == TileType.WATER)
-                return false;
-
-            double cost = (double)this.coord.distanceFrom(tile);
-
-            if (cost < 0) 
-                return false;
-
-            if (type == TileType.MOUNTAIN) cost *= 2;
-            double movePoints = this.Points.movePoints;
-
-            return movePoints >= cost;
-        }*/
 
     public override void looseLifePoints(int nbPoints)
         {

@@ -63,5 +63,22 @@ namespace TestUnitairesCore
             Assert.AreEqual(1, p.CurrentUnit.Points.MovePoints);
         }
 
+        [TestMethod]
+        public void TestIsDead(){
+            Player p = new Player(Race.Human, "Gaston", 4);
+
+            for (int i = 0; i < 4; i++)
+            {
+                p.createUnit(new Coordinate(0, 0), TileType.FOREST);
+                p.Units[i].Points.lifePoints = 0;
+            }
+
+            Assert.IsTrue(p.IsDead());
+
+            p.Units[0].Points.lifePoints = 1;
+            Assert.IsFalse(p.IsDead());
+
+        }
+
     }
 }

@@ -90,20 +90,7 @@ namespace ClassLibrary1
             this.VictoryPoints = 0;
         }
 
-        /*public void initializeRequiredMovePoints()
-        {
-            switch(this.Race) {
-                case Race.Elf :
-                    this.RequiredMovePoints = Elf.RequiredMovePoints();
-                    break;
-                case Race.Human:
-                    this.RequiredMovePoints = Human.RequiredMovePoints();
-                    break;
-                case Race.Orc:
-                    this.RequiredMovePoints = Orc.RequiredMovePoints();
-                    break;
-            }
-        }*/
+
 
         /// <summary>
         /// create a unit of the player's race
@@ -214,6 +201,15 @@ namespace ClassLibrary1
             {
                 u.Points.MovePoints = 2;
             }
+        }
+
+        public bool IsDead()
+        {
+            foreach(Unit u in this.Units)
+            {
+                if (!(u.isDead())) return false;
+            }
+            return true;
         }
 
     }

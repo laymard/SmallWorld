@@ -34,40 +34,13 @@ namespace ClassLibrary1
             }
         }
 
-        /*public override void spendMovePoints(Coordinate tile, TileType type)
-        {
-            double cost = (double)this.coord.distanceFrom(tile);
-            if (type == TileType.PLAIN) cost *= 0.5;
-            Points.movePoints -= cost;
-        }*/
-
-        /*public override bool canMove(Coordinate tile, TileType type)
-        {
-            // Les orcs ne peuvent pas aller sur l'eau
-            if (type == TileType.WATER)
-                return false;
-
-            double cost = this.coord.distanceFrom(tile);
-
-            if (cost < 0)
-                return false;
-
-            if (type == TileType.PLAIN) cost *= 0.5;
-            double movePoints = (double)Points.movePoints;
-
-            return movePoints >= cost;
-        }*/
-
         public override bool canAttack(Coordinate tile, TileType type)
         {
             int dist = this.coord.distanceFrom(tile);
-            return ((currentTile == TileType.MOUNTAIN && dist == 2) || dist == 1);
+            bool distance = ((currentTile == TileType.MOUNTAIN && dist == 2) || dist == 1);
+            bool points = Orc.requiredMovePoints[type] < this.Points.MovePoints;
+            return (points && distance);
         }
-
-        /*public override Dictionary<TileType, double> RequiredMovePoints
-        {
-            get;
-        }*/
 
         private static Dictionary<TileType, double> requiredMovePoints = new Dictionary<TileType, double>()
                 {

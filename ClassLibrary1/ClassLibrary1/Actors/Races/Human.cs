@@ -34,26 +34,13 @@ namespace ClassLibrary1
             }
         }
 
-        /*public override void spendMovePoints(Coordinate tile, TileType type)
-        {
-            double cost = (double)this.coord.distanceFrom(tile);
-            Points.movePoints -= cost;
-        }*/
-
-        /*public override bool canMove(Coordinate tile, TileType type)
-        {
-            double cost = (double)this.coord.distanceFrom(tile);
-
-            if (cost < 0)
-                return false;
-
-            return Points.movePoints >= cost;
-        }*/
-
         public override bool canAttack(Coordinate tile, TileType type)
         {
             int dist = this.coord.distanceFrom(tile);
-            return (dist == 1);
+            bool distance = (dist == 1);
+            bool points = Human.requiredMovePoints[type] < this.Points.MovePoints;
+
+            return (points && distance);
         }
 
 

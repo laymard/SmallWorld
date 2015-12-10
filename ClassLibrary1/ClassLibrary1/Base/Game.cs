@@ -87,23 +87,13 @@ namespace ClassLibrary1
             set;
         }
 
-
-        public void AddPlayer(Race race, String name, int nbUnits)
-        {
-            Player p = new Player(race, name, nbUnits);
-            if (checkRaces(p.Race))
-            {
-                Players.Add(p);
-            }
-        }
-
         /// <summary>
         /// Constructeur par défaut de la classe Game.
         /// </summary>
         public Game()
         {
             this.AttackedUnit = null;
-            //initializeMap(new StandardMap());
+            this.Map = new Map();
             this.Players = new List<Player>();
         }
 
@@ -113,6 +103,15 @@ namespace ClassLibrary1
             this.CurrentPlayerIndex = gs.Game.CurrentPlayerIndex;
             this.Map = new Map(gs.Game.Map, gs.Matrix);
             this.TurnsLeft = gs.Game.TurnsLeft;
+        }
+
+        public void AddPlayer(Race race, String name, int nbUnits)
+        {
+            Player p = new Player(race, name, nbUnits);
+            if (checkRaces(p.Race))
+            {
+                Players.Add(p);
+            }
         }
 
         /// <summary>
@@ -138,6 +137,12 @@ namespace ClassLibrary1
             setFirstPlayer();
         }
 
+        /// <summary>
+        /// Vérifie s'il y a un autre joueur que player sur la case coord
+        /// </summary>
+        /// <param name="coord"></param>
+        /// <param name="player"></param>
+        /// <returns>true si un autre joueur est présent, faux sinon.</returns>
         public bool otherRaceOnTile(Coordinate coord, Player player)
         {
             bool res = false;
@@ -166,8 +171,15 @@ namespace ClassLibrary1
         /// </summary>
         public void changePlayer()
         {
+            if (TurnsLeft == 0 || this.Victory()) this.end();
             this.CurrentPlayerIndex = (CurrentPlayerIndex + 1) % (Map.MapSize.NbPlayers+1);
             this.CurrentPlayer.setMovePoints();
+
+        }
+
+        private bool Victory()
+        {
+            return true;
         }
 
         /// <summary>
@@ -206,7 +218,7 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// Attaque d'une case par l'unité courante.
+        /// Attaque d'une unité par l'unité courante.
         /// </summary>
         public void attack()
         {
@@ -230,6 +242,7 @@ namespace ClassLibrary1
                 else
                 {
                     CurrentPlayer.CurrentUnit.looseLifePoints(lost);
+                    CurrentPlayer.CurrentUnit.spendMovePoints(type);
                 }
             }
         }
@@ -237,7 +250,6 @@ namespace ClassLibrary1
         public void move(Coordinate coord)
         {
             TileType type = Map.getTile(coord);
-            //var quichelorraine = unit.RequiredMovePoints();
             CurrentPlayer.CurrentUnit.move(coord, type);
         }
 
@@ -245,22 +257,20 @@ namespace ClassLibrary1
         {
             Coordinate coord = Map.getCoord(0, 0);
             TileType type = Map.getTile(coord);
-            //var quichelorraine = unit.RequiredMovePoints();
             CurrentPlayer.CurrentUnit.move(coord, type);
         }
         /// <summary>
-        /// Algorithme de décision du vainqueur entre les unités currentUnit et defender
+        /// Algorithme de décision du vainqueur entre les unités CurrentUnit et opponentUnit
         /// </summary>
         public Boolean chooseWinner(Unit opponentUnit)
         {
-            // TO DO : algo de décision du vainqueur entre les unités currentUnit et defender
-            // retourne true si currentUnit a gagné, false sinon
             double defender = opponentUnit.getRatioDefender();
             double attacker = CurrentPlayer.CurrentUnit.getRatioAttacker();
+
             Random r= new Random();
             double rnd = r.Next(0, 1);
+
             return (rnd > defender/(attacker+attacker));
-            
         }
 
         /// <summary>
@@ -269,19 +279,16 @@ namespace ClassLibrary1
         /// </summary>
         public bool selectBestDefender(Coordinate tile)
         {
-            int i = 0;
-            bool found = false;
+                List<Unit> units = this.getUnitsOnTile(tile);
 
-            while (!found && i < Players.Count)
-            {
-                List<Unit> p_units = Players[i].getUnitsOnTile(tile);
-                if (!(p_units.Count == 0)) // si le joueur a au moins une unité sur la case
+                // s'il n'y a pas d'unité sur la case
+                if ((units.Count == 0)) return false;
+
+                // s'il y a au moins une unité sur la case
+                else 
                 {
-                    // le joueur présent sur la case tile est trouvé
-                    found = true;
-
-                    Unit best = p_units[0];
-                    foreach (Unit u in p_units)
+                    Unit best = units[0];
+                    foreach (Unit u in units)
                     {
                         if (u.betterDefence(best))
                         {
@@ -289,16 +296,14 @@ namespace ClassLibrary1
                         }
                     }
                     AttackedUnit = best;
+                    return true;
                 }
-            }
-            // pas d'unité sur cette case.
-            return found;
         }
 
         /// <summary>
         /// Retourne la liste des unités présentes sur la case coord
         /// </summary>
-        public void getUnitsOnTile(Coordinate coord)
+        public List<Unit> getUnitsOnTile(Coordinate coord)
         {
             List<Unit> units = new List<Unit>();
             foreach (Player p in Players)
@@ -308,6 +313,7 @@ namespace ClassLibrary1
                     units.Add(u);
                 }
             }
+            return units;
         }
 
         public void saveGame(String path)
