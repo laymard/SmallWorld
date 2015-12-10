@@ -12,7 +12,6 @@ namespace ClassLibrary1
         /// <summary>
         /// Liste des joueurs (au moins deux)
         /// </summary>
-
         [XmlArray("players")]
         [XmlArrayItem("player")]
         public List<Player> Players
@@ -20,7 +19,6 @@ namespace ClassLibrary1
             get;
             set;
         }
-
 
         /// <summary>
         /// Indice du joueur courant dans la liste des joueurs Players.
@@ -102,6 +100,10 @@ namespace ClassLibrary1
             this.Players = new List<Player>();
         }
 
+        /// <summary>
+        /// Constructeur de Game à partir d'une sauvegarde
+        /// </summary>
+        /// <param name="gs">Jeu chargé</param>
         public Game(GameSaver gs)
         {
             this.Players = gs.Game.Players;
@@ -110,6 +112,12 @@ namespace ClassLibrary1
             this.TurnsLeft = gs.Game.TurnsLeft;
         }
 
+        /// <summary>
+        /// Ajoute un joueur au jeu après avoir vérifié que sa race n'a pas déjà été choisie par un autre joueur. 
+        /// </summary>
+        /// <param name="race">race du joueur</param>
+        /// <param name="name">nom du joueur</param>
+        /// <param name="nbUnits">nombre d'unités</param>
         public void AddPlayer(Race race, String name, int nbUnits)
         {
             Player p = new Player(race, name, nbUnits);
@@ -146,8 +154,8 @@ namespace ClassLibrary1
         /// <summary>
         /// Vérifie s'il y a un autre joueur que player sur la case coord
         /// </summary>
-        /// <param name="coord"></param>
-        /// <param name="player"></param>
+        /// <param name="coord">Coordonnées de la case</param>
+        /// <param name="player">Joueur concerné</param>
         /// <returns>true si un autre joueur est présent, faux sinon.</returns>
         public bool otherRaceOnTile(Coordinate coord, Player player)
         {
@@ -210,7 +218,7 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// Fin du jeu.
+        /// Fin du jeu : le champion est soit le dernier joueur vivant, soit le joueur ayant le plus de points de victoire
         /// </summary>
         public void end()
         {
@@ -232,8 +240,10 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// Vérifie que la Race race n'a pas déjà été choisie par un autre joueur lors de l'initialisation de la partie. Retourne faux si la race a déjà été selectionnée. Vrai, sinon.
+        /// Vérifie que la Race race n'a pas déjà été choisie par un autre joueur lors de l'initialisation de la partie. 
         /// </summary>
+        /// <param name="race">Race</param>
+        /// <returns>Retourne faux si la race a déjà été selectionnée. Vrai, sinon.</returns>
         public bool checkRaces(Race race)
         {
             for (int i = 0; i < Players.Count; i++)
@@ -247,8 +257,9 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// Selectionne la case tile et si des unités sont présentes sur la cases alors la meilleure unité est choisie pour l'attaque.
+        ///  Selectionne la case tile et si des unités sont présentes sur la cases alors la meilleure unité est choisie pour l'attaque.
         /// </summary>
+        /// <param name="tile">Case à sélectionner</param>
         public void selectTile(Coordinate tile)
         {
             SelectedTile = tile;
@@ -288,22 +299,21 @@ namespace ClassLibrary1
             }
         }
 
-
+        /// <summary>
+        /// Déplacement de l'unité courante
+        /// </summary>
+        /// <param name="coord">Coordonnées de la case cible</param>
         public void move(Coordinate coord)
         {
             TileType type = Map.getTile(coord);
             CurrentPlayer.CurrentUnit.move(coord, type);
         }
 
-        public void move(int x, int y)
-        {
-            Coordinate coord = Map.getCoord(0, 0);
-            TileType type = Map.getTile(coord);
-            CurrentPlayer.CurrentUnit.move(coord, type);
-        }
         /// <summary>
         /// Algorithme de décision du vainqueur entre les unités CurrentUnit et opponentUnit
         /// </summary>
+        /// <param name="opponentUnit">Unité attaquée</param>
+        /// <returns></returns>
         public Boolean chooseWinner(Unit opponentUnit)
         {
             double defender = opponentUnit.getRatioDefender();
@@ -317,8 +327,9 @@ namespace ClassLibrary1
 
         /// <summary>
         /// Si des unités sont présentes sur la cases alors la meilleure unité est choisie pour l'attaque.
-        /// retourne true si une unité est attaquée, false sinon
         /// </summary>
+        /// <param name="tile">Coordonnées</param>
+        /// <returns> retourne true si une unité est attaquée, false sinon</returns>
         public bool selectBestDefender(Coordinate tile)
         {
             List<Unit> units = this.getUnitsOnTile(tile);
@@ -345,6 +356,8 @@ namespace ClassLibrary1
         /// <summary>
         /// Retourne la liste des unités présentes sur la case coord
         /// </summary>
+        /// <param name="coord">Coordonnées</param>
+        /// <returns></returns>
         public List<Unit> getUnitsOnTile(Coordinate coord)
         {
             List<Unit> units = new List<Unit>();
@@ -358,6 +371,10 @@ namespace ClassLibrary1
             return units;
         }
 
+        /// <summary>
+        /// Sauvegarde du jeu
+        /// </summary>
+        /// <param name="path">path du fichier de sauvegarde</param>
         public void saveGame(String path)
         {
             GameSaver gs = new GameSaver(this);
