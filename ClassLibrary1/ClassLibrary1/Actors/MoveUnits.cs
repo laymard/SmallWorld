@@ -8,8 +8,14 @@ namespace ClassLibrary1
     public class MoveUnits : Command
     {
         private Coordinate target;
-        private double cost1;
+        //private double cost1;
 
+        /// <summary>
+        /// Constructeur de MoveUnits
+        /// </summary>
+        /// <param name="unit">Unité</param>
+        /// <param name="target">Coordonnées de la case cible</param>
+        /// <param name="cost">Coût du déplacement</param>
         public MoveUnits(Unit unit, Coordinate target, double cost)
         {
             // TODO: Complete member initialization
@@ -18,6 +24,10 @@ namespace ClassLibrary1
             this.cost = cost;
             this.lastCoord = new Coordinate(Unit.coord.X,Unit.coord.Y);
         }
+
+        /// <summary>
+        /// Unité
+        /// </summary>
         public Unit Unit
         {
             get;
@@ -25,7 +35,7 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// point de mouvement nécessaire à ce mouvement
+        /// Points de mouvement nécessaire à ce mouvement
         /// </summary>
         public double cost
         {
@@ -34,7 +44,7 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// position avant le mouvement
+        /// Position avant le mouvement
         /// </summary>
         public Coordinate lastCoord
         {

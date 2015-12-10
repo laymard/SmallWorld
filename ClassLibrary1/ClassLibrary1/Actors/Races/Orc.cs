@@ -87,6 +87,11 @@ namespace ClassLibrary1
             }
         }
 
+        /// <summary>
+        /// Vérifie que l'unité peut être placée sur une case type (placement initial sur la map)
+        /// </summary>
+        /// <param name="type">type de case</param>
+        /// <returns></returns>
         public static bool canBeOn(TileType type)
         {
             return Orc.requiredMovePoints[type] != -1;

@@ -9,6 +9,9 @@ namespace ClassLibrary1
     [Serializable()]
     public class Player
     {
+        /// <summary>
+        /// Nom du joueur
+        /// </summary>
         [XmlAttribute()]
         public String Name
         {
@@ -16,6 +19,9 @@ namespace ClassLibrary1
             set;
         }
 
+        /// <summary>
+        /// Points de victoire
+        /// </summary>
         [XmlAttribute()]
         public int VictoryPoints
         {
@@ -23,13 +29,9 @@ namespace ClassLibrary1
             set;
         }
 
-        /*[XmlIgnore()]
-        public double MovePoints
-        {
-            get;
-            set;
-        }*/
-
+        /// <summary>
+        /// Pile des actions
+        /// </summary>
         [XmlIgnore()]
         public Stack<Command> Actions
         {
@@ -37,6 +39,9 @@ namespace ClassLibrary1
             set;
         }
 
+        /// <summary>
+        /// Liste des unités
+        /// </summary>
         [XmlArray("units")]
         [XmlArrayItem("unit")]
         public List<Unit> Units
@@ -45,6 +50,9 @@ namespace ClassLibrary1
             set;
         }
 
+        /// <summary>
+        /// Nombre d'unités
+        /// </summary>
         [XmlAttribute()]
         public int NbUnits
         {
@@ -52,6 +60,9 @@ namespace ClassLibrary1
             set;
         }
 
+        /// <summary>
+        /// Unité en cours de jeu
+        /// </summary>
         [XmlIgnore()]
         public Unit CurrentUnit
         {
@@ -59,13 +70,9 @@ namespace ClassLibrary1
             set;
         }
 
-        [XmlIgnore()]
-        public Command Command
-        {
-            get;
-            set;
-        }
-
+        /// <summary>
+        /// Race des unités
+        /// </summary>
         [XmlAttribute()]
         public Race Race
         {
@@ -74,8 +81,11 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// create an Elf unit and add it to its a list
+        /// Constructeur de Player
         /// </summary>
+        /// <param name="race">Race des unités</param>
+        /// <param name="name">Nom du joueur</param>
+        /// <param name="nbUnits">Nombre d'unités</param>
         public Player(Race race, String name, int nbUnits)
         {
             this.Race = race;
@@ -86,6 +96,9 @@ namespace ClassLibrary1
             this.Actions = new Stack<Command>();
         }
 
+        /// <summary>
+        /// Constructeur par défaut
+        /// </summary>
         public Player()
         {
             this.VictoryPoints = 0;
@@ -94,7 +107,7 @@ namespace ClassLibrary1
 
 
         /// <summary>
-        /// create a unit of the player's race
+        /// Crée une unité de la race du joueur
         /// </summary>
         public void createUnit(Coordinate coord, TileType type) 
         {
@@ -117,7 +130,7 @@ namespace ClassLibrary1
             }
         }
         /// <summary>
-        /// create an Elf unit and add it to its a list
+        /// Crée une unité d'elfes et l'ajoute à la liste des unités
         /// </summary>
         public void CreateElf(Coordinate coord, TileType type)
         {
@@ -126,7 +139,7 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// create a Human unit and add it to its a list
+        /// Crée une unité d'humains et l'ajoute à la liste des unités
         /// </summary>
         public void CreateHuman(Coordinate coord, TileType type)
         {
@@ -135,7 +148,7 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// create an Orc unit and add it to its a list
+        /// Crée une unité d'orques et l'ajoute à la liste des unités
         /// </summary>
         public void CreateOrc(Coordinate coord, TileType type)
         {
@@ -151,9 +164,33 @@ namespace ClassLibrary1
             CurrentUnit = u;
         }
 
+        /// <summary>
+        /// Annule la dernière commande
+        /// </summary>
         public void undoLastCommand()
         {
             this.Actions.Pop().undo();
+        }
+
+        /// <summary>
+        /// Ajout d'une commande de déplacement à la pile des commandes
+        /// </summary>
+        /// <param name="target">Coordonnées cible</param>
+        /// <param name="cost">Coût du déplacement</param>
+        public void addMoveCommand(Coordinate target, double cost)
+        {
+            MoveUnits mu = new MoveUnits(CurrentUnit, target, cost);
+            this.Actions.Push(mu);
+        }
+
+        /// <summary>
+        /// Ajout d'une commande d'attaque à la pile des commandes
+        /// </summary>
+        /// <param name="cost">Coût du déplacement</param>
+        /// <param name="tile">Coordonnées cible</param>
+        public void addAttackCommand(int cost, Coordinate tile)
+        {
+            throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -170,11 +207,12 @@ namespace ClassLibrary1
 
         }
 
-        public void addAttackCommand(int cost, Coordinate tile)
-        {
-            throw new System.NotImplementedException();
-        }
 
+        /// <summary>
+        /// Déplace l'unité courante 
+        /// </summary>
+        /// <param name="target">Coordonnées de la case cible</param>
+        /// <param name="targetType">Type de case</param>
         public void move (Coordinate target, TileType targetType)
         {
             double requiredMovePoints = CurrentUnit.RequiredMovePoints[targetType];
@@ -184,12 +222,6 @@ namespace ClassLibrary1
                 this.addMoveCommand(target, requiredMovePoints);
                 this.CurrentUnit.move(target, targetType);
             }
-        }
-
-        public void addMoveCommand(Coordinate target,double cost)
-        {
-            MoveUnits mu = new MoveUnits(CurrentUnit,target, cost);
-            this.Actions.Push(mu);
         }
 
         /// <summary>
