@@ -182,7 +182,7 @@ namespace ClassLibrary1
         /// </summary>
         public void changePlayer()
         {
-            this.CurrentPlayerIndex = (CurrentPlayerIndex + 1) % Map.MapSize.NbPlayers;
+            this.CurrentPlayerIndex = (CurrentPlayerIndex + 1) % (Map.MapSize.NbPlayers+1);
             this.CurrentPlayer.setMovePoints();
         }
 

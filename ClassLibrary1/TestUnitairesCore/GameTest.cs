@@ -108,7 +108,20 @@ namespace ClassLibrary1
             List<Player> list = new List<Player> { p1, p2, p3 };
             StandardMap ms = new StandardMap();
 
-            Game game = new Game(ms, list); 
+            Game game = new Game(ms, list);
+
+            Player first = game.CurrentPlayer;
+            game.changePlayer();
+            Player second = game.CurrentPlayer;
+            game.changePlayer();
+            Player third = game.CurrentPlayer;
+            game.changePlayer();
+
+            Assert.AreNotEqual(first,second);
+            Assert.AreNotEqual(second, third);
+            Assert.AreNotEqual(third, game.CurrentPlayer);
+            Assert.AreEqual(first, game.CurrentPlayer);
+
         }
 
         [TestMethod]
