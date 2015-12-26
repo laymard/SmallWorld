@@ -26,10 +26,10 @@ namespace GUI
         public MapPage(Map map)
         {
             this.map = map;
-            this.nbTiles = map.MapSize.nbTiles;
+            this.nbTiles = map.MapSize.NbTiles;
             InitializeComponent();
             // calcul du côté de la case
-            this.sizeTile = mapGrid.Height / this.map.MapSize.nbTiles;
+            this.sizeTile = mapGrid.Height / this.map.MapSize.NbTiles;
         }
 
 
@@ -56,7 +56,7 @@ namespace GUI
         public Button formatBouton(TileType type)
         {
             Button bouton = new Button();
-            SolidColorBrush couleur;
+            SolidColorBrush couleur = new SolidColorBrush();
             Uri uri = new Uri("images/test.png");
             switch(type){
                 case TileType.MOUNTAIN :
@@ -89,11 +89,11 @@ namespace GUI
         public void creerGrille()
         {
             // création de la grid
-            for (int j = 0; j < map.MapSize.nbTiles; j++)
+            for (int j = 0; j < map.MapSize.NbTiles; j++)
             {
                 mapGrid.ColumnDefinitions.Add(new ColumnDefinition());
             }
-            for (int i = 0; i < map.MapSize.nbTiles; i++)
+            for (int i = 0; i < map.MapSize.NbTiles; i++)
             {
                 mapGrid.RowDefinitions.Add(new RowDefinition());
             }
