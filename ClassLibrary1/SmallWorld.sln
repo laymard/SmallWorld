@@ -21,6 +21,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libCPP", "libCPP\libCPPP.vcxproj", "{81E670FE-8518-4C71-B28D-D3D6AC90C790}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{803C3883-2587-42CD-9CB0-69A2F2DE4875}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B3760582-AD61-4F7C-98F3-3D3861E7FEE4} = {B3760582-AD61-4F7C-98F3-3D3861E7FEE4}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

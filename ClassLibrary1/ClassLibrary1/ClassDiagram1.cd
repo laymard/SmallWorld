@@ -37,41 +37,40 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Human">
-    <Position X="5.5" Y="9.5" Width="1.5" />
+    <Position X="6.25" Y="10" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAQAAgAAAAAAAAACQAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <HashCode>AAhAAAAIQAAgAAAAAAAAACQAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Actors\Races\Human.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Orc">
-    <Position X="3.75" Y="9.5" Width="1.5" />
+    <Position X="3.25" Y="10" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAQAAgAAAAAAAAACQAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <HashCode>AAhAAAAIQAAgAAAAAAAAACQAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Actors\Races\Orc.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Elf">
-    <Position X="7.25" Y="9.5" Width="1.5" />
+    <Position X="9" Y="9.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAQAAgAAAAgAAAACQAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <HashCode>AAhAAAAIQAAgAAAAgAAAACQAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Actors\Races\Elf.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Map">
     <Position X="15.75" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAAAAAAQAAAAQAAAAAAgCAAAAAAAAAAAgAAAAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAgCAAAAAAAAAAAgAAAAEAAAA=</HashCode>
       <FileName>Environment\Map.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="MapSize" />
-      <Property Name="TileFactory" />
     </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary1.Unit">
     <Position X="5.75" Y="5.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAgAAgAQAAggACAgAACACQAABBAAAAAAQAAAAAAABA=</HashCode>
+      <HashCode>AAggAAgAQAAggACAgAACACQAABBAAAAAAQAAAAAAABA=</HashCode>
       <FileName>Actors\Races\Unit.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -79,9 +78,9 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary1.Player">
-    <Position X="5.5" Y="0.5" Width="2.5" />
+    <Position X="5.75" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>UCgEAAgAIAAAIACACAAABAQAACIAAAAAEAAAAAAAAgY=</HashCode>
+      <HashCode>UCgEAAgAIAAAIACACAAAFAQAACAAAAAAEAAAAAAAAgY=</HashCode>
       <FileName>Actors\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -107,14 +106,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.SavedGameBuilder">
-    <Position X="17.75" Y="2.5" Width="1.5" />
+    <Position X="17.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Serialisation\SavedGameBuilder.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.NewGameBuilder">
-    <Position X="19.75" Y="2.5" Width="1.5" />
+    <Position X="19.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAIABAAAAAAAAAAAAAA=</HashCode>
       <FileName>Serialisation\NewGameBuilder.cs</FileName>
@@ -195,14 +194,14 @@
   <Class Name="ClassLibrary1.Game">
     <Position X="8.75" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AADIAIACABAAAACAEAABAAAkASAgEACAAEgBgACAAAA=</HashCode>
+      <HashCode>AADIAIACABAAAACAEAABAAgkACAgEAiAAEgBgACAAAA=</HashCode>
       <FileName>Base\Game.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.MoveUnits">
     <Position X="0.5" Y="3.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAIAAAAEIAAAAAAAAAAQAAAAAAAAAAABggQ=</HashCode>
+      <HashCode>AAAACAAAAAAAAAAEIAAAAAAAAAAQAAAAAAAAAAABggQ=</HashCode>
       <FileName>Actors\MoveUnits.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -226,7 +225,7 @@
     </TypeIdentifier>
   </Interface>
   <Enum Name="ClassLibrary1.TileType">
-    <Position X="20.5" Y="5" Width="1.5" />
+    <Position X="20.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAgAAACAAAAAAAgAAAAAAAAACAAAgAAAAAA=</HashCode>
       <FileName>Environment\TileType.cs</FileName>

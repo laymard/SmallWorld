@@ -111,6 +111,17 @@ namespace ClassLibrary1
         }
 
         /// <summary>
+        /// Type d'une case
+        /// </summary>
+        /// <param name="coord">Coordonnées de la case</param>
+        /// <returns>retourne le type de la case à partir de ses coordonnées</returns>
+        public TileType getTile(int x, int y)
+        {
+            Coordinate coord = this.getCoord(x, y);
+            return getTile(coord);
+        }
+
+        /// <summary>
         /// Coordonnées
         /// </summary>
         /// <param name="x">x</param>
