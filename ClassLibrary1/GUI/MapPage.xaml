@@ -3,12 +3,22 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
-	Title="Map">
+      mc:Ignorable="d"
+	Title="Map" Height="728" Width="768">
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" ></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
 
-    <Grid x:Name="mapGrid">
-        <Image x:Name="test" HorizontalAlignment="Left" Height="100" Margin="101,80,0,0" VerticalAlignment="Top" Width="100" Source="images/test.png"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
+        <Grid x:Name="mapGrid" Grid.Row="1" Grid.Column="1"/>
     </Grid>
+
 </Page>

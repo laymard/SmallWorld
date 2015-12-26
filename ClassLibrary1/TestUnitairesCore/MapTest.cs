@@ -33,11 +33,16 @@ namespace TestUnitairesCore
           
             // Si la case coord existe getTile doit retourner le type de case
             TileType tile1 = map.getTile(coord1);
+
             Assert.AreEqual(TileType.WATER,tile1);
 
+
             // sinon getTile retourne le type DEFAULT
-            TileType tile2 = map.getTile(coord2);
-            Assert.AreEqual(TileType.DEFAULT, tile2);
+            TileType tile3 = map.getTile(coord2);
+
+            Assert.AreEqual(TileType.DEFAULT, tile3);
+
+
         }
 
         /// <summary>
