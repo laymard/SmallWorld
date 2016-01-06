@@ -65,7 +65,7 @@ namespace GUI
             SolidColorBrush color = new SolidColorBrush();
             var appDir = System.IO.Path.GetDirectoryName(typeof(MapPage).Assembly.Location);
             var filePath = System.IO.Path.Combine(appDir, "/images/test.png");
-            //Uri uri = new Uri("/images/test.png", UriKind.Relative);
+            Uri uri = new Uri(filePath,UriKind.Relative);
             switch(type){
                 case TileType.MOUNTAIN :
                     color = new SolidColorBrush(Colors.Brown);

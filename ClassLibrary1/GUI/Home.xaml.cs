@@ -32,12 +32,13 @@ namespace GUI
 
         private void newGame(object sender, RoutedEventArgs e)
         {
-
+            var page = new Config();
+            this.NavigationService.Navigate(page);
         }
 
         private void quit(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
     }
