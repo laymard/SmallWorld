@@ -4,7 +4,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d"
+      xmlns:local="clr-namespace:ClassLibrary1;assembly=ClassLibrary1"
 	Title="Map" Height="728" Width="768">
+    
+  
     <Grid x:Name="MainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" ></RowDefinition>
@@ -19,7 +22,11 @@
         </Grid.ColumnDefinitions>
 
         <Grid x:Name="mapGrid" Grid.Row="1" Grid.Column="1">
+            <Grid.Resources>
+                <local:Map x:Key="Map"></local:Map>
+            </Grid.Resources>
         </Grid>
     </Grid>
 
+    
 </Page>

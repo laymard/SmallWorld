@@ -63,8 +63,9 @@ namespace GUI
         {
             Button bouton = new Button();
             SolidColorBrush color = new SolidColorBrush();
-            Uri uri = new Uri(@"images\test.png", UriKind.RelativeOrAbsolute);
-            
+            var appDir = System.IO.Path.GetDirectoryName(typeof(MapPage).Assembly.Location);
+            var filePath = System.IO.Path.Combine(appDir, "/images/test.png");
+            Uri uri = new Uri(filePath,UriKind.RelativeOrAbsolute);
             switch(type){
                 case TileType.MOUNTAIN :
                     color = new SolidColorBrush(Colors.Brown);
@@ -82,7 +83,7 @@ namespace GUI
                     color = new SolidColorBrush(Colors.Green);
                     break;
             }
-            
+
             addImage(bouton,uri);
             bouton.SetValue(Button.BackgroundProperty, color);
 
@@ -110,7 +111,7 @@ namespace GUI
                 mapGrid.RowDefinitions.Add(new RowDefinition());
 
                 for (int i = 0; i < this.NbTiles; i++)
-                {
+            {
                     // placement du bouton dans la grille 
                     Button button = this.createButton(this.Game.Map.getTile(i,j));
                     button.SetValue(Grid.ColumnProperty, j);
