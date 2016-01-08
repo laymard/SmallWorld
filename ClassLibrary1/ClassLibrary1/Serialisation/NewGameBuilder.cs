@@ -7,10 +7,13 @@ namespace ClassLibrary1
 {
     public class NewGameBuilder : GameBuilder
     {
-        public NewGameBuilder(MapSize ms)
+        public NewGameBuilder(MapSize ms, String name1, Race race1, String name2, Race race2)
             : base()
         {
             this.Ms = ms;
+            this.Game.Players = new List<Player>(this.Ms.NbPlayers);
+            this.Game.AddPlayer(race1, name1, ms.NbUnits);
+            this.Game.AddPlayer(race2, name2, ms.NbUnits);
         }
         public MapSize Ms
         {
@@ -19,18 +22,18 @@ namespace ClassLibrary1
         }
         public override void buildGame()
         {
-            this.initializeMap(this.Ms);
+            this.initializeMap();
+            this.Game.StartGame();
         }
 
         /// <summary>
         /// Initialisation de la carte à partir des caractéristiques du mode de jeu contenues dans la MapSize ms.
         /// </summary>
-        public void initializeMap(MapSize ms)
+        public void initializeMap()
         {
-            this.Game.Map = new Map(ms);
+            this.Game.Map = new Map(this.Ms);
             this.Game.Map.initialiseTiles();
-            this.Game.Players = new List<Player>(ms.NbPlayers);
-            this.Game.TurnsLeft = ms.NbTurns;
+            this.Game.TurnsLeft = this.Ms.NbTurns;
         }
     }
 }

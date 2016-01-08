@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ClassLibrary1;
 
 namespace GUI
 {
@@ -27,7 +29,11 @@ namespace GUI
 
         private void loadGame(object sender, RoutedEventArgs e)
         {
-
+            string file = @"savedgame.xml";
+            if(File.Exists(file)){
+                MapPage mp = new MapPage(new SavedGameBuilder(file));
+                this.NavigationService.Navigate(mp);
+            }
         }
 
         private void newGame(object sender, RoutedEventArgs e)

@@ -21,12 +21,11 @@ namespace GUI
     /// </summary>
     public partial class MapPage : Page
     {
-        public MapPage()
+        public MapPage(GameBuilder gb)
         {
             InitializeComponent();
 
             // Création du jeu
-            NewGameBuilder gb = new NewGameBuilder(new StandardMap());
             gb.buildGame();
             this.Game = gb.Game;
 
@@ -124,7 +123,7 @@ namespace GUI
         }
         
 
-        /**A partir de l'uri, crée l'image adapté à la taille du Bouton**/
+        /** A partir de l'uri, crée l'image adapté à la taille du Bouton **/
         public void addImage(Button button, Uri uri)
         {
 

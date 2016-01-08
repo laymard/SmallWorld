@@ -42,6 +42,7 @@ namespace ClassLibrary1
             }
         }
 
+        [XmlIgnore()]
         /// <summary>
         /// Joueur vainqueur.
         /// </summary>
@@ -96,6 +97,7 @@ namespace ClassLibrary1
         public Game()
         {
             this.AttackedUnit = null;
+            this.Champion = null;
             this.Map = new Map();
             this.Players = new List<Player>();
         }

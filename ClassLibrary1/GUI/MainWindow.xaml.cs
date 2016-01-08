@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ClassLibrary1;
 
 namespace GUI
 {
@@ -23,6 +24,10 @@ namespace GUI
         public MainWindow()
         {
             InitializeComponent();
+            GameBuilder gb = new NewGameBuilder(new StandardMap(),"Robert",Race.Human,"Etienne",Race.Elf);
+            gb.buildGame();
+            GameSaver gs = new GameSaver(gb.Game);
+            gs.SaveGame("game.xml");
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace ClassLibrary1
 {
@@ -42,6 +43,7 @@ namespace ClassLibrary1
             return (points && distance);
         }
 
+        [XmlIgnore()]
         private static Dictionary<TileType, double> requiredMovePoints = new Dictionary<TileType, double>()
                 {
                     {TileType.MOUNTAIN, 1},
@@ -50,6 +52,7 @@ namespace ClassLibrary1
                     {TileType.PLAIN, 0.5}
                 };
 
+        [XmlIgnore()]
         private static Dictionary<TileType, int> victoryPoints = new Dictionary<TileType, int>()
         {
             {TileType.FOREST,1 },
@@ -57,6 +60,7 @@ namespace ClassLibrary1
             {TileType.PLAIN,1 },
         };
 
+        [XmlIgnore()]
         public override Dictionary<TileType, double> RequiredMovePoints
         {
             get
@@ -65,6 +69,7 @@ namespace ClassLibrary1
             }
         }
 
+        [XmlIgnore()]
         public override Dictionary<TileType,int> VictoryPoints
         {
             get

@@ -33,19 +33,24 @@ namespace ClassLibrary1
             set;
         }
 
+
         /// <summary>
         /// Map statique associant à chaque type de case le nombre de points de mouvement requis
         /// </summary>
+
+        [XmlIgnore()]
         public virtual Dictionary<TileType, double> RequiredMovePoints
         {
             get;
             set;
         }
 
+
         /// <summary>
         /// Map statique associant à chaque type de case le nombre de points de victoire associé
         /// </summary>
-        public virtual Dictionary<TileType,int> VictoryPoints
+        [XmlIgnore()]
+        public virtual Dictionary<TileType, int> VictoryPoints
         {
             get;
             set;
