@@ -23,8 +23,8 @@
 
         <Image Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom" Source="images/test.png"/>
         <Image Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom"/>
-        <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" Grid.Column="0" Grid.Row="2"/>
-        <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="Player 2" VerticalAlignment="Top" Grid.Column="2" Grid.Row="2"/>
+        <TextBox x:Name="name1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" Grid.Column="0" Grid.Row="2"/>
+        <TextBox x:Name="name2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Player 2" VerticalAlignment="Top" Grid.Column="2" Grid.Row="2"/>
         
         <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1">
             <RadioButton Content="Human" GroupName="J2"/>
@@ -45,6 +45,6 @@
             <RadioButton Content="Small" GroupName="Mode"/>
             <RadioButton Content="Standard" GroupName="Mode" IsChecked="True" />
         </StackPanel>
-        <Button Content="FIGHT !!!!!!" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+        <Button Content="FIGHT !!!!!!" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Click="startNewGame" />
     </Grid>
 </Page>
