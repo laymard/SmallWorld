@@ -4,10 +4,14 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:Custom="http://schemas.microsoft.com/surface/2008" x:Class="GUI.Config" 
+      xmlns:local="clr-namespace:GUI"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="Config">
 
+    <Page.Resources>
+        <local:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+    </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
@@ -27,17 +31,21 @@
         <TextBox x:Name="name2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Player 2" VerticalAlignment="Top" Grid.Column="2" Grid.Row="2"/>
         
         <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1">
-            <RadioButton Content="Human" GroupName="J2" IsChecked="{Binding
-ElementName=human1, Path=Items, Mode=OneWay}"
-/>
-            <RadioButton Content="Orc" GroupName="J2"/>
-            <RadioButton Content="Elf" GroupName="J2"/>
+            <RadioButton Name="human2" Content="Human" GroupName="J2" IsEnabled="{Binding
+ElementName=human1, Path=IsChecked, Converter={StaticResource InverseBooleanConverter}, Mode=TwoWay}"/>
+            <RadioButton Name="orc2" Content="Orc" GroupName="J2" IsEnabled="{Binding
+ElementName=orc1, Path=IsChecked, Converter={StaticResource InverseBooleanConverter}, Mode=TwoWay}"/>
+            <RadioButton Name="elf2" Content="Elf" GroupName="J2" IsEnabled="{Binding
+ElementName=elf1, Path=IsChecked, Converter={StaticResource InverseBooleanConverter}, Mode=TwoWay}"/>
         </StackPanel>
 
         <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1">
-            <RadioButton Name="human1" Content="Human" GroupName="J1"/>
-            <RadioButton Name="orc1" Content="Orc" GroupName="J1"/>
-            <RadioButton Name="elf1" Content="Elf" GroupName="J1"/>
+            <RadioButton Name="human1" Content="Human" GroupName="J1" IsEnabled="{Binding
+ElementName=human2, Path=IsChecked, Converter={StaticResource InverseBooleanConverter}, Mode=TwoWay}"/>
+            <RadioButton Name="orc1" Content="Orc" GroupName="J1" IsEnabled="{Binding
+ElementName=orc2, Path=IsChecked, Converter={StaticResource InverseBooleanConverter}, Mode=TwoWay}"/>
+            <RadioButton Name="elf1" Content="Elf" GroupName="J1" IsEnabled="{Binding
+ElementName=elf2, Path=IsChecked, Converter={StaticResource InverseBooleanConverter}, Mode=TwoWay}"/>
         </StackPanel>
 
 
