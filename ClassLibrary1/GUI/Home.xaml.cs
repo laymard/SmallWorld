@@ -29,7 +29,7 @@ namespace GUI
 
         private void loadGame(object sender, RoutedEventArgs e)
         {
-            string file = @"savedgame.xml";
+            string file = @"savedGame.xml";
             if(File.Exists(file)){
                 MapPage mp = new MapPage(new SavedGameBuilder(file));
                 this.NavigationService.Navigate(mp);

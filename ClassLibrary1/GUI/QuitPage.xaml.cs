@@ -17,23 +17,24 @@ using ClassLibrary1;
 namespace GUI
 {
     /// <summary>
-    /// Logique d'interaction pour Config.xaml
+    /// Logique d'interaction pour Page1.xaml
     /// </summary>
-    public partial class Config : Page
+    public partial class QuitPage : Page
     {
-
-        public Config()
+        public GameSaver GameSaver { get; set; }
+        public QuitPage(Game game)
         {
             InitializeComponent();
-
+            this.GameSaver = new GameSaver(game);
         }
 
-        private void startNewGame(object sender, RoutedEventArgs e)
+        private void saveGame(object sender, RoutedEventArgs e)
         {
-            Button button = sender as Button;
-            button.Content = "Patientez svp";
-            MapPage mp = new MapPage(new NewGameBuilder(new SmallMap(),name1.Text, Race.Human, name2.Text, Race.Elf));
-            this.NavigationService.Navigate(mp);
+            this.GameSaver.SaveGame(@"savedGame.xml");
+
+            // TO DO : retour page principale
         }
+
+
     }
 }

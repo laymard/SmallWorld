@@ -148,6 +148,12 @@ namespace GUI
 
             button.Content = box;
         }
+
+        private void backToMenu(object sender, RoutedEventArgs e)
+        {
+            QuitPage qp = new QuitPage(this.Game);
+            NavigationService.Navigate(qp);
+        }
        
     }
 }

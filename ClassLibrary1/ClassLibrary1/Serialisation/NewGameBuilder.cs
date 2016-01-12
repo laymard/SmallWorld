@@ -15,6 +15,13 @@ namespace ClassLibrary1
             this.Game.AddPlayer(race1, name1, ms.NbUnits);
             this.Game.AddPlayer(race2, name2, ms.NbUnits);
         }
+
+        public NewGameBuilder(MapSize ms)
+            : base()
+        {
+            this.Ms = ms;
+            this.Game.Players = new List<Player>(this.Ms.NbPlayers);
+        }
         public MapSize Ms
         {
             get;

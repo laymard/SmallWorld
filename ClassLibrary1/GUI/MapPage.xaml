@@ -26,6 +26,7 @@
                 <local:Map x:Key="Map"></local:Map>
             </Grid.Resources>
         </Grid>
+        <Button x:Name="saveGameButton" Content="Quitter partie" Grid.Column="2" Grid.Row="0" Click="backToMenu"></Button>
     </Grid>
 
     
