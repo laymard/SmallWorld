@@ -7,10 +7,12 @@
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="Home">
 
-    <Grid>
-        <Button Content="Nouvelle Partie" HorizontalAlignment="Left" Margin="95,107,0,0" VerticalAlignment="Top" Width="97" Click="newGame"/>
-        <Button Content="Charger Partie" HorizontalAlignment="Left" Margin="95,159,0,0" VerticalAlignment="Top" Width="97" Click="loadGame"/>
-        <Button Content="Quitter" HorizontalAlignment="Left" Margin="106,235,0,0" VerticalAlignment="Top" Width="75" Click="quit"/>
+        <StackPanel Name="panel" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200">
+        <Button Content="Nouvelle Partie" Click="newGame"/>
+        <Button Content="Charger Partie" Width="{Binding
+ElementName=panel, Path=Width, Mode=OneWay}" Click="loadGame"/>
+        <Button Content="Quitter" Width="{Binding
+ElementName=panel, Path=Width, Mode=OneWay}" Click="quit"/>
+        </StackPanel>
 
-    </Grid>
 </Page>

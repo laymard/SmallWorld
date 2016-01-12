@@ -14,47 +14,45 @@
     </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="4*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="99*"/>
+            <ColumnDefinition Width="100*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Image Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom" Source="images/test.png"/>
-        <Image Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom"/>
-        <TextBox x:Name="name1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" Grid.Column="0" Grid.Row="2"/>
-        <TextBox x:Name="name2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Player 2" VerticalAlignment="Top" Grid.Column="2" Grid.Row="2"/>
-        
-        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1">
-            <RadioButton Name="human2" Content="Human" GroupName="J2" IsEnabled="{Binding
-ElementName=human1, Path=IsChecked, Converter={StaticResource InverseBooleanConverter}, Mode=TwoWay}"/>
-            <RadioButton Name="orc2" Content="Orc" GroupName="J2" IsEnabled="{Binding
-ElementName=orc1, Path=IsChecked, Converter={StaticResource InverseBooleanConverter}, Mode=TwoWay}"/>
-            <RadioButton Name="elf2" Content="Elf" GroupName="J2" IsEnabled="{Binding
-ElementName=elf1, Path=IsChecked, Converter={StaticResource InverseBooleanConverter}, Mode=TwoWay}"/>
+        <StackPanel Grid.Column="0" HorizontalAlignment="Center" Height="180" VerticalAlignment="Center" Width="90">
+            <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Race du joueur 1"/>
+                <RadioButton x:Name="human1" Content="Human" GroupName="J1" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=human2, Mode=TwoWay}"/>
+                <RadioButton x:Name="orc1" Content="Orc" GroupName="J1" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=orc2, Mode=TwoWay}"/>
+                <RadioButton x:Name="elf1" Content="Elf" GroupName="J1" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=elf2, Mode=TwoWay}"/>
+            </StackPanel>
+            <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom" Source="images/test.png"/>
+            <TextBox x:Name="name1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" Width="70"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2" HorizontalAlignment="Center" Height="180" VerticalAlignment="Center" Width="90">
+            <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Height="60" Width="90">
+                <TextBlock Text="Race du joueur 2"/>
+                <RadioButton x:Name="human2" Content="Human" GroupName="J2" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=human1, Mode=TwoWay}"/>
+                <RadioButton x:Name="orc2" Content="Orc" GroupName="J2" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=orc1, Mode=TwoWay}"/>
+                <RadioButton x:Name="elf2" Content="Elf" GroupName="J2" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=elf1, Mode=TwoWay}"/>
+            </StackPanel>
+            <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom" Source="images/test.png"/>
+            <TextBox x:Name="name2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Player 2" VerticalAlignment="Center" Width="70" Height="18"/>
         </StackPanel>
 
-        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1">
-            <RadioButton Name="human1" Content="Human" GroupName="J1" IsEnabled="{Binding
-ElementName=human2, Path=IsChecked, Converter={StaticResource InverseBooleanConverter}, Mode=TwoWay}"/>
-            <RadioButton Name="orc1" Content="Orc" GroupName="J1" IsEnabled="{Binding
-ElementName=orc2, Path=IsChecked, Converter={StaticResource InverseBooleanConverter}, Mode=TwoWay}"/>
-            <RadioButton Name="elf1" Content="Elf" GroupName="J1" IsEnabled="{Binding
-ElementName=elf2, Path=IsChecked, Converter={StaticResource InverseBooleanConverter}, Mode=TwoWay}"/>
-        </StackPanel>
 
-
-        <Label Content="Choose !" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" />
-        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
+        <Label Content="Choose !" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" Margin="26,0,23,0" Height="26" Width="50" />
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20,90,17,0" Height="61" Width="80">
+            <TextBlock Text="Mode de jeu"></TextBlock>
             <RadioButton Content="Demo" GroupName="Mode"/>
             <RadioButton Content="Small" GroupName="Mode"/>
             <RadioButton Content="Standard" GroupName="Mode" IsChecked="True" />
         </StackPanel>
-        <Button Content="FIGHT !!!!!!" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Click="startNewGame" />
+        <Button Content="FIGHT !!!!!!" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Click="startNewGame" Margin="24,245,21,35" Height="20" Width="54" />
+
     </Grid>
 </Page>
