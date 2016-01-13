@@ -10,17 +10,17 @@
     <Page.Background>
         <ImageBrush ImageSource="/images/riziere.jpg"/>
     </Page.Background>
-    
+
     <Grid x:Name="MainGrid" >
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*" ></RowDefinition>
+            <RowDefinition Height="1*" ></RowDefinition>
             <RowDefinition Height="10*"></RowDefinition>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="5*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="152*" />
             <ColumnDefinition Width="157*"></ColumnDefinition>
             <ColumnDefinition Width="75*"/>
@@ -38,29 +38,36 @@
             </Grid.Resources>
         </Grid>
         <Button x:Name="saveGameButton" Content="Quitter partie" Grid.Column="3" Grid.Row="0" Click="backToMenu"></Button>
-        <Button Content="Finir le tour" Grid.Column="3" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="56" Width="150" Click="NextPlayer"/>
-        <Grid Name="players"  HorizontalAlignment="Left" Height="163" Grid.Column="1" Grid.Row="3"  VerticalAlignment="Top" Width="396">
+        <Button Content="Finir le tour" Grid.Column="3" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="20" Width="150" Click="NextPlayer"/>
+
+        <Grid Name="players"  HorizontalAlignment="Left" Height="163" Grid.Column="1" Grid.Row="3"  VerticalAlignment="Top" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="0" Background="Beige" Opacity="0.70" Margin="10">
-                <TextBlock Name="name1" Text="Joueur 1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"></TextBlock>
-                <TextBlock Name="race1" Text="Race 1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"></TextBlock>
-                <TextBlock Name="nbUnits1" Text="Nb unités" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
-                <TextBlock Name="nbPoints1" Text="Nb points" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
-            </StackPanel>
-            <StackPanel Grid.Column="1" Background="Beige" Opacity="0.70" Margin="10">
-                <TextBlock Name="name2" Text="Joueur 2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"></TextBlock>
-                <TextBlock Name="race2" Text="Race 2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"></TextBlock>
-                <TextBlock Name="nbUnits2" Text="Nb unités" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
-                <TextBlock Name="nbPoints2" Text="Nb points" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
-            </StackPanel>
+            <DockPanel Name="Joueur1" Grid.Column="0" Background="Beige" Opacity="0.70" Margin="10" LastChildFill="True">
+                <TextBlock DockPanel.Dock="Top" Name="name1" Text="Joueur 1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"></TextBlock>
+                <Image Name="Image1" Source="images/orc.png" DockPanel.Dock="Left" Width="58"/>
+                <StackPanel DockPanel.Dock="Right" >
+                    <TextBlock Name="race1" Text="Race 1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"></TextBlock>
+                    <TextBlock Name="nbUnits1" Text="Nb unités" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
+                    <TextBlock Name="nbPoints1" Text="Nb points" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
+                </StackPanel>
+            </DockPanel>
+            <DockPanel Name="Joueur2" Grid.Column="1" Background="Beige" Opacity="0.70" Margin="10" LastChildFill="True">
+                <TextBlock DockPanel.Dock="Top" Name="name2" Text="Joueur 2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"></TextBlock>
+                <Image Name="Image2" Source="images/orc.png" DockPanel.Dock="Left" Width="58"/>
+                <StackPanel DockPanel.Dock="Right" >
+                    <TextBlock Name="race2" Text="Race 2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"></TextBlock>
+                    <TextBlock Name="nbUnits2" Text="Nb unités" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
+                    <TextBlock Name="nbPoints2" Text="Nb points" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
+                </StackPanel>
+            </DockPanel>
 
         </Grid>
     </Grid>
-    
+
 
 
 
