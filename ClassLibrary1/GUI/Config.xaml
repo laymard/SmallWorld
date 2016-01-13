@@ -11,7 +11,8 @@
 
     <Page.Resources>
         <local:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
-    </Page.Resources>
+        <local:SourceImage x:Key="SourceImage" />
+    </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100*"/>
@@ -30,7 +31,7 @@
                 <RadioButton x:Name="orc1" Content="Orc" GroupName="J1" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=orc2, Mode=TwoWay}"/>
                 <RadioButton x:Name="elf1" Content="Elf" GroupName="J1" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=elf2, Mode=TwoWay}"/>
             </StackPanel>
-            <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom" Source="images/test.png"/>
+            <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom" Source="images/test.png" />
             <TextBox x:Name="name1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" Width="70"/>
         </StackPanel>
         <StackPanel Grid.Column="2" HorizontalAlignment="Center" Height="180" VerticalAlignment="Center" Width="90">

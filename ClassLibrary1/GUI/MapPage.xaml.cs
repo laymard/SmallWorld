@@ -90,17 +90,14 @@ namespace GUI
 
             tile.Fill = image;
 
-
-
-            tile.Width= this.TileSize;
-            tile.Height = this.TileSize;
+            tile.Width= 0.8*this.TileSize;
+            tile.Height = 0.8*this.TileSize;
             return tile;
         }
 
 
-        private Rectangle createUnit(Race race)
+        private Image createUnit(Race race)
         {
-            Rectangle tile = new Rectangle();
             String path = "";
 
             switch (race)
@@ -122,13 +119,11 @@ namespace GUI
 
             BitmapImage SourceBi = new BitmapImage(uri);
             SourceBi.UriSource = uri;
-            ImageBrush image = new ImageBrush(SourceBi);
-
-            tile.Fill = image;
-
-            tile.Width = 0.75*this.TileSize;
-            tile.Height = 0.75 * this.TileSize;
-            return tile;
+            Image image = new Image();
+            image.Source = SourceBi;
+            //image.Height = 0.5 * this.TileSize;
+            //image.Width = 0.5 * this.TileSize;
+            return image;
         }
 
 
@@ -170,7 +165,7 @@ namespace GUI
             {
                 foreach (Unit u in p.Units)
                 {
-                    Rectangle unit = this.createUnit(p.Race);
+                    Image unit = this.createUnit(p.Race);
                     unit.SetValue(Grid.ColumnProperty, u.coord.X);
                     unit.SetValue(Grid.RowProperty, u.coord.Y);
                     mapGrid.Children.Add(unit);

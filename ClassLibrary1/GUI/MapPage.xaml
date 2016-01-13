@@ -10,22 +10,23 @@
 
     <Grid x:Name="MainGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="52*" ></RowDefinition>
-            <RowDefinition Height="67*"></RowDefinition>
-            <RowDefinition Height="11*"/>
-            <RowDefinition Height="52*"></RowDefinition>
+            <RowDefinition Height="27*" ></RowDefinition>
+            <RowDefinition Height="219*"></RowDefinition>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="76*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition Width="1.5*"></ColumnDefinition>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="25*" />
+            <ColumnDefinition Width="78*"></ColumnDefinition>
+            <ColumnDefinition Width="25*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid x:Name="mapGrid" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+        <Grid x:Name="mapGrid" Grid.Row="1" Grid.Column="1"  Background="Black">
             <Grid.Resources>
                 <local:Map x:Key="Map"></local:Map>
             </Grid.Resources>
+
         </Grid>
         <Grid x:Name="unitGrid" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
             <Grid.Resources>
