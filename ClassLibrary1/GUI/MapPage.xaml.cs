@@ -153,10 +153,22 @@ namespace GUI
                     tile.SetValue(Grid.ColumnProperty, j);
                     tile.SetValue(Grid.RowProperty, i);
                     mapGrid.Children.Add(tile);
+                    tile.AddHandler(Rectangle.MouseLeftButtonDownEvent,(RoutedEventHandler)selectedTile);
+                    
                 }
                 
             }
             
+        }
+
+        private void selectedTile(object sender, RoutedEventArgs e)
+        {
+            Rectangle rect = (Rectangle)sender;
+
+            var x = rect.GetValue(Grid.ColumnProperty);
+            var y = rect.GetValue(Grid.RowProperty);
+
+            MessageBox.Show("rectangle cliqué : x = "+x+" y : "+y);
         }
 
         public void diplayUnits()
@@ -169,6 +181,7 @@ namespace GUI
                     unit.SetValue(Grid.ColumnProperty, u.coord.X);
                     unit.SetValue(Grid.RowProperty, u.coord.Y);
                     mapGrid.Children.Add(unit);
+                    unit.AddHandler(Rectangle.MouseLeftButtonDownEvent, (RoutedEventHandler)selectedTile);
                 }
             }
         }
