@@ -35,6 +35,9 @@
         </Grid>
         <Button x:Name="saveGameButton" Content="Quitter partie" Grid.Column="2" Grid.Row="0" Click="backToMenu"></Button>
         <Button Content="Finir le tour" Grid.Column="2" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="56" Width="150" Click="NextPlayer"/>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+                   
+        </StackPanel>
 
     </Grid>
 
