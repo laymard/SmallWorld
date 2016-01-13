@@ -17,23 +17,24 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="25*" />
-            <ColumnDefinition Width="78*"></ColumnDefinition>
+            <ColumnDefinition Width="66*" />
+            <ColumnDefinition Width="37*"></ColumnDefinition>
             <ColumnDefinition Width="25*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid x:Name="mapGrid" Grid.Row="1" Grid.Column="1"  Background="Black">
+        <Grid x:Name="mapGrid" Grid.Row="1" Grid.Column="0"  Background="Black">
             <Grid.Resources>
                 <local:Map x:Key="Map"></local:Map>
             </Grid.Resources>
 
         </Grid>
-        <Grid x:Name="unitGrid" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+        <Grid x:Name="unitGrid" Grid.Row="1" Grid.Column="0">
             <Grid.Resources>
                 <local:Map x:Key="Map"></local:Map>
             </Grid.Resources>
         </Grid>
         <Button x:Name="saveGameButton" Content="Quitter partie" Grid.Column="2" Grid.Row="0" Click="backToMenu"></Button>
+        <Button Content="Finir le tour" Grid.Column="2" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="56" Width="150" Click="NextPlayer"/>
 
     </Grid>
 

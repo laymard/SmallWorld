@@ -11,9 +11,7 @@
 
     <Page.Resources>
         <local:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
-        <local:SourceImage x:Key="SourceImage" />
     </Page.Resources>
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100*"/>
@@ -28,21 +26,21 @@
         <StackPanel Grid.Column="0" HorizontalAlignment="Center" Height="180" VerticalAlignment="Center" Width="90">
             <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="Race du joueur 1"/>
-                <RadioButton x:Name="human1" Content="Human" GroupName="J1" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=human2, Mode=TwoWay}"/>
-                <RadioButton x:Name="orc1" Content="Orc" GroupName="J1" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=orc2, Mode=TwoWay}"/>
-                <RadioButton x:Name="elf1" Content="Elf" GroupName="J1" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=elf2, Mode=TwoWay}"/>
+                <RadioButton x:Name="human1" Content="Human" GroupName="J1" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=human2, Mode=TwoWay}" Checked="DisplayPlayer"/>
+                <RadioButton x:Name="orc1" Content="Orc" GroupName="J1" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=orc2, Mode=TwoWay}" Checked="DisplayPlayer"/>
+                <RadioButton x:Name="elf1" Content="Elf" GroupName="J1" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=elf2, Mode=TwoWay}" Checked="DisplayPlayer"/>
             </StackPanel>
-            <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom" Source="images/test.png" />
+            <Image Name="Image1" HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom" Source="images/test.png"/>
             <TextBox x:Name="name1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" Width="70"/>
         </StackPanel>
         <StackPanel Grid.Column="2" HorizontalAlignment="Center" Height="180" VerticalAlignment="Center" Width="90">
             <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Height="60" Width="90">
                 <TextBlock Text="Race du joueur 2"/>
-                <RadioButton x:Name="human2" Content="Human" GroupName="J2" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=human1, Mode=TwoWay}"/>
-                <RadioButton x:Name="orc2" Content="Orc" GroupName="J2" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=orc1, Mode=TwoWay}"/>
-                <RadioButton x:Name="elf2" Content="Elf" GroupName="J2" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=elf1, Mode=TwoWay}"/>
+                <RadioButton x:Name="human2" Content="Human" GroupName="J2" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=human1, Mode=TwoWay}" Checked="DisplayPlayer"/>
+                <RadioButton x:Name="orc2" Content="Orc" GroupName="J2" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=orc1, Mode=TwoWay}" Checked="DisplayPlayer"/>
+                <RadioButton x:Name="elf2" Content="Elf" GroupName="J2" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=elf1, Mode=TwoWay}" Checked="DisplayPlayer"/>
             </StackPanel>
-            <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom" Source="images/test.png"/>
+            <Image Name="Image2" HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom" Source="images/test.png"/>
             <TextBox x:Name="name2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Player 2" VerticalAlignment="Center" Width="70" Height="18"/>
         </StackPanel>
 

@@ -207,7 +207,11 @@ namespace GUI
             QuitPage qp = new QuitPage(this.Game);
             NavigationService.Navigate(qp);
         }
-       
+
+        private void NextPlayer(object sender, RoutedEventArgs e)
+        {
+            Game.EndTurn();
+        }
     }
 }
 

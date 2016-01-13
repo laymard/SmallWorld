@@ -56,5 +56,42 @@ namespace GUI
             MapPage mp = new MapPage(new NewGameBuilder(this.getMap(), name1.Text, this.getRaceJ1(), name2.Text, this.getRaceJ2()));
             this.NavigationService.Navigate(mp);
         }
+
+        private void DisplayPlayer(object sender, RoutedEventArgs e)
+        {
+            RadioButton button = sender as RadioButton;
+
+            if (button.Equals(orc1))
+            {
+                Image1.Source = new BitmapImage(new Uri(@"/images/orc.png", UriKind.Relative));
+            }
+
+            if (button.Equals(elf1))
+            {
+                Image1.Source = new BitmapImage(new Uri(@"/images/elf_asiat.png", UriKind.Relative));
+            }
+
+            if (button.Equals(human1))
+            {
+                Image1.Source = new BitmapImage(new Uri(@"/images/Human.png", UriKind.Relative));
+            }
+
+
+            if (button.Equals(orc2))
+            {
+                Image2.Source = new BitmapImage(new Uri(@"/images/orc.png", UriKind.Relative));
+            }
+
+            if (button.Equals(elf2))
+            {
+                Image2.Source = new BitmapImage(new Uri(@"/images/elf_asiat.png", UriKind.Relative));
+            }
+
+            if (button.Equals(human2))
+            {
+                Image2.Source = new BitmapImage(new Uri(@"/images/Human.png", UriKind.Relative));
+            }
+        }
+
     }
 }
