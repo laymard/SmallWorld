@@ -35,6 +35,7 @@ namespace GUI
             // calcul du côté de la case
             this.TileSize = mapGrid.Width / this.NbTiles;
             this.buildGrid();
+            this.diplayUnits();
         }
 
 
@@ -105,15 +106,15 @@ namespace GUI
             switch (race)
             {
                 case Race.Human:
-                    path = @"images/bonhomme.png";
+                    path = @"images/Human.png";
                     break;
 
                 case Race.Elf:
-                    path = @"images/bonhomme.png";
+                    path = @"images/elf_asiat.png";
                     break;
 
                 case Race.Orc:
-                    path = @"images/bonhomme.png";
+                    path = @"images/orc.png";
                     break;
             }
 
@@ -125,8 +126,8 @@ namespace GUI
 
             tile.Fill = image;
 
-            tile.Width = this.TileSize;
-            tile.Height = this.TileSize;
+            tile.Width = 0.75*this.TileSize;
+            tile.Height = 0.75 * this.TileSize;
             return tile;
         }
 
