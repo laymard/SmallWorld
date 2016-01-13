@@ -158,10 +158,17 @@ namespace GUI
                     tile.SetValue(Grid.ColumnProperty, j);
                     tile.SetValue(Grid.RowProperty, i);
                     mapGrid.Children.Add(tile);
+                    tile.AddHandler(Rectangle.MouseLeftButtonDownEvent,(RoutedEventHandler)selectedTile);
+                    
                 }
                 
             }
             
+        }
+
+        private void selectedTile(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("rectangle cliqué");
         }
 
         public void diplayUnits()
