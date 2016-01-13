@@ -2,9 +2,9 @@
 
 enum TileType {
 	Plain = 0,
-	Moutain = 1,
-	Forest = 2,
-	Water = 3
+	Water = 1,
+	Mountain = 2,
+	Forest = 3
 };
 
 class Algo {
