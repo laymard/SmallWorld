@@ -12,7 +12,8 @@
     <Page.Resources>
         <local:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
         <local:SourceImage x:Key="SourceImage" />
-    </Page.Resources>
+    </Page.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100*"/>

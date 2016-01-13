@@ -163,12 +163,28 @@ namespace GUI
 
         private void selectedTile(object sender, RoutedEventArgs e)
         {
-            Rectangle rect = (Rectangle)sender;
+            Rectangle rect = sender as Rectangle;
 
             var x = rect.GetValue(Grid.ColumnProperty);
             var y = rect.GetValue(Grid.RowProperty);
 
-            MessageBox.Show("rectangle cliqué : x = "+x+" y : "+y);
+            MessageBox.Show("Case cliquée : x = "+x+" y : "+y);
+        }
+
+        private void selectedUnit(object sender, RoutedEventArgs e)
+        {
+            Image rect = sender as Image;
+
+            var x = (int)rect.GetValue(Grid.ColumnProperty);
+            var y = (int)rect.GetValue(Grid.RowProperty);
+            Coordinate c = new Coordinate(x,y);
+
+            var units = Game.getUnitsOnTile(c);
+            var first = units[0];
+
+            MessageBox.Show("Unité cliquée : x = " + x + " y : " + y + "Unités : "+units[0]);
+
+            
         }
 
         public void diplayUnits()
@@ -181,7 +197,7 @@ namespace GUI
                     unit.SetValue(Grid.ColumnProperty, u.coord.X);
                     unit.SetValue(Grid.RowProperty, u.coord.Y);
                     mapGrid.Children.Add(unit);
-                    unit.AddHandler(Rectangle.MouseLeftButtonDownEvent, (RoutedEventHandler)selectedTile);
+                    unit.AddHandler(Image.MouseLeftButtonDownEvent, (RoutedEventHandler)selectedUnit);
                 }
             }
         }
