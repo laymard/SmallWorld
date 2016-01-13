@@ -163,7 +163,7 @@ namespace GUI
 
         private void selectedTile(object sender, RoutedEventArgs e)
         {
-            Rectangle rect = (Rectangle)sender;
+            Rectangle rect = sender as Rectangle;
 
             var x = rect.GetValue(Grid.ColumnProperty);
             var y = rect.GetValue(Grid.RowProperty);
@@ -191,7 +191,11 @@ namespace GUI
             QuitPage qp = new QuitPage(this.Game);
             NavigationService.Navigate(qp);
         }
-       
+
+        private void NextPlayer(object sender, RoutedEventArgs e)
+        {
+            Game.EndTurn();
+        }
     }
 }
 
