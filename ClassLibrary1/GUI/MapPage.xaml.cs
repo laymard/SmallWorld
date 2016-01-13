@@ -33,8 +33,8 @@ namespace GUI
             this.NbTiles = Game.Map.MapSize.NbTiles;
 
             // calcul du côté de la case
-            this.TileSize = mapGrid.Height / this.NbTiles;
-            this.displayGrid();
+            this.TileSize = mapGrid.Width / this.NbTiles;
+            this.buildGrid();
         }
 
 
@@ -58,38 +58,76 @@ namespace GUI
 
 
         // constructeur de bouton correspondant au format de la grille
-        public Button createButton(TileType type)
+        public Rectangle createTile(TileType type)
         {
-            Button bouton = new Button();
-            SolidColorBrush color = new SolidColorBrush();
-            var appDir = System.IO.Path.GetDirectoryName(typeof(MapPage).Assembly.Location);
-            var filePath = System.IO.Path.Combine(appDir, "/images/test.png");
-            Uri uri = new Uri(filePath,UriKind.RelativeOrAbsolute);
+            Rectangle tile = new Rectangle();
+            String path = "";
+
             switch(type){
                 case TileType.MOUNTAIN :
-                    color = new SolidColorBrush(Colors.Brown);
+                    path = @"images/test.png";
                     break;
 
                 case TileType.WATER :
-                    color = new SolidColorBrush(Colors.Blue);
+                    path = @"images/test.png";
                     break;
 
                 case TileType.PLAIN :
-                    color = new SolidColorBrush(Colors.GreenYellow);
+                    path = @"images/test.png";
                     break;
 
                 case TileType.FOREST :
-                    color = new SolidColorBrush(Colors.Green);
+                    path = @"images/test.png";
                     break;
             }
 
-            addImage(bouton,uri);
-            bouton.SetValue(Button.BackgroundProperty, color);
+            Uri uri = new Uri(path, UriKind.Relative);
 
-            bouton.SetValue(Button.WidthProperty, this.TileSize);
-            bouton.SetValue(Button.HeightProperty, this.TileSize);
+            BitmapImage SourceBi = new BitmapImage(uri);
+            SourceBi.UriSource = uri;
+            ImageBrush image = new ImageBrush(SourceBi);
 
-            return bouton;
+            tile.Fill = image;
+
+
+
+            tile.Width= this.TileSize;
+            tile.Height = this.TileSize;
+            return tile;
+        }
+
+
+        private Rectangle createUnit(Race race)
+        {
+            Rectangle tile = new Rectangle();
+            String path = "";
+
+            switch (race)
+            {
+                case Race.Human:
+                    path = @"images/bonhomme.png";
+                    break;
+
+                case Race.Elf:
+                    path = @"images/bonhomme.png";
+                    break;
+
+                case Race.Orc:
+                    path = @"images/bonhomme.png";
+                    break;
+            }
+
+            Uri uri = new Uri(path, UriKind.Relative);
+
+            BitmapImage SourceBi = new BitmapImage(uri);
+            SourceBi.UriSource = uri;
+            ImageBrush image = new ImageBrush(SourceBi);
+
+            tile.Fill = image;
+
+            tile.Width = this.TileSize;
+            tile.Height = this.TileSize;
+            return tile;
         }
 
 
@@ -101,52 +139,42 @@ namespace GUI
 
 
         /** Affiche la grille **/
-        public void displayGrid()
+        public void buildGrid()
         {
             for (int j = 0; j < this.NbTiles; j++)
             {
-                // Création de la grille
+                // Création de la grille map
                 mapGrid.ColumnDefinitions.Add(new ColumnDefinition());
                 mapGrid.RowDefinitions.Add(new RowDefinition());
+                // Création de la grille des unités
+                unitGrid.ColumnDefinitions.Add(new ColumnDefinition());
+                unitGrid.RowDefinitions.Add(new RowDefinition());
 
                 for (int i = 0; i < this.NbTiles; i++)
             {
-                    // placement du bouton dans la grille 
-                    Button button = this.createButton(this.Game.Map.getTile(i,j));
-                    button.SetValue(Grid.ColumnProperty, j);
-                    button.SetValue(Grid.RowProperty, i);
-                    mapGrid.Children.Add(button);
+                    // placement de la tile dans la grille 
+                    Rectangle tile = this.createTile(this.Game.Map.getTile(i,j));
+                    tile.SetValue(Grid.ColumnProperty, j);
+                    tile.SetValue(Grid.RowProperty, i);
+                    mapGrid.Children.Add(tile);
                 }
                 
             }
             
         }
-        
 
-        /** A partir de l'uri, crée l'image adapté à la taille du Bouton **/
-        public void addImage(Button button, Uri uri)
+        public void diplayUnits()
         {
-
-            // creation de l'image 
-            Image image = new Image();
-            BitmapImage SourceBi = new BitmapImage();
-            SourceBi.UriSource = uri;
-            image.Source = SourceBi;
-
-            // empeche l'icone de depasser du contour du bouton
-            image.SetValue(Image.HeightProperty, this.TileSize);
-            image.SetValue(Image.WidthProperty, this.TileSize);
-            image.SetValue(Image.HorizontalAlignmentProperty, HorizontalAlignment.Center);
-            image.SetValue(Image.VerticalAlignmentProperty, VerticalAlignment.Center);
-
-            // ajout de l'image au bouton
-            Grid box = new Grid();
-            box.RowDefinitions.Add(new RowDefinition());
-            image.SetValue(Grid.RowProperty, 0);
-            
-            box.Children.Add(image);
-
-            button.Content = box;
+            foreach (Player p in Game.Players)
+            {
+                foreach (Unit u in p.Units)
+                {
+                    Rectangle unit = this.createUnit(p.Race);
+                    unit.SetValue(Grid.ColumnProperty, u.coord.X);
+                    unit.SetValue(Grid.RowProperty, u.coord.Y);
+                    mapGrid.Children.Add(unit);
+                }
+            }
         }
 
         private void backToMenu(object sender, RoutedEventArgs e)
