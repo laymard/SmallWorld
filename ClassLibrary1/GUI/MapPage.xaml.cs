@@ -168,7 +168,12 @@ namespace GUI
 
         private void selectedTile(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("rectangle cliqué");
+            Rectangle rect = (Rectangle)sender;
+
+            var x = rect.GetValue(Grid.ColumnProperty);
+            var y = rect.GetValue(Grid.RowProperty);
+
+            MessageBox.Show("rectangle cliqué : x = "+x+" y : "+y);
         }
 
         public void diplayUnits()
@@ -181,6 +186,7 @@ namespace GUI
                     unit.SetValue(Grid.ColumnProperty, u.coord.X);
                     unit.SetValue(Grid.RowProperty, u.coord.Y);
                     mapGrid.Children.Add(unit);
+                    unit.AddHandler(Rectangle.MouseLeftButtonDownEvent, (RoutedEventHandler)selectedTile);
                 }
             }
         }
