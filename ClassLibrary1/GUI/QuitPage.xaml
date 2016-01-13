@@ -6,10 +6,13 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="Page1">
+    <Page.Background>
+        <ImageBrush ImageSource="/images/riziere.jpg"/>
+    </Page.Background>
 
     <Grid>
         <StackPanel>
-            <TextBlock Text="Voulez vous sauvegarder la partie ?"></TextBlock>
+            <TextBlock Text="Voulez vous sauvegarder la partie ?" Background="#7FFFFFFF"></TextBlock>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
