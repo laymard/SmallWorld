@@ -17,7 +17,7 @@
                 </Grid.ColumnDefinitions>
                 
                 <Button Content="Oui" Grid.Column="0" Click="saveGame"></Button>
-                <Button Content="Non" Grid.Column="1"></Button>
+                <Button Content="Non" Grid.Column="1" Click="quitGame"></Button>
             </Grid>
         </StackPanel>
     </Grid>

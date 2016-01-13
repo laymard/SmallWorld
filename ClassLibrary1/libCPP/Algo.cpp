@@ -20,7 +20,7 @@ void Algo::fillMap(TileType map[], int size)
 	{
 		max.push_back(nbMaxType);
 	}
-	
+	srand(time(NULL));
 	//TODO : init map tiles with a better algorithm
 	for (int i = 0; i < size*size; i++) {
 		randNb = rand() % 4;

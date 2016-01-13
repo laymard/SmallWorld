@@ -44,7 +44,8 @@ namespace GUI
 
         private void quit(object sender, RoutedEventArgs e)
         {
-            
+
+            App.Current.MainWindow.Close();
         }
 
     }

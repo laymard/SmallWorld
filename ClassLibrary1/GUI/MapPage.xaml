@@ -48,4 +48,8 @@
             <Rectangle Grid.Column="1" Opacity="0.70" Fill="Beige" Margin="10" />
         </Grid>
     </Grid>
+
+
+
+
 </Page>

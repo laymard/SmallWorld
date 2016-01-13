@@ -32,7 +32,13 @@ namespace GUI
         {
             this.GameSaver.SaveGame(@"savedGame.xml");
 
-            // TO DO : retour page principale
+            App.Current.MainWindow.Close();
+        }
+
+        private void quitGame(object sender, RoutedEventArgs e)
+        {
+
+            App.Current.MainWindow.Close();
         }
 
 
