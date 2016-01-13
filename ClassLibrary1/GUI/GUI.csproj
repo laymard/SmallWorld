@@ -132,9 +132,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\blowhard.png" />
+    <Resource Include="images\cyclop.png" />
+    <Resource Include="images\Elf Asiatique.png" />
+    <Resource Include="images\forest.png" />
+    <Resource Include="images\Human.png" />
+    <Resource Include="images\mountain.png" />
+    <Resource Include="images\plain.png" />
     <Content Include="images\test.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="images\water.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClassLibrary1\Core.csproj">
