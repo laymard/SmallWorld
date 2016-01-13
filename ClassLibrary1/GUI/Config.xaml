@@ -8,6 +8,9 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="Config">
+    <Page.Background>
+        <ImageBrush ImageSource="/images/riziere.jpg"/>
+    </Page.Background>
 
     <Page.Resources>
         <local:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
@@ -23,9 +26,9 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Column="0" HorizontalAlignment="Center" Height="180" VerticalAlignment="Center" Width="90">
+        <StackPanel Grid.Column="0" HorizontalAlignment="Center" Height="180" VerticalAlignment="Center" Width="90" Background="#7FFFFFFF">
             <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Text="Race du joueur 1"/>
+                <TextBlock Text="Race du joueur 1"  />
                 <RadioButton x:Name="human1" Content="Human" GroupName="J1" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=human2, Mode=TwoWay}"  Checked="DisplayPlayer"/>
                 <RadioButton x:Name="orc1" Content="Orc" GroupName="J1" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=orc2, Mode=TwoWay}" Checked="DisplayPlayer"/>
                 <RadioButton x:Name="elf1" Content="Elf" GroupName="J1" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=elf2, Mode=TwoWay}" Checked="DisplayPlayer"/>
@@ -33,7 +36,7 @@
             <Image Name="Image1" HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom" Source="images/Human.png"/>
             <TextBox x:Name="name1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" Width="70"/>
         </StackPanel>
-        <StackPanel Grid.Column="2" HorizontalAlignment="Center" Height="180" VerticalAlignment="Center" Width="90">
+        <StackPanel Grid.Column="2" HorizontalAlignment="Center" Height="180" VerticalAlignment="Center" Width="90" Background="#7FFFFFFF" >
             <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Height="60" Width="90">
                 <TextBlock Text="Race du joueur 2"/>
                 <RadioButton x:Name="human2" Content="Human" GroupName="J2" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=human1, Mode=TwoWay}" Checked="DisplayPlayer"/>
@@ -45,8 +48,8 @@
         </StackPanel>
 
 
-        <Label Content="Choose !" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" Margin="26,0,23,0" Height="26" Width="50" />
-        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20,90,17,0" Height="61" Width="80">
+        <Label Content="Choisissez !" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" Margin="26,0,23,0" Height="26" Width="50" Background="#7FFFFFFF" />
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20,90,17,0" Height="61" Width="80" Background="#7FFFFFFF">
             <TextBlock Text="Mode de jeu"></TextBlock>
             <RadioButton x:Name="demo" Content="Demo" GroupName="Mode"/>
             <RadioButton x:Name="small" Content="Small" GroupName="Mode"/>
