@@ -179,10 +179,9 @@ namespace GUI
             var y = (int)rect.GetValue(Grid.RowProperty);
             Coordinate c = new Coordinate(x,y);
 
-            var units = Game.getUnitsOnTile(c);
-            var first = units[0];
+            var units = Game.CurrentPlayer.getUnitsOnTile(c);
 
-            MessageBox.Show("Unité cliquée : x = " + x + " y : " + y + "Unités : "+units[0]);
+            MessageBox.Show("Unité cliquée : x = " + x + " y : " + y );
 
             
         }
