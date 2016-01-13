@@ -183,8 +183,6 @@ namespace GUI
             var first = units[0];
 
             MessageBox.Show("Unité cliquée : x = " + x + " y : " + y + "Unités : "+units[0]);
-
-            
         }
 
         public void diplayUnits()

@@ -5,40 +5,47 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d"
       xmlns:local="clr-namespace:ClassLibrary1;assembly=ClassLibrary1"
-	Title="Map" Height="728" Width="768">
+	Title="Map" WindowHeight="1" WindowWidth="1">
+    <Page.Background>
+        <ImageBrush ImageSource="/images/riziere.jpg"/>
+    </Page.Background>
 
+    <Grid x:Name="MainGrid" >
 
-    <Grid x:Name="MainGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="27*" ></RowDefinition>
-            <RowDefinition Height="219*"></RowDefinition>
-            <RowDefinition Height="42*"/>
-            <RowDefinition Height="76*"></RowDefinition>
+            <RowDefinition Height="1*" ></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="66*" />
-            <ColumnDefinition Width="37*"></ColumnDefinition>
-            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="152*" />
+            <ColumnDefinition Width="157*"></ColumnDefinition>
+            <ColumnDefinition Width="75*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid x:Name="mapGrid" Grid.Row="1" Grid.Column="0"  Background="Black">
+        <Grid x:Name="mapGrid" Grid.Row="1" Grid.Column="1"  Background="Black">
             <Grid.Resources>
                 <local:Map x:Key="Map"></local:Map>
             </Grid.Resources>
 
         </Grid>
-        <Grid x:Name="unitGrid" Grid.Row="1" Grid.Column="0">
+        <Grid x:Name="unitGrid" Grid.Row="1" Grid.Column="1">
             <Grid.Resources>
                 <local:Map x:Key="Map"></local:Map>
             </Grid.Resources>
         </Grid>
-        <Button x:Name="saveGameButton" Content="Quitter partie" Grid.Column="2" Grid.Row="0" Click="backToMenu"></Button>
-        <Button Content="Finir le tour" Grid.Column="2" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="56" Width="150" Click="NextPlayer"/>
-
+        <Button x:Name="saveGameButton" Content="Quitter partie" Grid.Column="3" Grid.Row="0" Click="backToMenu"></Button>
+        <Button Content="Finir le tour" Grid.Column="3" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="56" Width="150" Click="NextPlayer"/>
+        <Grid Name="players"  HorizontalAlignment="Left" Height="163" Grid.Column="1" Grid.Row="3"  VerticalAlignment="Top" Width="396">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Rectangle Grid.Column="0" Opacity="0.70" Fill="Beige" Margin="10" />
+            <Rectangle Grid.Column="1" Opacity="0.70" Fill="Beige" Margin="10" />
+        </Grid>
     </Grid>
-
-
-
-
 </Page>
