@@ -11,9 +11,9 @@ namespace ClassLibrary1
             public SmallMap()
             {
                 this.NbPlayers = 2;
-                this.NbTiles = 6;
+                this.NbTiles = 10;
                 this.NbTurns = 5;
-                this.NbUnits = 4;
+                this.NbUnits = 6;
             }
     }
 }

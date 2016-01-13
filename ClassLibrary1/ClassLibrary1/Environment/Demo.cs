@@ -11,9 +11,9 @@ namespace ClassLibrary1
         public DemoMap()
         {
             this.NbPlayers = 2;
-            this.NbTiles = 10;
+            this.NbTiles = 6;
             this.NbTurns = 20;
-            this.NbUnits = 6;
+            this.NbUnits = 4;
         }
     }
 }
