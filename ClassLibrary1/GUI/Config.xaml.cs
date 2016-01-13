@@ -28,11 +28,32 @@ namespace GUI
 
         }
 
+        public Race getRaceJ1()
+        {
+            if (orc1.IsChecked.Value) { return Race.Orc; }
+            if (human1.IsChecked.Value) { return Race.Human; }
+            else { return Race.Elf; }
+        }
+
+        public Race getRaceJ2()
+        {
+            if ((bool)orc2.IsChecked) { return Race.Orc; }
+            if (human2.IsChecked.Value) { return Race.Human; }
+            else { return Race.Elf; }
+        }
+
+        public MapSize getMap()
+        {
+            if ((bool)demo.IsChecked) { return new DemoMap(); }
+            if ((bool)standard.IsChecked) { return new StandardMap(); }
+            else { return new SmallMap(); }
+        }
+
         private void startNewGame(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
             button.Content = "Patientez svp";
-            MapPage mp = new MapPage(new NewGameBuilder(new SmallMap(),name1.Text, Race.Human, name2.Text, Race.Elf));
+            MapPage mp = new MapPage(new NewGameBuilder(this.getMap(), name1.Text, this.getRaceJ1(), name2.Text, this.getRaceJ2()));
             this.NavigationService.Navigate(mp);
         }
     }

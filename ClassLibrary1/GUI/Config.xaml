@@ -48,9 +48,9 @@
         <Label Content="Choose !" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" Margin="26,0,23,0" Height="26" Width="50" />
         <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20,90,17,0" Height="61" Width="80">
             <TextBlock Text="Mode de jeu"></TextBlock>
-            <RadioButton Content="Demo" GroupName="Mode"/>
-            <RadioButton Content="Small" GroupName="Mode"/>
-            <RadioButton Content="Standard" GroupName="Mode" IsChecked="True" />
+            <RadioButton x:Name="demo" Content="Demo" GroupName="Mode"/>
+            <RadioButton x:Name="small" Content="Small" GroupName="Mode"/>
+            <RadioButton x:Name="standard" Content="Standard" GroupName="Mode" IsChecked="True" />
         </StackPanel>
         <Button Content="FIGHT !!!!!!" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Click="startNewGame" Margin="24,245,21,35" Height="20" Width="54" />
 
