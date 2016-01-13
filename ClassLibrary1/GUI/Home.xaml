@@ -7,7 +7,7 @@
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="Home">
     <Page.Background>
-        <ImageBrush ImageSource="/images/riziere.jpg"/>
+        <ImageBrush ImageSource="images/riziere.jpg"/>
     </Page.Background>
 
     <StackPanel Name="panel" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200">

@@ -37,15 +37,7 @@ namespace GUI
 
             this.buildGrid();
             this.diplayUnits();
-
-            name1.Text = Game.Players[0].Name;
-            nbPoints1.Text = "Points de victoire : " + Game.Players[0].VictoryPoints;
-            race1.Text = Game.Players[0].Race.ToString();
-            nbUnits1.Text = "Nombre unités : "+Game.Players[0].NbUnits;
-            name2.Text = Game.Players[1].Name;
-            nbPoints2.Text = "Points de victoire : " + Game.Players[1].VictoryPoints;
-            race2.Text = Game.Players[1].Race.ToString();
-            nbUnits2.Text = "Nombre unités : " + Game.Players[1].NbUnits;
+            this.DisplayPlayer();
         }
 
 
@@ -219,6 +211,45 @@ namespace GUI
         private void NextPlayer(object sender, RoutedEventArgs e)
         {
             Game.EndTurn();
+        }
+
+        private void DisplayPlayer()
+        {
+            name1.Text = Game.Players[0].Name;
+            nbPoints1.Text = "Points de victoire : " + Game.Players[0].VictoryPoints;
+            race1.Text = Game.Players[0].Race.ToString();
+            nbUnits1.Text = "Nombre unités : " + Game.Players[0].NbUnits;
+            name2.Text = Game.Players[1].Name;
+            nbPoints2.Text = "Points de victoire : " + Game.Players[1].VictoryPoints;
+            race2.Text = Game.Players[1].Race.ToString();
+            nbUnits2.Text = "Nombre unités : " + Game.Players[1].NbUnits;
+
+            switch (Game.Players[0].Race)
+            {
+                case Race.Elf :
+                    Image1.Source = new BitmapImage(new Uri(@"/images/elf_asiat.png", UriKind.Relative));
+                    break;
+                case Race.Human:
+                    Image1.Source = new BitmapImage(new Uri(@"/images/Human.png", UriKind.Relative));
+                    break;
+                case Race.Orc:
+                    Image1.Source = new BitmapImage(new Uri(@"/images/orc.png", UriKind.Relative));
+                    break;
+            }
+
+            switch (Game.Players[1].Race)
+            {
+                case Race.Elf:
+                    Image2.Source = new BitmapImage(new Uri(@"/images/elf_asiat.png", UriKind.Relative));
+                    break;
+                case Race.Human:
+                    Image2.Source = new BitmapImage(new Uri(@"/images/Human.png", UriKind.Relative));
+                    break;
+                case Race.Orc:
+                    Image2.Source = new BitmapImage(new Uri(@"/images/orc.png", UriKind.Relative));
+                    break;
+            }
+         
         }
     }
 }
