@@ -211,6 +211,7 @@ namespace GUI
         private void NextPlayer(object sender, RoutedEventArgs e)
         {
             Game.EndTurn();
+            DisplayPlayer();
         }
 
         private void DisplayPlayer()
@@ -248,6 +249,18 @@ namespace GUI
                 case Race.Orc:
                     Image2.Source = new BitmapImage(new Uri(@"/images/orc.png", UriKind.Relative));
                     break;
+            }
+
+            if (Game.CurrentPlayer.Equals(Game.Players[0]))
+            {
+                Joueur2.SetValue(DockPanel.OpacityProperty, 0.50);
+                Joueur1.SetValue(DockPanel.OpacityProperty, 0.85);
+            }
+
+            if (Game.CurrentPlayer.Equals(Game.Players[1]))
+            {
+                Joueur1.SetValue(DockPanel.OpacityProperty, 0.50);
+                Joueur2.SetValue(DockPanel.OpacityProperty, 0.85);
             }
          
         }

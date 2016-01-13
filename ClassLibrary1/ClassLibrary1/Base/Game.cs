@@ -194,7 +194,7 @@ namespace ClassLibrary1
             // Changement de joueur
             else
             {
-                this.CurrentPlayerIndex = (CurrentPlayerIndex + 1) % (Map.MapSize.NbPlayers + 1);
+                this.CurrentPlayerIndex = (CurrentPlayerIndex + 1) % (Map.MapSize.NbPlayers);
             }
         }
 

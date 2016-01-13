@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="152*" />
             <ColumnDefinition Width="157*"></ColumnDefinition>
             <ColumnDefinition Width="75*"/>
@@ -40,13 +40,13 @@
         <Button x:Name="saveGameButton" Content="Quitter partie" Grid.Column="3" Grid.Row="0" Click="backToMenu"></Button>
         <Button Content="Finir le tour" Grid.Column="3" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="20" Width="150" Click="NextPlayer"/>
 
-        <Grid Name="players"  HorizontalAlignment="Left" Height="163" Grid.Column="1" Grid.Row="3"  VerticalAlignment="Top" Grid.ColumnSpan="3" Width="462" Margin="12">
+        <Grid Name="players"  HorizontalAlignment="Left" Height="163" Grid.Column="1" Grid.Row="3"  VerticalAlignment="Top" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <DockPanel Grid.Column="0" Background="Beige" Opacity="0.70" Margin="10" LastChildFill="True">
+            <DockPanel Name="Joueur1" Grid.Column="0" Background="Beige" Opacity="0.70" Margin="10" LastChildFill="True">
                 <TextBlock DockPanel.Dock="Top" Name="name1" Text="Joueur 1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"></TextBlock>
                 <Image Name="Image1" Source="images/orc.png" DockPanel.Dock="Left" Width="58"/>
                 <StackPanel DockPanel.Dock="Right" >
@@ -55,7 +55,7 @@
                     <TextBlock Name="nbPoints1" Text="Nb points" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
                 </StackPanel>
             </DockPanel>
-            <DockPanel Grid.Column="1" Background="Beige" Opacity="0.70" Margin="10" LastChildFill="True">
+            <DockPanel Name="Joueur2" Grid.Column="1" Background="Beige" Opacity="0.70" Margin="10" LastChildFill="True">
                 <TextBlock DockPanel.Dock="Top" Name="name2" Text="Joueur 2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"></TextBlock>
                 <Image Name="Image2" Source="images/orc.png" DockPanel.Dock="Left" Width="58"/>
                 <StackPanel DockPanel.Dock="Right" >
