@@ -133,8 +133,8 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\blowhard.png" />
-    <Resource Include="images\cyclop.png" />
-    <Resource Include="images\Elf Asiatique.png" />
+    <Resource Include="images\orc.png" />
+    <Resource Include="images\elf_asiat.png" />
     <Resource Include="images\forest.png" />
     <Resource Include="images\Human.png" />
     <Resource Include="images\mountain.png" />

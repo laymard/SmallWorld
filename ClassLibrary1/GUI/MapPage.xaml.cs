@@ -65,19 +65,19 @@ namespace GUI
 
             switch(type){
                 case TileType.MOUNTAIN :
-                    path = @"images/test.png";
+                    path = @"images/mountain.png";
                     break;
 
                 case TileType.WATER :
-                    path = @"images/test.png";
+                    path = @"images/water.png";
                     break;
 
                 case TileType.PLAIN :
-                    path = @"images/test.png";
+                    path = @"images/plain.png";
                     break;
 
                 case TileType.FOREST :
-                    path = @"images/test.png";
+                    path = @"images/forest.png";
                     break;
             }
 
