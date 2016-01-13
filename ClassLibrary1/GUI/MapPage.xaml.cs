@@ -34,8 +34,18 @@ namespace GUI
 
             // calcul du côté de la case
             this.TileSize = mapGrid.Width / this.NbTiles;
+
             this.buildGrid();
             this.diplayUnits();
+
+            name1.Text = Game.Players[0].Name;
+            nbPoints1.Text = "Points de victoire : " + Game.Players[0].VictoryPoints;
+            race1.Text = Game.Players[0].Race.ToString();
+            nbUnits1.Text = "Nombre unités : "+Game.Players[0].NbUnits;
+            name2.Text = Game.Players[1].Name;
+            nbPoints2.Text = "Points de victoire : " + Game.Players[1].VictoryPoints;
+            race2.Text = Game.Players[1].Race.ToString();
+            nbUnits2.Text = "Nombre unités : " + Game.Players[1].NbUnits;
         }
 
 
@@ -56,7 +66,6 @@ namespace GUI
             get;
             set;
         }
-
 
         // constructeur de bouton correspondant au format de la grille
         public Rectangle createTile(TileType type)

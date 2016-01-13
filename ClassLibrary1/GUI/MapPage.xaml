@@ -5,15 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d"
       xmlns:local="clr-namespace:ClassLibrary1;assembly=ClassLibrary1"
+      xmlns:gui="clr-namespace:GUI"
 	Title="Map" WindowHeight="1" WindowWidth="1">
     <Page.Background>
         <ImageBrush ImageSource="/images/riziere.jpg"/>
     </Page.Background>
-
+    
     <Grid x:Name="MainGrid" >
-
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" ></RowDefinition>
+            <RowDefinition Height="5*" ></RowDefinition>
             <RowDefinition Height="10*"></RowDefinition>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="5*"></RowDefinition>
@@ -44,11 +44,23 @@
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Rectangle Grid.Column="0" Opacity="0.70" Fill="Beige" Margin="10" />
-            <Rectangle Grid.Column="1" Opacity="0.70" Fill="Beige" Margin="10" />
+
+            <StackPanel Grid.Column="0" Background="Beige" Opacity="0.70" Margin="10">
+                <TextBlock Name="name1" Text="Joueur 1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"></TextBlock>
+                <TextBlock Name="race1" Text="Race 1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"></TextBlock>
+                <TextBlock Name="nbUnits1" Text="Nb unités" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
+                <TextBlock Name="nbPoints1" Text="Nb points" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Background="Beige" Opacity="0.70" Margin="10">
+                <TextBlock Name="name2" Text="Joueur 2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"></TextBlock>
+                <TextBlock Name="race2" Text="Race 2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"></TextBlock>
+                <TextBlock Name="nbUnits2" Text="Nb unités" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
+                <TextBlock Name="nbPoints2" Text="Nb points" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
+            </StackPanel>
+
         </Grid>
     </Grid>
-
+    
 
 
 
