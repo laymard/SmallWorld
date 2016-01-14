@@ -33,7 +33,7 @@
                 <RadioButton x:Name="orc1" Content="Orc" GroupName="J1" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=orc2, Mode=TwoWay}" Checked="DisplayPlayer"/>
                 <RadioButton x:Name="elf1" Content="Elf" GroupName="J1" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=elf2, Mode=TwoWay}" Checked="DisplayPlayer"/>
             </StackPanel>
-            <Image Name="Image1" HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom" Source="images/Human.png"/>
+            <Image Name="Image1" HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom" Source="images/point_inter.png"/>
             <TextBox x:Name="name1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" Width="70"/>
         </StackPanel>
         <StackPanel Grid.Column="2" HorizontalAlignment="Center" Height="180" VerticalAlignment="Center" Width="90" Background="#7FFFFFFF" >
@@ -43,7 +43,7 @@
                 <RadioButton x:Name="orc2" Content="Orc" GroupName="J2" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=orc1, Mode=TwoWay}"   Checked="DisplayPlayer"/>
                 <RadioButton x:Name="elf2" Content="Elf" GroupName="J2" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=elf1, Mode=TwoWay}" Checked="DisplayPlayer"/>
             </StackPanel>
-            <Image Name="Image2" HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom" Source="images/orc.png"/>
+            <Image Name="Image2" HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom" Source="images/point_inter.png"/>
             <TextBox x:Name="name2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Player 2" VerticalAlignment="Center" Width="70" Height="18"/>
         </StackPanel>
 

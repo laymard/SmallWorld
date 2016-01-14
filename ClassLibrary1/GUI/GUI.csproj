@@ -163,6 +163,7 @@
     <Resource Include="images\logo5.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="images\point_inter.png" />
     <Content Include="images\test.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
