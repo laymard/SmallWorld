@@ -106,8 +106,8 @@ namespace GUI
             {
                     // placement de la tile dans la grille 
                     Rectangle tile = this.createTile(this.Game.Map.getTile(i,j));
-                    tile.SetValue(Grid.ColumnProperty, j);
-                    tile.SetValue(Grid.RowProperty, i);
+                    tile.SetValue(Grid.ColumnProperty, i);
+                    tile.SetValue(Grid.RowProperty, j);
                     mapGrid.Children.Add(tile);
                     tile.AddHandler(Rectangle.MouseLeftButtonDownEvent,(RoutedEventHandler)selectedTile);
                     
@@ -121,10 +121,14 @@ namespace GUI
         {
             Rectangle rect = sender as Rectangle;
 
-            var x = rect.GetValue(Grid.ColumnProperty);
-            var y = rect.GetValue(Grid.RowProperty);
+            var x = (int)rect.GetValue(Grid.ColumnProperty);
+            var y = (int)rect.GetValue(Grid.RowProperty);
 
             MessageBox.Show("Case cliquée : x = "+x+" y : "+y);
+
+            // Si click sur une case : move
+            Game.selectTile(Game.Map.getCoord(x,y));
+            actualiseDisplay();
         }
 
         private void selectTile(object sender, RoutedEventArgs e)

@@ -68,12 +68,14 @@ namespace ClassLibrary1
             StandardMap ms = new StandardMap();
             // Création du jeu
             NewGameBuilder gb = new NewGameBuilder(ms);
-            gb.buildGame();
+
             Game game = gb.Game;
             // Création des joueurs
             game.AddPlayer(Race.Human, "Robert", 4);
             game.AddPlayer(Race.Orc, "Marie", 4);
             game.AddPlayer(Race.Elf, "Gaston", 4);
+
+            gb.buildGame();
 
             Player p1 = game.Players[0];
             Player p2 = game.Players[1];
@@ -121,12 +123,14 @@ namespace ClassLibrary1
             StandardMap ms = new StandardMap();
             // Création du jeu
             NewGameBuilder gb = new NewGameBuilder(ms);
-            gb.buildGame();
+
             Game game = gb.Game;
             // Création des joueurs
             game.AddPlayer(Race.Human, "Robert", 4);
             game.AddPlayer(Race.Orc, "Marie", 4);
             game.AddPlayer(Race.Elf, "Gaston", 4);
+
+            gb.buildGame();
 
             // Test
             Player first = game.CurrentPlayer;
@@ -153,13 +157,14 @@ namespace ClassLibrary1
             StandardMap ms = new StandardMap();
             // Création du jeu
             GameBuilder gb = new NewGameBuilder(ms);
-            gb.buildGame();
             Game game = gb.Game;
             // Création des joueurs
             game.AddPlayer(Race.Human, "Robert", 4);
             game.AddPlayer(Race.Orc, "Marie", 4);
             game.AddPlayer(Race.Elf, "Gaston", 4);
             game.AddPlayer(Race.Elf, "Gaston", 4);
+
+            gb.buildGame();
 
             Assert.AreEqual(3,game.Players.Count);
         }
