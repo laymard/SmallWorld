@@ -43,12 +43,12 @@ namespace TestUnitairesCore
 
             NewGameBuilder builder = new NewGameBuilder(new DemoMap());
 
-            builder.buildGame();
-
             Game game = builder.Game;
 
             game.AddPlayer(Race.Human, "Player 1", 4);
             game.AddPlayer(Race.Orc, "Player 2", 4);
+
+            builder.buildGame();
 
             Player p1 = game.Players[0];
             Player p2 = game.Players[1];

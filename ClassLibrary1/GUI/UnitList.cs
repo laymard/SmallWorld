@@ -24,7 +24,17 @@ namespace GUI
         private UnitList()
         {
             unitsItems = new Dictionary<Unit,DockPanel>();
-        } 
+        }
+
+        public Unit getUnit(DockPanel dockPanel)
+        {
+            foreach (Unit u in unitsItems.Keys)
+            {
+                if (unitsItems[u].Equals(dockPanel)) return u;
+            }
+
+            return null;
+        }
         public DockPanel getDockPanel(Unit u, Race race)
         {
             if (!unitsItems.ContainsKey(u))

@@ -121,10 +121,14 @@ namespace GUI
         {
             Rectangle rect = sender as Rectangle;
 
-            var x = rect.GetValue(Grid.ColumnProperty);
-            var y = rect.GetValue(Grid.RowProperty);
+            var x = (int)rect.GetValue(Grid.ColumnProperty);
+            var y = (int)rect.GetValue(Grid.RowProperty);
 
             MessageBox.Show("Case cliquée : x = "+x+" y : "+y);
+
+            // Si click sur une case : move
+            Game.selectTile(Game.Map.getCoord(x,y));
+            actualiseDisplay();
         }
 
         private void selectTile(object sender, RoutedEventArgs e)
@@ -212,6 +216,13 @@ namespace GUI
         public void actualiseDisplay(){
             DisplayPlayer();
             displayUnitsOnMap();
+        }
+
+        private void SelectUnit(object sender, SelectionChangedEventArgs e)
+        {
+            DockPanel dp = (DockPanel)Units.SelectedItem;
+            Unit unit = UnitList.INSTANCE.getUnit(dp);
+            Game.CurrentPlayer.selectUnit(unit);
         }
 
 

@@ -63,33 +63,33 @@ namespace GUI
 
             if (button.Equals(orc1))
             {
-                Image1.Source = new BitmapImage(new Uri(@"/images/orc.png", UriKind.Relative));
+                Image1.Source = ImageFactory.INSTANCE.getImage(Race.Orc).Source;
             }
 
             if (button.Equals(elf1))
             {
-                Image1.Source = new BitmapImage(new Uri(@"/images/elf_asiat.png", UriKind.Relative));
+                Image1.Source = ImageFactory.INSTANCE.getImage(Race.Elf).Source;
             }
 
             if (button.Equals(human1))
             {
-                Image1.Source = new BitmapImage(new Uri(@"/images/Human.png", UriKind.Relative));
+                Image1.Source = ImageFactory.INSTANCE.getImage(Race.Human).Source;
             }
 
 
             if (button.Equals(orc2))
             {
-                Image2.Source = new BitmapImage(new Uri(@"/images/orc.png", UriKind.Relative));
+                Image2.Source = ImageFactory.INSTANCE.getImage(Race.Orc).Source;
             }
 
             if (button.Equals(elf2))
             {
-                Image2.Source = new BitmapImage(new Uri(@"/images/elf_asiat.png", UriKind.Relative));
+                Image2.Source = ImageFactory.INSTANCE.getImage(Race.Elf).Source;
             }
 
             if (button.Equals(human2))
             {
-                Image2.Source = new BitmapImage(new Uri(@"/images/Human.png", UriKind.Relative));
+                Image2.Source = ImageFactory.INSTANCE.getImage(Race.Human).Source;
             }
         }
 
