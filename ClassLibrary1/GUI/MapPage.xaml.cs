@@ -127,14 +127,14 @@ namespace GUI
             MessageBox.Show("Case cliquée : x = "+x+" y : "+y);
         }
 
-        private void selectedUnit(object sender, RoutedEventArgs e)
+        private void selectTile(object sender, RoutedEventArgs e)
         {
             Image rect = sender as Image;
 
             // Case cliquée
             var x = (int)rect.GetValue(Grid.ColumnProperty);
             var y = (int)rect.GetValue(Grid.RowProperty);
-            Coordinate c = new Coordinate(x,y);
+            Coordinate c = Game.Map.getCoord(x, y);
             MessageBox.Show("Unité cliquée : x = " + x + " y : " + y);
 
             // nettoie liste
@@ -146,8 +146,10 @@ namespace GUI
                 DockPanel unitDisplay = UnitList.INSTANCE.getDockPanel(u, Game.CurrentPlayer.Race);
                 this.Units.Items.Add(unitDisplay);
             }
-            
-            
+
+            // Si click sur une unité adverse : attaque
+            Game.selectTile(c);
+            actualiseDisplay();
         }
 
         public void displayUnitsOnMap()
@@ -160,7 +162,7 @@ namespace GUI
                     unit.SetValue(Grid.ColumnProperty, u.coord.X);
                     unit.SetValue(Grid.RowProperty, u.coord.Y);
                     mapGrid.Children.Add(unit);
-                    unit.AddHandler(Image.MouseLeftButtonDownEvent, (RoutedEventHandler)selectedUnit);
+                    unit.AddHandler(Image.MouseLeftButtonDownEvent, (RoutedEventHandler)selectTile);
                 }
             }
         }
@@ -205,9 +207,16 @@ namespace GUI
                 Joueur2.SetValue(DockPanel.OpacityProperty, 0.85);
             }
          
+        } 
+        public void actualiseDisplay(){
+            DisplayPlayer();
+            displayUnitsOnMap();
         }
 
-    }
+
+
+
+}
 }
 
 

@@ -281,11 +281,20 @@ namespace ClassLibrary1
         /// <param name="tile">Case à sélectionner</param>
         public void selectTile(Coordinate tile)
         {
-            SelectedTile = tile;
-            if (selectBestDefender(tile))
+            if (CurrentPlayer.CurrentUnit != null)
             {
-                attack();
+                SelectedTile = tile;
+                if (selectBestDefender(tile))
+                {
+                    attack();
+                }
+                else
+                {
+                    this.move(tile);
+                }
+
             }
+         
         }
 
         /// <summary>
