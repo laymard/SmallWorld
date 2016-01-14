@@ -134,6 +134,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\valid.png" />
     <Resource Include="images\blowhard.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -173,6 +174,7 @@
     <Resource Include="images\nouvelle_partie.png" />
     <Resource Include="images\oui.png" />
     <Resource Include="images\quitter.png" />
+    <Resource Include="images\quit.png" />
     <Content Include="images\test.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
