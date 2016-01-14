@@ -51,8 +51,7 @@ namespace GUI
 
         private void startNewGame(object sender, RoutedEventArgs e)
         {
-            Button button = sender as Button;
-            button.Content = "Patientez svp";
+
             MapPage mp = new MapPage(new NewGameBuilder(this.getMap(), name1.Text, this.getRaceJ1(), name2.Text, this.getRaceJ2()));
             this.NavigationService.Navigate(mp);
         }
