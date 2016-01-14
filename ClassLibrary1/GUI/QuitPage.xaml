@@ -18,9 +18,10 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
+
+                <Image x:Name="oui"  Source="images/oui.png" Height="150" Grid.Column="0" MouseEnter="size_plus" MouseLeave="size_less" MouseLeftButtonDown="saveGame"></Image>
+                <Image x:Name="non"  Source="images/non.png" Height="150" Grid.Column="1" MouseEnter="size_plus" MouseLeave="size_less" MouseLeftButtonDown="quitGame"></Image>
                 
-                <Button Content="Oui" Grid.Column="0" Click="saveGame"></Button>
-                <Button Content="Non" Grid.Column="1" Click="quitGame"></Button>
             </Grid>
         </StackPanel>
     </Grid>

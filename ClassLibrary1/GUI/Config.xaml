@@ -48,14 +48,14 @@
         </StackPanel>
 
 
-        <Image Source="images/choisissez.png" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" Height="100"  />
-        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20,90,17,0" Height="61" Width="80" Background="#7FFFFFFF">
+        <Image Source="images/choisissez.png" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" Height="200"  />
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20,250,17,0" Height="61" Width="80" Background="#7FFFFFFF">
             <TextBlock Text="Mode de jeu"></TextBlock>
             <RadioButton x:Name="demo" Content="Demo" GroupName="Mode"/>
             <RadioButton x:Name="small" Content="Small" GroupName="Mode"/>
             <RadioButton x:Name="standard" Content="Standard" GroupName="Mode" IsChecked="True"/>
         </StackPanel>
-        <Button Content="FIGHT !!!!!!" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Click="startNewGame" Margin="24,245,21,35" Height="20" Width="54"/>
+        <Image Source="images/fight.png" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center" MouseLeftButtonDown="startNewGame" Margin="24,245,21,35" Height="200" MouseEnter="size_plus" MouseLeave="size_less"/>
 
     </Grid>
 </Page>
