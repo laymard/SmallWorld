@@ -117,8 +117,6 @@ namespace GUI
             var x = (int)rect.GetValue(Grid.ColumnProperty);
             var y = (int)rect.GetValue(Grid.RowProperty);
 
-            MessageBox.Show("Case cliquée : x = "+x+" y : "+y);
-
             // Si click sur une case : move
             Game.selectTile(Game.Map.getCoord(x,y));
             actualiseDisplay();
@@ -131,8 +129,6 @@ namespace GUI
             // Case cliquée
             var x = (int)rect.GetValue(Grid.ColumnProperty);
             var y = (int)rect.GetValue(Grid.RowProperty);
-
-            MessageBox.Show("Unité cliquée : x = " + x + " y : " + y);
 
             // Si click sur une unité adverse : attaque
             Game.selectTile(Game.Map.getCoord(x, y));
