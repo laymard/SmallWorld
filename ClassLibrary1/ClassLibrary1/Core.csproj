@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actors\AttackUnits.cs" />
+    <Compile Include="Base\Observer.cs" />
     <Compile Include="Environment\Algo.cs" />
     <Compile Include="Environment\Coordinate.cs" />
     <Compile Include="Actors\Commande.cs" />
