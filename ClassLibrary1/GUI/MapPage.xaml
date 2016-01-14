@@ -44,6 +44,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
             <DockPanel Name="Joueur1" Grid.Column="0" Background="Beige" Opacity="0.70" Margin="10" LastChildFill="True">
@@ -63,6 +64,11 @@
                     <TextBlock Name="nbUnits2" Text="Nb unités" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
                     <TextBlock Name="nbPoints2" Text="Nb points" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
                 </StackPanel>
+            </DockPanel>
+            <DockPanel Name="tourRestant" Grid.Column="2" Background="Beige" Opacity="0.70" Margin="10" LastChildFill="True">
+                <Label Content="Tour restant : "></Label>
+                <Label x:Name="TourRestants"></Label>
+                
             </DockPanel>
         </Grid>
         

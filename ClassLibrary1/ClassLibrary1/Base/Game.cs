@@ -155,7 +155,12 @@ namespace ClassLibrary1
 
                           default :
                                TileType tile =this.Map.getTile(coord);
-                               if(!tile.Equals(TileType.WATER))
+                               while(tile.Equals(TileType.WATER)){
+                                   x = rnd.Next(0, Map.MapSize.NbTiles - 1);
+                                   y = rnd.Next(0, Map.MapSize.NbTiles - 1);
+                                   coord = Map.getCoord(x, y);
+                                   tile = this.Map.getTile(coord);
+                               }
                                 {
                                     while (p.Units.Count != p.Units.Capacity)
                                     {

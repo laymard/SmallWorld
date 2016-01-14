@@ -106,8 +106,8 @@ namespace GUI
             {
                     // placement de la tile dans la grille 
                     Rectangle tile = this.createTile(this.Game.Map.getTile(i,j));
-                    tile.SetValue(Grid.ColumnProperty, j);
-                    tile.SetValue(Grid.RowProperty, i);
+                    tile.SetValue(Grid.ColumnProperty, i);
+                    tile.SetValue(Grid.RowProperty, j);
                     mapGrid.Children.Add(tile);
                     tile.AddHandler(Rectangle.MouseLeftButtonDownEvent,(RoutedEventHandler)selectedTile);
                     
@@ -176,6 +176,7 @@ namespace GUI
         private void NextPlayer(object sender, RoutedEventArgs e)
         {
             Game.EndTurn();
+            TourRestants.Content = Game.TurnsLeft.ToString();
             DisplayPlayer();
         }
 
