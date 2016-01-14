@@ -83,14 +83,7 @@ namespace GUI
         }
 
 
-        // Enlève tous les éléments présents dans la grid de la page xaml
-        public void nettoieGrille()
-        {
-            mapGrid.Children.Clear();
-        }
-
-
-        /** Affiche la grille **/
+        /** Construit la grille **/
         public void buildGrid()
         {
             for (int j = 0; j < this.NbTiles; j++)
@@ -109,7 +102,7 @@ namespace GUI
                     tile.SetValue(Grid.ColumnProperty, i);
                     tile.SetValue(Grid.RowProperty, j);
                     mapGrid.Children.Add(tile);
-                    tile.AddHandler(Rectangle.MouseLeftButtonDownEvent,(RoutedEventHandler)selectedTile);
+                    tile.AddHandler(Rectangle.MouseLeftButtonDownEvent,(RoutedEventHandler)selectTile);
                     
                 }
                 
@@ -117,7 +110,7 @@ namespace GUI
             
         }
 
-        private void selectedTile(object sender, RoutedEventArgs e)
+        private void selectTile(object sender, RoutedEventArgs e)
         {
             Rectangle rect = sender as Rectangle;
 
@@ -131,33 +124,42 @@ namespace GUI
             actualiseDisplay();
         }
 
-        private void selectTile(object sender, RoutedEventArgs e)
+        private void selectUnitOnTile(object sender, RoutedEventArgs e)
         {
             Image rect = sender as Image;
 
             // Case cliquée
             var x = (int)rect.GetValue(Grid.ColumnProperty);
             var y = (int)rect.GetValue(Grid.RowProperty);
-            Coordinate c = Game.Map.getCoord(x, y);
+
             MessageBox.Show("Unité cliquée : x = " + x + " y : " + y);
 
+            // Si click sur une unité adverse : attaque
+            Game.selectTile(Game.Map.getCoord(x, y));
+            actualiseDisplay();
+        }
+
+        private void displayUnitList()
+        {
             // nettoie liste
             this.Units.Items.Clear();
 
-            // affichage des unités dans la liste
-            var units = Game.CurrentPlayer.getUnitsOnTile(c);
-            foreach(Unit u in units){
-                DockPanel unitDisplay = UnitList.INSTANCE.getDockPanel(u, Game.CurrentPlayer.Race);
-                this.Units.Items.Add(unitDisplay);
+            if (Game.SelectedTile != null)
+            {
+                // affichage des unités dans la liste
+                var units = Game.CurrentPlayer.getUnitsOnTile(Game.SelectedTile);
+                foreach (Unit u in units)
+                {
+                    DockPanel unitDisplay = UnitList.INSTANCE.getDockPanel(u, Game.CurrentPlayer.Race);
+                    this.Units.Items.Add(unitDisplay);
+                }
             }
 
-            // Si click sur une unité adverse : attaque
-            Game.selectTile(c);
-            actualiseDisplay();
         }
 
         public void displayUnitsOnMap()
         {
+            unitGrid.Children.Clear();
             foreach (Player p in Game.Players)
             {
                 foreach (Unit u in p.Units)
@@ -165,24 +167,11 @@ namespace GUI
                     Image unit = this.createUnit(p.Race);
                     unit.SetValue(Grid.ColumnProperty, u.coord.X);
                     unit.SetValue(Grid.RowProperty, u.coord.Y);
-                    mapGrid.Children.Add(unit);
-                    unit.AddHandler(Image.MouseLeftButtonDownEvent, (RoutedEventHandler)selectTile);
+                    unitGrid.Children.Add(unit);
+                    unit.AddHandler(Image.MouseLeftButtonDownEvent, (RoutedEventHandler)selectUnitOnTile);
                 }
             }
-        }
-
-        private void backToMenu(object sender, RoutedEventArgs e)
-        {
-            QuitPage qp = new QuitPage(this.Game);
-            NavigationService.Navigate(qp);
-        }
-
-        private void NextPlayer(object sender, RoutedEventArgs e)
-        {
-            Game.EndTurn();
-            TourRestants.Content = Game.TurnsLeft.ToString();
-            DisplayPlayer();
-        }
+        }  
 
         private void DisplayPlayer()
         {
@@ -211,12 +200,7 @@ namespace GUI
                 Joueur1.SetValue(DockPanel.OpacityProperty, 0.50);
                 Joueur2.SetValue(DockPanel.OpacityProperty, 0.85);
             }
-         
         } 
-        public void actualiseDisplay(){
-            DisplayPlayer();
-            displayUnitsOnMap();
-        }
 
         private void SelectUnit(object sender, SelectionChangedEventArgs e)
         {
@@ -226,7 +210,25 @@ namespace GUI
         }
 
 
+        private void backToMenu(object sender, RoutedEventArgs e)
+        {
+            QuitPage qp = new QuitPage(this.Game);
+            NavigationService.Navigate(qp);
+        }
 
+        private void NextPlayer(object sender, RoutedEventArgs e)
+        {
+            Game.EndTurn();
+            TourRestants.Content = Game.TurnsLeft.ToString();
+            DisplayPlayer();
+        }
+
+        public void actualiseDisplay()
+        {
+            DisplayPlayer();
+            displayUnitsOnMap();
+            displayUnitList();
+        }
 
 }
 }

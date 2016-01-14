@@ -37,14 +37,19 @@ namespace GUI
         }
         public DockPanel getDockPanel(Unit u, Race race)
         {
-            if (!unitsItems.ContainsKey(u))
+            DockPanel dp = AddUnit(u, race);
+            if (unitsItems.ContainsKey(u))
             {
-                AddUnit(u, race);
+                this.unitsItems[u] = dp;
+            }
+            else
+            {
+                unitsItems.Add(u, dp);
             }
 
             return unitsItems[u];
         }
-        public void AddUnit(Unit u, Race race)
+        public DockPanel AddUnit(Unit u, Race race)
         {
             DockPanel res = new DockPanel();
 
@@ -72,7 +77,7 @@ namespace GUI
             DockPanel.SetDock(stack, Dock.Right);
             res.Children.Add(stack);
 
-            this.unitsItems.Add(u, res);
+            return res;
         }
     }
 }

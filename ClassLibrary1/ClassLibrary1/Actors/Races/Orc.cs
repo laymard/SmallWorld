@@ -58,6 +58,7 @@ namespace ClassLibrary1
             {TileType.FOREST,1 },
             {TileType.MOUNTAIN,2 },
             {TileType.PLAIN,1 },
+            {TileType.WATER,0 }
         };
 
         [XmlIgnore()]

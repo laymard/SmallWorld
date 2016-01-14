@@ -102,10 +102,13 @@ namespace ClassLibrary1
         /// <param name="type">Type de la case cible</param>
         public void move(Coordinate targetTile, TileType type)
         {
-            this.spendMovePoints(type);
-            coord = targetTile;
-            currentTile = type;
-            this.addVictoryPoints();
+            if(canMove(targetTile,type)){
+                this.spendMovePoints(type);
+                coord = targetTile;
+                currentTile = type;
+                this.addVictoryPoints();
+            }
+
         }
 
         /// <summary>

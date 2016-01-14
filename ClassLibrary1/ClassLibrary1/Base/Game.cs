@@ -288,7 +288,6 @@ namespace ClassLibrary1
         {
             if (CurrentPlayer.CurrentUnit != null)
             {
-                SelectedTile = tile;
                 if (selectBestDefender(tile))
                 {
                     attack();
@@ -297,8 +296,9 @@ namespace ClassLibrary1
                 {
                     this.move(tile);
                 }
-
             }
+
+            SelectedTile = tile;
          
         }
 
@@ -396,7 +396,7 @@ namespace ClassLibrary1
             List<Unit> units = new List<Unit>();
             foreach (Player p in Players)
             {
-                foreach (Unit u in p.Units)
+                foreach (Unit u in p.getUnitsOnTile(coord))
                 {
                     units.Add(u);
                 }

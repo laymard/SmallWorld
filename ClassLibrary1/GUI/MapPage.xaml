@@ -75,8 +75,5 @@
         <ListBox  Name="Units" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Background="Beige" Opacity="0.85" SelectionChanged="SelectUnit">
         </ListBox>
     </Grid>
-
-
-
-
+    
 </Page>
