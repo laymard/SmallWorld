@@ -12,7 +12,7 @@ namespace ClassLibrary1
             {
                 this.NbPlayers = 2;
                 this.NbTiles = 10;
-                this.NbTurns = 5;
+                this.NbTurns = 20;
                 this.NbUnits = 6;
             }
     }

@@ -17,7 +17,7 @@
             <RowDefinition Height="400"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Image Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="images/logo5.png" Margin="0,0,1,300"  ></Image>
+        <Image x:Name="Logo"  Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="images/logo5.png" Margin="0,0,1,300" MouseEnter="size_plus" MouseLeave="size_less"  ></Image>
 
         <StackPanel Grid.Row="1" Name="panel" VerticalAlignment="Center" HorizontalAlignment="Center" >
             <Button Content="Nouvelle Partie" Click="newGame"/>

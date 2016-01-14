@@ -216,6 +216,8 @@ namespace GUI
         {
             Game.EndTurn();
             TourRestants.Content = Game.TurnsLeft.ToString();
+            nbPoints1.Text = "Nb points " + Game.Players[0].VictoryPoints;
+            nbPoints2.Text = "Nb points " + Game.Players[1].VictoryPoints;
             DisplayPlayer();
         }
 

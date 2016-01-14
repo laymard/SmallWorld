@@ -48,5 +48,19 @@ namespace GUI
             App.Current.MainWindow.Close();
         }
 
+
+
+        private void size_plus(object sender, MouseEventArgs e)
+        {
+            Image img = ((Image)sender);
+            img.Height = img.ActualHeight * 1.1;
+        }
+
+        private void size_less(object sender, MouseEventArgs e)
+        {
+            Image img = ((Image)sender);
+            img.Height /= 1.1;
+        }
+
     }
 }
