@@ -143,50 +143,13 @@ namespace GUI
             // affichage des unités dans la liste
             var units = Game.CurrentPlayer.getUnitsOnTile(c);
             foreach(Unit u in units){
-                Button button = new Button();
-                DockPanel unitDisplay = addUnitToList(u);
-                button.Content = unitDisplay;
-                this.Units.Items.Add(button);
-
-                //button.Click += selectUnitInList;
+                DockPanel unitDisplay = UnitList.INSTANCE.getDockPanel(u, Game.CurrentPlayer.Race);
+                this.Units.Items.Add(unitDisplay);
             }
             
             
         }
 
-        public DockPanel addUnitToList(Unit u)
-        {
-            DockPanel res = new DockPanel();
-
-            // image à gauche
-            Image image = ImageFactory.INSTANCE.getImage(Game.CurrentPlayer.Race);
-            DockPanel.SetDock(image, Dock.Left);
-            res.Children.Add(image);
-
-            // points à droite
-            TextBlock attaque = new TextBlock();
-            attaque.Text = "Attaque : " + u.Points.attackPoints;
-            TextBlock defence = new TextBlock();
-            defence.Text = "Défense : " + u.Points.defencePoints;
-            TextBlock depl = new TextBlock();
-            depl.Text = "Déplacement : " + u.Points.MovePoints;
-            TextBlock vie = new TextBlock();
-            vie.Text = "Vie : " + u.Points.lifePoints;
-
-            StackPanel stack = new StackPanel();
-            stack.Children.Add(attaque);
-            stack.Children.Add(defence);
-            stack.Children.Add(vie);
-            stack.Children.Add(depl);
-            
-            DockPanel.SetDock(stack, Dock.Right);
-            res.Children.Add(stack);
-
-            var width = (double)res.GetValue(Grid.WidthProperty);
-            res.Width = width;
-
-            return res;
-        }
         public void displayUnitsOnMap()
         {
             foreach (Player p in Game.Players)
@@ -209,12 +172,6 @@ namespace GUI
         }
 
         private void NextPlayer(object sender, RoutedEventArgs e)
-        {
-            Game.EndTurn();
-            DisplayPlayer();
-        }
-
-        private void selectUnitInList(object sender, RoutedEventArgs e)
         {
             Game.EndTurn();
             DisplayPlayer();
