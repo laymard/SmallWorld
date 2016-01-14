@@ -143,23 +143,28 @@ namespace ClassLibrary1
 
                   if (!otherRaceOnTile(coord, p))
                   {
-                      if (p.Race.Equals(Race.Human))
+                      switch (p.Race)
                       {
-                          while (p.Units.Count != p.Units.Capacity)
+                          case Race.Human :
+                               while (p.Units.Count != p.Units.Capacity)
                           {
                     // creation de l'unit si la case n'est pas occupée par un autre joueur
                         p.createUnit(coord, this.Map.getTile(coord));
                           }
-                      }
-                      else
-                      {
-                          TileType tile =this.Map.getTile(coord);
-                          if(!tile.Equals(TileType.WATER))
-                          {
-                       // creation de l'unit si la case n'est pas occupée par un autre joueur
-                          p.createUnit(coord, this.Map.getTile(coord));
-                          }
-                      }
+                          break;
+
+                          default :
+                               TileType tile =this.Map.getTile(coord);
+                               if(!tile.Equals(TileType.WATER))
+                                {
+                                    while (p.Units.Count != p.Units.Capacity)
+                                    {
+                                        // creation de l'unit si la case n'est pas occupée par un autre joueur
+                                        p.createUnit(coord, this.Map.getTile(coord));
+                                    }
+                               }
+                               break;
+                      }       
                 }
             }
             setFirstPlayer();

@@ -24,10 +24,6 @@ namespace GUI
         public MainWindow()
         {
             InitializeComponent();
-            GameBuilder gb = new NewGameBuilder(new StandardMap(),"Robert",Race.Human,"Etienne",Race.Elf);
-            gb.buildGame();
-            GameSaver gs = new GameSaver(gb.Game);
-            gs.SaveGame("game.xml");
         }
     }
 }
