@@ -75,7 +75,7 @@
                 <Label Content="Tours restant : " HorizontalAlignment="Center" FontSize="18" DockPanel.Dock="Top"></Label>
                 <Label x:Name="TourRestants" HorizontalAlignment="Center" FontSize="24" DockPanel.Dock="Bottom"></Label>
             </DockPanel>
-            <Image Grid.Column="3" MouseLeftButtonDown="NextPlayer" HorizontalAlignment="Center" Width="50"  Margin="10" Source="images/valid.png"/>
+            <Image Grid.Column="3" MouseLeftButtonDown="NextPlayer" HorizontalAlignment="Center" Height="100"  Margin="10" Source="images/finir_tour.png" MouseEnter="size_plus" MouseLeave="size_less"></Image>
         </Grid>
         
         <ListBox  Name="Units" Grid.Column="3" Grid.Row="1" Grid.RowSpan="1" Background="Beige" Opacity="0.85" SelectionChanged="SelectUnit">
