@@ -212,11 +212,19 @@ namespace ClassLibrary1
             // Le jeu est-il fini ?
             if (TurnsLeft == 0 || Victory())
                 this.end();
+        
 
             // Changement de joueur
             else
             {
                 this.CurrentPlayerIndex = (CurrentPlayerIndex + 1) % (Map.MapSize.NbPlayers);
+                if (this.CurrentPlayerIndex == 0)
+                {
+                    this.TurnsLeft--;
+                    foreach(Player p in this.Players){
+                        p.finishMoves();
+                    }
+                }
             }
         }
 
