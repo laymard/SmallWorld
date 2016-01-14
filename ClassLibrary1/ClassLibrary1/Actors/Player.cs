@@ -253,5 +253,13 @@ namespace ClassLibrary1
             return true;
         }
 
+
+        internal void InitializeMovePoints()
+        {
+            foreach (Unit u in Units)
+            {
+                u.Points.MovePoints = 2;
+            }
+        }
     }
 }

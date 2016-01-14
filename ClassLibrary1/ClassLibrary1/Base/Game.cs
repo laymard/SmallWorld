@@ -216,6 +216,7 @@ namespace ClassLibrary1
             // Changement de joueur
             else
             {
+                this.CurrentPlayer.InitializeMovePoints();
                 this.CurrentPlayerIndex = (CurrentPlayerIndex + 1) % (Map.MapSize.NbPlayers);
             }
         }
@@ -307,8 +308,8 @@ namespace ClassLibrary1
         /// </summary>
         public void attack()
         {
-            TileType type = this.Map.getTile(SelectedTile);
-            if (CurrentPlayer.CurrentUnit.canAttack(SelectedTile, type))
+            TileType type = this.Map.getTile(AttackedUnit.coord);
+            if (CurrentPlayer.CurrentUnit.canAttack(AttackedUnit.coord, type))
             {
                 // choix du vainqueur de l'attaque
                 bool winner = this.chooseWinner(AttackedUnit);
