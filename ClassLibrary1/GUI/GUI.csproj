@@ -61,6 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Action.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -175,6 +176,9 @@
     <Resource Include="images\oui.png" />
     <Resource Include="images\quitter.png" />
     <Resource Include="images\quit.png" />
+    <Resource Include="images\default.png" />
+    <Resource Include="images\move.png" />
+    <Resource Include="images\sword.png" />
     <Content Include="images\test.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

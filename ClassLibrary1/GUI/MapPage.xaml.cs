@@ -116,10 +116,37 @@ namespace GUI
 
             var x = (int)rect.GetValue(Grid.ColumnProperty);
             var y = (int)rect.GetValue(Grid.RowProperty);
+            if (Game.CurrentPlayer.CurrentUnit != null)
+            {
+                Coordinate c = Game.CurrentPlayer.CurrentUnit.coord;
+                // Si click sur une case : move
+                Game.selectTile(Game.Map.getCoord(x, y));
+                if (Game.CurrentPlayer.CurrentUnit.coord != c)
+                {
+                    displayAction(GUI.Action.Move);
+                }
+            }
+            else
+            {
+                Game.selectTile(Game.Map.getCoord(x, y));
+            }
 
-            // Si click sur une case : move
-            Game.selectTile(Game.Map.getCoord(x,y));
             actualiseDisplay();
+        }
+
+        private void displayAction(GUI.Action action)
+        {
+            ImageAction.Source = ImageFactory.INSTANCE.getImage(action).Source;
+
+            String text = "";
+            switch (action)
+            {
+                case GUI.Action.Move :
+                    text = Game.CurrentPlayer.Name + " se déplace\n sur une case " + Game.CurrentPlayer.CurrentUnit.currentTile+".";
+                    break;
+            }
+
+            this.Action.Text = text;
         }
 
         private void selectUnitOnTile(object sender, RoutedEventArgs e)
@@ -132,6 +159,7 @@ namespace GUI
 
             // Si click sur une unité adverse : attaque
             Game.selectTile(Game.Map.getCoord(x, y));
+
             actualiseDisplay();
         }
 

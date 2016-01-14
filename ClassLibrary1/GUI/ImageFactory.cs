@@ -20,13 +20,49 @@ namespace GUI
         public static ImageFactory INSTANCE = new ImageFactory();
         public Dictionary<TileType, BitmapImage> Tiles { get; set; }
         public Dictionary<Race, BitmapImage> Races { get; set; }
+        public Dictionary<Action, BitmapImage> Actions { get; set; }
 
         private ImageFactory()
         {
             Tiles = new Dictionary<TileType, BitmapImage>();
             Races = new Dictionary<Race, BitmapImage>();
+            Actions = new Dictionary<Action, BitmapImage>();
         }
 
+        public Image getImage(Action action)
+        {
+            Image image = new Image();
+
+            if (Actions.ContainsKey(action))
+            {
+                image.Source = Actions[action];
+            }
+            else
+            {
+                String path = "";
+                switch (action)
+                {
+                    case Action.Fight:
+                        path = @"images/sword.png";
+                        break;
+
+                    case Action.Move:
+                        path = @"images/move.png";
+                        break;
+                }
+
+                Uri uri = new Uri(path, UriKind.Relative);
+
+                BitmapImage SourceBi = new BitmapImage(uri);
+                SourceBi.UriSource = uri;
+
+                image.Source = SourceBi;
+
+                Actions.Add(action, SourceBi);
+            }
+
+            return image;
+        }
         public Image getImage(Race race)
         {
             Image image = new Image();
