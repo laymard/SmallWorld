@@ -206,7 +206,7 @@ namespace GUI
         }
 
 
-        private void backToMenu(object sender, RoutedEventArgs e)
+        private void backToMenu(object sender, MouseButtonEventArgs e)
         {
             QuitPage qp = new QuitPage(this.Game);
             NavigationService.Navigate(qp);
@@ -227,7 +227,6 @@ namespace GUI
             displayUnitsOnMap();
             displayUnitList();
         }
-
 }
 }
 
