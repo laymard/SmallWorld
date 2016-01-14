@@ -48,7 +48,7 @@
         </StackPanel>
 
 
-        <Label Content="Choisissez !" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" Margin="26,0,23,0" Height="26" Width="50" Background="#7FFFFFFF" />
+        <Image Source="images/choisissez.png" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" Height="100"  />
         <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20,90,17,0" Height="61" Width="80" Background="#7FFFFFFF">
             <TextBlock Text="Mode de jeu"></TextBlock>
             <RadioButton x:Name="demo" Content="Demo" GroupName="Mode"/>

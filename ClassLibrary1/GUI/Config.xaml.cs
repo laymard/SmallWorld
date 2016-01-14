@@ -57,6 +57,22 @@ namespace GUI
             this.NavigationService.Navigate(mp);
         }
 
+        private void size_plus(object sender, MouseEventArgs e)
+        {
+            Image img = ((Image)sender);
+            img.Height = img.ActualHeight * 1.1;
+            e.Handled = true;
+        }
+
+        private void size_less(object sender, MouseEventArgs e)
+        {
+            Image img = ((Image)sender);
+            img.Height /= 1.1;
+            e.Handled = true;
+        }
+
+    
+
         private void DisplayPlayer(object sender, RoutedEventArgs e)
         {
             RadioButton button = sender as RadioButton;
@@ -94,4 +110,6 @@ namespace GUI
         }
 
     }
+
+
 }
