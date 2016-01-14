@@ -217,7 +217,6 @@ namespace ClassLibrary1
             // Changement de joueur
             else
             {
-                this.CurrentPlayer.InitializeMovePoints();
                 this.CurrentPlayerIndex = (CurrentPlayerIndex + 1) % (Map.MapSize.NbPlayers);
                 if (this.CurrentPlayerIndex == 0)
                 {
