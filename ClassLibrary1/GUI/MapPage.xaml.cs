@@ -213,6 +213,13 @@ namespace GUI
             displayUnitsOnMap();
         }
 
+        private void SelectUnit(object sender, SelectionChangedEventArgs e)
+        {
+            DockPanel dp = (DockPanel)Units.SelectedItem;
+            Unit unit = UnitList.INSTANCE.getUnit(dp);
+            Game.CurrentPlayer.selectUnit(unit);
+        }
+
 
 
 
