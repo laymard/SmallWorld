@@ -9,6 +9,7 @@ namespace ClassLibrary1
     [Serializable()]
     public class Game
     {
+
         /// <summary>
         /// Liste des joueurs (au moins deux)
         /// </summary>
@@ -326,6 +327,8 @@ namespace ClassLibrary1
                 int lost = rnd.Next(1, 4);
                 if (winner)
                 {
+                    String otherPlayer = Players[(CurrentPlayerIndex + 1) % (Map.MapSize.NbPlayers)].Name;
+                    notify(CurrentPlayer.Name,otherPlayer,otherPlayer,lost);
                     AttackedUnit.looseLifePoints(lost);
                     if (AttackedUnit.isDead())
                     {
@@ -334,6 +337,8 @@ namespace ClassLibrary1
                 }
                 else
                 {
+                    String otherPlayer = Players[(CurrentPlayerIndex + 1) % (Map.MapSize.NbPlayers)].Name;
+                    notify(CurrentPlayer.Name, otherPlayer, CurrentPlayer.Name, lost);
                     CurrentPlayer.CurrentUnit.looseLifePoints(lost);
                     CurrentPlayer.CurrentUnit.spendMovePoints(type);
                 }
@@ -420,6 +425,11 @@ namespace ClassLibrary1
         {
             GameSaver gs = new GameSaver(this);
             gs.SaveGame(path);
+        }
+
+        public void notify(String attackName, String defenseName, String looserName, int nbPoints)
+        {
+            Observer.INSTANCE.update(attackName, defenseName, looserName, nbPoints);
         }
     }
 }

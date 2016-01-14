@@ -144,6 +144,11 @@ namespace GUI
                 case GUI.Action.Move :
                     text = Game.CurrentPlayer.Name + " se déplace\n sur une case " + Game.CurrentPlayer.CurrentUnit.currentTile+".";
                     break;
+
+                case GUI.Action.Fight :
+                    text = Observer.INSTANCE.AttackName + " attaque " + Observer.INSTANCE.DefenseName+
+                        " !\n" + Observer.INSTANCE.LooserName + " perd " + Observer.INSTANCE.NbPoints+" points de vie.";
+                    break;
             }
 
             this.Action.Text = text;
@@ -157,8 +162,13 @@ namespace GUI
             var x = (int)rect.GetValue(Grid.ColumnProperty);
             var y = (int)rect.GetValue(Grid.RowProperty);
 
+
             // Si click sur une unité adverse : attaque
             Game.selectTile(Game.Map.getCoord(x, y));
+            if (Observer.INSTANCE.hasChanged)
+            {
+                displayAction(GUI.Action.Fight);
+            }
 
             actualiseDisplay();
         }
