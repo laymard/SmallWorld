@@ -164,6 +164,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\point_inter.png" />
+    <Resource Include="images\annuler.png" />
+    <Resource Include="images\charger_partie.png" />
+    <Resource Include="images\choisissez.png" />
+    <Resource Include="images\fight.png" />
+    <Resource Include="images\finir_tour.png" />
+    <Resource Include="images\non.png" />
+    <Resource Include="images\nouvelle_partie.png" />
+    <Resource Include="images\oui.png" />
+    <Resource Include="images\quitter.png" />
     <Content Include="images\test.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
