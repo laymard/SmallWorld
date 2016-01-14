@@ -21,8 +21,8 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="152*" />
-            <ColumnDefinition Width="157*"></ColumnDefinition>
+            <ColumnDefinition Width="160*" />
+            <ColumnDefinition Width="150*"></ColumnDefinition>
             <ColumnDefinition Width="75*"/>
         </Grid.ColumnDefinitions>
 
@@ -64,8 +64,10 @@
                     <TextBlock Name="nbPoints2" Text="Nb points" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
                 </StackPanel>
             </DockPanel>
-
         </Grid>
+        
+        <ListBox Name="Units" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Background="Beige" Opacity="0.85">
+        </ListBox>
     </Grid>
 
 

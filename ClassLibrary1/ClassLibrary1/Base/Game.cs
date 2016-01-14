@@ -141,13 +141,25 @@ namespace ClassLibrary1
                 int y = rnd.Next(0, Map.MapSize.NbTiles - 1);
                 Coordinate coord = Map.getCoord(x, y);
 
-                if (!otherRaceOnTile(coord, p))
-                {
-                    while (p.Units.Count != p.Units.Capacity)
-                    {
+                  if (!otherRaceOnTile(coord, p))
+                  {
+                      if (p.Race.Equals(Race.Human))
+                      {
+                          while (p.Units.Count != p.Units.Capacity)
+                          {
                     // creation de l'unit si la case n'est pas occupée par un autre joueur
                         p.createUnit(coord, this.Map.getTile(coord));
-                    }
+                          }
+                      }
+                      else
+                      {
+                          TileType tile =this.Map.getTile(coord);
+                          if(!tile.Equals(TileType.WATER))
+                          {
+                       // creation de l'unit si la case n'est pas occupée par un autre joueur
+                          p.createUnit(coord, this.Map.getTile(coord));
+                          }
+                      }
                 }
             }
             setFirstPlayer();
