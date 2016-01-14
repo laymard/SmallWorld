@@ -36,7 +36,7 @@ namespace GUI
             this.TileSize = mapGrid.Width / this.NbTiles;
 
             this.buildGrid();
-            this.diplayUnits();
+            this.displayUnitsOnMap();
             this.DisplayPlayer();
         }
 
@@ -63,31 +63,8 @@ namespace GUI
         public Rectangle createTile(TileType type)
         {
             Rectangle tile = new Rectangle();
-            String path = "";
-
-            switch(type){
-                case TileType.MOUNTAIN :
-                    path = @"images/mountain.png";
-                    break;
-
-                case TileType.WATER :
-                    path = @"images/water.png";
-                    break;
-
-                case TileType.PLAIN :
-                    path = @"images/plain.png";
-                    break;
-
-                case TileType.FOREST :
-                    path = @"images/forest.png";
-                    break;
-            }
-
-            Uri uri = new Uri(path, UriKind.Relative);
-
-            BitmapImage SourceBi = new BitmapImage(uri);
-            SourceBi.UriSource = uri;
-            ImageBrush image = new ImageBrush(SourceBi);
+            
+            ImageBrush image = ImageFactory.INSTANCE.getImage(type);
 
             tile.Fill = image;
 
@@ -99,31 +76,9 @@ namespace GUI
 
         private Image createUnit(Race race)
         {
-            String path = "";
-
-            switch (race)
-            {
-                case Race.Human:
-                    path = @"images/Human.png";
-                    break;
-
-                case Race.Elf:
-                    path = @"images/elf_asiat.png";
-                    break;
-
-                case Race.Orc:
-                    path = @"images/orc.png";
-                    break;
-            }
-
-            Uri uri = new Uri(path, UriKind.Relative);
-
-            BitmapImage SourceBi = new BitmapImage(uri);
-            SourceBi.UriSource = uri;
-            Image image = new Image();
-            image.Source = SourceBi;
-            //image.Height = 0.5 * this.TileSize;
-            //image.Width = 0.5 * this.TileSize;
+            Image image = ImageFactory.INSTANCE.getImage(race);
+            image.Height = 0.5 * this.TileSize;
+            image.Width = 0.5 * this.TileSize;
             return image;
         }
 
@@ -176,18 +131,63 @@ namespace GUI
         {
             Image rect = sender as Image;
 
+            // Case cliquée
             var x = (int)rect.GetValue(Grid.ColumnProperty);
             var y = (int)rect.GetValue(Grid.RowProperty);
             Coordinate c = new Coordinate(x,y);
+            MessageBox.Show("Unité cliquée : x = " + x + " y : " + y);
 
+            // nettoie liste
+            this.Units.Items.Clear();
+
+            // affichage des unités dans la liste
             var units = Game.CurrentPlayer.getUnitsOnTile(c);
+            foreach(Unit u in units){
+                Button button = new Button();
+                DockPanel unitDisplay = addUnitToList(u);
+                button.Content = unitDisplay;
+                this.Units.Items.Add(button);
 
-            MessageBox.Show("Unité cliquée : x = " + x + " y : " + y );
-
+                //button.Click += selectUnitInList;
+            }
+            
             
         }
 
-        public void diplayUnits()
+        public DockPanel addUnitToList(Unit u)
+        {
+            DockPanel res = new DockPanel();
+
+            // image à gauche
+            Image image = ImageFactory.INSTANCE.getImage(Game.CurrentPlayer.Race);
+            DockPanel.SetDock(image, Dock.Left);
+            res.Children.Add(image);
+
+            // points à droite
+            TextBlock attaque = new TextBlock();
+            attaque.Text = "Attaque : " + u.Points.attackPoints;
+            TextBlock defence = new TextBlock();
+            defence.Text = "Défense : " + u.Points.defencePoints;
+            TextBlock depl = new TextBlock();
+            depl.Text = "Déplacement : " + u.Points.MovePoints;
+            TextBlock vie = new TextBlock();
+            vie.Text = "Vie : " + u.Points.lifePoints;
+
+            StackPanel stack = new StackPanel();
+            stack.Children.Add(attaque);
+            stack.Children.Add(defence);
+            stack.Children.Add(vie);
+            stack.Children.Add(depl);
+            
+            DockPanel.SetDock(stack, Dock.Right);
+            res.Children.Add(stack);
+
+            var width = (double)res.GetValue(Grid.WidthProperty);
+            res.Width = width;
+
+            return res;
+        }
+        public void displayUnitsOnMap()
         {
             foreach (Player p in Game.Players)
             {
@@ -214,6 +214,12 @@ namespace GUI
             DisplayPlayer();
         }
 
+        private void selectUnitInList(object sender, RoutedEventArgs e)
+        {
+            Game.EndTurn();
+            DisplayPlayer();
+        }
+
         private void DisplayPlayer()
         {
             name1.Text = Game.Players[0].Name;
@@ -225,31 +231,10 @@ namespace GUI
             race2.Text = Game.Players[1].Race.ToString();
             nbUnits2.Text = "Nombre unités : " + Game.Players[1].NbUnits;
 
-            switch (Game.Players[0].Race)
-            {
-                case Race.Elf :
-                    Image1.Source = new BitmapImage(new Uri(@"/images/elf_asiat.png", UriKind.Relative));
-                    break;
-                case Race.Human:
-                    Image1.Source = new BitmapImage(new Uri(@"/images/Human.png", UriKind.Relative));
-                    break;
-                case Race.Orc:
-                    Image1.Source = new BitmapImage(new Uri(@"/images/orc.png", UriKind.Relative));
-                    break;
-            }
 
-            switch (Game.Players[1].Race)
-            {
-                case Race.Elf:
-                    Image2.Source = new BitmapImage(new Uri(@"/images/elf_asiat.png", UriKind.Relative));
-                    break;
-                case Race.Human:
-                    Image2.Source = new BitmapImage(new Uri(@"/images/Human.png", UriKind.Relative));
-                    break;
-                case Race.Orc:
-                    Image2.Source = new BitmapImage(new Uri(@"/images/orc.png", UriKind.Relative));
-                    break;
-            }
+            Image1.Source = ImageFactory.INSTANCE.getImage(Game.Players[0].Race).Source;
+            Image2.Source = ImageFactory.INSTANCE.getImage(Game.Players[1].Race).Source;
+
 
             if (Game.CurrentPlayer.Equals(Game.Players[0]))
             {
@@ -264,6 +249,7 @@ namespace GUI
             }
          
         }
+
     }
 }
 
