@@ -10,3 +10,4 @@ The game's core was made in C\# langage. All objects were designed with the code
 * C#, C++ and WPF
 
 # Screenshots
+![](images/SW.JPG)
